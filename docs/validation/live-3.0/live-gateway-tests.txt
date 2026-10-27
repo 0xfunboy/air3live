@@ -1,0 +1,24 @@
+✔ editorial input supports separate title/subtitle and newline ticker while bounding every field (2.734401ms)
+✔ title expiry disables output and survives restart without resetting the deadline (11.394682ms)
+✔ simultaneous title edits merge serially, invalid updates leave state intact and later writes recover (4.728844ms)
+✔ explicit title clear persists a disabled empty banner (3.847673ms)
+✔ live HTTP roles keep producer, player and operator authority separate (78.433353ms)
+✔ local operator cookies are HttpOnly and same-origin protected against CSRF and host rebinding (33.097436ms)
+✔ remote-origin configuration requires an operator token and issues a Secure cookie (21.874187ms)
+✔ producer can publish titles and an asynchronously resolved wallpanel but cannot configure or start live output (24.935959ms)
+✔ private keys persist server-side but never appear in settings responses or public program/config/market (34.115769ms)
+✔ live output starts only from an authorized explicit POST and stops before endpoint settings can change (44.211084ms)
+✔ Twitch callback receives the initiating operator cookie session and cannot be replayed or stolen by another session (29.062987ms)
+✔ chat ingestion stores bounded plain text and cannot trigger titles, narration, camera commands or streaming (22.820258ms)
+✔ new TTS settings apply to the next narration and their keys are excluded from operator responses (55.112485ms)
+✔ operator commands are allowlisted and publisher or player credentials cannot drive the presenter (30.272647ms)
+✔ settings reject internal-token injection, prototype keys and credential-bearing URLs atomically (22.897121ms)
+✔ the actual settings queue evaluates a token-save guard before applying a deferred OAuth patch (18.333439ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 527.838267

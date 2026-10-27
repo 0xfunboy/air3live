@@ -1,0 +1,713 @@
+TAP version 13
+# Subtest: camera attention follows a real world lens with bounded neck and binocular eye rotations
+ok 1 - camera attention follows a real world lens with bounded neck and binocular eye rotations
+  ---
+  duration_ms: 1655.534141
+  type: 'test'
+  ...
+# Subtest: pose layers cannot accumulate, and interrupted motion fades remain normalized
+ok 2 - pose layers cannot accumulate, and interrupted motion fades remain normalized
+  ---
+  duration_ms: 601.709389
+  type: 'test'
+  ...
+# Subtest: audio-clock coarticulation is continuous through cue changes and preserves silence
+ok 3 - audio-clock coarticulation is continuous through cue changes and preserves silence
+  ---
+  duration_ms: 13.104629
+  type: 'test'
+  ...
+# Subtest: actual avatar: retargeting, complete skinning and bounded facial controls
+    # Subtest: all seven delivered clips carry destination translation retarget metadata
+    ok 1 - all seven delivered clips carry destination translation retarget metadata
+      ---
+      duration_ms: 1.177784
+      type: 'test'
+      ...
+    # Subtest: animation never restores the wider foreign shoulder and longer foot segments
+    ok 2 - animation never restores the wider foreign shoulder and longer foot segments
+      ---
+      duration_ms: 135.978619
+      type: 'test'
+      ...
+    # Subtest: twelve-weight restoration remains normalized and idempotent
+    ok 3 - twelve-weight restoration remains normalized and idempotent
+      ---
+      duration_ms: 20.708234
+      type: 'test'
+      ...
+    # Subtest: skin shader composes with the eye/hair shader and supports normal passes
+    ok 4 - skin shader composes with the eye/hair shader and supports normal passes
+      ---
+      duration_ms: 1.599295
+      type: 'test'
+      ...
+    # Subtest: named morph subset is bounded and ready for the supplied face
+    ok 5 - named morph subset is bounded and ready for the supplied face
+      ---
+      duration_ms: 0.436974
+      type: 'test'
+      ...
+    # Subtest: jaw articulation moves lower teeth and tongue while keeping upper teeth fixed
+    ok 6 - jaw articulation moves lower teeth and tongue while keeping upper teeth fixed
+      ---
+      duration_ms: 8.293548
+      type: 'test'
+      ...
+    # Subtest: all nine audio cues produce finite bounded controls and reset without accumulation
+    ok 7 - all nine audio cues produce finite bounded controls and reset without accumulation
+      ---
+      duration_ms: 64.706597
+      type: 'test'
+      ...
+    # Subtest: foot grounding is invariant under a stage transform
+    ok 8 - foot grounding is invariant under a stage transform
+      ---
+      duration_ms: 4.89082
+      type: 'test'
+      ...
+    1..8
+ok 4 - actual avatar: retargeting, complete skinning and bounded facial controls
+  ---
+  duration_ms: 674.119558
+  type: 'test'
+  ...
+# Subtest: capture lock 1 releases after a thrown setup step and the next session starts
+ok 5 - capture lock 1 releases after a thrown setup step and the next session starts
+  ---
+  duration_ms: 107.321178
+  type: 'test'
+  ...
+# Subtest: capture lock 2 releases after a thrown setup step and the next session starts
+ok 6 - capture lock 2 releases after a thrown setup step and the next session starts
+  ---
+  duration_ms: 104.1292
+  type: 'test'
+  ...
+# Subtest: capture listener errors other than an occupied port reject startup
+ok 7 - capture listener errors other than an occupied port reject startup
+  ---
+  duration_ms: 3.027942
+  type: 'test'
+  ...
+# Subtest: publication requires explicit output, while encoding uses audio and two-second GOP
+ok 8 - publication requires explicit output, while encoding uses audio and two-second GOP
+  ---
+  duration_ms: 6.570293
+  type: 'test'
+  ...
+# Subtest: stream URLs, keys and bearer values are redacted without exposing paths
+ok 9 - stream URLs, keys and bearer values are redacted without exposing paths
+  ---
+  duration_ms: 0.452456
+  type: 'test'
+  ...
+# Subtest: software renderer is never reported as hardware
+ok 10 - software renderer is never reported as hardware
+  ---
+  duration_ms: 0.328544
+  type: 'test'
+  ...
+# Subtest: configuration rejects shared credentials and remote avatar paths
+ok 11 - configuration rejects shared credentials and remote avatar paths
+  ---
+  duration_ms: 4.220122
+  type: 'test'
+  ...
+# Subtest: the Intel launcher encoder is accepted and receives QSV-compatible pixels and options
+ok 12 - the Intel launcher encoder is accepted and receives QSV-compatible pixels and options
+  ---
+  duration_ms: 0.755051
+  type: 'test'
+  ...
+# Subtest: eye makeup uses the original data mask and the brows follow hair tint through the real skinning adapter
+ok 13 - eye makeup uses the original data mask and the brows follow hair tint through the real skinning adapter
+  ---
+  duration_ms: 466.656033
+  type: 'test'
+  ...
+# Subtest: footwear GLBs retain attributed sources, compatible PBR, finite compact geometry and valid indices
+ok 14 - footwear GLBs retain attributed sources, compatible PBR, finite compact geometry and valid indices
+  ---
+  duration_ms: 35.395189
+  type: 'test'
+  ...
+# Subtest: uploaded footwear originals are preserved byte-for-byte
+ok 15 - uploaded footwear originals are preserved byte-for-byte
+  ---
+  duration_ms: 61.096062
+  type: 'test'
+  ...
+# Subtest: missing financial values stay unknown; invalid trades are rejected
+ok 16 - missing financial values stay unknown; invalid trades are rejected
+  ---
+  duration_ms: 33.184761
+  type: 'test'
+  ...
+# Subtest: OHLCV accepts valid candles only, deduplicates time and sorts without invented prices
+ok 17 - OHLCV accepts valid candles only, deduplicates time and sorts without invented prices
+  ---
+  duration_ms: 0.441039
+  type: 'test'
+  ...
+# Subtest: dApp base and socket endpoints preserve prefix and never accept embedded credentials
+ok 18 - dApp base and socket endpoints preserve prefix and never accept embedded credentials
+  ---
+  duration_ms: 1.237952
+  type: 'test'
+  ...
+# Subtest: staleness and backoff have finite predictable bounds
+ok 19 - staleness and backoff have finite predictable bounds
+  ---
+  duration_ms: 0.293042
+  type: 'test'
+  ...
+# Subtest: narration audio is restricted to the exact same-origin job path
+ok 20 - narration audio is restricted to the exact same-origin job path
+  ---
+  duration_ms: 0.262947
+  type: 'test'
+  ...
+# Subtest: bounded fetch rejects an oversized chunked response before reading the full body
+ok 21 - bounded fetch rejects an oversized chunked response before reading the full body
+  ---
+  duration_ms: 41.269631
+  type: 'test'
+  ...
+# Subtest: selection and timeframe changes clear previous candles before new data arrives
+ok 22 - selection and timeframe changes clear previous candles before new data arrives
+  ---
+  duration_ms: 1.193898
+  type: 'test'
+  ...
+# Subtest: stopped data adapter cannot apply a late network response
+ok 23 - stopped data adapter cannot apply a late network response
+  ---
+  duration_ms: 2.209733
+  type: 'test'
+  ...
+# Subtest: adapter accepts the original dApp HTTP and WebSocket DTO forms without changing report semantics
+ok 24 - adapter accepts the original dApp HTTP and WebSocket DTO forms without changing report semantics
+  ---
+  duration_ms: 0.674072
+  type: 'test'
+  ...
+# Subtest: manual observer neither creates audio nor claims narration
+ok 25 - manual observer neither creates audio nor claims narration
+  ---
+  duration_ms: 22.986878
+  type: 'test'
+  ...
+# Subtest: armAudio prepares a silent graph reused for serialized playout; secrets stay private
+ok 26 - armAudio prepares a silent graph reused for serialized playout; secrets stay private
+  ---
+  duration_ms: 215.179012
+  type: 'test'
+  ...
+# Subtest: failed lease heartbeat immediately stops audio and never finishes the utterance
+ok 27 - failed lease heartbeat immediately stops audio and never finishes the utterance
+  ---
+  duration_ms: 309.362612
+  type: 'test'
+  ...
+# Subtest: disconnect stops the current source and terminalizes it without replay
+ok 28 - disconnect stops the current source and terminalizes it without replay
+  ---
+  duration_ms: 11.867059
+  type: 'test'
+  ...
+# Subtest: a hanging heartbeat cannot extend local speech past the last confirmed lease
+ok 29 - a hanging heartbeat cannot extend local speech past the last confirmed lease
+  ---
+  duration_ms: 868.365798
+  type: 'test'
+  ...
+# Subtest: leased presentation and coarticulation accompany speech, then clear on cancellation
+ok 30 - leased presentation and coarticulation accompany speech, then clear on cancellation
+  ---
+  duration_ms: 146.397559
+  type: 'test'
+  ...
+# Subtest: finished narration clears presentation metadata before the next job
+ok 31 - finished narration clears presentation metadata before the next job
+  ---
+  duration_ms: 127.847659
+  type: 'test'
+  ...
+# Subtest: producer/player authorization is separate; config and failures never disclose credentials
+ok 32 - producer/player authorization is separate; config and failures never disclose credentials
+  ---
+  duration_ms: 119.015594
+  type: 'test'
+  ...
+# Subtest: idempotency survives readiness and conflicts are rejected; bounded queue recovers after cancel
+ok 33 - idempotency survives readiness and conflicts are rejected; bounded queue recovers after cancel
+  ---
+  duration_ms: 94.142414
+  type: 'test'
+  ...
+# Subtest: public emotion discovery matches aliases and narration stage cues are validated over HTTP
+ok 34 - public emotion discovery matches aliases and narration stage cues are validated over HTTP
+  ---
+  duration_ms: 87.940333
+  type: 'test'
+  ...
+# Subtest: simultaneous claims lease exactly one narration; leased heartbeat protects decoding
+ok 35 - simultaneous claims lease exactly one narration; leased heartbeat protects decoding
+  ---
+  duration_ms: 155.897025
+  type: 'test'
+  ...
+# Subtest: cancelling generation aborts provider, preserves cancelled state and starts next job
+ok 36 - cancelling generation aborts provider, preserves cancelled state and starts next job
+  ---
+  duration_ms: 137.376863
+  type: 'test'
+  ...
+# Subtest: cancellation invalidates playback lease and denies subsequent audio reads
+ok 37 - cancellation invalidates playback lease and denies subsequent audio reads
+  ---
+  duration_ms: 87.344972
+  type: 'test'
+  ...
+# Subtest: expired lease never replays; a new narration can be claimed
+ok 38 - expired lease never replays; a new narration can be claimed
+  ---
+  duration_ms: 116.816917
+  type: 'test'
+  ...
+# Subtest: original expiry caps heartbeats and work cannot be played after its deadline
+ok 39 - original expiry caps heartbeats and work cannot be played after its deadline
+  ---
+  duration_ms: 100.521714
+  type: 'test'
+  ...
+# Subtest: claim skips audio that cannot finish before expiry and start rechecks after decoding
+ok 40 - claim skips audio that cannot finish before expiry and start rechecks after decoding
+  ---
+  duration_ms: 122.649583
+  type: 'test'
+  ...
+# Subtest: restart expires possibly spoken audio while preserving ready jobs and idempotency
+ok 41 - restart expires possibly spoken audio while preserving ready jobs and idempotency
+  ---
+  duration_ms: 108.350654
+  type: 'test'
+  ...
+# Subtest: static serving permits only studio assets and vendor allowlist, including symlink containment
+ok 42 - static serving permits only studio assets and vendor allowlist, including symlink containment
+  ---
+  duration_ms: 58.554523
+  type: 'test'
+  ...
+# Subtest: second gateway on same database is rejected without disrupting active instance
+ok 43 - second gateway on same database is rejected without disrupting active instance
+  ---
+  duration_ms: 37.898735
+  type: 'test'
+  ...
+# Subtest: process crash releases the gateway lock and recovery never replays leased audio
+ok 44 - process crash releases the gateway lock and recovery never replays leased audio
+  ---
+  duration_ms: 115.506259
+  type: 'test'
+  ...
+# Subtest: imported hair follows immutable head binding after animation and presentation scaling; switching preserves avatar
+ok 45 - imported hair follows immutable head binding after animation and presentation scaling; switching preserves avatar
+  ---
+  duration_ms: 1707.02322
+  type: 'test'
+  ...
+# Subtest: failed and racing hairstyle loads preserve a valid visible style and latest user choice
+ok 46 - failed and racing hairstyle loads preserve a valid visible style and latest user choice
+  ---
+  duration_ms: 1721.434935
+  type: 'test'
+  ...
+# Subtest: espresso is an intermediate colour, reuses the authored atlas and keeps brows in sync with successful choices
+ok 47 - espresso is an intermediate colour, reuses the authored atlas and keeps brows in sync with successful choices
+  ---
+  duration_ms: 1045.810016
+  type: 'test'
+  ...
+# Subtest: soft hair lag stays bounded and gives similar motion at 30 and 60 updates per second
+ok 48 - soft hair lag stays bounded and gives similar motion at 30 and 60 updates per second
+  ---
+  duration_ms: 1556.117044
+  type: 'test'
+  ...
+# Subtest: replacement ponytail preserves source geometry and follows the calibrated head bind transform
+ok 49 - replacement ponytail preserves source geometry and follows the calibrated head bind transform
+  ---
+  duration_ms: 1277.108794
+  type: 'test'
+  ...
+# Subtest: health worker reports the exact bounded JSON result, deduplicates probes and recovers after timeout
+ok 50 - health worker reports the exact bounded JSON result, deduplicates probes and recovers after timeout
+  ---
+  duration_ms: 77.288288
+  type: 'test'
+  ...
+# Subtest: launcher GPU preference preserves a typed prior snapshot and passes executable paths as data
+ok 51 - launcher GPU preference preserves a typed prior snapshot and passes executable paths as data
+  ---
+  duration_ms: 2.120562
+  type: 'test'
+  ...
+# Subtest: occupied preview port chooses another port without disturbing its owner
+ok 52 - occupied preview port chooses another port without disturbing its owner
+  ---
+  duration_ms: 28.145567
+  type: 'test'
+  ...
+# Subtest: owned readiness waits for its actual JSON event and spawn failures reject cleanly
+ok 53 - owned readiness waits for its actual JSON event and spawn failures reject cleanly
+  ---
+  duration_ms: 131.026105
+  type: 'test'
+  ...
+# Subtest: IPC shutdown runs asynchronous drain before exit and does not force a Windows-style termination
+ok 54 - IPC shutdown runs asynchronous drain before exit and does not force a Windows-style termination
+  ---
+  duration_ms: 178.54172
+  type: 'test'
+  ...
+# Subtest: launcher IPC preload lets a completed worker exit naturally and preserves its exit code
+ok 55 - launcher IPC preload lets a completed worker exit naturally and preserves its exit code
+  ---
+  duration_ms: 88.832938
+  type: 'test'
+  ...
+# Subtest: loss of the owning launcher closes its detached worker gracefully
+ok 56 - loss of the owning launcher closes its detached worker gracefully
+  ---
+  duration_ms: 57.252975
+  type: 'test'
+  ...
+# Subtest: service stdin EOF does not terminate an unattended broadcaster
+ok 57 - service stdin EOF does not terminate an unattended broadcaster
+  ---
+  duration_ms: 8.373653
+  type: 'test'
+  ...
+# Subtest: explicit supervisor can stop through split quit lines and EOF
+ok 58 - explicit supervisor can stop through split quit lines and EOF
+  ---
+  duration_ms: 1.873859
+  type: 'test'
+  ...
+# Subtest: audio clock chooses a cue at exact boundaries and closes during silence and after end
+ok 59 - audio clock chooses a cue at exact boundaries and closes during silence and after end
+  ---
+  duration_ms: 1.302387
+  type: 'test'
+  ...
+# Subtest: malformed, overlapping and unbounded timelines are rejected
+ok 60 - malformed, overlapping and unbounded timelines are rejected
+  ---
+  duration_ms: 0.493126
+  type: 'test'
+  ...
+# Subtest: missing aligner has an explicit fallback; required mode fails and cancellation is respected
+ok 61 - missing aligner has an explicit fallback; required mode fails and cancellation is respected
+  ---
+  duration_ms: 6.653574
+  type: 'test'
+  ...
+# Subtest: aligned cues persist across a gateway restart and travel with the audio lease
+ok 62 - aligned cues persist across a gateway restart and travel with the audio lease
+  ---
+  duration_ms: 35.121371
+  type: 'test'
+  ...
+# Subtest: five conical lights remain independently adjustable, with world-space presenter targeting
+ok 63 - five conical lights remain independently adjustable, with world-space presenter targeting
+  ---
+  duration_ms: 10.120708
+  type: 'test'
+  ...
+# Subtest: clean output excludes cone guides and software shadow budget does not disable lights
+ok 64 - clean output excludes cone guides and software shadow budget does not disable lights
+  ---
+  duration_ms: 3.697032
+  type: 'test'
+  ...
+# Subtest: shipped preset and exact decimal settings round-trip, malformed imports cannot change a light
+ok 65 - shipped preset and exact decimal settings round-trip, malformed imports cannot change a light
+  ---
+  duration_ms: 12.131789
+  type: 'test'
+  ...
+# Subtest: preset imports, asset selections and local persistence agree on the actual applied state
+ok 66 - preset imports, asset selections and local persistence agree on the actual applied state
+  ---
+  duration_ms: 6.570372
+  type: 'test'
+  ...
+# Subtest: independent queued hair and shoe edits merge, and in-flight light/name edits survive completion
+ok 67 - independent queued hair and shoe edits merge, and in-flight light/name edits survive completion
+  ---
+  duration_ms: 6.707254
+  type: 'test'
+  ...
+# Subtest: failed accessory import restores the previous complete look and does not persist a partial look
+ok 68 - failed accessory import restores the previous complete look and does not persist a partial look
+  ---
+  duration_ms: 2.345092
+  type: 'test'
+  ...
+# Subtest: a browser denying localStorage can load the shipped preset without falsely reporting persistence
+ok 69 - a browser denying localStorage can load the shipped preset without falsely reporting persistence
+  ---
+  duration_ms: 46.188072
+  type: 'test'
+  ...
+# Subtest: disposing a pending preset stops subsequent accessory work and never writes the preference
+ok 70 - disposing a pending preset stops subsequent accessory work and never writes the preference
+  ---
+  duration_ms: 2.438229
+  type: 'test'
+  ...
+# Subtest: a superseded failed request cannot leave an error on the succeeding latest look
+ok 71 - a superseded failed request cannot leave an error on the succeeding latest look
+  ---
+  duration_ms: 5.183495
+  type: 'test'
+  ...
+# Subtest: v2 source and packaged defaults retain every user light value and the requested appearance
+ok 72 - v2 source and packaged defaults retain every user light value and the requested appearance
+  ---
+  duration_ms: 10.559451
+  type: 'test'
+  ...
+# Subtest: v1 import migrates new wardrobe fields without rewriting the saved hair or light choices
+ok 73 - v1 import migrates new wardrobe fields without rewriting the saved hair or light choices
+  ---
+  duration_ms: 3.844622
+  type: 'test'
+  ...
+# Subtest: v2 storage starts the new appearance, honours v2 custom looks and reset, and imports v1 separately
+ok 74 - v2 storage starts the new appearance, honours v2 custom looks and reset, and imports v1 separately
+  ---
+  duration_ms: 35.10138
+  type: 'test'
+  ...
+# Subtest: all v2 clothing and boot-fit combinations round-trip and reach their asset controllers
+ok 75 - all v2 clothing and boot-fit combinations round-trip and reach their asset controllers
+  ---
+  duration_ms: 11.297888
+  type: 'test'
+  ...
+# Subtest: invalid new fields reject atomically before changing any accessory or light
+ok 76 - invalid new fields reject atomically before changing any accessory or light
+  ---
+  duration_ms: 3.303565
+  type: 'test'
+  ...
+# Subtest: in-flight hair, clothing, fit, name and exact lighting edits merge into one final persisted look
+ok 77 - in-flight hair, clothing, fit, name and exact lighting edits merge into one final persisted look
+  ---
+  duration_ms: 4.716394
+  type: 'test'
+  ...
+# Subtest: failed crop loading rolls back earlier successful hair and boot-fit changes without partial persistence
+ok 78 - failed crop loading rolls back earlier successful hair and boot-fit changes without partial persistence
+  ---
+  duration_ms: 2.039674
+  type: 'test'
+  ...
+# Subtest: a superseded crop failure cannot erase the later boot-fit choice or leave a stale error
+ok 79 - a superseded crop failure cannot erase the later boot-fit choice or leave a stale error
+  ---
+  duration_ms: 3.567784
+  type: 'test'
+  ...
+# Subtest: missing clothing controller rejects crop and restores changed assets
+ok 80 - missing clothing controller rejects crop and restores changed assets
+  ---
+  duration_ms: 5.550664
+  type: 'test'
+  ...
+# Subtest: disposal during a boot change prevents later clothing work and persistence
+ok 81 - disposal during a boot change prevents later clothing work and persistence
+  ---
+  duration_ms: 6.473678
+  type: 'test'
+  ...
+# Subtest: studio and character HTML both select Leggermente felice at full intensity
+ok 82 - studio and character HTML both select Leggermente felice at full intensity
+  ---
+  duration_ms: 12.424341
+  type: 'test'
+  ...
+# Subtest: seven recorded captures retain source hashes, attribution and the exact target rig identity
+ok 83 - seven recorded captures retain source hashes, attribution and the exact target rig identity
+  ---
+  duration_ms: 87.204968
+  type: 'test'
+  ...
+# Subtest: manual capture selection survives narration without adding walking to the automatic idle rotation
+ok 84 - manual capture selection survives narration without adding walking to the automatic idle rotation
+  ---
+  duration_ms: 606.230835
+  type: 'test'
+  ...
+# Subtest: retargeted human walking moves both legs, preserves segment lengths and crosses the loop without a pose jump
+ok 85 - retargeted human walking moves both legs, preserves segment lengths and crosses the loop without a pose jump
+  ---
+  duration_ms: 454.433414
+  type: 'test'
+  ...
+# Subtest: all finite turns end once, with a measured clockwise variant of the same human capture
+ok 86 - all finite turns end once, with a measured clockwise variant of the same human capture
+  ---
+  duration_ms: 1.195641
+  type: 'test'
+  ...
+# Subtest: capture crossfades remain continuous at completion and preserve the shoulder baseline at partial weights
+ok 87 - capture crossfades remain continuous at completion and preserve the shoulder baseline at partial weights
+  ---
+  duration_ms: 453.762961
+  type: 'test'
+  ...
+# Subtest: 60 Hz finite journeys retain centred turns, shoulder height and continuous feet/root motion
+ok 88 - 60 Hz finite journeys retain centred turns, shoulder height and continuous feet/root motion
+  ---
+  duration_ms: 4778.963095
+  type: 'test'
+  ...
+# Subtest: presentation accepts only supported monitor/home actions and rejects malformed or extra fields
+ok 89 - presentation accepts only supported monitor/home actions and rejects malformed or extra fields
+  ---
+  duration_ms: 2.098551
+  type: 'test'
+  ...
+# Subtest: presentation survives database restart, participates in idempotency and reaches the existing lease
+ok 90 - presentation survives database restart, participates in idempotency and reaches the existing lease
+  ---
+  duration_ms: 83.758442
+  type: 'test'
+  ...
+# Subtest: additive migration preserves hashes and retries from a pre-presentation database
+ok 91 - additive migration preserves hashes and retries from a pre-presentation database
+  ---
+  duration_ms: 40.951926
+  type: 'test'
+  ...
+# Subtest: plain agent text keeps the current operator expression during narration
+ok 92 - plain agent text keeps the current operator expression during narration
+  ---
+  duration_ms: 2.001708
+  type: 'test'
+  ...
+# Subtest: explicit neutral and warm narration emotions override the operator while playing
+ok 93 - explicit neutral and warm narration emotions override the operator while playing
+  ---
+  duration_ms: 0.237539
+  type: 'test'
+  ...
+# Subtest: idle, paused, finished and cancelled playback restore the current operator choice
+ok 94 - idle, paused, finished and cancelled playback restore the current operator choice
+  ---
+  duration_ms: 0.254075
+  type: 'test'
+  ...
+# Subtest: legacy claims without emotionExplicit retain their prior emotion behaviour
+ok 95 - legacy claims without emotionExplicit retain their prior emotion behaviour
+  ---
+  duration_ms: 0.231942
+  type: 'test'
+  ...
+# Subtest: absent playback or absent emotion falls back without inventing an emotion
+ok 96 - absent playback or absent emotion falls back without inventing an emotion
+  ---
+  duration_ms: 0.229748
+  type: 'test'
+  ...
+# Subtest: real queue leases distinguish omitted emotion from explicit neutral and warm without changing legacy payloads
+ok 97 - real queue leases distinguish omitted emotion from explicit neutral and warm without changing legacy payloads
+  ---
+  duration_ms: 86.032656
+  type: 'test'
+  ...
+# Subtest: speech segments at boundaries, preserves text and never cuts a surrogate pair
+ok 98 - speech segments at boundaries, preserves text and never cuts a surrogate pair
+  ---
+  duration_ms: 1.552797
+  type: 'test'
+  ...
+# Subtest: WAV validation rejects truncation, float encoding and inconsistent sample alignment
+ok 99 - WAV validation rejects truncation, float encoding and inconsistent sample alignment
+  ---
+  duration_ms: 5.027273
+  type: 'test'
+  ...
+# Subtest: fully buffered HTTP WAV with streaming size sentinels is normalized safely
+ok 100 - fully buffered HTTP WAV with streaming size sentinels is normalized safely
+  ---
+  duration_ms: 1.190994
+  type: 'test'
+  ...
+# Subtest: TTS requests sequential bounded WAV segments and concatenates compatible PCM only
+ok 101 - TTS requests sequential bounded WAV segments and concatenates compatible PCM only
+  ---
+  duration_ms: 65.610122
+  type: 'test'
+  ...
+# Subtest: TTS fails clearly on differing sample rates instead of concatenating corrupt audio
+ok 102 - TTS fails clearly on differing sample rates instead of concatenating corrupt audio
+  ---
+  duration_ms: 3.268634
+  type: 'test'
+  ...
+# Subtest: provider errors are sanitized and body limits are enforced before buffering
+ok 103 - provider errors are sanitized and body limits are enforced before buffering
+  ---
+  duration_ms: 1.227818
+  type: 'test'
+  ...
+# Subtest: cancellation propagates to the provider and never becomes provider detail
+ok 104 - cancellation propagates to the provider and never becomes provider detail
+  ---
+  duration_ms: 11.732497
+  type: 'test'
+  ...
+# Subtest: actual avatar walks to all monitors with planted feet and returns through the clear aisle
+ok 105 - actual avatar walks to all monitors with planted feet and returns through the clear aisle
+  ---
+  duration_ms: 4080.898168
+  type: 'test'
+  ...
+# Subtest: body draw masks compose across top and footwear and restore the exact source geometry
+ok 106 - body draw masks compose across top and footwear and restore the exact source geometry
+  ---
+  duration_ms: 13.48631
+  type: 'test'
+  ...
+# Subtest: supplied crop top binds after animation, stays finite and restores clothing independently of the boots
+ok 107 - supplied crop top binds after animation, stays finite and restores clothing independently of the boots
+  ---
+  duration_ms: 936.175828
+  type: 'test'
+  ...
+# Subtest: top selection handles superseded and failed loads and closes pending assets without retaining the garment
+ok 108 - top selection handles superseded and failed loads and closes pending assets without retaining the garment
+  ---
+  duration_ms: 329.026962
+  type: 'test'
+  ...
+# Subtest: boot fits reject unknown modes before altering the selection
+ok 109 - boot fits reject unknown modes before altering the selection
+  ---
+  duration_ms: 232.193692
+  type: 'test'
+  ...
+1..109
+# tests 117
+# suites 0
+# pass 117
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7079.845555

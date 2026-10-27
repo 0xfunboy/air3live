@@ -1,0 +1,17 @@
+Comando: node --test --test-isolation=none test/wardrobe-refinement.test.mjs test/footwear.test.mjs
+Directory: studio-broadcast
+
+✔ footwear GLBs retain attributed sources, compatible PBR, finite compact geometry and valid indices (36.918191ms)
+✔ uploaded footwear originals are preserved byte-for-byte (41.009127ms)
+✔ body draw masks compose across top and footwear and restore the exact source geometry (7.790903ms)
+✔ supplied crop top binds after animation, stays finite and restores clothing independently of the boots (619.442474ms)
+✔ top selection handles superseded and failed loads and closes pending assets without retaining the garment (248.547707ms)
+✔ boot fits reject unknown modes before altering the selection (183.374023ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1212.69355

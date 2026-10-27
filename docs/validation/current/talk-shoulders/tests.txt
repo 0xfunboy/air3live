@@ -1,0 +1,29 @@
+✔ camera attention follows a real world lens with bounded neck and binocular eye rotations (1588.932842ms)
+✔ pose layers cannot accumulate, and interrupted motion fades remain normalized (555.463305ms)
+✔ audio-clock coarticulation is continuous through cue changes and preserves silence (10.315253ms)
+▶ actual avatar: retargeting, complete skinning and bounded facial controls
+  ✔ all seven delivered clips carry destination translation retarget metadata (1.083043ms)
+  ✔ animation never restores the wider foreign shoulder and longer foot segments (93.043802ms)
+  ✔ twelve-weight restoration remains normalized and idempotent (15.522333ms)
+  ✔ skin shader composes with the eye/hair shader and supports normal passes (1.109962ms)
+  ✔ named morph subset is bounded and ready for the supplied face (0.385317ms)
+  ✔ jaw articulation moves lower teeth and tongue while keeping upper teeth fixed (9.003143ms)
+  ✔ all nine audio cues produce finite bounded controls and reset without accumulation (51.724283ms)
+  ✔ foot grounding is invariant under a stage transform (5.88736ms)
+✔ actual avatar: retargeting, complete skinning and bounded facial controls (608.249841ms)
+✔ all finite turns end once, with a measured clockwise variant of the same human capture (1.103243ms)
+✔ capture crossfades remain continuous at completion and preserve the shoulder baseline at partial weights (445.517627ms)
+✔ 60 Hz finite journeys retain centred turns, shoulder height and continuous feet/root motion (4847.844368ms)
+✔ actual avatar walks to all monitors with planted feet and returns through the clear aisle (4597.554747ms)
+✔ four full talk clips retain natural shoulder height, captured arm directions and original lower body (10644.86839ms)
+✔ talk correction restores cleanly on repeated seeks, zero delta updates and a transformed stage (244.25885ms)
+✔ rapid talk/idle changes crossfade shoulder correction without attachment pops or unnormalized weights (1055.129618ms)
+✔ manual mocap and idle tracks remain identical with talk stabilization enabled or disabled (528.639888ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12663.391616

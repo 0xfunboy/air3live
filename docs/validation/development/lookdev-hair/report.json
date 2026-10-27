@@ -1,0 +1,100 @@
+{
+  "schema": "air3.imported-hair-qa.v1",
+  "date": "2026-10-25T03:21:15.090547+00:00",
+  "runtimeSha256": "0a75edb9679dfc22f61863249a7669ff6fae7cee482f298be2d35072f537a7c6",
+  "passed": true,
+  "unitTests": {
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test --test-isolation=none studio-broadcast/test/hair-wardrobe.test.mjs",
+    "durationMs": 2235.553754
+  },
+  "finalHarnessErrors": [],
+  "frames": [
+    {
+      "file": "wavy-front.png",
+      "source": "WebGL framebuffer from standalone real model harness",
+      "harnessRun": "renders-v2"
+    },
+    {
+      "file": "wavy-side.png",
+      "source": "WebGL framebuffer from standalone real model harness",
+      "harnessRun": "renders-v2"
+    },
+    {
+      "file": "wavy-back.png",
+      "source": "WebGL framebuffer from standalone real model harness",
+      "harnessRun": "renders-v2"
+    },
+    {
+      "file": "wavy-threequarter.png",
+      "source": "WebGL framebuffer from standalone real model harness",
+      "harnessRun": "renders-v2"
+    },
+    {
+      "file": "wavy-medium.png",
+      "source": "WebGL framebuffer from standalone real model harness",
+      "harnessRun": "renders-v2"
+    },
+    {
+      "file": "artemis-front.png",
+      "source": "WebGL framebuffer from standalone real model harness",
+      "harnessRun": "renders-final"
+    },
+    {
+      "file": "artemis-side.png",
+      "source": "WebGL framebuffer from standalone real model harness",
+      "harnessRun": "renders-final"
+    }
+  ],
+  "fit": {
+    "wavy": {
+      "scale": [
+        0.057,
+        0.057,
+        0.075
+      ],
+      "translation": [
+        0,
+        0.5575,
+        -0.01
+      ],
+      "ponytailLength": 0.7
+    },
+    "artemis": {
+      "scale": [
+        0.81,
+        0.81,
+        0.85
+      ],
+      "translation": [
+        0,
+        -0.0339,
+        -0.015
+      ],
+      "fringeAngles": [
+        0.12,
+        -0.1,
+        0
+      ],
+      "fringeOffset": 0.045
+    }
+  },
+  "weightSums": {
+    "wavy": [
+      0.9999999552965164,
+      1.0000000447034836
+    ],
+    "artemis": [
+      0.9999999552965164,
+      1.0000000465661287
+    ]
+  },
+  "limitations": [
+    "Standalone source-module material/fitting QA; compiled studio QA is recorded separately by the root validation workflow",
+    "Hair cards, not Unreal groom or strand path tracing",
+    "Bounded bone lag, no full collision simulation",
+    "Artemis license currently noncommercial",
+    "Wavy author states Roblox Marketplace origin; declared CC BY4.0 is preserved without a rights guarantee"
+  ]
+}

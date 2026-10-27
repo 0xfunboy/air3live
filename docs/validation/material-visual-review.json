@@ -1,0 +1,20 @@
+{
+  "profile": "air3-materials-2026-10-24-v3",
+  "baked_maps": 12,
+  "baked_bytes": 4012774,
+  "decoded_output_hashes_match": true,
+  "browser_report": "material-browser-v3.json",
+  "visual_inspection": {
+    "eyes": "Iris, pupil and sclera visible; no flat gray occlusion. Resting lids were refined by avatar controller.",
+    "hair": "Restored supplied opacity curve (2*sqrt(R)); reduced harsh white anisotropic highlights; brown hair has visible card strands.",
+    "skin": "Makeup visible; foundation chroma moderates source nose redness; normal strength .45 reduces abrasive pore shading.",
+    "mouth": "Separate roughness for teeth/gums/tongue; reduced reflectivity and darker natural palette remove bright metallic-looking tongue."
+  },
+  "remaining_visual_limits": [
+    "Hair cards retain silhouette aliasing and do not reproduce UE groom strand shading.",
+    "Eye color-picker and dental palette textures absent; documented natural substitutes are used.",
+    "No full skin SSS, source animated wrinkle maps or exact UE ocular/occlusion shader."
+  ],
+  "unreal_visual_parity_certified": false,
+  "capture_warning": "The captured preview still used PCFSoftShadowMap; Three r186 automatically used PCFShadowMap. Root was notified to update the preview constant."
+}

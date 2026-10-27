@@ -1,0 +1,370 @@
+{
+  "passed": true,
+  "date": "2026-10-24T17:26:16.807Z",
+  "frontendBuild": {
+    "schema": "air3.frontend-build.v1",
+    "builtAt": "2026-10-24T17:15:45.063Z",
+    "node": "v24.19.0",
+    "esbuild": "0.28.2",
+    "inputs": [
+      {
+        "path": "public/air3-attention.mjs",
+        "bytes": 8830,
+        "sha256": "ea1e33cd14300879e1d104ec8866fc7943ac715497bfd7bb8dea86f4270a783d"
+      },
+      {
+        "path": "public/air3-avatar.mjs",
+        "bytes": 17664,
+        "sha256": "49833b767d9d09684ae690dd9c478769694e479b6cd2566cbc487d7c329c7362"
+      },
+      {
+        "path": "public/air3-face.mjs",
+        "bytes": 14631,
+        "sha256": "bf67004472684e6eae68b962a6f5b91fb54f29250fac94b56ec0fd261701ae2b"
+      },
+      {
+        "path": "public/air3-hair.mjs",
+        "bytes": 22339,
+        "sha256": "64d6e989424bc9eb9211a58139079ba5f5219d7841f176ecd800c78bd67dcafa"
+      },
+      {
+        "path": "public/air3-stage-motion.mjs",
+        "bytes": 22414,
+        "sha256": "60b146089c68539c1b061e72dfff7f2d549eb1a70d8f9c410c901162c00994a2"
+      },
+      {
+        "path": "public/app.mjs",
+        "bytes": 18653,
+        "sha256": "81860bde899600d95783438ec12102d3da49bbc04bff455eaff9d466509427dd"
+      },
+      {
+        "path": "public/avatar-materials.mjs",
+        "bytes": 11931,
+        "sha256": "855293477b72f26440ea5b74e3142aa0ce63949f4960baf4766e4a1b38a79c10"
+      },
+      {
+        "path": "public/data.mjs",
+        "bytes": 6950,
+        "sha256": "d99246963e242514d9e360fce7a28f960516351b9d161a79e60fde4899a10bd9"
+      },
+      {
+        "path": "public/health-worker.mjs",
+        "bytes": 1384,
+        "sha256": "99d2a59a1171635574df2b529fde30b10dc996f90722b35e52859b0d0e513340"
+      },
+      {
+        "path": "public/lip-sync.mjs",
+        "bytes": 3017,
+        "sha256": "14a176477ab81e0c015dc9828957ca65ca04438f9f2dae7bf460f325d9980730"
+      },
+      {
+        "path": "public/monitors.mjs",
+        "bytes": 9876,
+        "sha256": "1dbbac662963732b0d95999556719d7a68496aecbd295813ff3516390e12572e"
+      },
+      {
+        "path": "public/preview/viewer.mjs",
+        "bytes": 13408,
+        "sha256": "fa1752ff47a41827a863fb2ea35d23bdc0fd76c9ade44d52c67aeb7a8e4e6304"
+      },
+      {
+        "path": "public/pure.mjs",
+        "bytes": 6882,
+        "sha256": "df1d7cc83213d905d4a3b19efd6ad93b830667dbb7dd98ddada40bebdd2b8f02"
+      },
+      {
+        "path": "public/speech-player.mjs",
+        "bytes": 13141,
+        "sha256": "f9c52457f7476d7b6053bb3fffe615e40f805b88d4ce3414bff862c122140048"
+      },
+      {
+        "path": "public/studio-rendering.mjs",
+        "bytes": 11950,
+        "sha256": "375b0a998e296ee4505881e803df06ce324dfde15fb8b3170245be7c3a6a39b3"
+      },
+      {
+        "path": "public/studio-scene.mjs",
+        "bytes": 31976,
+        "sha256": "bb692586f1cd4f00bcb4aac67f935a681d720812166d4d37e5d300853beb48ee"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "public/build/app.js",
+        "bytes": 66197,
+        "sha256": "2ae232f9a52a5d2c88210c8dd183ce2817f8e4f34850fb57ac162610a4c64708"
+      },
+      {
+        "path": "public/build/health.js",
+        "bytes": 694,
+        "sha256": "c3b0210057f80fa8371fa3cd0ff9b18e4da4fb9b1183a74612c99d3650d6debe"
+      },
+      {
+        "path": "public/build/preview.js",
+        "bytes": 8837,
+        "sha256": "d9bad78507a7a8dcc26305ccade17a60fcb29fa48c6f34c66f65f013ad0a3057"
+      },
+      {
+        "path": "public/build/shared-CBLIMTOB.js",
+        "bytes": 55695,
+        "sha256": "e006780dec3df04a45e69827bf59a324306ec955b0dbe23d73502fb6ed3c73a3"
+      },
+      {
+        "path": "public/build/shared-IUPYLFTI.js",
+        "bytes": 4402,
+        "sha256": "86e688e2e69c4e98b3cb355fff00d7e293ef390b9f772559d47569c80a4b603d"
+      }
+    ],
+    "externalDependencies": [
+      "three@0.186.1"
+    ],
+    "validatedModelImages": [
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/BodyBaseColor.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/Unnamed_albedo.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/1.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/FaceColor_MAIN.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/data/FaceRoughness_ORM.png"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/data/FaceNormal_MAIN.png"
+      },
+      {
+        "model": "SM_Entrance_MiddleTable.glb",
+        "image": "textures/color/T_EntranceMiddleTable.webp"
+      },
+      {
+        "model": "SM_Keyboard.glb",
+        "image": "textures/color/T_EntranceKeyboard.webp"
+      },
+      {
+        "model": "SM_Laptop.glb",
+        "image": "textures/color/T_EntranceLaptop.webp"
+      }
+    ]
+  },
+  "presentationCue": "monitor:left",
+  "desktop": false,
+  "displayVariable": false,
+  "stdin": "closed, unattended service mode",
+  "fixture": "12-second prerecorded speech from the supplied project, returned by a local TTS API fixture; native Rhubarb is actually executed",
+  "providerCalls": 2,
+  "completed": "finished",
+  "cancellation": "cancelled",
+  "completionElapsedMs": 27402,
+  "cleanCaptureShutdown": true,
+  "lipSync": "rhubarb:pocketSphinx",
+  "alignment": "generated from WAV during this test, not the precalculated demo JSON",
+  "avatar": "AIR3-runtime.glb",
+  "recording": "studio-2026-10-24T17-25-04-804Z-2928dc45.mkv",
+  "video": {
+    "codec": "h264",
+    "width": 960,
+    "height": 540,
+    "fps": "15/1",
+    "frames": 766
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRate": "48000",
+    "channels": 2,
+    "peakPcm16": 18594,
+    "nonSilentSamples": 254520
+  },
+  "durationSeconds": 51.656,
+  "renderer": {
+    "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "frameCount": 49,
+    "fps": 0.9,
+    "width": 960,
+    "height": 540,
+    "audioState": "running",
+    "currentJob": null,
+    "quality": "software",
+    "avatar": "airewardrop · live presenter",
+    "avatarRig": {
+      "profile": "AIR3 source geometry with translation-retargeted animations",
+      "extendedSkinMeshes": 7,
+      "preservedSkinInfluences": 12,
+      "idleClips": 3,
+      "talkClips": 4,
+      "motion": "idle",
+      "facialLipSync": {
+        "ready": true,
+        "articulation": "bounded skeletal poses plus source corrective morphs",
+        "controls": 35,
+        "sourceCorrectiveCount": 29,
+        "mouthCue": "X",
+        "emotion": "neutral",
+        "emotionIntensity": 0.35,
+        "blink": 0,
+        "microExpressions": true,
+        "microSmile": 0.055,
+        "mouthInterpolation": "bounded exponential damping",
+        "phoneticTiming": "none",
+        "rigLogicParity": false
+      },
+      "attention": {
+        "ready": true,
+        "enabled": true,
+        "target": "travel",
+        "lensContact": false,
+        "headYawDegrees": -1.7224882907275556,
+        "headPitchDegrees": 5.0787893973903975,
+        "eyeYawDegrees": {
+          "left": 6.8492125907405725,
+          "right": 8.53915546301616
+        },
+        "eyePitchDegrees": {
+          "left": 2.40056675032734,
+          "right": 2.3897555962410553
+        },
+        "limitsDegrees": {
+          "headYaw": 48,
+          "headPitch": [
+            -18,
+            20
+          ],
+          "eyeYaw": 24,
+          "eyePitch": 17
+        },
+        "calibratedAxes": true,
+        "headTimeConstantSeconds": 0.3,
+        "eyeTimeConstantSeconds": 0.025,
+        "cameraAssigned": true,
+        "proceduralGlance": 0
+      },
+      "motionBlend": {
+        "mode": "normalized continuous weights",
+        "timeConstantSeconds": 0.18,
+        "contributingActions": 3,
+        "weightSum": 1
+      },
+      "rootOrientationLocked": true,
+      "footContactAnchors": 126,
+      "materials": {
+        "profile": "air3-materials-2026-10-24-v4-blue-iris",
+        "surfaces": {
+          "skin-body": 1,
+          "cloth": 7,
+          "shoes": 1,
+          "skin-face": 1,
+          "mouth": 1,
+          "tear-film": 2,
+          "eyes": 2,
+          "lashes": 1,
+          "waterline": 1,
+          "hair": 1,
+          "brows": 1
+        },
+        "source": "Supplied Unreal 5.7.4 material parameters and textures",
+        "normalY": -1,
+        "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+        "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+        "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+        "limitations": [
+          "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+          "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+        ]
+      },
+      "normalY": -1
+    },
+    "stageMotion": {
+      "ready": true,
+      "enabled": false,
+      "phase": "walking",
+      "moving": true,
+      "target": "left",
+      "pendingTarget": null,
+      "returning": false,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": -2.356194490192345,
+      "speed": 0,
+      "steps": 6,
+      "swingFoot": "r",
+      "contacts": {
+        "l": {
+          "stance": true,
+          "target": [
+            -0.8086220984744373,
+            0.11895959632682107,
+            0.8052246098995929
+          ],
+          "errorMetres": 1.6384480079334787e-10
+        },
+        "r": {
+          "stance": false,
+          "target": [
+            -0.6470554706701609,
+            0.13122621446845145,
+            0.5831359534689281
+          ],
+          "errorMetres": 2.1634163183705636e-10
+        }
+      },
+      "maximumPlantedAnkleErrorMetres": 0.0014832210894688408,
+      "pelvisDrop": 0.03274999999857102,
+      "stanceMinimumFlexMetres": 0.03399999999857102,
+      "calibratedPelvisHeightMetres": 0.9799022888782565,
+      "pointWeight": 0,
+      "pointingSide": null,
+      "method": "procedural alternating steps, world-space two-bone IK and bounded open-hand presentation",
+      "motionCapture": false,
+      "clothSimulation": false
+    },
+    "effectiveCamera": "wide",
+    "hair": {
+      "profile": "air3-short-ponytail-2026-10-24-v7",
+      "legacyBunHidden": true,
+      "scalpFit": "copied source scalp cards settled toward scanned cranial geometry; bun removed",
+      "style": "short rear ponytail with feathered hairline and shoulder wisps",
+      "meshes": 4,
+      "triangles": 59282,
+      "boundTo": "body__head",
+      "secondaryMotion": "bounded critically damped strand lag",
+      "sourceGeometryModified": false,
+      "hybridSourceCards": true,
+      "geometricFramingFibres": 112,
+      "fibreTriangles": 14784,
+      "collisions": false
+    },
+    "environment": {
+      "source": "authored linear HDR softbox scene",
+      "pmrem": true,
+      "resolution": 128
+    },
+    "reflections": {
+      "mode": "environment reflection only"
+    },
+    "postprocessing": {
+      "output": "direct ACES/sRGB",
+      "ao": false,
+      "bloom": false
+    },
+    "lipSync": "none"
+  },
+  "limitations": [
+    "Software WebGL and libx264; CUDA/NVENC not tested",
+    "960x540 at 15fps encoding; renderer may run slower and encoder duplicate frames",
+    "No live RTMP/RTSP publication or external TTS inference",
+    "No GPU soak or Unreal parity certification"
+  ]
+}

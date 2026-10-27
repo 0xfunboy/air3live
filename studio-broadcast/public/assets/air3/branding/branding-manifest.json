@@ -1,0 +1,38 @@
+{
+  "source": "source-assets/branding/banner-2026-10-25/source-banner.png",
+  "sourceSha256": "f15ac9cfa41d64e91aa9288070534961d05edce22d6c7089ed40c380a9398feb",
+  "method": "imagegen transparent extraction plus native SVG contour reconstruction for clean runtime edges. Original imagegen outputs retained unchanged under source-assets. Vector lettering is a reconstruction, not a pixel-identical crop.",
+  "imagegenSource": "Exact user-selected banner, without substitution",
+  "placement": {
+    "corporateInScene": "one backdrop sign",
+    "corporateOutsideScene": "one program overlay; character preview uses its header",
+    "projectMark": "desk and operator header",
+    "monitorBrands": 0
+  },
+  "assets": [
+    {
+      "file": "air3-lockup.svg",
+      "sha256": "48551fed274de88520ecfd8f2344509a7ea574b1637a401101ea1d2305733165"
+    },
+    {
+      "file": "air3-lockup.png",
+      "sha256": "e47b7afb1808d259741e8e3e66469f1d07ed009bd23e53edadc3abe71ac4d48c"
+    },
+    {
+      "file": "air3-emblem.svg",
+      "sha256": "052c3ea7243322b2e3de2d3957cac97fdfafbffab2915db4611ab0c6f5dc02ed"
+    },
+    {
+      "file": "air3-emblem.png",
+      "sha256": "25e0f129384643d7c73da9a178252baddb477d6cd1e2408425eb0c0ff9b2b086"
+    },
+    {
+      "file": "airewardrop-lockup.svg",
+      "sha256": "47903c50e7f6727716e710adcd7e52a32831aee2cb2b92e154204e6cff7ba8c8"
+    },
+    {
+      "file": "airewardrop-lockup.png",
+      "sha256": "870ba072d2a51e19aca5632c14ba8cfbe6e93fea3ee28e64f1ce02530ac44ab7"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "air3.hair-unused-joints-check.v1",
+  "checkedAt": "2026-10-25T03:26:52.619087+00:00",
+  "passed": true,
+  "assets": [
+    {
+      "id": "wavy",
+      "sourceSha256": "5d98107bd3e51fb9e58644d9167092976d5b8f44be23ebf41740144c30925154",
+      "optimizedSha256": "c17dfbd513a8d9525a4b86d9cc37d9719bd873a1275f6019c599cd9c15ca06a2",
+      "optimizedBytes": 318136,
+      "jointSlotsChanged": 9791,
+      "allOtherAccessorsByteIdentical": true,
+      "everyChangedSlotHasExactlyZeroWeight": true
+    },
+    {
+      "id": "artemis",
+      "sourceSha256": "9452903dd16ee1e0fd5403990273509392c7c6768ed6ebf84487202b43531108",
+      "optimizedSha256": "7d18ac158ac25dcab7808e689acb0b230ef06a9dd434de96e4be61ee603f8c67",
+      "optimizedBytes": 533616,
+      "jointSlotsChanged": 9267,
+      "allOtherAccessorsByteIdentical": true,
+      "everyChangedSlotHasExactlyZeroWeight": true
+    }
+  ]
+}

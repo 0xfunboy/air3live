@@ -1,0 +1,42 @@
+{
+  "schema": "air3.validation.dapp-bridge/1",
+  "recordedAt": "2026-10-27T03:46:20.183954+00:00",
+  "command": "node --test test/dapp-wallpanel.test.mjs",
+  "workingDirectory": "studio-broadcast",
+  "exitCode": 0,
+  "tests": 11,
+  "passed": 11,
+  "failed": 0,
+  "durationMs": 300.751611,
+  "cliHelpExitCode": 0,
+  "realComponents": [
+    "Pure market normalization shared with renderer",
+    "Wallpanel normalization shared with gateway",
+    "HTTP redirects through localhost server"
+  ],
+  "mockedComponents": [
+    "Public dApp trades, candles and reports",
+    "Live wallpanel acceptance except local HTTP redirect test",
+    "Clock and retry scheduler in cadence test"
+  ],
+  "externalDappValidated": false,
+  "credentialsRequiredForRealRun": [
+    "AIR3_DAPP_BASE_URL",
+    "AIR3_PRODUCER_TOKEN"
+  ],
+  "defaults": {
+    "feed": "track",
+    "pollMs": 4000,
+    "candlesMs": 15000,
+    "reportMs": 60000,
+    "timeoutMs": 4000,
+    "ttlSeconds": 30,
+    "rotationMs": 12000,
+    "maxBackoffMs": 30000
+  },
+  "sha256": {
+    "adapters/dapp-wallpanel.mjs": "6f68cad4861e236982b241e11b98ea241602dd2fe52744410cd6fb399e24bb9f",
+    "studio-broadcast/test/dapp-wallpanel.test.mjs": "0f58f88e0b9cbbd56624c3041fb33d5c3224c9955ea7c06205f162e74f639bfd",
+    "docs/DAPP_BRIDGE_3.0.md": "787ecf8aac40997f0f2895806b2c6920ddcb49bc681703810ba223ff84c7be06"
+  }
+}

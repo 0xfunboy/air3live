@@ -1,0 +1,21 @@
+[Unit]
+Description=AIR3 headless broadcaster
+Wants=network-online.target air3-gateway.service
+After=network-online.target air3-gateway.service
+StartLimitIntervalSec=300
+StartLimitBurst=6
+
+[Service]
+Type=simple
+User=air3
+WorkingDirectory=/opt/air3/studio-broadcast
+EnvironmentFile=/opt/air3/studio-broadcast/.env
+ExecStart=/usr/bin/node src/broadcast.mjs
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=25
+KillMode=control-group
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

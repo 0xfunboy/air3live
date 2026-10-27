@@ -1,0 +1,46 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import * as THREE from 'three';
+import { applyAvatarMaterials } from '../public/avatar-materials.mjs';
+import { Air3AvatarRig } from '../public/air3-avatar.mjs';
+import { loadAvatarFixture } from './fixtures/avatar-fixture.mjs';
+
+test('eye makeup uses the original data mask and the brows follow hair tint through the real skinning adapter', async context => {
+  const loaded = [];
+  context.mock.method(THREE.TextureLoader.prototype, 'loadAsync', async url => {
+    const map = new THREE.Texture(); map.name = url; loaded.push(map); return map;
+  });
+  const gltf = await loadAvatarFixture();
+  const materialApi = await applyAvatarMaterials(gltf, { quality: 'software' });
+  const rig = new Air3AvatarRig(gltf);
+  let face, brow;
+  gltf.scene.traverse(mesh => { if (mesh.userData.air3Surface === 'skin-face') face = mesh; if (mesh.userData.air3Surface === 'brows') brow = mesh; });
+  assert.ok(face && brow, 'Actual avatar contains both face and eyebrow surfaces');
+  const shader = () => ({ uniforms: {}, vertexShader: THREE.ShaderLib.physical.vertexShader, fragmentShader: THREE.ShaderLib.physical.fragmentShader });
+  const faceShader = shader(), browShader = shader();
+  face.material.onBeforeCompile(faceShader); brow.material.onBeforeCompile(browShader);
+  const mask = faceShader.uniforms.air3EyeMakeupMask.value;
+  assert.equal(mask.name, 'AIR3/../data/FaceEyeLipstickMask.png');
+  assert.equal(mask.colorSpace, THREE.NoColorSpace);
+  assert.equal(mask.flipY, false);
+  assert.ok(face.userData.air3ExtendedSkinning, 'Twelve-influence skinning and makeup coexist');
+  const map = brow.material.map;
+  materialApi.setHairColor('#3b2b21');
+  assert.equal(materialApi.diagnostics.brows.linkedHairColor, '#3b2b21');
+  const dark = browShader.uniforms.air3BrowTint.value.clone();
+  materialApi.setHairColor('#c6a774');
+  assert.ok(browShader.uniforms.air3BrowTint.value.r > dark.r, 'Brow pigment follows the selected family, not a fixed black swatch');
+  assert.equal(brow.material.map, map, 'Original strand coverage and UV map remain intact');
+  assert.equal(brow.material.transparent, false);
+  assert.equal(brow.material.depthWrite, true);
+  const tintBefore = materialApi.diagnostics.brows.tintSrgb;
+  assert.throws(() => materialApi.setHairColor('not-a-colour'), /sRGB/);
+  assert.equal(materialApi.diagnostics.brows.tintSrgb, tintBefore);
+  materialApi.setEyeMakeupStrength(0);
+  assert.equal(faceShader.uniforms.air3EyeMakeupStrength.value, 0);
+  materialApi.setEyeMakeupStrength(1);
+  assert.equal(faceShader.uniforms.air3EyeMakeupStrength.value, 1);
+  assert.throws(() => materialApi.setEyeMakeupStrength(NaN), /between/);
+  assert.equal(materialApi.diagnostics.eyeMakeup.protectedLipChannel, 'B');
+  rig.dispose(); materialApi.dispose();
+});

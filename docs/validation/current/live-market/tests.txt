@@ -1,0 +1,27 @@
+✔ market defaults are real Binance; enum, enabled and key fields reject invalid input and never accept arbitrary endpoints (1.640642ms)
+✔ liquidation snapshots use completed execution price × executed quantity, correct long/short, and exclude partial/request-only orders (0.570178ms)
+✔ Binance candle normalization preserves actual values, order, and rejects impossible OHLC instead of synthesizing data (5.287134ms)
+✔ observed heatmap bins only matching real executed events and distinguishes empty collection from a predicted-level model (0.921925ms)
+✔ CoinGlass adapter maps source axes, keeps missing-index alignment, and never falls back to an invented model (0.624037ms)
+✔ wallpanel validates original AIRTrack DTO, caps supplied content, ignores HTML/URL transport, preserves nulls and marks expiry (5.182681ms)
+✔ disabled service opens no feed, HTTP request or scheduled timer (1.651949ms)
+✔ stopping during local history load prevents a late market connection (0.288785ms)
+✔ queued market reconfiguration applies changes in order and keeps disabled mode offline (0.633401ms)
+✔ missing CoinGlass key is explicit and never leaks a secret or generates demo values (58.490767ms)
+✔ real provider never substitutes demo during source failure and marks retained data stale (12.35683ms)
+✔ Binance reconnect closes old socket, ignores duplicate executions and late callbacks after stop (8.846542ms)
+✔ market heartbeat detects frozen ticker socket without mistaking quiet liquidation activity for disconnect (1.212472ms)
+✔ provider/symbol changes abort old requests and cannot relabel old candles or prices (1.633773ms)
+✔ bounded local history survives restart with original wallpanel values and no API key; duplicates and expired rows are filtered (6.710046ms)
+✔ invalid persisted history cannot supply future or synthetic-looking real records (2.911241ms)
+✔ demo is a separate explicit mode, watermarked in provenance, and never persists synthetic liquidation events (4.798476ms)
+✔ renderer market client keeps prior real snapshot marked stale on failure, sends auth only to same-origin API, and disposes (2.348152ms)
+✔ renderer market client does not deliver a late response after teardown (1.060009ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 246.697158

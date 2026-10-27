@@ -1,0 +1,39 @@
+{
+  "test": "configured-avatar readiness and cancellation",
+  "results": [
+    {
+      "kind": "missing",
+      "status": "rejected",
+      "reason": "fetch for \"http://127.0.0.1:33137/assets/missing.glb\" responded with 404: Not Found",
+      "elapsedMs": 1214,
+      "states": [
+        "Loading configured avatar",
+        "Configured avatar failed to start: fetch for \"http://127.0.0.1:33137/assets/missing.glb\" responded with 404: Not Found"
+      ],
+      "passed": true
+    },
+    {
+      "kind": "dispose",
+      "status": "rejected",
+      "reason": "Studio disposed before readiness",
+      "elapsedMs": 1,
+      "states": [
+        "Loading configured avatar"
+      ],
+      "passed": true
+    },
+    {
+      "kind": "context-loss",
+      "status": "rejected",
+      "reason": "WebGL context lost before studio readiness",
+      "elapsedMs": 1176,
+      "states": [
+        "Loading configured avatar",
+        "WebGL context lost; broadcaster restart required",
+        "Configured avatar failed to start: signal is aborted without reason"
+      ],
+      "passed": true
+    }
+  ],
+  "passed": true
+}

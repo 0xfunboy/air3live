@@ -1,0 +1,389 @@
+{
+  "schema": 1,
+  "count": 29,
+  "sourceMorphCount": 815,
+  "sourceSparseSha256": "e6b13792e0deffb3e9f3206fc6af770269be133990f0d4fce5387a66919e0ca3",
+  "metadataSha256": "8262c3d929646a2049a6a90e887faa94c7a580dd709ea1cb13a875a02eae5645",
+  "outputSha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d",
+  "topologyAndSkinPreserved": true,
+  "mappingChecks": "All815 targets match named group support; all29 selected match anatomical side/region; exact position/index correspondence. This is not a RigLogic evaluation.",
+  "selected": [
+    {
+      "name": "head_lod0_mesh__brow_down_L",
+      "sourceIndex": 0,
+      "primitive": 0,
+      "affectedVertices": 163,
+      "weightedCenter": [
+        0.029940074309706688,
+        1.5744209289550781,
+        0.08389214426279068
+      ],
+      "maxDeltaMeters": 0.000352271570591256,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__brow_down_R",
+      "sourceIndex": 1,
+      "primitive": 0,
+      "affectedVertices": 140,
+      "weightedCenter": [
+        -0.026868566870689392,
+        1.574696660041809,
+        0.08644455671310425
+      ],
+      "maxDeltaMeters": 0.00032549499883316457,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__brow_raiseIn_L",
+      "sourceIndex": 4,
+      "primitive": 0,
+      "affectedVertices": 401,
+      "weightedCenter": [
+        0.02039594203233719,
+        1.570717692375183,
+        0.07085485756397247
+      ],
+      "maxDeltaMeters": 0.00047621826524846256,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__brow_raiseIn_R",
+      "sourceIndex": 5,
+      "primitive": 0,
+      "affectedVertices": 391,
+      "weightedCenter": [
+        -0.020131582394242287,
+        1.5705455541610718,
+        0.06834045797586441
+      ],
+      "maxDeltaMeters": 0.000501354574225843,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__brow_raiseOuter_left",
+      "sourceIndex": 6,
+      "primitive": 0,
+      "affectedVertices": 890,
+      "weightedCenter": [
+        0.0276858638972044,
+        1.5799390077590942,
+        0.07955210655927658
+      ],
+      "maxDeltaMeters": 0.0007647624588571489,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__brow_raiseOuter_right",
+      "sourceIndex": 7,
+      "primitive": 0,
+      "affectedVertices": 852,
+      "weightedCenter": [
+        -0.0285329669713974,
+        1.5801022052764893,
+        0.08038944751024246
+      ],
+      "maxDeltaMeters": 0.0005706956726498902,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__eye_blink_L",
+      "sourceIndex": 30,
+      "primitive": 0,
+      "affectedVertices": 1322,
+      "weightedCenter": [
+        0.02700524404644966,
+        1.5652469396591187,
+        0.08206652104854584
+      ],
+      "maxDeltaMeters": 0.0014093006029725075,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__eye_blink_R",
+      "sourceIndex": 31,
+      "primitive": 0,
+      "affectedVertices": 1251,
+      "weightedCenter": [
+        -0.02728184126317501,
+        1.5668517351150513,
+        0.08168745785951614
+      ],
+      "maxDeltaMeters": 0.001441220985725522,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__eye_widen_L",
+      "sourceIndex": 34,
+      "primitive": 0,
+      "affectedVertices": 224,
+      "weightedCenter": [
+        0.029247445985674858,
+        1.5701075792312622,
+        0.08235950022935867
+      ],
+      "maxDeltaMeters": 0.0011481879046186805,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__eye_widen_R",
+      "sourceIndex": 35,
+      "primitive": 0,
+      "affectedVertices": 190,
+      "weightedCenter": [
+        -0.027959348633885384,
+        1.5705091953277588,
+        0.08299482613801956
+      ],
+      "maxDeltaMeters": 0.0006519971648231149,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__eye_cheekRaise_L",
+      "sourceIndex": 38,
+      "primitive": 0,
+      "affectedVertices": 1443,
+      "weightedCenter": [
+        0.03830411657691002,
+        1.539976716041565,
+        0.06912166625261307
+      ],
+      "maxDeltaMeters": 0.0009213300654664636,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__eye_cheekRaise_R",
+      "sourceIndex": 39,
+      "primitive": 0,
+      "affectedVertices": 1360,
+      "weightedCenter": [
+        -0.039843473583459854,
+        1.540549635887146,
+        0.06732062250375748
+      ],
+      "maxDeltaMeters": 0.0008967912290245295,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_cornerPull_left",
+      "sourceIndex": 138,
+      "primitive": 0,
+      "affectedVertices": 2484,
+      "weightedCenter": [
+        0.02284684032201767,
+        1.525950312614441,
+        0.07724632322788239
+      ],
+      "maxDeltaMeters": 0.0014946110313758254,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_cornerPull_right",
+      "sourceIndex": 139,
+      "primitive": 0,
+      "affectedVertices": 2412,
+      "weightedCenter": [
+        -0.022102143615484238,
+        1.5219262838363647,
+        0.0779050812125206
+      ],
+      "maxDeltaMeters": 0.001305007142946124,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_cornerDepress_L",
+      "sourceIndex": 153,
+      "primitive": 0,
+      "affectedVertices": 457,
+      "weightedCenter": [
+        0.0281278844922781,
+        1.528130292892456,
+        0.0823439508676529
+      ],
+      "maxDeltaMeters": 0.00042305138777010143,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_cornerDepress_R",
+      "sourceIndex": 154,
+      "primitive": 0,
+      "affectedVertices": 405,
+      "weightedCenter": [
+        -0.027552274987101555,
+        1.5218398571014404,
+        0.07943028956651688
+      ],
+      "maxDeltaMeters": 0.0003892459790222347,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_lipsPurse_UL",
+      "sourceIndex": 159,
+      "primitive": 0,
+      "affectedVertices": 454,
+      "weightedCenter": [
+        0.017405912280082703,
+        1.523317575454712,
+        0.08769187331199646
+      ],
+      "maxDeltaMeters": 0.000560352869797498,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_lipsPurse_UR",
+      "sourceIndex": 160,
+      "primitive": 0,
+      "affectedVertices": 370,
+      "weightedCenter": [
+        -0.01754566840827465,
+        1.519087553024292,
+        0.08547205477952957
+      ],
+      "maxDeltaMeters": 0.0005693882703781128,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_lipsPurse_DL",
+      "sourceIndex": 161,
+      "primitive": 0,
+      "affectedVertices": 255,
+      "weightedCenter": [
+        0.017305945977568626,
+        1.5024008750915527,
+        0.07887352257966995
+      ],
+      "maxDeltaMeters": 0.0005423510447144508,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_lipsPurse_DR",
+      "sourceIndex": 162,
+      "primitive": 0,
+      "affectedVertices": 276,
+      "weightedCenter": [
+        -0.017719632014632225,
+        1.5022073984146118,
+        0.0791720598936081
+      ],
+      "maxDeltaMeters": 0.0006010131328366697,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_funnel_UL",
+      "sourceIndex": 167,
+      "primitive": 0,
+      "affectedVertices": 795,
+      "weightedCenter": [
+        0.012457901611924171,
+        1.5169235467910767,
+        0.09130556881427765
+      ],
+      "maxDeltaMeters": 0.0007574600749649107,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_funnel_UR",
+      "sourceIndex": 168,
+      "primitive": 0,
+      "affectedVertices": 878,
+      "weightedCenter": [
+        -0.013189933262765408,
+        1.5183037519454956,
+        0.0914604440331459
+      ],
+      "maxDeltaMeters": 0.0007889156695455313,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_funnel_DL",
+      "sourceIndex": 169,
+      "primitive": 0,
+      "affectedVertices": 795,
+      "weightedCenter": [
+        0.014542710967361927,
+        1.5016382932662964,
+        0.08684984594583511
+      ],
+      "maxDeltaMeters": 0.0006108527886681259,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_funnel_DR",
+      "sourceIndex": 170,
+      "primitive": 0,
+      "affectedVertices": 834,
+      "weightedCenter": [
+        -0.015476265922188759,
+        1.5025478601455688,
+        0.08621269464492798
+      ],
+      "maxDeltaMeters": 0.0006450446089729667,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_lipsPress_L",
+      "sourceIndex": 285,
+      "primitive": 0,
+      "affectedVertices": 1093,
+      "weightedCenter": [
+        0.013383149169385433,
+        1.5150442123413086,
+        0.09032135456800461
+      ],
+      "maxDeltaMeters": 0.0004588600422721356,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__mouth_lipsPress_R",
+      "sourceIndex": 286,
+      "primitive": 0,
+      "affectedVertices": 1222,
+      "weightedCenter": [
+        -0.015095173381268978,
+        1.5120017528533936,
+        0.08802095055580139
+      ],
+      "maxDeltaMeters": 0.00047834625001996756,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "head_lod0_mesh__jaw_open",
+      "sourceIndex": 606,
+      "primitive": 0,
+      "affectedVertices": 6263,
+      "weightedCenter": [
+        0.00045325374230742455,
+        1.5112553834915161,
+        0.0473598949611187
+      ],
+      "maxDeltaMeters": 0.006353767588734627,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "cartilage_lod0_mesh__eye_blink_L",
+      "sourceIndex": 753,
+      "primitive": 8,
+      "affectedVertices": 135,
+      "weightedCenter": [
+        0.02695152536034584,
+        1.568318486213684,
+        0.08396284282207489
+      ],
+      "maxDeltaMeters": 0.0008003021939657629,
+      "regionCheck": "passed"
+    },
+    {
+      "name": "cartilage_lod0_mesh__eye_blink_R",
+      "sourceIndex": 754,
+      "primitive": 8,
+      "affectedVertices": 124,
+      "weightedCenter": [
+        -0.027069956064224243,
+        1.567807912826538,
+        0.08344295620918274
+      ],
+      "maxDeltaMeters": 0.0008202755707316101,
+      "regionCheck": "passed"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "scope": "studio visuals and rendering",
+  "files": [
+    "studio-broadcast/public/studio-scene.mjs",
+    "studio-broadcast/public/studio-rendering.mjs",
+    "docs/STUDIO_RENDERING.md"
+  ],
+  "files_sha256": {
+    "studio-broadcast/public/studio-scene.mjs": "06e0ee95d77d2f7f27f9299b23d0a5a113ece01a34667aa9812ee5be58cc8904",
+    "studio-broadcast/public/studio-rendering.mjs": "375b0a998e296ee4505881e803df06ce324dfde15fb8b3170245be7c3a6a39b3"
+  },
+  "preset_shader_validation": {
+    "software": "pass",
+    "balanced": "pass",
+    "high": "pass",
+    "avatar": "real AIR3-runtime with 12-influence skinning and 29 source corrective morphs",
+    "webgl_errors": 0,
+    "asset_request_failures": 0,
+    "note": "Preset reports captured during material v2; final integration uses v3. Use presenter samples for actual avatar render counts, early wide diagnostics preceded the avatar frame."
+  },
+  "final_material_v3_integration": {
+    "visual_render": "pass",
+    "javascript_shader_errors": 0,
+    "overall_test": "failed",
+    "reason": "5 health poll requests aborted at 4s timeout while SwiftShader blocked the browser main thread",
+    "report": "studio-integration-software.json"
+  },
+  "readiness_fault_injection": {
+    "configured_missing_asset": "rejects",
+    "dispose_during_load": "rejects",
+    "context_loss_during_load": "rejects"
+  },
+  "rendering_limits": [
+    "SwiftShader-only checks, not a NVIDIA performance benchmark",
+    "Planar reflection on floor; environment reflection on desk, no general SSR",
+    "GTAO excludes alpha-card and transparent surfaces; their color and shadow passes remain active",
+    "Image-based lighting and PBR approximations, not Lumen or a certified Unreal parity"
+  ]
+}

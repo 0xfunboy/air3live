@@ -1,0 +1,32 @@
+{
+  "schema": "air3.converter-portability.v1",
+  "generatedAt": "2026-10-25T03:40:36.869755+00:00",
+  "passed": true,
+  "footwear": {
+    "ranFromOutsideProject": true,
+    "moduleLoading": "Node CommonJS package entry resolved through file URL",
+    "explicitOutputUsed": true,
+    "runtimeFilesUnchanged": {
+      "boot.glb": true,
+      "shoes-test.glb": true
+    },
+    "byteIdenticalRebuiltFiles": {
+      "boot.glb": "050c5385ccf4700ed095f3f0d025447f30f6abb2dde77b3569ee6b8c53dbe829",
+      "shoes-test.glb": "59dd3a8981b500cd6c1e79f4a02b4ae37a1606ae81065957d154026ea0e2e08e"
+    }
+  },
+  "pythonConverters": {
+    "checked": [
+      "prepare_hair_assets.py",
+      "retarget_body_translations.py",
+      "retarget_accad_motion.py"
+    ],
+    "syntaxPassed": true,
+    "machineSpecificScratchPaths": false,
+    "notExecutedToPreserveFrozenRuntime": true
+  },
+  "limitations": [
+    "Windows native path conversion is implemented with Node pathToFileURL; the conversion was executed on Linux, not Windows.",
+    "Texture/motion regeneration was not rerun in this final audit; exact versions and complete included inputs are documented in tools/README.md."
+  ]
+}

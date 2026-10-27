@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-27",
+  "scope": "Official Twitch documentation; no signed-in registration or real OAuth test",
+  "sources": [
+    {
+      "url": "https://dev.twitch.tv/docs/api/get-started/",
+      "section": "Register an application",
+      "finding": "The official tutorial explicitly instructs registering http://localhost:3000."
+    },
+    {
+      "url": "https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/",
+      "section": "Authorization code grant flow; Examples of the four flows",
+      "finding": "Authorization and token-exchange examples use http://localhost:3000. Registered redirect URI is required."
+    },
+    {
+      "url": "https://dev.twitch.tv/docs/authentication/register-app/",
+      "section": "Registering Your App",
+      "finding": "Requires registering the application callback URL, but does not specify an HTTP localhost exception or a rule for numeric loopback IPs."
+    }
+  ],
+  "conclusion": "HTTP localhost is explicitly documented. The consulted official pages did not establish whether HTTP 127.0.0.1 is accepted or forbidden. Numeric-IP support remains unverified.",
+  "implementation": "Launcher local control URL now uses localhost. Session origin and derived callback therefore stay on localhost. Gateway bind and internal rendering remain on 127.0.0.1; explicit HTTPS public origin remains unchanged.",
+  "verification": "34 local boundary tests passed; 7 real-local-gateway smoke checks passed, including session/callback origin agreement. No Twitch account, token exchange or public stream was used."
+}

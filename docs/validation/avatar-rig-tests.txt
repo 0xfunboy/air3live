@@ -1,0 +1,18 @@
+▶ actual avatar: retargeting, complete skinning and bounded facial controls
+  ✔ all seven delivered clips carry destination translation retarget metadata (0.737422ms)
+  ✔ animation never restores the wider foreign shoulder and longer foot segments (59.676821ms)
+  ✔ twelve-weight restoration remains normalized and idempotent (16.437833ms)
+  ✔ skin shader composes with the eye/hair shader and supports normal passes (0.843145ms)
+  ✔ named morph subset is bounded and ready for the supplied face (0.184779ms)
+  ✔ jaw articulation moves lower teeth and tongue while keeping upper teeth fixed (4.975193ms)
+  ✔ all nine audio cues produce finite bounded controls and reset without accumulation (31.853397ms)
+  ✔ foot grounding is invariant under a stage transform (2.485797ms)
+✔ actual avatar: retargeting, complete skinning and bounded facial controls (460.742573ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 474.189219

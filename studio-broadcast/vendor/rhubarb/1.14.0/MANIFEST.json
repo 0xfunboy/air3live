@@ -1,0 +1,476 @@
+{
+  "version": "1.14.0",
+  "source": "https://github.com/DanielSWolf/rhubarb-lip-sync/releases/tag/v1.14.0",
+  "officialArchives": [
+    {
+      "name": "Rhubarb-Lip-Sync-1.14.0-Linux.zip",
+      "sha256": "a9a9074862cff47b2d59b8bf399a678a3b0b74f9452ad6ad94cb292913dd8667",
+      "files": [
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/README.adoc",
+          "bytes": 23164
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/acoustic-model/mixture_weights",
+          "bytes": 657728
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/acoustic-model/variances",
+          "bytes": 23675972
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/acoustic-model/means",
+          "bytes": 23675972
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/acoustic-model/README",
+          "bytes": 1617
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/acoustic-model/feature_transform",
+          "bytes": 5660
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/acoustic-model/mdef",
+          "bytes": 6992233
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/acoustic-model/noisedict",
+          "bytes": 113
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/acoustic-model/feat.params",
+          "bytes": 129
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/acoustic-model/transition_matrices",
+          "bytes": 2272
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/cmudict-en-us.dict",
+          "bytes": 3272051
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/en-us.lm.bin",
+          "bytes": 27114385
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/res/sphinx/en-us-phone.lm.bin",
+          "bytes": 857195
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/LICENSE.md",
+          "bytes": 27808
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/README.adoc",
+          "bytes": 344
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-flac-ffmpeg.wav",
+          "bytes": 1937792
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-uint8-ffmpeg.wav",
+          "bytes": 960078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-uint8-soundforge.wav",
+          "bytes": 960078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-float32-audition.wav",
+          "bytes": 3845534
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-int24-soundforge.wav",
+          "bytes": 2880078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-int24-audacity.wav",
+          "bytes": 2880150
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-int24-audition.wav",
+          "bytes": 2885534
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-vorbis-ffmpeg.wav",
+          "bytes": 72652
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-int32-ffmpeg.wav",
+          "bytes": 3840102
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-float32-ffmpeg.wav",
+          "bytes": 3840114
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-int32-soundforge.wav",
+          "bytes": 3840078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-int16-audacity.wav",
+          "bytes": 1920150
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-float32-audacity.wav",
+          "bytes": 3840194
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-float64-ffmpeg.wav",
+          "bytes": 7680114
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-int24-ffmpeg.wav",
+          "bytes": 2880102
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-uint8-audition.wav",
+          "bytes": 965534
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-int16-ffmpeg.wav",
+          "bytes": 1920078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-float32-soundforge.wav",
+          "bytes": 3840078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-int16-audition.wav",
+          "bytes": 1925534
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/tests/resources/sine-triangle-int16-soundforge.wav",
+          "bytes": 1920078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/rhubarb",
+          "bytes": 7331192
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Linux/CHANGELOG.md",
+          "bytes": 13000
+        }
+      ]
+    },
+    {
+      "name": "Rhubarb-Lip-Sync-1.14.0-Windows.zip",
+      "sha256": "62fa416a8d5e382a3828ee4bef358ce520d0b4cabdeaea75a7ac266d098d1fe3",
+      "files": [
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/CHANGELOG.md",
+          "bytes": 13188
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/LICENSE.md",
+          "bytes": 28080
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/README.adoc",
+          "bytes": 23572
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/acoustic-model/feat.params",
+          "bytes": 139
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/acoustic-model/feature_transform",
+          "bytes": 5660
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/acoustic-model/mdef",
+          "bytes": 7129342
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/acoustic-model/means",
+          "bytes": 23675972
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/acoustic-model/mixture_weights",
+          "bytes": 657728
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/acoustic-model/noisedict",
+          "bytes": 122
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/acoustic-model/README",
+          "bytes": 1651
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/acoustic-model/transition_matrices",
+          "bytes": 2272
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/acoustic-model/variances",
+          "bytes": 23675972
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/cmudict-en-us.dict",
+          "bytes": 3406774
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/en-us-phone.lm.bin",
+          "bytes": 857195
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/res/sphinx/en-us.lm.bin",
+          "bytes": 27114385
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/rhubarb.exe",
+          "bytes": 2703360
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/README.adoc",
+          "bytes": 348
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-flac-ffmpeg.wav",
+          "bytes": 1937792
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-float32-audacity.wav",
+          "bytes": 3840194
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-float32-audition.wav",
+          "bytes": 3845534
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-float32-ffmpeg.wav",
+          "bytes": 3840114
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-float32-soundforge.wav",
+          "bytes": 3840078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-float64-ffmpeg.wav",
+          "bytes": 7680114
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-int16-audacity.wav",
+          "bytes": 1920150
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-int16-audition.wav",
+          "bytes": 1925534
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-int16-ffmpeg.wav",
+          "bytes": 1920078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-int16-soundforge.wav",
+          "bytes": 1920078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-int24-audacity.wav",
+          "bytes": 2880150
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-int24-audition.wav",
+          "bytes": 2885534
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-int24-ffmpeg.wav",
+          "bytes": 2880102
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-int24-soundforge.wav",
+          "bytes": 2880078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-int32-ffmpeg.wav",
+          "bytes": 3840102
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-int32-soundforge.wav",
+          "bytes": 3840078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-uint8-audition.wav",
+          "bytes": 965534
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-uint8-ffmpeg.wav",
+          "bytes": 960078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-uint8-soundforge.wav",
+          "bytes": 960078
+        },
+        {
+          "name": "Rhubarb-Lip-Sync-1.14.0-Windows/tests/resources/sine-triangle-vorbis-ffmpeg.wav",
+          "bytes": 72652
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "linux-x64/README.adoc",
+      "bytes": 23164,
+      "sha256": "3c7dcb74008ca9eb96f5f258ca4f82e9a49ed9614d93f89bc98bd27ac3a22b43"
+    },
+    {
+      "path": "linux-x64/res/sphinx/acoustic-model/mixture_weights",
+      "bytes": 657728,
+      "sha256": "a756459b78bfaf85ad59215c77caaf03f9e58e91956975e33de7b8179d551c1f"
+    },
+    {
+      "path": "linux-x64/res/sphinx/acoustic-model/variances",
+      "bytes": 23675972,
+      "sha256": "66bc86ddf763cf27d6194247cbf4f2e912d78789ced246811e7f323f1e8280da"
+    },
+    {
+      "path": "linux-x64/res/sphinx/acoustic-model/means",
+      "bytes": 23675972,
+      "sha256": "10c8a3c1b0718bc786f4c82ba1824b22cd9cdc7ffb0589559c08c0189884f0f1"
+    },
+    {
+      "path": "linux-x64/res/sphinx/acoustic-model/README",
+      "bytes": 1617,
+      "sha256": "8b88de980568509c646d0527b8414beef136964391903b40996d32f737bf752e"
+    },
+    {
+      "path": "linux-x64/res/sphinx/acoustic-model/feature_transform",
+      "bytes": 5660,
+      "sha256": "05cd0ef213623137b6ac76d72922776c8a14f252e032c4a3f331d41760ef30cc"
+    },
+    {
+      "path": "linux-x64/res/sphinx/acoustic-model/mdef",
+      "bytes": 6992233,
+      "sha256": "a100d7401e8d59ed597ea6083e0acca77e41637b7db6db66f43a0799a2eba840"
+    },
+    {
+      "path": "linux-x64/res/sphinx/acoustic-model/noisedict",
+      "bytes": 113,
+      "sha256": "394633701a17db97a512838a79de395020fc571e0537b0498b2179f727642a48"
+    },
+    {
+      "path": "linux-x64/res/sphinx/acoustic-model/feat.params",
+      "bytes": 129,
+      "sha256": "9f4883ca1680270667565cec30a0b827081799617bb825ff6adace06f50c178f"
+    },
+    {
+      "path": "linux-x64/res/sphinx/acoustic-model/transition_matrices",
+      "bytes": 2272,
+      "sha256": "020e3a8998d12db0d02b620aed95ee1534676fd8e50afaad29d5b432f1e6f893"
+    },
+    {
+      "path": "linux-x64/res/sphinx/cmudict-en-us.dict",
+      "bytes": 3272051,
+      "sha256": "9de99dd2a24b63c653c1c30ab39388d05185cae36d0875f15c319b4ad6dc43af"
+    },
+    {
+      "path": "linux-x64/res/sphinx/en-us.lm.bin",
+      "bytes": 27114385,
+      "sha256": "db21d0642286677699e6dbc859d2e5395570222361999387ce60f6e1d01995d6"
+    },
+    {
+      "path": "linux-x64/res/sphinx/en-us-phone.lm.bin",
+      "bytes": 857195,
+      "sha256": "c57e0fa4191b096b1279cfe3a77927f52568fdecfc6624ddb5cec9527c763a54"
+    },
+    {
+      "path": "linux-x64/LICENSE.md",
+      "bytes": 27808,
+      "sha256": "c9a10d99959990ec6802c5e2d519fb23665affa7ba32abbdea5b251ee5f93af6"
+    },
+    {
+      "path": "linux-x64/rhubarb",
+      "bytes": 7331192,
+      "sha256": "d9aefa0627f843cd306333cc761368c4750ceddfa43236f0e607fa074249390c"
+    },
+    {
+      "path": "linux-x64/CHANGELOG.md",
+      "bytes": 13000,
+      "sha256": "4b2c2ff234b6c5f0b38d3689177ebecab5041d6242ec966cb1a5c535e6894d2c"
+    },
+    {
+      "path": "win32-x64/CHANGELOG.md",
+      "bytes": 13188,
+      "sha256": "78494d1dad875caa3ccf3053c27f0189b4fa69bc53222e7a86a0aadbaae6919b"
+    },
+    {
+      "path": "win32-x64/LICENSE.md",
+      "bytes": 28080,
+      "sha256": "057ddf185493d1cbee6696ca6c3c8558282f4b10ff348405e45f5966c820c1b7"
+    },
+    {
+      "path": "win32-x64/README.adoc",
+      "bytes": 23572,
+      "sha256": "3e928e7e1eed706a918ac1f647d2078bc23c7c61911e03318f4793cca2bb98f2"
+    },
+    {
+      "path": "win32-x64/res/sphinx/acoustic-model/feat.params",
+      "bytes": 139,
+      "sha256": "5c9f713783138ea25b8c89b466696abd7fb3eac1fe221245199f93d3e6747b55"
+    },
+    {
+      "path": "win32-x64/res/sphinx/acoustic-model/feature_transform",
+      "bytes": 5660,
+      "sha256": "05cd0ef213623137b6ac76d72922776c8a14f252e032c4a3f331d41760ef30cc"
+    },
+    {
+      "path": "win32-x64/res/sphinx/acoustic-model/mdef",
+      "bytes": 7129342,
+      "sha256": "797bbe86072637c1ec85d4aff13b8bf6c23fc56ffb0661c12669c29ddba596c9"
+    },
+    {
+      "path": "win32-x64/res/sphinx/acoustic-model/means",
+      "bytes": 23675972,
+      "sha256": "10c8a3c1b0718bc786f4c82ba1824b22cd9cdc7ffb0589559c08c0189884f0f1"
+    },
+    {
+      "path": "win32-x64/res/sphinx/acoustic-model/mixture_weights",
+      "bytes": 657728,
+      "sha256": "a756459b78bfaf85ad59215c77caaf03f9e58e91956975e33de7b8179d551c1f"
+    },
+    {
+      "path": "win32-x64/res/sphinx/acoustic-model/noisedict",
+      "bytes": 122,
+      "sha256": "83626d4923026bfc6c82e187b1316de65a80b0c749a25a518187fd3ab5f90c09"
+    },
+    {
+      "path": "win32-x64/res/sphinx/acoustic-model/README",
+      "bytes": 1651,
+      "sha256": "dc05e4e8e270fc059f9775535a8c59dfcc036fa4d3f8043e7387efe10036698c"
+    },
+    {
+      "path": "win32-x64/res/sphinx/acoustic-model/transition_matrices",
+      "bytes": 2272,
+      "sha256": "020e3a8998d12db0d02b620aed95ee1534676fd8e50afaad29d5b432f1e6f893"
+    },
+    {
+      "path": "win32-x64/res/sphinx/acoustic-model/variances",
+      "bytes": 23675972,
+      "sha256": "66bc86ddf763cf27d6194247cbf4f2e912d78789ced246811e7f323f1e8280da"
+    },
+    {
+      "path": "win32-x64/res/sphinx/cmudict-en-us.dict",
+      "bytes": 3406774,
+      "sha256": "cba3a8274b1aa678a67bd766ace311e78d9d40b3eddd40a0b8999e2b28cfcc6d"
+    },
+    {
+      "path": "win32-x64/res/sphinx/en-us-phone.lm.bin",
+      "bytes": 857195,
+      "sha256": "c57e0fa4191b096b1279cfe3a77927f52568fdecfc6624ddb5cec9527c763a54"
+    },
+    {
+      "path": "win32-x64/res/sphinx/en-us.lm.bin",
+      "bytes": 27114385,
+      "sha256": "db21d0642286677699e6dbc859d2e5395570222361999387ce60f6e1d01995d6"
+    },
+    {
+      "path": "win32-x64/rhubarb.exe",
+      "bytes": 2703360,
+      "sha256": "9e289c6b5939ef6b306a61e8105ec721fd8d52b3ce950d08891ea3cc7df5718d"
+    }
+  ]
+}

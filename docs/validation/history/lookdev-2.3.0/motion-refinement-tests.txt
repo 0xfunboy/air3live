@@ -1,0 +1,15 @@
+✔ seven recorded captures retain source hashes, attribution and the exact target rig identity (35.246415ms)
+✔ manual capture selection survives narration without adding walking to the automatic idle rotation (281.338205ms)
+✔ retargeted human walking moves both legs, preserves segment lengths and crosses the loop without a pose jump (271.207429ms)
+✔ all finite turns end once, with a measured clockwise variant of the same human capture (0.31267ms)
+✔ capture crossfades remain continuous at completion and preserve the shoulder baseline at partial weights (160.674565ms)
+✔ 60 Hz finite journeys retain centred turns, shoulder height and continuous feet/root motion (4324.716929ms)
+✔ actual avatar walks to all monitors with planted feet and returns through the clear aisle (3446.564468ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8628.782595

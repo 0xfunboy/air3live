@@ -1,0 +1,1798 @@
+{
+  "schema": "air3.live-e2e.v1",
+  "startedAt": "2026-10-27T03:49:45.364Z",
+  "passed": true,
+  "build": {
+    "schema": "air3.frontend-build.v1",
+    "builtAt": "2026-10-27T03:49:31.868Z",
+    "node": "v24.22.1",
+    "esbuild": "0.28.2",
+    "inputs": [
+      {
+        "path": "public/air3-attention.mjs",
+        "bytes": 8830,
+        "sha256": "ea1e33cd14300879e1d104ec8866fc7943ac715497bfd7bb8dea86f4270a783d"
+      },
+      {
+        "path": "public/air3-avatar.mjs",
+        "bytes": 19199,
+        "sha256": "e300f7fb43c2ae9511a5c70c02563a0f7716cff6cc95d89fb908c2804fe6aacf"
+      },
+      {
+        "path": "public/air3-clothing.mjs",
+        "bytes": 8139,
+        "sha256": "40bac2f5e43b0a65c9d889dd67527f82351eb093b9d6ef37ffe811dfd973c67b"
+      },
+      {
+        "path": "public/air3-face.mjs",
+        "bytes": 14631,
+        "sha256": "bf67004472684e6eae68b962a6f5b91fb54f29250fac94b56ec0fd261701ae2b"
+      },
+      {
+        "path": "public/air3-footwear.mjs",
+        "bytes": 15182,
+        "sha256": "7a039be3bdcc9756d347083a41cf0eea64ad9c09399b734bda3dd7acfd2840cc"
+      },
+      {
+        "path": "public/air3-garment-mask.mjs",
+        "bytes": 1752,
+        "sha256": "523983fecf63feef1cc8941d43beb239ec1a87acab4b745e9ba63e5e242b6aa6"
+      },
+      {
+        "path": "public/air3-hair-wardrobe.mjs",
+        "bytes": 17815,
+        "sha256": "5824be384bde5edcb76ddc3361ac85880b94a485df2cd831b5a4b8e3b44cecb7"
+      },
+      {
+        "path": "public/air3-hair.mjs",
+        "bytes": 22339,
+        "sha256": "64d6e989424bc9eb9211a58139079ba5f5219d7841f176ecd800c78bd67dcafa"
+      },
+      {
+        "path": "public/air3-locomotion.mjs",
+        "bytes": 12227,
+        "sha256": "3ef84eb748d50db5676a35b01b99047cd18d5097f4490d292dc4903312b23899"
+      },
+      {
+        "path": "public/air3-stage-motion.mjs",
+        "bytes": 25977,
+        "sha256": "6ec3ecc42171c939d573bcad17b8ae3a68a09fc476adeddd4ce723622bf17921"
+      },
+      {
+        "path": "public/air3-talk-shoulders.mjs",
+        "bytes": 4884,
+        "sha256": "63e51c972a3ea54e55eb5733d3c4f7a685879a25db7eda52aa550e72f9f7298c"
+      },
+      {
+        "path": "public/app.mjs",
+        "bytes": 24309,
+        "sha256": "ab0ed55f38463cc39e30623bf398f40bba156d9d6899a0989824eff05bb45b28"
+      },
+      {
+        "path": "public/assets/air3/motion/accad-female1.mjs",
+        "bytes": 513825,
+        "sha256": "259fe77eb411a1fa4208c63abfce3e3a5b3a9eaea0d83b8ed063786deb5853c9"
+      },
+      {
+        "path": "public/avatar-materials.mjs",
+        "bytes": 15443,
+        "sha256": "9d3c5848ec1043cb2baa6d5252724708a72a6eb504a8d22adad1cb96be269ccc"
+      },
+      {
+        "path": "public/control/control.mjs",
+        "bytes": 19066,
+        "sha256": "851d43722221abf61b16aebbcb111f370b84a208ca1d9578a1d1352747fe2004"
+      },
+      {
+        "path": "public/data.mjs",
+        "bytes": 6950,
+        "sha256": "d99246963e242514d9e360fce7a28f960516351b9d161a79e60fde4899a10bd9"
+      },
+      {
+        "path": "public/health-worker.mjs",
+        "bytes": 1384,
+        "sha256": "99d2a59a1171635574df2b529fde30b10dc996f90722b35e52859b0d0e513340"
+      },
+      {
+        "path": "public/lip-sync.mjs",
+        "bytes": 3017,
+        "sha256": "14a176477ab81e0c015dc9828957ca65ca04438f9f2dae7bf460f325d9980730"
+      },
+      {
+        "path": "public/live-market-client.mjs",
+        "bytes": 2757,
+        "sha256": "b78142c6003f76bc78d74e06a7fa44b7c2965272b6ca29b8d36c25b2f0181a6f"
+      },
+      {
+        "path": "public/live-program.mjs",
+        "bytes": 3794,
+        "sha256": "3bdd63b83b37b21b9af762b58fcd7f8cb424d5710b1ebd3df6c1abb17b44a025"
+      },
+      {
+        "path": "public/look-controller.mjs",
+        "bytes": 7349,
+        "sha256": "b82f4107f060e974dcbd34d927c3d2eaf28cfa39c7ca8e80a3a47a21a793b333"
+      },
+      {
+        "path": "public/look-controls.mjs",
+        "bytes": 12376,
+        "sha256": "742d8bcb7fe3667aa0e7cd36670edfe2f270a5b49a98a3b418b4a7892aaf724a"
+      },
+      {
+        "path": "public/look-presets.mjs",
+        "bytes": 6710,
+        "sha256": "e06ba8b352b79e48cc8c0f3f894b8ff66d131fb16c6878acd72f8b364827ddc9"
+      },
+      {
+        "path": "public/market-panels.mjs",
+        "bytes": 15479,
+        "sha256": "e39dd3a3a503d220aaeafb37bd0044fee354c7232cc21711ebd4ff31eb59ba55"
+      },
+      {
+        "path": "public/monitors.mjs",
+        "bytes": 10002,
+        "sha256": "90b4dd1e4bfbe0679995d6fe0db3c8a588d94931790cbc406c0da1cce168e9e2"
+      },
+      {
+        "path": "public/presenter-emotion.mjs",
+        "bytes": 413,
+        "sha256": "c5227f9894ab365fec71c8308b4f735f0350f4da8464a5f4bc1f4fcc103ef96b"
+      },
+      {
+        "path": "public/preview/viewer.mjs",
+        "bytes": 17536,
+        "sha256": "f02a55ab321c968031da1e3aeef3a4f7649d194d09f4e1d48a6505f408f8acb5"
+      },
+      {
+        "path": "public/pure.mjs",
+        "bytes": 6882,
+        "sha256": "df1d7cc83213d905d4a3b19efd6ad93b830667dbb7dd98ddada40bebdd2b8f02"
+      },
+      {
+        "path": "public/speech-player.mjs",
+        "bytes": 13195,
+        "sha256": "a5edb691e792b63d3538f4e027648c82bcb23317e2900696c4885650d279c83e"
+      },
+      {
+        "path": "public/studio-lighting.mjs",
+        "bytes": 5861,
+        "sha256": "41733af4ce7de8f349bd33e3218d8b0ab59956c32f2070dab84cebc0b0d21cb1"
+      },
+      {
+        "path": "public/studio-rendering.mjs",
+        "bytes": 11950,
+        "sha256": "375b0a998e296ee4505881e803df06ce324dfde15fb8b3170245be7c3a6a39b3"
+      },
+      {
+        "path": "public/studio-scene.mjs",
+        "bytes": 33327,
+        "sha256": "57d0b412efb8ccb8196ab53f3886e8830073ad8e88a7dd8b5e498d7ba2c3e1ac"
+      },
+      {
+        "path": "public/index.html",
+        "bytes": 6716,
+        "sha256": "a6b7b0998fe39929d5dc9c3e54f32def17f6159613b9ce50eedd246a97b20b40"
+      },
+      {
+        "path": "public/styles.css",
+        "bytes": 10592,
+        "sha256": "74d508aa469f1de241d3bcfd5d74f2ca29de8e9509c55ee986052765ac5ea9cb"
+      },
+      {
+        "path": "public/look-controls.css",
+        "bytes": 5033,
+        "sha256": "446330e769030605c3cf806f323291ed9b5bd42bde5b9ebb4dab764665a40543"
+      },
+      {
+        "path": "public/live-titles.css",
+        "bytes": 2127,
+        "sha256": "35b1a242b703b75da7fd6977ee42755614e4d7bc81f32bc67f3394589ff0ae8b"
+      },
+      {
+        "path": "public/control/index.html",
+        "bytes": 16156,
+        "sha256": "9a454aba1da37d2dc8f1a057a57fd8704e84a670ab69711dc8f0eaa3de2a6c9f"
+      },
+      {
+        "path": "public/control/style.css",
+        "bytes": 10484,
+        "sha256": "66e9c2d7ee5c5be3748aae138b545f6c744f8b597e1b69f19f6d122007c087e5"
+      },
+      {
+        "path": "public/preview/index.html",
+        "bytes": 4108,
+        "sha256": "2509172389d1fd2580062b0371ddcd530b9b781a13484f03b9ea20159f0d69bc"
+      },
+      {
+        "path": "public/preview/style.css",
+        "bytes": 5034,
+        "sha256": "a7599017d64002b34342b5ffb99ac4d4b5c934c8f663f8f8c92438c6f272db62"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "public/build/app.js",
+        "bytes": 87718,
+        "sha256": "f36828aa6c90ec348bad8bcb3b4d77f28e680de5831956c025557727c63daf08"
+      },
+      {
+        "path": "public/build/control.js",
+        "bytes": 14676,
+        "sha256": "da525f5e700cdc14daab70325337c80ea5d8c6e12f4f97b483baf89bb9cd9e4a"
+      },
+      {
+        "path": "public/build/health.js",
+        "bytes": 694,
+        "sha256": "c3b0210057f80fa8371fa3cd0ff9b18e4da4fb9b1183a74612c99d3650d6debe"
+      },
+      {
+        "path": "public/build/preview.js",
+        "bytes": 11232,
+        "sha256": "173e2ea536a2b505029f64805931c3ade933ca815a0033a0ed0f98405a126f77"
+      },
+      {
+        "path": "public/build/shared-IUPYLFTI.js",
+        "bytes": 4402,
+        "sha256": "86e688e2e69c4e98b3cb355fff00d7e293ef390b9f772559d47569c80a4b603d"
+      },
+      {
+        "path": "public/build/shared-RKISOQ5W.js",
+        "bytes": 581877,
+        "sha256": "016412608bc15950992e0cc6187b0ada1b3d0da800abde6e03c3b4d8040724b0"
+      }
+    ],
+    "assets": [
+      {
+        "path": "public/assets/air3/AIR3-ASSET-VERSION.json",
+        "bytes": 194,
+        "sha256": "b5f78c7ee3bf9592f24ca414de95b95490a049ea5e436c25f9090d62284128c9"
+      },
+      {
+        "path": "public/assets/air3/branding/air3-emblem.png",
+        "bytes": 68961,
+        "sha256": "25e0f129384643d7c73da9a178252baddb477d6cd1e2408425eb0c0ff9b2b086"
+      },
+      {
+        "path": "public/assets/air3/branding/air3-emblem.svg",
+        "bytes": 1160,
+        "sha256": "052c3ea7243322b2e3de2d3957cac97fdfafbffab2915db4611ab0c6f5dc02ed"
+      },
+      {
+        "path": "public/assets/air3/branding/air3-lockup.png",
+        "bytes": 79717,
+        "sha256": "e47b7afb1808d259741e8e3e66469f1d07ed009bd23e53edadc3abe71ac4d48c"
+      },
+      {
+        "path": "public/assets/air3/branding/air3-lockup.svg",
+        "bytes": 1759,
+        "sha256": "48551fed274de88520ecfd8f2344509a7ea574b1637a401101ea1d2305733165"
+      },
+      {
+        "path": "public/assets/air3/branding/airewardrop-lockup.png",
+        "bytes": 48640,
+        "sha256": "870ba072d2a51e19aca5632c14ba8cfbe6e93fea3ee28e64f1ce02530ac44ab7"
+      },
+      {
+        "path": "public/assets/air3/branding/airewardrop-lockup.svg",
+        "bytes": 6415,
+        "sha256": "47903c50e7f6727716e710adcd7e52a32831aee2cb2b92e154204e6cff7ba8c8"
+      },
+      {
+        "path": "public/assets/air3/branding/airewardrop-mark.png",
+        "bytes": 110479,
+        "sha256": "80b427076b3c1dd1555646b862d6e52742e020b5a9ec52eaac64cb56d79b3dd1"
+      },
+      {
+        "path": "public/assets/air3/branding/branding-manifest.json",
+        "bytes": 1508,
+        "sha256": "182a2f84a7d0d699d2cea55f4590878d2c2c2f5b4e7b4d45fc406c07ebcda012"
+      },
+      {
+        "path": "public/assets/air3/clothing/crop-top.glb",
+        "bytes": 2800472,
+        "sha256": "a7f45020f75d775a79ead6b1b8006f4ee89cc3f4ada3251efcebe6e4fd3735d7"
+      },
+      {
+        "path": "public/assets/air3/clothing/crop-top.json",
+        "bytes": 11852,
+        "sha256": "ed083cb0956bf8e9b438808ed2147df2b44d58471db07df71a422ff67c17c126"
+      },
+      {
+        "path": "public/assets/air3/demo/PROVENANCE.json",
+        "bytes": 764,
+        "sha256": "469f57a27c1b2c63c9f9dffcdf532acc3bf5a147fc4fca5667f9921ffe2895be"
+      },
+      {
+        "path": "public/assets/air3/demo/voice-reference.json",
+        "bytes": 5862,
+        "sha256": "a140690670f6e948e4f154c813279227882924d23893b8a7ae67b47dbb7cd03c"
+      },
+      {
+        "path": "public/assets/air3/demo/voice-reference.wav",
+        "bytes": 576078,
+        "sha256": "efbd6e9372b9cd8ddb598747a3d2efcd1b5df4620c297127b7f7b42e0b1dffd8"
+      },
+      {
+        "path": "public/assets/air3/footwear/assets-manifest.json",
+        "bytes": 2646,
+        "sha256": "cac1dd32056d5e05028962e0b881151dc2bbd6d7f5620b394fa826950ecd4afc"
+      },
+      {
+        "path": "public/assets/air3/footwear/boot.glb",
+        "bytes": 3206212,
+        "sha256": "050c5385ccf4700ed095f3f0d025447f30f6abb2dde77b3569ee6b8c53dbe829"
+      },
+      {
+        "path": "public/assets/air3/footwear/shoes-test.glb",
+        "bytes": 1117592,
+        "sha256": "59dd3a8981b500cd6c1e79f4a02b4ae37a1606ae81065957d154026ea0e2e08e"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-alpha.png",
+        "bytes": 1003494,
+        "sha256": "fde103729e4aa5dcd39bb389bf12949f72cdd45d1f66905cf1558268a3756966"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-auburn.webp",
+        "bytes": 247552,
+        "sha256": "5f09b84880d943a8c85b24778e5801e358be32b49915b06b3c7ff5731f726b84"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-black.webp",
+        "bytes": 130082,
+        "sha256": "0576d9c784e338b1545b7e6c8fc530974a3165db656028eb0d3f78c9346ae94f"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-blonde.webp",
+        "bytes": 350482,
+        "sha256": "7e0e9a39914dcce60da580cb76c5a308b757c4534f516777729379332db694fd"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-chestnut.webp",
+        "bytes": 250888,
+        "sha256": "5e0d90f88d2344973dccf0bb22de280d5c3a15f3ab109e7331dd9d0c31bfe019"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-copper.webp",
+        "bytes": 272218,
+        "sha256": "4c050275d4b82d3f7161951332875ccf4212f171d0d5c1bd75256f954fa1820c"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-dark-brown.webp",
+        "bytes": 212910,
+        "sha256": "c0e975cd3901431114a022e028145c570cf7fdd96c18393c8bccd3233b2d63ba"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-normal.png",
+        "bytes": 949625,
+        "sha256": "4449f49bc02981e88c86e6673278ad706a6a9fd2e497d73d3e80cb37cf30689e"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis.glb",
+        "bytes": 533616,
+        "sha256": "7d18ac158ac25dcab7808e689acb0b230ef06a9dd434de96e4be61ee603f8c67"
+      },
+      {
+        "path": "public/assets/air3/hair/manifest.json",
+        "bytes": 5659,
+        "sha256": "5f8ba5783bf3971313c6f98c21739159635f31d169ad9a64f3eae88417266bbe"
+      },
+      {
+        "path": "public/assets/air3/hair/wavy-source.png",
+        "bytes": 131717,
+        "sha256": "9e21c43fd8d4350cdb1e31aaeb8ff5c33fcacb63ad56152c068866ef7a3eb5c0"
+      },
+      {
+        "path": "public/assets/air3/hair/wavy.glb",
+        "bytes": 318136,
+        "sha256": "c17dfbd513a8d9525a4b86d9cc37d9719bd873a1275f6019c599cd9c15ca06a2"
+      },
+      {
+        "path": "public/assets/air3/metadata/air3-missing-metadata.json",
+        "bytes": 678117,
+        "sha256": "8262c3d929646a2049a6a90e887faa94c7a580dd709ea1cb13a875a02eae5645"
+      },
+      {
+        "path": "public/assets/air3/metadata/material-bake-report.json",
+        "bytes": 8693,
+        "sha256": "5ff0bc6109278e07750712dc6ac458d05e63c0a70a4722f25fe7d981c5869e26"
+      },
+      {
+        "path": "public/assets/air3/models/AIR3-runtime.glb",
+        "bytes": 21666344,
+        "sha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d"
+      },
+      {
+        "path": "public/assets/air3/models/Mod_16x9_moniotr.glb",
+        "bytes": 9380,
+        "sha256": "8a6454e4266d0e82ed2763de09cfb874204f3ddc3204291a5946bc237069246f"
+      },
+      {
+        "path": "public/assets/air3/models/SM_Entrance_Chair.glb",
+        "bytes": 96816,
+        "sha256": "f1ce11c01d9661638b33535115adc547a62e58c29547647d2766be82dd1daa61"
+      },
+      {
+        "path": "public/assets/air3/models/SM_Entrance_MiddleTable.glb",
+        "bytes": 107396,
+        "sha256": "8a77768929e39740026215c936f540ca3cb8d4ee1d8976d1a8359be0c3c74b67"
+      },
+      {
+        "path": "public/assets/air3/models/SM_Keyboard.glb",
+        "bytes": 15756,
+        "sha256": "2ba103016fbc530e5c02e746819dd78ba02fb2f5d0bf537204022cea9a259e1d"
+      },
+      {
+        "path": "public/assets/air3/models/SM_Laptop.glb",
+        "bytes": 15744,
+        "sha256": "c362554d65bf28f84293bd22eb6ca5549baf586d66578c824180a5b401123724"
+      },
+      {
+        "path": "public/assets/air3/motion/accad-female1.mjs",
+        "bytes": 513825,
+        "sha256": "259fe77eb411a1fa4208c63abfce3e3a5b3a9eaea0d83b8ed063786deb5853c9"
+      },
+      {
+        "path": "public/assets/air3/presets/default-look.json",
+        "bytes": 1826,
+        "sha256": "1efc7d61728b2ee438037881df011d5b8f25a64ce75ef0dce49d131ec255f065"
+      },
+      {
+        "path": "public/assets/air3/textures/color/1.webp",
+        "bytes": 1212628,
+        "sha256": "0c5d42856d9dbef86e11064ab11b1d057eaf34aad53fc74a4e04a0caec8a22b3"
+      },
+      {
+        "path": "public/assets/air3/textures/color/BodyBaseColor.webp",
+        "bytes": 316748,
+        "sha256": "a2b80c3d84eb8822bd3f281cee778d8d8bcc3b0cd81c231af69fb29585a84bb5"
+      },
+      {
+        "path": "public/assets/air3/textures/color/FaceColor_CM1.webp",
+        "bytes": 306712,
+        "sha256": "3d2d40ceb6fd4c1d731590b63382dfdc316e35755e55101fbc4e9e0b959ab1a0"
+      },
+      {
+        "path": "public/assets/air3/textures/color/FaceColor_CM2.webp",
+        "bytes": 305802,
+        "sha256": "b139880a4a32d6478028576adfe3ff2b080bef8f0d716c288d42fdf9eaf4851c"
+      },
+      {
+        "path": "public/assets/air3/textures/color/FaceColor_CM3.webp",
+        "bytes": 305186,
+        "sha256": "0045aac730485e581c995eec009d177c835ffd570dfd1493cbc8ddab4da11aeb"
+      },
+      {
+        "path": "public/assets/air3/textures/color/FaceColor_MAIN_LOD.webp",
+        "bytes": 305798,
+        "sha256": "f80a4aefb864b554607c6a18651697c770125a1ca3edb8d8428ce3846f9455d6"
+      },
+      {
+        "path": "public/assets/air3/textures/color/FaceColor_MAIN.webp",
+        "bytes": 306840,
+        "sha256": "73d6d4e9b8ffdaa683681ea9dcf675323430bb44e69601c9cbbc998bf9675e73"
+      },
+      {
+        "path": "public/assets/air3/textures/color/T_EntranceBigMonitor.webp",
+        "bytes": 134570,
+        "sha256": "beb47f8d1ff4f194d45cbcb82df86d3ba159facb0a4fed349d7ea6a28e5aedd0"
+      },
+      {
+        "path": "public/assets/air3/textures/color/T_EntranceKeyboard.webp",
+        "bytes": 32282,
+        "sha256": "0dfbb586d43c150a63f3abceeecce91554c68e47442aee57cb9d72344bf2787e"
+      },
+      {
+        "path": "public/assets/air3/textures/color/T_EntranceLaptop.webp",
+        "bytes": 72156,
+        "sha256": "b293438635cd5d211219dc317889ebd5ffa54df8893baa5cbeaa94cac8e5699e"
+      },
+      {
+        "path": "public/assets/air3/textures/color/T_EntranceMiddleTable.webp",
+        "bytes": 15362,
+        "sha256": "46f8fa55709d0390ad259f2a921e815239a99263e38aa76cafcdd836e5a8b816"
+      },
+      {
+        "path": "public/assets/air3/textures/color/T_MONITOR_SCREEN1.webp",
+        "bytes": 107172,
+        "sha256": "d1f99265e3ab1a7d3ae8f45ecbe7938ec33d0bba8812e71fead3c65a6d126140"
+      },
+      {
+        "path": "public/assets/air3/textures/color/Unnamed_albedo.webp",
+        "bytes": 1464630,
+        "sha256": "1281eeca8855df8fc96b6fc785629765e10151e2d9388c30217859f0ce727065"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceCavity_MAIN.png",
+        "bytes": 1044965,
+        "sha256": "b7a569f1cf5d1fa6aef6e378b64e70a6becc8f5d63e7bd766f9064a7e18c48b8"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceEyeLipstickMask.png",
+        "bytes": 36236,
+        "sha256": "eb943208aa7e2edd1da3d050dd967d0608ed19b65dae22b385d6a3c33c153cc6"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceFoundationBlusherMask.png",
+        "bytes": 257106,
+        "sha256": "c78fee2bd013609f197e7393c57b6bbc92b7fe44a3923dc1b48afce58697b4e7"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceNormal_MAIN_LOD.png",
+        "bytes": 5540440,
+        "sha256": "110b731c50bce738a4df07bec15717ed30cd3efd2f1f866785852a51430c4f39"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceNormal_MAIN.png",
+        "bytes": 5535150,
+        "sha256": "401d7a3c91e4b6b033b3e5fcc04504f5b8a21936567d26c9a737eb9c103a5642"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceNormal_WM1.png",
+        "bytes": 5561644,
+        "sha256": "1787b7f2efedbb31af2db2318a9a44d0b4412aca15b836f0c312eca5f6587fe3"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceNormal_WM2.png",
+        "bytes": 5580656,
+        "sha256": "614cc663e7913bb8619912e53b8144b3cbb336007bfec5c274accda7e5668950"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceNormal_WM3.png",
+        "bytes": 5506670,
+        "sha256": "81cf03af79062bb9b1d5665766ecd6f92a5b258f867f39716c4d1bf72e26cf72"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceRoughness_MAIN.png",
+        "bytes": 741928,
+        "sha256": "a67153dbc3c07e10b822189a249b79cd076464acfbada1b475f079d9a4d9bdb7"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceRoughness_ORM.png",
+        "bytes": 742534,
+        "sha256": "54809fd6d00df2f992d18cc599b46d5911a42ec6629d9e70c0613406ea643197"
+      },
+      {
+        "path": "public/assets/air3/textures/data/T_BakedNormal_LOD3.png",
+        "bytes": 65489,
+        "sha256": "22620177a606f1c1976cce819bac8df8cbdc444a274ac74ed848fc99f996e8d2"
+      },
+      {
+        "path": "public/assets/air3/textures/data/T_BakedNormal_LOD4.png",
+        "bytes": 71857,
+        "sha256": "dd6d1c8f8b07d8f609ade6026886eeb76f60e2a4c3350446de71e2c1fd6dd504"
+      },
+      {
+        "path": "public/assets/air3/textures/data/T_BakedNormal_LOD5.png",
+        "bytes": 75572,
+        "sha256": "da39a39c727cd2d21f26c0b143dde4dbe0280c720718dbd1aab638f8538693ae"
+      },
+      {
+        "path": "public/assets/air3/textures/data/T_Entrance_Keyboard_AO.png",
+        "bytes": 321820,
+        "sha256": "5dbfa990c2c6a4adfa6b04ecbe2e298075e295b4a79f97ef70428a8ff4f670e3"
+      },
+      {
+        "path": "public/assets/air3/textures/DefaultTexture__88bf471744.png",
+        "bytes": 29334,
+        "sha256": "419d93e5d7b7de8efd84800724ebef5f26569b197a27c111eeccfb9c9b1665b8"
+      },
+      {
+        "path": "public/assets/air3/textures/DefaultTexture.png",
+        "bytes": 29334,
+        "sha256": "419d93e5d7b7de8efd84800724ebef5f26569b197a27c111eeccfb9c9b1665b8"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyebrows_M_Shaded_CardsAtlas_Attribute__84fa339495.png",
+        "bytes": 6820748,
+        "sha256": "d61407a0869098338e5657ce7f63f07f6387ece62304a27259c9c16c7372ec1b"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyebrows_M_Shaded_CardsAtlas_Attribute.png",
+        "bytes": 6820748,
+        "sha256": "d61407a0869098338e5657ce7f63f07f6387ece62304a27259c9c16c7372ec1b"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyebrows_M_Shaded_CardsAtlas_Tangent__d5ee90738c.png",
+        "bytes": 463022,
+        "sha256": "2b782e83662223c16bc6a76a2ef5d6613f3842b97cc3b5f5482e50b3583fb214"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyebrows_M_Shaded_CardsAtlas_Tangent.png",
+        "bytes": 463022,
+        "sha256": "2b782e83662223c16bc6a76a2ef5d6613f3842b97cc3b5f5482e50b3583fb214"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyelashes_L_Curl_Coverage__09972f4e60.png",
+        "bytes": 442658,
+        "sha256": "960d9fc297f629ed8949a55d66326f8bb82100a684b0e0de82953256fd49c70b"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyelashes_L_Curl_Coverage.png",
+        "bytes": 442658,
+        "sha256": "960d9fc297f629ed8949a55d66326f8bb82100a684b0e0de82953256fd49c70b"
+      },
+      {
+        "path": "public/assets/air3/textures/Hair_S_UpdoBuns_CardsAtlas_Attribute__6ed0c137d2.png",
+        "bytes": 16843696,
+        "sha256": "5b94db124992abb927bac92e134772a3b0b93efd352b3e12859d21c310fc8508"
+      },
+      {
+        "path": "public/assets/air3/textures/Hair_S_UpdoBuns_CardsAtlas_Attribute.png",
+        "bytes": 16843696,
+        "sha256": "5b94db124992abb927bac92e134772a3b0b93efd352b3e12859d21c310fc8508"
+      },
+      {
+        "path": "public/assets/air3/textures/Hair_S_UpdoBuns_CardsAtlas_Tangent__3e69afb824.png",
+        "bytes": 321250,
+        "sha256": "328af0e868ba3f00d2871625a9dfe15031610834cdfc2fa916cbf507839c4ac9"
+      },
+      {
+        "path": "public/assets/air3/textures/Hair_S_UpdoBuns_CardsAtlas_Tangent.png",
+        "bytes": 321250,
+        "sha256": "328af0e868ba3f00d2871625a9dfe15031610834cdfc2fa916cbf507839c4ac9"
+      },
+      {
+        "path": "public/assets/air3/textures/render/BrowsAnisotropy.png",
+        "bytes": 222145,
+        "sha256": "c2a61330d38cca55a4b290843d0d1b08cf7a7b763d1604136c5df37200bcdeb8"
+      },
+      {
+        "path": "public/assets/air3/textures/render/BrowsColorCoverage.webp",
+        "bytes": 1174462,
+        "sha256": "453cbe19ff420b00c4cc07ec38f5f6427593cb1a5e7fb39b7a1374badcecf182"
+      },
+      {
+        "path": "public/assets/air3/textures/render/ClothWeave.png",
+        "bytes": 802,
+        "sha256": "0a18525a19999791f91f4980011fa9769f4134e73ca1e42679fce13e38f679bd"
+      },
+      {
+        "path": "public/assets/air3/textures/render/EyeColor.webp",
+        "bytes": 63846,
+        "sha256": "04cd78017b606a34c01d3702bbf26eb10ebd9c43db5326a04e42bda857d7f1dc"
+      },
+      {
+        "path": "public/assets/air3/textures/render/EyeNormal.png",
+        "bytes": 368049,
+        "sha256": "e24e20421d9f4db33d0919d9a34d70d4f89b2edde95e29a91a6eb482077cf22d"
+      },
+      {
+        "path": "public/assets/air3/textures/render/FaceBeautyColor.webp",
+        "bytes": 284680,
+        "sha256": "f5c0e7b4e2c699664df0cf4f4228095d3e988706a3622b3adc2fbf723302fa00"
+      },
+      {
+        "path": "public/assets/air3/textures/render/FaceBeautyORM.png",
+        "bytes": 733519,
+        "sha256": "cdf25a6a09ee11a3a72d67e148f00534fd78a292c035e14f684ac4ccec87d2ef"
+      },
+      {
+        "path": "public/assets/air3/textures/render/HairAnisotropy.png",
+        "bytes": 101228,
+        "sha256": "2b02c87b4d9a05b2666f919901311aff0d5931e8bb697377561b3012f5233abe"
+      },
+      {
+        "path": "public/assets/air3/textures/render/HairColorCoverage.webp",
+        "bytes": 804784,
+        "sha256": "9f3838b59cec8c9113c0a28a881bfb3512e325a16051c29a29f6d567de29547e"
+      },
+      {
+        "path": "public/assets/air3/textures/render/LashesCoverage.png",
+        "bytes": 256369,
+        "sha256": "a89a1b07a999dfe2b2d522fe8ae2de80ab22bcdaa64f418840329e962353beb9"
+      },
+      {
+        "path": "public/assets/air3/textures/render/MouthColor.webp",
+        "bytes": 1290,
+        "sha256": "56efcd494c760cb7d041e9b1112fc8d7b2b858d429c027aabcd1651eb995fe1d"
+      },
+      {
+        "path": "public/assets/air3/textures/render/MouthORM.png",
+        "bytes": 1600,
+        "sha256": "d84e56becb665246a4a8276d19c190b16c1b23b49cc1c8accf497720e10bdc3c"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Iris_A_H__eaf366aa78.png",
+        "bytes": 246052,
+        "sha256": "7f10c9f9e6c08b6f5731d2afb4427c2140c2e8593e3bb9a967819f3769ce5ace"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Iris_A_H.png",
+        "bytes": 246052,
+        "sha256": "7f10c9f9e6c08b6f5731d2afb4427c2140c2e8593e3bb9a967819f3769ce5ace"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Iris_A_M__07f8b38c91.png",
+        "bytes": 1756245,
+        "sha256": "73c3d3ed6d165664d3bdd495819e79e6cbfddc3962ba186b418936c0ee603029"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Iris_A_M.png",
+        "bytes": 1756245,
+        "sha256": "73c3d3ed6d165664d3bdd495819e79e6cbfddc3962ba186b418936c0ee603029"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Sclera_D__71622ea133.png",
+        "bytes": 3513309,
+        "sha256": "fed8f33529d93acb5607c68396be92349cc410f8f7656b4597e310dadaba4609"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Sclera_D.png",
+        "bytes": 3513309,
+        "sha256": "fed8f33529d93acb5607c68396be92349cc410f8f7656b4597e310dadaba4609"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Sclera_N__6e30201483.png",
+        "bytes": 1484901,
+        "sha256": "43e0d9842f5c78eaa473a88b8a96c2ea32c0e50a44d1868cafa52f55c50601ba"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Sclera_N.png",
+        "bytes": 1484901,
+        "sha256": "43e0d9842f5c78eaa473a88b8a96c2ea32c0e50a44d1868cafa52f55c50601ba"
+      }
+    ],
+    "externalDependencies": [
+      "three@0.186.1"
+    ],
+    "validatedModelImages": [
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/BodyBaseColor.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/Unnamed_albedo.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/1.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/FaceColor_MAIN.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/data/FaceRoughness_ORM.png"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/data/FaceNormal_MAIN.png"
+      },
+      {
+        "model": "SM_Entrance_MiddleTable.glb",
+        "image": "textures/color/T_EntranceMiddleTable.webp"
+      },
+      {
+        "model": "SM_Keyboard.glb",
+        "image": "textures/color/T_EntranceKeyboard.webp"
+      },
+      {
+        "model": "SM_Laptop.glb",
+        "image": "textures/color/T_EntranceLaptop.webp"
+      }
+    ]
+  },
+  "errors": [],
+  "httpErrors": [],
+  "checks": [
+    "Compiled control room authenticates locally, preserves requested defaults and loads no second 3D renderer",
+    "Control room fits desktop and 390px mobile viewport",
+    "Titles save from the UI; public program contains scene state without credentials",
+    "Headless compiled studio applies the white top, live titles and explicit demo monitors; title HTML remains inert text",
+    "Record button starts the owned headless browser and real H.264/AAC encoder without DISPLAY",
+    "Real WebAudio/Rhubarb narration finishes and keeps happy100 while speaking",
+    "Included reference-audio command temporarily releases the player and resumes its exclusive queue afterward",
+    "Stop drains capture and encoder; recorded file decodes to H.264720p and non-silent AAC48k stereo"
+  ],
+  "provider": "local WAV fixture, not external TTS inference",
+  "platformBroadcast": false,
+  "gpuBenchmark": false,
+  "market": "explicit offline/demo QA; no synthetic data masquerades as live",
+  "base": "http://127.0.0.1:33865",
+  "browser": "Chrome/148.0.7778.97",
+  "scene": {
+    "ready": true,
+    "frameCount": 7,
+    "lastRenderedFrameAt": 1793072998890,
+    "lastFrameAt": 1793072998890,
+    "fps": 0.6,
+    "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "contextLost": false,
+    "renderer": "three.js/WebGL",
+    "width": 1280,
+    "height": 720,
+    "drawCalls": 144,
+    "triangles": 379168,
+    "avatar": "Presentatrice virtuale · live",
+    "jawMorphs": 0,
+    "camera": "auto",
+    "effectiveCamera": "wide",
+    "avatarRig": {
+      "profile": "AIR3 source geometry with translation-retargeted animations",
+      "extendedSkinMeshes": 7,
+      "preservedSkinInfluences": 12,
+      "idleClips": 3,
+      "talkClips": 4,
+      "motion": "idle",
+      "facialLipSync": {
+        "ready": true,
+        "articulation": "bounded skeletal poses plus source corrective morphs",
+        "controls": 35,
+        "sourceCorrectiveCount": 29,
+        "mouthCue": "X",
+        "emotion": "happy",
+        "emotionIntensity": 1,
+        "blink": 0,
+        "microExpressions": true,
+        "microSmile": 0.055,
+        "mouthInterpolation": "bounded exponential damping",
+        "phoneticTiming": "none",
+        "rigLogicParity": false
+      },
+      "talkShoulders": {
+        "enabled": true,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 0,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 0
+          }
+        ]
+      },
+      "attention": {
+        "ready": true,
+        "enabled": true,
+        "target": "camera",
+        "lensContact": true,
+        "headYawDegrees": 8.398880676540985,
+        "headPitchDegrees": 7.499384172647628,
+        "eyeYawDegrees": {
+          "left": 6.839420589748813,
+          "right": 7.230379655859689
+        },
+        "eyePitchDegrees": {
+          "left": 8.647340990664228,
+          "right": 8.639556709683564
+        },
+        "limitsDegrees": {
+          "headYaw": 48,
+          "headPitch": [
+            -18,
+            20
+          ],
+          "eyeYaw": 24,
+          "eyePitch": 17
+        },
+        "calibratedAxes": true,
+        "headTimeConstantSeconds": 0.3,
+        "eyeTimeConstantSeconds": 0.025,
+        "cameraAssigned": true,
+        "proceduralGlance": 0
+      },
+      "motionBlend": {
+        "mode": "normalized continuous weights",
+        "timeConstantSeconds": 0.18,
+        "contributingActions": 1,
+        "weightSum": 1
+      },
+      "rootOrientationLocked": true,
+      "footContactAnchors": 126,
+      "materials": {
+        "profile": "air3-materials-2026-10-25-v5-eye-makeup",
+        "surfaces": {
+          "skin-body": 1,
+          "shoes": 1,
+          "cloth": 7,
+          "skin-face": 1,
+          "mouth": 1,
+          "tear-film": 2,
+          "eyes": 2,
+          "lashes": 1,
+          "waterline": 1,
+          "hair": 1,
+          "brows": 1
+        },
+        "source": "Supplied Unreal 5.7.4 material parameters and textures",
+        "normalY": -1,
+        "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+        "face": "Scanned albedo with stronger upper-eye shadow and liner from the original RGB mask; lips protected",
+        "eyeMakeup": {
+          "mask": "FaceEyeLipstickMask.png",
+          "shadowChannel": "R",
+          "linerChannel": "G",
+          "protectedLipChannel": "B",
+          "strength": 1
+        },
+        "brows": {
+          "linkedHairColor": "#3b2b21",
+          "tintSrgb": "#251a13",
+          "alphaCutoff": 0.13,
+          "preservedStrandCoverage": true
+        },
+        "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+        "limitations": [
+          "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+          "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+        ]
+      },
+      "normalY": -1
+    },
+    "quality": {
+      "name": "software",
+      "maxPixelRatio": 1,
+      "shadowSize": 512,
+      "reflectionSize": 0,
+      "reflectionInterval": 1,
+      "ao": false,
+      "bloom": false,
+      "msaa": 0,
+      "environmentSize": 128,
+      "requested": "software",
+      "softwareRenderer": true,
+      "selectionReason": "explicit selection"
+    },
+    "environment": {
+      "source": "authored linear HDR softbox scene",
+      "pmrem": true,
+      "resolution": 128
+    },
+    "reflections": {
+      "mode": "environment reflection only"
+    },
+    "postprocessing": {
+      "output": "direct ACES/sRGB",
+      "ao": false,
+      "bloom": false
+    },
+    "stageLayout": {
+      "home": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "monitorTargets": {
+        "left": [
+          -3.55,
+          1.95,
+          -2.3
+        ],
+        "center": [
+          0,
+          2.15,
+          -3.55
+        ],
+        "right": [
+          3.55,
+          1.95,
+          -2.3
+        ]
+      },
+      "monitorSpots": {
+        "left": [
+          -2.5,
+          0.005,
+          -0.85
+        ],
+        "center": [
+          -0.8,
+          0.005,
+          -1.85
+        ],
+        "right": [
+          2.45,
+          0.005,
+          -0.85
+        ]
+      },
+      "routes": {
+        "left": [
+          [
+            -0.75,
+            0.005,
+            0.65
+          ],
+          [
+            -1.55,
+            0.005,
+            -0.15
+          ],
+          [
+            -2.5,
+            0.005,
+            -0.85
+          ]
+        ],
+        "center": [
+          [
+            -0.75,
+            0.005,
+            0.65
+          ],
+          [
+            -0.9,
+            0.005,
+            -0.75
+          ],
+          [
+            -0.8,
+            0.005,
+            -1.85
+          ]
+        ],
+        "right": [
+          [
+            -0.75,
+            0.005,
+            0.65
+          ],
+          [
+            -0.65,
+            0.005,
+            -0.45
+          ],
+          [
+            0.75,
+            0.005,
+            -0.75
+          ],
+          [
+            2.45,
+            0.005,
+            -0.85
+          ]
+        ]
+      },
+      "desk": {
+        "center": [
+          1.65,
+          0,
+          1.2
+        ],
+        "halfSize": [
+          1.35,
+          0.56,
+          0.57
+        ]
+      },
+      "monitorWidths": {
+        "left": 2.7,
+        "center": 3.45,
+        "right": 2.7
+      }
+    },
+    "stageMotion": {
+      "ready": true,
+      "enabled": false,
+      "phase": "home",
+      "moving": false,
+      "target": null,
+      "pendingTarget": null,
+      "returning": false,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": 0.05,
+      "speed": 0,
+      "steps": 0,
+      "contacts": {
+        "l": {
+          "stance": false,
+          "target": [
+            -0.5719398718474062,
+            0.11888855892454553,
+            0.6025781131527236
+          ],
+          "errorMetres": 0
+        },
+        "r": {
+          "stance": false,
+          "target": [
+            -0.8407472036624992,
+            0.11765594590220257,
+            0.6588787783146377
+          ],
+          "errorMetres": 0
+        }
+      },
+      "maximumPlantedAnkleErrorMetres": 0,
+      "maximumStanceAnchorDriftMetres": 0,
+      "contactReachReleases": 0,
+      "pelvisDrop": 0,
+      "stanceMinimumFlexMetres": 0,
+      "pointWeight": 0,
+      "pointingSide": null,
+      "travelState": "stand",
+      "turnStrideScale": 1,
+      "turnPlan": null,
+      "journeyPlan": null,
+      "transitions": 0,
+      "locomotion": {
+        "ready": true,
+        "error": null,
+        "source": "ACCAD / The Ohio State University, Open Motion Project, Female 1",
+        "license": "CC-BY-3.0",
+        "clip": "stand",
+        "time": 0.4,
+        "duration": 2.999997,
+        "rate": 1,
+        "sourceFile": "Female1_A01_Stand.bvh",
+        "sourceFrames": [
+          0,
+          90
+        ],
+        "contacts": [
+          1,
+          1
+        ],
+        "cycles": 0,
+        "motionCapture": true,
+        "syntheticGait": false
+      },
+      "method": "Recorded ACCAD Female 1 BVH, calibrated shoulder baseline, central one/two-step turns, phase-matched finite action sequence, continuous captured-pose blending and measured support stabilization",
+      "motionCapture": true,
+      "syntheticGait": false,
+      "clothSimulation": false
+    },
+    "lighting": {
+      "ambient": 0,
+      "environment": 0.17,
+      "exposure": 0.95,
+      "followPresenter": true,
+      "lights": [
+        {
+          "id": "key",
+          "enabled": true,
+          "intensity": 17.5,
+          "azimuth": 38,
+          "radius": 3,
+          "height": 3.2,
+          "targetHeight": 1.35,
+          "cone": 31,
+          "penumbra": 0.65,
+          "color": "#fff1df",
+          "shadows": true,
+          "worldPosition": [
+            1.0969844259769745,
+            3.205,
+            3.014032260820166
+          ],
+          "actualShadow": true
+        },
+        {
+          "id": "side",
+          "enabled": true,
+          "intensity": 51,
+          "azimuth": 96,
+          "radius": 3.1,
+          "height": 2.6,
+          "targetHeight": 1.35,
+          "cone": 34,
+          "penumbra": 0.65,
+          "color": "#353e9c",
+          "shadows": true,
+          "worldPosition": [
+            2.3330178756416475,
+            2.605,
+            0.3259617638702747
+          ],
+          "actualShadow": false
+        },
+        {
+          "id": "fill",
+          "enabled": true,
+          "intensity": 6.5,
+          "azimuth": -42,
+          "radius": 3.2,
+          "height": 2.8,
+          "targetHeight": 1.35,
+          "cone": 38,
+          "penumbra": 0.65,
+          "color": "#fffde5",
+          "shadows": true,
+          "worldPosition": [
+            -2.8912179403483464,
+            2.8049999999999997,
+            3.0280634415276615
+          ],
+          "actualShadow": false
+        },
+        {
+          "id": "rim-left",
+          "enabled": true,
+          "intensity": 21.5,
+          "azimuth": -135,
+          "radius": 2.8,
+          "height": 3.35,
+          "targetHeight": 1.35,
+          "cone": 30,
+          "penumbra": 0.65,
+          "color": "#04b1fb",
+          "shadows": true,
+          "worldPosition": [
+            -2.729898987322333,
+            3.355,
+            -1.3298989873223328
+          ],
+          "actualShadow": false
+        },
+        {
+          "id": "rim-right",
+          "enabled": true,
+          "intensity": 20,
+          "azimuth": 155,
+          "radius": 3.1,
+          "height": 3,
+          "targetHeight": 1.35,
+          "cone": 28,
+          "penumbra": 0.65,
+          "color": "#ffe4c5",
+          "shadows": false,
+          "worldPosition": [
+            0.5601166113961684,
+            3.005,
+            -2.159554139813615
+          ],
+          "actualShadow": false
+        }
+      ],
+      "type": "five conical inverse-square spotlights",
+      "guides": false,
+      "actualShadowLights": 1,
+      "target": [
+        -0.75,
+        0.005,
+        0.65
+      ]
+    },
+    "look": {
+      "schema": "airewardrop.look.v2",
+      "name": "Cinque spot · luce morbida",
+      "hair": {
+        "style": "wavy",
+        "color": "espresso"
+      },
+      "footwear": {
+        "style": "boot",
+        "fit": "relaxed"
+      },
+      "clothing": {
+        "style": "crop"
+      },
+      "lighting": {
+        "ambient": 0,
+        "environment": 0.17,
+        "exposure": 0.95,
+        "followPresenter": true,
+        "lights": [
+          {
+            "id": "key",
+            "enabled": true,
+            "intensity": 17.5,
+            "azimuth": 38,
+            "radius": 3,
+            "height": 3.2,
+            "targetHeight": 1.35,
+            "cone": 31,
+            "penumbra": 0.65,
+            "color": "#fff1df",
+            "shadows": true
+          },
+          {
+            "id": "side",
+            "enabled": true,
+            "intensity": 51,
+            "azimuth": 96,
+            "radius": 3.1,
+            "height": 2.6,
+            "targetHeight": 1.35,
+            "cone": 34,
+            "penumbra": 0.65,
+            "color": "#353e9c",
+            "shadows": true
+          },
+          {
+            "id": "fill",
+            "enabled": true,
+            "intensity": 6.5,
+            "azimuth": -42,
+            "radius": 3.2,
+            "height": 2.8,
+            "targetHeight": 1.35,
+            "cone": 38,
+            "penumbra": 0.65,
+            "color": "#fffde5",
+            "shadows": true
+          },
+          {
+            "id": "rim-left",
+            "enabled": true,
+            "intensity": 21.5,
+            "azimuth": -135,
+            "radius": 2.8,
+            "height": 3.35,
+            "targetHeight": 1.35,
+            "cone": 30,
+            "penumbra": 0.65,
+            "color": "#04b1fb",
+            "shadows": true
+          },
+          {
+            "id": "rim-right",
+            "enabled": true,
+            "intensity": 20,
+            "azimuth": 155,
+            "radius": 3.1,
+            "height": 3,
+            "targetHeight": 1.35,
+            "cone": 28,
+            "penumbra": 0.65,
+            "color": "#ffe4c5",
+            "shadows": false
+          }
+        ]
+      }
+    },
+    "lookBusy": false,
+    "lookError": null,
+    "footwear": {
+      "profile": "air3-fitted-footwear-2026-10-25-v2",
+      "style": "boot",
+      "desired": "boot",
+      "fit": "relaxed",
+      "desiredFit": "relaxed",
+      "loading": false,
+      "error": null,
+      "triangles": 40746,
+      "originalShoeMeshes": 1,
+      "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+      "boneScalesChanged": false,
+      "commercialUse": true,
+      "originalSoleY": -0.03498281538486481,
+      "fittingFoot": false,
+      "cachedStyles": [
+        "boot:relaxed"
+      ]
+    },
+    "clothing": {
+      "profile": "air3-supplied-crop-top-2026-10-27-v2",
+      "style": "crop",
+      "desired": "crop",
+      "loading": false,
+      "error": null,
+      "triangles": 12052,
+      "sourceShirtMeshes": 6,
+      "source": "DaaGHrii / Off Shoulder Top",
+      "license": "CC BY 4.0",
+      "bodyBoneScalesChanged": false,
+      "skinning": "surface-transferred normalized four body influences",
+      "clothPhysics": false,
+      "fit": {
+        "heightReductionPercent": 15,
+        "pinnedUpperEdge": true,
+        "neckline": "soft straight boat neck",
+        "bodyGeometryChanged": false
+      },
+      "fabric": {
+        "color": "white",
+        "undertone": "subtle cream highlights and lilac shadows",
+        "authoredTexture": "preserved UV detail with shader tonal remap",
+        "weave": "filtered procedural cotton"
+      }
+    },
+    "hair": {
+      "pendingStyle": null,
+      "styles": [
+        {
+          "id": "wavy",
+          "label": "Coda ondulata",
+          "license": "CC BY 4.0 · zHairezt",
+          "commercial": true,
+          "source": "https://sketchfab.com/3d-models/wavy-white-ponytail-with-bones-d3e0ba8904504d6fb5e247346a4e93de"
+        },
+        {
+          "id": "artemis",
+          "label": "Artemis · prova non commerciale",
+          "license": "CC BY-NC 4.0 · CT Reed / antoinepavia",
+          "commercial": false,
+          "source": "https://sketchfab.com/3d-models/ponytail-1-artemis-character-hair-free-b15554b4b9934cd6adbcf8669f83f634"
+        },
+        {
+          "id": "legacy",
+          "label": "Coda corta AIR3",
+          "license": "Derivata dai sorgenti del progetto",
+          "commercial": null
+        }
+      ],
+      "colors": [
+        {
+          "id": "blonde",
+          "label": "Biondo",
+          "tint": "#c6a774",
+          "authorTexture": 3
+        },
+        {
+          "id": "copper",
+          "label": "Rame",
+          "tint": "#a86437",
+          "authorTexture": 1
+        },
+        {
+          "id": "auburn",
+          "label": "Castano ramato",
+          "tint": "#7b3c21",
+          "authorTexture": 2
+        },
+        {
+          "id": "chestnut",
+          "label": "Castano",
+          "tint": "#6e4a31",
+          "authorTexture": 4
+        },
+        {
+          "id": "dark-brown",
+          "label": "Castano scuro",
+          "tint": "#4b321e",
+          "authorTexture": 5
+        },
+        {
+          "id": "espresso",
+          "label": "Castano quasi nero",
+          "tint": "#3b2b21",
+          "authorTexture": 5,
+          "atlas": "dark-brown"
+        },
+        {
+          "id": "black",
+          "label": "Nero naturale",
+          "tint": "#252323",
+          "authorTexture": 6
+        }
+      ],
+      "commercial": true,
+      "license": "CC BY 4.0 · zHairezt",
+      "sourceGeometryModified": false,
+      "avatarGeometryModified": false,
+      "boundTo": "body__head",
+      "originalHighBunHidden": true,
+      "profile": "air3-imported-hair-2026-10-25-v2-espresso",
+      "triangles": 4922,
+      "meshes": 7,
+      "joints": 17,
+      "fit": {
+        "scale": [
+          0.057,
+          0.057,
+          0.075
+        ],
+        "translation": [
+          0,
+          0.5575,
+          -0.01
+        ],
+        "ponytailLength": 0.7
+      },
+      "secondaryMotion": "critically damped ponytail and small front-tip lag; no collision solver",
+      "style": "wavy",
+      "color": "espresso",
+      "colorSrgb": "#3b2b21",
+      "browColorLinked": true,
+      "softness": {
+        "angularLagRadians": [
+          -0.0019455144603840952,
+          0.0026023468230770563
+        ],
+        "maximumLagRadians": 0.055,
+        "springFrequency": 5.5,
+        "frontRootsFixed": true
+      },
+      "cachedStyles": [
+        "wavy"
+      ],
+      "residentColorAtlases": 0
+    },
+    "avatarMaterials": {
+      "profile": "air3-materials-2026-10-25-v5-eye-makeup",
+      "surfaces": {
+        "skin-body": 1,
+        "shoes": 1,
+        "cloth": 7,
+        "skin-face": 1,
+        "mouth": 1,
+        "tear-film": 2,
+        "eyes": 2,
+        "lashes": 1,
+        "waterline": 1,
+        "hair": 1,
+        "brows": 1
+      },
+      "source": "Supplied Unreal 5.7.4 material parameters and textures",
+      "normalY": -1,
+      "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+      "face": "Scanned albedo with stronger upper-eye shadow and liner from the original RGB mask; lips protected",
+      "eyeMakeup": {
+        "mask": "FaceEyeLipstickMask.png",
+        "shadowChannel": "R",
+        "linerChannel": "G",
+        "protectedLipChannel": "B",
+        "strength": 1
+      },
+      "brows": {
+        "linkedHairColor": "#3b2b21",
+        "tintSrgb": "#251a13",
+        "alphaCutoff": 0.13,
+        "preservedStrandCoverage": true
+      },
+      "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+      "limitations": [
+        "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+        "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+      ]
+    },
+    "branding": {
+      "corporateInScene": 1,
+      "projectInScene": 1,
+      "monitorLogos": 0
+    },
+    "audioState": "not-created",
+    "currentJob": null,
+    "speech": {
+      "phase": "observer",
+      "connected": false,
+      "currentJob": null,
+      "text": "",
+      "error": "",
+      "audioState": "not-created",
+      "elapsed": 0,
+      "duration": 0,
+      "amplitude": 0,
+      "lipSync": "none",
+      "mouthCue": "X",
+      "mouthWeights": null,
+      "presentation": null,
+      "audioArmed": false
+    },
+    "gatewayConnected": false,
+    "health": {
+      "pending": true,
+      "workerFailed": false,
+      "successes": 0,
+      "failures": 0,
+      "lastSuccessAt": null,
+      "probes": []
+    },
+    "data": {
+      "connected": true,
+      "lastReceivedAt": 1793072998900,
+      "error": ""
+    },
+    "liveProgram": {
+      "revision": 3,
+      "titles": {
+        "enabled": true,
+        "label": "#AIR3 LIVE",
+        "title": "Mercati, il punto della giornata",
+        "subtitle": "Prova della regia #AIR3 · dati dimostrativi dichiarati",
+        "ticker": [
+          "Una guida scorrevole controllata via API",
+          "Prezzi, commenti e aggiornamenti editoriali"
+        ],
+        "speed": 65,
+        "ttlSeconds": 0,
+        "expiresAt": null,
+        "updatedAt": 1793072987018
+      }
+    }
+  },
+  "broadcastBeforeStop": {
+    "phase": "running",
+    "mode": "record",
+    "startedAt": 1793073010933,
+    "encoder": "libx264",
+    "frame": 1004,
+    "fps": 26.87,
+    "renderFps": 1,
+    "bitrate": "1818.6kbits/s",
+    "elapsedSeconds": 42.666667,
+    "lastProgressAt": 1793073072371,
+    "error": null,
+    "attempt": 0,
+    "previewAt": 1793073072359,
+    "recording": "studio-2026-10-27T03-50-11-163Z-3f72acd7.mkv",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "events": [
+      {
+        "mode": "record",
+        "profile": "720p30",
+        "provider": "restream",
+        "at": "2026-10-27T03:50:10.936Z",
+        "event": "start-requested"
+      },
+      {
+        "encoder": "libx264",
+        "requested": "libx264",
+        "hardware": false,
+        "at": "2026-10-27T03:50:11.061Z",
+        "event": "encoder-selected"
+      },
+      {
+        "software": true,
+        "at": "2026-10-27T03:50:24.344Z",
+        "event": "renderer-ready"
+      },
+      {
+        "mode": "file",
+        "recording": "/tmp/air3-live-e2e-ZeEMo8/data/recordings/studio-2026-10-27T03-50-11-163Z-3f72acd7.mkv",
+        "width": 1280,
+        "height": 720,
+        "fps": 30,
+        "encoder": "libx264",
+        "at": "2026-10-27T03:50:26.596Z",
+        "event": "broadcast-running"
+      },
+      {
+        "job": null,
+        "phase": "idle",
+        "lipSync": "none",
+        "elapsed": 0,
+        "duration": 0,
+        "mouthCue": "X",
+        "expression": "happy",
+        "expressionIntensity": 1,
+        "at": "2026-10-27T03:50:34.300Z",
+        "event": "speech-playback"
+      },
+      {
+        "job": "live-e2e-voice",
+        "phase": "playing",
+        "lipSync": "rhubarb:pocketSphinx",
+        "elapsed": 0.679818594104308,
+        "duration": 12,
+        "mouthCue": "X",
+        "expression": "happy",
+        "expressionIntensity": 1,
+        "at": "2026-10-27T03:51:00.022Z",
+        "event": "speech-playback"
+      },
+      {
+        "job": null,
+        "phase": "playing",
+        "lipSync": "rhubarb:pocketSphinx",
+        "elapsed": 0.4011791383219955,
+        "duration": 12,
+        "expression": "happy",
+        "expressionIntensity": 1,
+        "at": "2026-10-27T03:51:12.362Z",
+        "event": "speech-playback"
+      },
+      {
+        "message": "[vost#0:0/libx264 @ 0x55eca62d7940] More than 1000 frames duplicated",
+        "at": "2026-10-27T03:51:12.427Z",
+        "event": "encoder-message"
+      }
+    ],
+    "busy": false
+  },
+  "capture": {
+    "video": {
+      "codec": "h264",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1"
+    },
+    "audio": {
+      "codec": "aac",
+      "rate": "48000",
+      "channels": 2,
+      "peakPCM": 18743,
+      "nonSilentSamples": 1152737
+    },
+    "durationSeconds": 45.994,
+    "bytes": 14175343,
+    "recording": "/tmp/air3-live-e2e-ZeEMo8/data/recordings/studio-2026-10-27T03-50-11-163Z-3f72acd7.mkv",
+    "providerCalls": 1,
+    "cleanStop": true,
+    "events": [
+      {
+        "mode": "record",
+        "profile": "720p30",
+        "provider": "restream",
+        "at": "2026-10-27T03:50:10.936Z",
+        "event": "start-requested"
+      },
+      {
+        "encoder": "libx264",
+        "requested": "libx264",
+        "hardware": false,
+        "at": "2026-10-27T03:50:11.061Z",
+        "event": "encoder-selected"
+      },
+      {
+        "software": true,
+        "at": "2026-10-27T03:50:24.344Z",
+        "event": "renderer-ready"
+      },
+      {
+        "mode": "file",
+        "recording": "/tmp/air3-live-e2e-ZeEMo8/data/recordings/studio-2026-10-27T03-50-11-163Z-3f72acd7.mkv",
+        "width": 1280,
+        "height": 720,
+        "fps": 30,
+        "encoder": "libx264",
+        "at": "2026-10-27T03:50:26.596Z",
+        "event": "broadcast-running"
+      },
+      {
+        "job": null,
+        "phase": "idle",
+        "lipSync": "none",
+        "elapsed": 0,
+        "duration": 0,
+        "mouthCue": "X",
+        "expression": "happy",
+        "expressionIntensity": 1,
+        "at": "2026-10-27T03:50:34.300Z",
+        "event": "speech-playback"
+      },
+      {
+        "job": "live-e2e-voice",
+        "phase": "playing",
+        "lipSync": "rhubarb:pocketSphinx",
+        "elapsed": 0.679818594104308,
+        "duration": 12,
+        "mouthCue": "X",
+        "expression": "happy",
+        "expressionIntensity": 1,
+        "at": "2026-10-27T03:51:00.022Z",
+        "event": "speech-playback"
+      },
+      {
+        "job": null,
+        "phase": "playing",
+        "lipSync": "rhubarb:pocketSphinx",
+        "elapsed": 0.4011791383219955,
+        "duration": 12,
+        "expression": "happy",
+        "expressionIntensity": 1,
+        "at": "2026-10-27T03:51:12.362Z",
+        "event": "speech-playback"
+      },
+      {
+        "message": "[vost#0:0/libx264 @ 0x55eca62d7940] More than 1000 frames duplicated",
+        "at": "2026-10-27T03:51:12.427Z",
+        "event": "encoder-message"
+      },
+      {
+        "at": "2026-10-27T03:51:12.555Z",
+        "event": "renderer-final"
+      },
+      {
+        "at": "2026-10-27T03:51:17.033Z",
+        "event": "broadcaster-stopped"
+      },
+      {
+        "code": 0,
+        "signal": null,
+        "expected": true,
+        "at": "2026-10-27T03:51:18.899Z",
+        "event": "process-exited"
+      }
+    ]
+  },
+  "internalReviewDirectory": "/tmp/air3-live-e2e-ZeEMo8",
+  "finishedAt": "2026-10-27T03:51:19.442Z"
+}

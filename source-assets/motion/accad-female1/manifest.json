@@ -1,0 +1,166 @@
+{
+  "schema": "air3.accad-retarget.v2",
+  "targetSha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d",
+  "sourceUrl": "https://accad.osu.edu/research/motion-lab/mocap-system-and-data",
+  "license": "https://creativecommons.org/licenses/by/3.0/",
+  "archiveUrl": "https://accad.osu.edu/sites/accad.osu.edu/files/Female1_bvh.zip",
+  "archiveSha256": "84543297a24fe9900449675837b5b7758c5208d0f56b699d10a3eb362a46530a",
+  "targetBones": [
+    "pelvis",
+    "spine_01",
+    "spine_02",
+    "spine_03",
+    "spine_04",
+    "spine_05",
+    "neck_01",
+    "neck_02",
+    "head",
+    "clavicle_l",
+    "upperarm_l",
+    "lowerarm_l",
+    "hand_l",
+    "thigh_l",
+    "calf_l",
+    "foot_l",
+    "ball_l",
+    "clavicle_r",
+    "upperarm_r",
+    "lowerarm_r",
+    "hand_r",
+    "thigh_r",
+    "calf_r",
+    "foot_r",
+    "ball_r"
+  ],
+  "legScale": 1.0310133284844984,
+  "calibration": {
+    "reference": "MH_Idle01_UE frame 0",
+    "shoulderDeltaScale": 0.35,
+    "maximumShoulderDeltaDegrees": 4.2,
+    "turnSteps": {
+      "turnLeft": 1,
+      "turnRight": 1,
+      "turnAround": 2,
+      "turnAroundRight": 2
+    }
+  },
+  "method": "World-space bind-axis retarget; target-idle shoulder baseline plus bounded recorded variation; finite one/two-step turn intervals and reflected clockwise variant; locomotion yaw separated; optical floor drift correction; distributed smooth loop closure; no synthetic gait",
+  "clips": [
+    {
+      "id": "stand",
+      "source": "Female1_A01_Stand.bvh",
+      "sha256": "9cbbb4749b42922503fb24997d53f60d6c36b62f6c00a12d3c8a1a9cfd5987d4",
+      "frames": [
+        0,
+        90
+      ],
+      "samples": 91,
+      "duration": 2.999997,
+      "rootDistance": 0.0,
+      "meanSpeed": 0.0,
+      "mirrored": false
+    },
+    {
+      "id": "start",
+      "source": "Female1_B01_StandToWalk.bvh",
+      "sha256": "457380654d973564439a1fb356d0d9b3b40b7fef050e9acee7335c5a6fe9ca99",
+      "frames": [
+        20,
+        78
+      ],
+      "samples": 59,
+      "duration": 1.9333314,
+      "rootDistance": 0.95146,
+      "meanSpeed": 0.48434,
+      "mirrored": false
+    },
+    {
+      "id": "walk",
+      "source": "Female1_B03_Walk1.bvh",
+      "sha256": "10acc687217a734ed2cb06e4f8d8e842a86a0f5f6946c03db7a93f07eba5edd3",
+      "frames": [
+        92,
+        129
+      ],
+      "samples": 38,
+      "duration": 1.2333321,
+      "rootDistance": 1.37806,
+      "meanSpeed": 1.11993,
+      "mirrored": false
+    },
+    {
+      "id": "stop",
+      "source": "Female1_B02_WalkToStandT2.bvh",
+      "sha256": "39860644791f5731aaf8ab5613a4aae642f6c0a0bafe472bb3786d41be038e10",
+      "frames": [
+        91,
+        147
+      ],
+      "samples": 57,
+      "duration": 1.8666648,
+      "rootDistance": 0.59983,
+      "meanSpeed": 0.32872,
+      "mirrored": false
+    },
+    {
+      "id": "turnLeft",
+      "source": "Female1_B09_WalkTurnLeft90.bvh",
+      "sha256": "9930bf3df5f800fae554d235c9f077cb6427b6e06e18197a95b2e74c662f2b92",
+      "frames": [
+        110,
+        132
+      ],
+      "samples": 23,
+      "duration": 0.7333326,
+      "rootDistance": 0.57998,
+      "meanSpeed": 0.79949,
+      "mirrored": false
+    },
+    {
+      "id": "turnRight",
+      "source": "Female1_B12_WalkTurnRight90.bvh",
+      "sha256": "64ed9566a13ea24a89118fc94eaff139ddbf9ee3adc8b8b97452b3e07d1ac21a",
+      "frames": [
+        95,
+        117
+      ],
+      "samples": 23,
+      "duration": 0.7333326,
+      "rootDistance": 0.70796,
+      "meanSpeed": 0.97209,
+      "mirrored": false
+    },
+    {
+      "id": "turnAround",
+      "source": "Female1_B15_WalkTurnAround180.bvh",
+      "sha256": "850f4a24e5aae2c8d6a22f4d03319c00a968858e63b53651ee3cd3209417e8d0",
+      "frames": [
+        150,
+        201
+      ],
+      "samples": 52,
+      "duration": 1.6999983,
+      "rootDistance": 0.79379,
+      "meanSpeed": 0.4719,
+      "mirrored": false
+    }
+  ],
+  "variants": [
+    {
+      "id": "turnAroundRight",
+      "source": "Female1_B15_WalkTurnAround180.bvh",
+      "sha256": "850f4a24e5aae2c8d6a22f4d03319c00a968858e63b53651ee3cd3209417e8d0",
+      "frames": [
+        150,
+        201
+      ],
+      "samples": 52,
+      "duration": 1.6999983,
+      "rootDistance": 0.79379,
+      "meanSpeed": 0.4719,
+      "mirrored": true
+    }
+  ],
+  "outputBytes": 513825,
+  "outputSha256": "259fe77eb411a1fa4208c63abfce3e3a5b3a9eaea0d83b8ed063786deb5853c9"
+}

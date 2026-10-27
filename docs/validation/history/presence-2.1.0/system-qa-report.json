@@ -1,0 +1,199 @@
+{
+  "schema": "air3.measured-system-qa.v1",
+  "timestamp": "2026-10-24T17:16:02.854Z",
+  "environment": {
+    "os": "linux",
+    "release": "6.18.55",
+    "arch": "x64",
+    "node": "v24.19.0",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "logicalCpus": 9,
+    "gpu": "not measured by this script",
+    "encoder": "not measured by this script"
+  },
+  "tests": {
+    "exitCode": 0,
+    "tests": 74,
+    "passed": 74,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 14680
+  },
+  "syntax": {
+    "exitCode": 0,
+    "modules": 73,
+    "durationMs": 3103
+  },
+  "build": {
+    "exitCode": 0,
+    "durationMs": 165
+  },
+  "passed": true,
+  "scope": "Studio service only. dApp and Eliza are unchanged source snapshots; no build of those repositories is claimed.",
+  "frontendBuild": {
+    "schema": "air3.frontend-build.v1",
+    "builtAt": "2026-10-24T17:15:45.063Z",
+    "node": "v24.19.0",
+    "esbuild": "0.28.2",
+    "inputs": [
+      {
+        "path": "public/air3-attention.mjs",
+        "bytes": 8830,
+        "sha256": "ea1e33cd14300879e1d104ec8866fc7943ac715497bfd7bb8dea86f4270a783d"
+      },
+      {
+        "path": "public/air3-avatar.mjs",
+        "bytes": 17664,
+        "sha256": "49833b767d9d09684ae690dd9c478769694e479b6cd2566cbc487d7c329c7362"
+      },
+      {
+        "path": "public/air3-face.mjs",
+        "bytes": 14631,
+        "sha256": "bf67004472684e6eae68b962a6f5b91fb54f29250fac94b56ec0fd261701ae2b"
+      },
+      {
+        "path": "public/air3-hair.mjs",
+        "bytes": 22339,
+        "sha256": "64d6e989424bc9eb9211a58139079ba5f5219d7841f176ecd800c78bd67dcafa"
+      },
+      {
+        "path": "public/air3-stage-motion.mjs",
+        "bytes": 22414,
+        "sha256": "60b146089c68539c1b061e72dfff7f2d549eb1a70d8f9c410c901162c00994a2"
+      },
+      {
+        "path": "public/app.mjs",
+        "bytes": 18653,
+        "sha256": "81860bde899600d95783438ec12102d3da49bbc04bff455eaff9d466509427dd"
+      },
+      {
+        "path": "public/avatar-materials.mjs",
+        "bytes": 11931,
+        "sha256": "855293477b72f26440ea5b74e3142aa0ce63949f4960baf4766e4a1b38a79c10"
+      },
+      {
+        "path": "public/data.mjs",
+        "bytes": 6950,
+        "sha256": "d99246963e242514d9e360fce7a28f960516351b9d161a79e60fde4899a10bd9"
+      },
+      {
+        "path": "public/health-worker.mjs",
+        "bytes": 1384,
+        "sha256": "99d2a59a1171635574df2b529fde30b10dc996f90722b35e52859b0d0e513340"
+      },
+      {
+        "path": "public/lip-sync.mjs",
+        "bytes": 3017,
+        "sha256": "14a176477ab81e0c015dc9828957ca65ca04438f9f2dae7bf460f325d9980730"
+      },
+      {
+        "path": "public/monitors.mjs",
+        "bytes": 9876,
+        "sha256": "1dbbac662963732b0d95999556719d7a68496aecbd295813ff3516390e12572e"
+      },
+      {
+        "path": "public/preview/viewer.mjs",
+        "bytes": 13408,
+        "sha256": "fa1752ff47a41827a863fb2ea35d23bdc0fd76c9ade44d52c67aeb7a8e4e6304"
+      },
+      {
+        "path": "public/pure.mjs",
+        "bytes": 6882,
+        "sha256": "df1d7cc83213d905d4a3b19efd6ad93b830667dbb7dd98ddada40bebdd2b8f02"
+      },
+      {
+        "path": "public/speech-player.mjs",
+        "bytes": 13141,
+        "sha256": "f9c52457f7476d7b6053bb3fffe615e40f805b88d4ce3414bff862c122140048"
+      },
+      {
+        "path": "public/studio-rendering.mjs",
+        "bytes": 11950,
+        "sha256": "375b0a998e296ee4505881e803df06ce324dfde15fb8b3170245be7c3a6a39b3"
+      },
+      {
+        "path": "public/studio-scene.mjs",
+        "bytes": 31976,
+        "sha256": "bb692586f1cd4f00bcb4aac67f935a681d720812166d4d37e5d300853beb48ee"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "public/build/app.js",
+        "bytes": 66197,
+        "sha256": "2ae232f9a52a5d2c88210c8dd183ce2817f8e4f34850fb57ac162610a4c64708"
+      },
+      {
+        "path": "public/build/health.js",
+        "bytes": 694,
+        "sha256": "c3b0210057f80fa8371fa3cd0ff9b18e4da4fb9b1183a74612c99d3650d6debe"
+      },
+      {
+        "path": "public/build/preview.js",
+        "bytes": 8837,
+        "sha256": "d9bad78507a7a8dcc26305ccade17a60fcb29fa48c6f34c66f65f013ad0a3057"
+      },
+      {
+        "path": "public/build/shared-CBLIMTOB.js",
+        "bytes": 55695,
+        "sha256": "e006780dec3df04a45e69827bf59a324306ec955b0dbe23d73502fb6ed3c73a3"
+      },
+      {
+        "path": "public/build/shared-IUPYLFTI.js",
+        "bytes": 4402,
+        "sha256": "86e688e2e69c4e98b3cb355fff00d7e293ef390b9f772559d47569c80a4b603d"
+      }
+    ],
+    "externalDependencies": [
+      "three@0.186.1"
+    ],
+    "validatedModelImages": [
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/BodyBaseColor.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/Unnamed_albedo.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/1.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/FaceColor_MAIN.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/data/FaceRoughness_ORM.png"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/data/FaceNormal_MAIN.png"
+      },
+      {
+        "model": "SM_Entrance_MiddleTable.glb",
+        "image": "textures/color/T_EntranceMiddleTable.webp"
+      },
+      {
+        "model": "SM_Keyboard.glb",
+        "image": "textures/color/T_EntranceKeyboard.webp"
+      },
+      {
+        "model": "SM_Laptop.glb",
+        "image": "textures/color/T_EntranceLaptop.webp"
+      }
+    ]
+  },
+  "postSuiteChecks": [
+    {
+      "timestamp": "2026-10-24T17:25:04.416084+00:00",
+      "command": "node --check studio-broadcast/src/broadcast.mjs",
+      "exitCode": 0,
+      "sha256": "530138b45d6a382edb8e91005ff1135dde546f53bb2fb1a1a6314730e0d580e1",
+      "scope": "Renderer summary adds stageMotion, effectiveCamera and hair; encoder log recognizes QuickSync hardware. Actual final capture is verified separately.",
+      "path": "studio-broadcast/src/broadcast.mjs"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "air3.voice-demo-provenance.v1",
+  "source": "source-assets/MT_Voice_Test.flac",
+  "sourceSha256": "a9dea84e35a81add5c63be76cddb90bb0752307f14e7070c76fcf6b3430f2593",
+  "excerptStartSeconds": 10,
+  "durationSeconds": 12,
+  "format": "WAV PCM16 mono, 24000 Hz",
+  "sourceProvidedBy": "Project owner in the supplied asset collection",
+  "use": "Included preview and local pipeline fixture. Not a TTS inference benchmark.",
+  "files": [
+    {
+      "file": "voice-reference.json",
+      "bytes": 5862,
+      "sha256": "a140690670f6e948e4f154c813279227882924d23893b8a7ae67b47dbb7cd03c"
+    },
+    {
+      "file": "voice-reference.wav",
+      "bytes": 576078,
+      "sha256": "efbd6e9372b9cd8ddb598747a3d2efcd1b5df4620c297127b7f7b42e0b1dffd8"
+    }
+  ]
+}

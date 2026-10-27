@@ -1,0 +1,636 @@
+{
+  "scope": "Numerical measurements of actual skinned geometry and body joint world transforms; original supplied animation versus corrected destination translations. Source geometry and bone weights unchanged.",
+  "groundTargetY": -0.034982888176406504,
+  "clips": [
+    {
+      "clip": "MH_Idle01_UE",
+      "samples": [
+        {
+          "timeSeconds": 0,
+          "before": {
+            "shoulderJointSpanMeters": 0.3823632864644278,
+            "headPivotHeightMeters": 1.6187112175636211,
+            "leftShoeToeHeelDistanceMeters": 0.33826879321174713,
+            "shoeLowestY": -0.031885913026004534,
+            "approximateHeightMeters": 1.8606383371217454
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2743923148643264,
+            "headPivotHeightMeters": 1.5069189837956227,
+            "leftShoeToeHeelDistanceMeters": 0.31548180142378907,
+            "shoeLowestY": -0.03498288817640652,
+            "approximateHeightMeters": 1.7519880878739114
+          }
+        },
+        {
+          "timeSeconds": 1.5916666984558105,
+          "before": {
+            "shoulderJointSpanMeters": 0.38230543276052,
+            "headPivotHeightMeters": 1.618098078983862,
+            "leftShoeToeHeelDistanceMeters": 0.3382811871249136,
+            "shoeLowestY": -0.031881033978622825,
+            "approximateHeightMeters": 1.8632582427657558
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.27435040858859533,
+            "headPivotHeightMeters": 1.5063873024714884,
+            "leftShoeToeHeelDistanceMeters": 0.3154952616371973,
+            "shoeLowestY": -0.03498288817640638,
+            "approximateHeightMeters": 1.7546799860057734
+          }
+        },
+        {
+          "timeSeconds": 3.183333396911621,
+          "before": {
+            "shoulderJointSpanMeters": 0.38245429646730666,
+            "headPivotHeightMeters": 1.6175183787658698,
+            "leftShoeToeHeelDistanceMeters": 0.338299485650527,
+            "shoeLowestY": -0.031912466929032844,
+            "approximateHeightMeters": 1.863973705691075
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2744591106044232,
+            "headPivotHeightMeters": 1.505771484256688,
+            "leftShoeToeHeelDistanceMeters": 0.31551516175464933,
+            "shoeLowestY": -0.034982888176406456,
+            "approximateHeightMeters": 1.7553541488101885
+          }
+        },
+        {
+          "timeSeconds": 4.775000095367432,
+          "before": {
+            "shoulderJointSpanMeters": 0.38212248815460026,
+            "headPivotHeightMeters": 1.6199872213745317,
+            "leftShoeToeHeelDistanceMeters": 0.33818966645449255,
+            "shoeLowestY": -0.031710107538786426,
+            "approximateHeightMeters": 1.8658400097749588
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2742170206229521,
+            "headPivotHeightMeters": 1.5079429193898837,
+            "leftShoeToeHeelDistanceMeters": 0.315395961626361,
+            "shoeLowestY": -0.03498288817640652,
+            "approximateHeightMeters": 1.7570684884279308
+          }
+        },
+        {
+          "timeSeconds": 6.360300127029419,
+          "before": {
+            "shoulderJointSpanMeters": 0.38236446843138516,
+            "headPivotHeightMeters": 1.618713164789656,
+            "leftShoeToeHeelDistanceMeters": 0.3382685790438235,
+            "shoeLowestY": -0.031889907168583906,
+            "approximateHeightMeters": 1.8606388582339197
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.274393175578425,
+            "headPivotHeightMeters": 1.5069220089933775,
+            "leftShoeToeHeelDistanceMeters": 0.3154815663765201,
+            "shoeLowestY": -0.034982888176406504,
+            "approximateHeightMeters": 1.7519958219598077
+          }
+        }
+      ]
+    },
+    {
+      "clip": "MH_Idle02_UE",
+      "samples": [
+        {
+          "timeSeconds": 0,
+          "before": {
+            "shoulderJointSpanMeters": 0.382362959443627,
+            "headPivotHeightMeters": 1.618712454030154,
+            "leftShoeToeHeelDistanceMeters": 0.3382688474787527,
+            "shoeLowestY": -0.03188573475705649,
+            "approximateHeightMeters": 1.8606251011931108
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.27439207422311573,
+            "headPivotHeightMeters": 1.5069203719446096,
+            "leftShoeToeHeelDistanceMeters": 0.31548185982679755,
+            "shoeLowestY": -0.03498288817640649,
+            "approximateHeightMeters": 1.7519823297174024
+          }
+        },
+        {
+          "timeSeconds": 1.1166666746139526,
+          "before": {
+            "shoulderJointSpanMeters": 0.38223149413734947,
+            "headPivotHeightMeters": 1.6190036816893756,
+            "leftShoeToeHeelDistanceMeters": 0.33825103886475893,
+            "shoeLowestY": -0.03188722609593632,
+            "approximateHeightMeters": 1.860354465269396
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2742962115293422,
+            "headPivotHeightMeters": 1.5071386267905433,
+            "leftShoeToeHeelDistanceMeters": 0.3154625245967001,
+            "shoeLowestY": -0.034982888176406546,
+            "approximateHeightMeters": 1.7516308565117262
+          }
+        },
+        {
+          "timeSeconds": 2.2333333492279053,
+          "before": {
+            "shoulderJointSpanMeters": 0.3821773860200507,
+            "headPivotHeightMeters": 1.6185970881787552,
+            "leftShoeToeHeelDistanceMeters": 0.33821650124909536,
+            "shoeLowestY": -0.031813938211328587,
+            "approximateHeightMeters": 1.8603574065664361
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.27425682544745256,
+            "headPivotHeightMeters": 1.5066088782395546,
+            "leftShoeToeHeelDistanceMeters": 0.31542502409478584,
+            "shoeLowestY": -0.034982888176406476,
+            "approximateHeightMeters": 1.7515381465923134
+          }
+        },
+        {
+          "timeSeconds": 3.350000023841858,
+          "before": {
+            "shoulderJointSpanMeters": 0.38243553270249514,
+            "headPivotHeightMeters": 1.6187272690736527,
+            "leftShoeToeHeelDistanceMeters": 0.3382656413532561,
+            "shoeLowestY": -0.03187811934050875,
+            "approximateHeightMeters": 1.859599649730513
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.27444472352021243,
+            "headPivotHeightMeters": 1.5068816994150442,
+            "leftShoeToeHeelDistanceMeters": 0.31547837178688204,
+            "shoeLowestY": -0.03498288817640665,
+            "approximateHeightMeters": 1.750900835407375
+          }
+        },
+        {
+          "timeSeconds": 4.462200031757355,
+          "before": {
+            "shoulderJointSpanMeters": 0.38235761299029697,
+            "headPivotHeightMeters": 1.618689884802961,
+            "leftShoeToeHeelDistanceMeters": 0.3382691522827828,
+            "shoeLowestY": -0.031889405233248756,
+            "approximateHeightMeters": 1.8606243201452457
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2743881874251523,
+            "headPivotHeightMeters": 1.5069073450530186,
+            "leftShoeToeHeelDistanceMeters": 0.3154821871221016,
+            "shoeLowestY": -0.034982888176406456,
+            "approximateHeightMeters": 1.7519757803500606
+          }
+        }
+      ]
+    },
+    {
+      "clip": "MH_Idle03_UE",
+      "samples": [
+        {
+          "timeSeconds": 0,
+          "before": {
+            "shoulderJointSpanMeters": 0.38087417868590195,
+            "headPivotHeightMeters": 1.6086104057693273,
+            "leftShoeToeHeelDistanceMeters": 0.3383788402682966,
+            "shoeLowestY": -0.031886893201634785,
+            "approximateHeightMeters": 1.848764505096383
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2733132493886413,
+            "headPivotHeightMeters": 1.4973187955383245,
+            "leftShoeToeHeelDistanceMeters": 0.31560168845247505,
+            "shoeLowestY": -0.03498288817640652,
+            "approximateHeightMeters": 1.7405010625917858
+          }
+        },
+        {
+          "timeSeconds": 0.8416666388511658,
+          "before": {
+            "shoulderJointSpanMeters": 0.38094638553272336,
+            "headPivotHeightMeters": 1.6054519515173997,
+            "leftShoeToeHeelDistanceMeters": 0.3384079228302007,
+            "shoeLowestY": -0.03188786751806938,
+            "approximateHeightMeters": 1.8441281804110354
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2733672265396948,
+            "headPivotHeightMeters": 1.4940315385022311,
+            "leftShoeToeHeelDistanceMeters": 0.31563325930296715,
+            "shoeLowestY": -0.03498288817640649,
+            "approximateHeightMeters": 1.7357416713674079
+          }
+        },
+        {
+          "timeSeconds": 1.6833332777023315,
+          "before": {
+            "shoulderJointSpanMeters": 0.3811755108017389,
+            "headPivotHeightMeters": 1.6048501394148535,
+            "leftShoeToeHeelDistanceMeters": 0.3384115731612942,
+            "shoeLowestY": -0.03188538966343464,
+            "approximateHeightMeters": 1.842686399941447
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2735346153729906,
+            "headPivotHeightMeters": 1.493537660348141,
+            "leftShoeToeHeelDistanceMeters": 0.3156382419382464,
+            "shoeLowestY": -0.034982888176406504,
+            "approximateHeightMeters": 1.7344714193877062
+          }
+        },
+        {
+          "timeSeconds": 2.5249999165534973,
+          "before": {
+            "shoulderJointSpanMeters": 0.3811763455089024,
+            "headPivotHeightMeters": 1.6047953978544338,
+            "leftShoeToeHeelDistanceMeters": 0.3384107455833555,
+            "shoeLowestY": -0.03190050997233983,
+            "approximateHeightMeters": 1.8439866012464505
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2735338526953511,
+            "headPivotHeightMeters": 1.4934898452161514,
+            "leftShoeToeHeelDistanceMeters": 0.3156340177428197,
+            "shoeLowestY": -0.03498288817640647,
+            "approximateHeightMeters": 1.7357634268122348
+          }
+        },
+        {
+          "timeSeconds": 3.3632998888492582,
+          "before": {
+            "shoulderJointSpanMeters": 0.3808754536936941,
+            "headPivotHeightMeters": 1.6085924064181218,
+            "leftShoeToeHeelDistanceMeters": 0.338380128391981,
+            "shoeLowestY": -0.031884830142655876,
+            "approximateHeightMeters": 1.8487365195226169
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.273314192905017,
+            "headPivotHeightMeters": 1.4972852553086755,
+            "leftShoeToeHeelDistanceMeters": 0.3156039645988209,
+            "shoeLowestY": -0.03498288817640643,
+            "approximateHeightMeters": 1.740456974069821
+          }
+        }
+      ]
+    },
+    {
+      "clip": "MH_Talk",
+      "samples": [
+        {
+          "timeSeconds": 0,
+          "before": {
+            "shoulderJointSpanMeters": 0.37696732530497234,
+            "headPivotHeightMeters": 1.6620546637485702,
+            "leftShoeToeHeelDistanceMeters": 0.33824204633992927,
+            "shoeLowestY": 0.009974262241000452,
+            "approximateHeightMeters": 1.8444320306416613
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.27045964736312844,
+            "headPivotHeightMeters": 1.5059617197014257,
+            "leftShoeToeHeelDistanceMeters": 0.31547323712771136,
+            "shoeLowestY": -0.035308757525495706,
+            "approximateHeightMeters": 1.733367159632127
+          }
+        },
+        {
+          "timeSeconds": 8.233333587646484,
+          "before": {
+            "shoulderJointSpanMeters": 0.3770122168281281,
+            "headPivotHeightMeters": 1.6615163693180321,
+            "leftShoeToeHeelDistanceMeters": 0.3382226567633203,
+            "shoeLowestY": 0.00878609310851164,
+            "approximateHeightMeters": 1.8500453037902345
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.27049286127797956,
+            "headPivotHeightMeters": 1.5057432758707603,
+            "leftShoeToeHeelDistanceMeters": 0.31545228353049276,
+            "shoeLowestY": -0.035208265742254566,
+            "approximateHeightMeters": 1.7381073676159509
+          }
+        },
+        {
+          "timeSeconds": 16.46666717529297,
+          "before": {
+            "shoulderJointSpanMeters": 0.37741150861408207,
+            "headPivotHeightMeters": 1.6626407563683672,
+            "leftShoeToeHeelDistanceMeters": 0.33822486816526687,
+            "shoeLowestY": 0.009311140862490193,
+            "approximateHeightMeters": 1.8491471707239204
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2707834035944777,
+            "headPivotHeightMeters": 1.5067735556208761,
+            "leftShoeToeHeelDistanceMeters": 0.3154546189650957,
+            "shoeLowestY": -0.03524923874920587,
+            "approximateHeightMeters": 1.7376435543400794
+          }
+        },
+        {
+          "timeSeconds": 24.700000762939453,
+          "before": {
+            "shoulderJointSpanMeters": 0.3772690367891271,
+            "headPivotHeightMeters": 1.6603253201411112,
+            "leftShoeToeHeelDistanceMeters": 0.33824303202335787,
+            "shoeLowestY": 0.009106127668003606,
+            "approximateHeightMeters": 1.8467290336180993
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2706799895837117,
+            "headPivotHeightMeters": 1.5040046284206292,
+            "leftShoeToeHeelDistanceMeters": 0.31547433509848904,
+            "shoeLowestY": -0.03506767153671267,
+            "approximateHeightMeters": 1.7345742674058928
+          }
+        },
+        {
+          "timeSeconds": 32.90040101623535,
+          "before": {
+            "shoulderJointSpanMeters": 0.37679837330191523,
+            "headPivotHeightMeters": 1.661670506473094,
+            "leftShoeToeHeelDistanceMeters": 0.33824249891076325,
+            "shoeLowestY": 0.009963497837959885,
+            "approximateHeightMeters": 1.8438353161748438
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2703365097780106,
+            "headPivotHeightMeters": 1.5055617057962944,
+            "leftShoeToeHeelDistanceMeters": 0.3154737254741974,
+            "shoeLowestY": -0.035307014109141326,
+            "approximateHeightMeters": 1.7327446310076682
+          }
+        }
+      ]
+    },
+    {
+      "clip": "MH_Talk01",
+      "samples": [
+        {
+          "timeSeconds": 0,
+          "before": {
+            "shoulderJointSpanMeters": 0.37255151092136995,
+            "headPivotHeightMeters": 1.6202767535438227,
+            "leftShoeToeHeelDistanceMeters": 0.33235043513644175,
+            "shoeLowestY": -0.027874636423771464,
+            "approximateHeightMeters": 1.8463787305277843
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.26724407855716054,
+            "headPivotHeightMeters": 1.509175468088303,
+            "leftShoeToeHeelDistanceMeters": 0.309461213798623,
+            "shoeLowestY": -0.034982888155689534,
+            "approximateHeightMeters": 1.7423856968041824
+          }
+        },
+        {
+          "timeSeconds": 2.3916666507720947,
+          "before": {
+            "shoulderJointSpanMeters": 0.3741577381534061,
+            "headPivotHeightMeters": 1.6172761941538336,
+            "leftShoeToeHeelDistanceMeters": 0.3324257357946464,
+            "shoeLowestY": -0.027318377237962006,
+            "approximateHeightMeters": 1.8447857161520027
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.26841460949420903,
+            "headPivotHeightMeters": 1.5039498561589788,
+            "leftShoeToeHeelDistanceMeters": 0.3095673247653446,
+            "shoeLowestY": -0.034982888177319184,
+            "approximateHeightMeters": 1.7390082172655692
+          }
+        },
+        {
+          "timeSeconds": 4.7833333015441895,
+          "before": {
+            "shoulderJointSpanMeters": 0.37544379294122693,
+            "headPivotHeightMeters": 1.6022688610603997,
+            "leftShoeToeHeelDistanceMeters": 0.33208248927173056,
+            "shoeLowestY": -0.031785663531506046,
+            "approximateHeightMeters": 1.8358419443080627
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.26935302588900034,
+            "headPivotHeightMeters": 1.494833976663344,
+            "leftShoeToeHeelDistanceMeters": 0.30907599924428536,
+            "shoeLowestY": -0.0351081229105855,
+            "approximateHeightMeters": 1.731692636096878
+          }
+        },
+        {
+          "timeSeconds": 7.174999952316284,
+          "before": {
+            "shoulderJointSpanMeters": 0.3750871798516452,
+            "headPivotHeightMeters": 1.6194588300526724,
+            "leftShoeToeHeelDistanceMeters": 0.332161469696324,
+            "shoeLowestY": -0.028491566269720457,
+            "approximateHeightMeters": 1.8557355793291002
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2690950222636216,
+            "headPivotHeightMeters": 1.5074959487826016,
+            "leftShoeToeHeelDistanceMeters": 0.30928532406636494,
+            "shoeLowestY": -0.03498288817858849,
+            "approximateHeightMeters": 1.750206099465702
+          }
+        },
+        {
+          "timeSeconds": 9.55709993648529,
+          "before": {
+            "shoulderJointSpanMeters": 0.3723372277713132,
+            "headPivotHeightMeters": 1.6203073981863891,
+            "leftShoeToeHeelDistanceMeters": 0.33235081019244184,
+            "shoeLowestY": -0.02792631893227354,
+            "approximateHeightMeters": 1.845856282194982
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.26708797545771623,
+            "headPivotHeightMeters": 1.5092626473728432,
+            "leftShoeToeHeelDistanceMeters": 0.3094599933178149,
+            "shoeLowestY": -0.034982888176006234,
+            "approximateHeightMeters": 1.7418681006251688
+          }
+        }
+      ]
+    },
+    {
+      "clip": "MH_Talk02",
+      "samples": [
+        {
+          "timeSeconds": 0,
+          "before": {
+            "shoulderJointSpanMeters": 0.37889617387665336,
+            "headPivotHeightMeters": 1.6095286668154976,
+            "leftShoeToeHeelDistanceMeters": 0.3323408369875472,
+            "shoeLowestY": -0.040265551861201086,
+            "approximateHeightMeters": 1.8600276760565868
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.27187012351319045,
+            "headPivotHeightMeters": 1.509345791668292,
+            "leftShoeToeHeelDistanceMeters": 0.3093750113066059,
+            "shoeLowestY": -0.03516467120600494,
+            "approximateHeightMeters": 1.7547818224272171
+          }
+        },
+        {
+          "timeSeconds": 2.258333444595337,
+          "before": {
+            "shoulderJointSpanMeters": 0.3777713071631417,
+            "headPivotHeightMeters": 1.6141014857929321,
+            "leftShoeToeHeelDistanceMeters": 0.33243989089206255,
+            "shoeLowestY": -0.039586074998736044,
+            "approximateHeightMeters": 1.837231181885363
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.27105404428541824,
+            "headPivotHeightMeters": 1.5134298753128783,
+            "leftShoeToeHeelDistanceMeters": 0.30951253968833276,
+            "shoeLowestY": -0.03515270761041855,
+            "approximateHeightMeters": 1.7321641543774535
+          }
+        },
+        {
+          "timeSeconds": 4.516666889190674,
+          "before": {
+            "shoulderJointSpanMeters": 0.3798288554018547,
+            "headPivotHeightMeters": 1.5966128167612228,
+            "leftShoeToeHeelDistanceMeters": 0.33243950407274775,
+            "shoeLowestY": -0.0412743498204473,
+            "approximateHeightMeters": 1.8471124900471503
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2725489131945371,
+            "headPivotHeightMeters": 1.4976579646165198,
+            "leftShoeToeHeelDistanceMeters": 0.30954694943971606,
+            "shoeLowestY": -0.03522192150896642,
+            "approximateHeightMeters": 1.7421052095909664
+          }
+        },
+        {
+          "timeSeconds": 6.775000333786011,
+          "before": {
+            "shoulderJointSpanMeters": 0.3784368905162923,
+            "headPivotHeightMeters": 1.607755992641243,
+            "leftShoeToeHeelDistanceMeters": 0.33229009991253394,
+            "shoeLowestY": -0.04125161726006196,
+            "approximateHeightMeters": 1.8596341069819775
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2715362360603614,
+            "headPivotHeightMeters": 1.5084126007803835,
+            "leftShoeToeHeelDistanceMeters": 0.3092862890059307,
+            "shoeLowestY": -0.03524658142179328,
+            "approximateHeightMeters": 1.7542856792828494
+          }
+        },
+        {
+          "timeSeconds": 9.024300444602966,
+          "before": {
+            "shoulderJointSpanMeters": 0.3788961813874101,
+            "headPivotHeightMeters": 1.6095281362867964,
+            "leftShoeToeHeelDistanceMeters": 0.3323384469301673,
+            "shoeLowestY": -0.04026569469079885,
+            "approximateHeightMeters": 1.8600291105190607
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2718701288499641,
+            "headPivotHeightMeters": 1.5093452956624716,
+            "leftShoeToeHeelDistanceMeters": 0.3093720731207584,
+            "shoeLowestY": -0.035164672002195044,
+            "approximateHeightMeters": 1.754783149379973
+          }
+        }
+      ]
+    },
+    {
+      "clip": "MH_Talk03",
+      "samples": [
+        {
+          "timeSeconds": 0,
+          "before": {
+            "shoulderJointSpanMeters": 0.38005782864537824,
+            "headPivotHeightMeters": 1.6054484663620805,
+            "leftShoeToeHeelDistanceMeters": 0.3324028723352952,
+            "shoeLowestY": -0.041774264102669406,
+            "approximateHeightMeters": 1.8544299896596677
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2727161575142346,
+            "headPivotHeightMeters": 1.507548803938482,
+            "leftShoeToeHeelDistanceMeters": 0.30937900820293246,
+            "shoeLowestY": -0.03505182120960439,
+            "approximateHeightMeters": 1.7498009458339072
+          }
+        },
+        {
+          "timeSeconds": 2.6500000953674316,
+          "before": {
+            "shoulderJointSpanMeters": 0.37942224472600755,
+            "headPivotHeightMeters": 1.6049073542505705,
+            "leftShoeToeHeelDistanceMeters": 0.3322475175373914,
+            "shoeLowestY": -0.03998503453361227,
+            "approximateHeightMeters": 1.8538481051459554
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.27225324649005644,
+            "headPivotHeightMeters": 1.5043739692401927,
+            "leftShoeToeHeelDistanceMeters": 0.30921559570645263,
+            "shoeLowestY": -0.034991942571182086,
+            "approximateHeightMeters": 1.7483216281731473
+          }
+        },
+        {
+          "timeSeconds": 5.300000190734863,
+          "before": {
+            "shoulderJointSpanMeters": 0.38229804155105773,
+            "headPivotHeightMeters": 1.5931861516223722,
+            "leftShoeToeHeelDistanceMeters": 0.332356440170315,
+            "shoeLowestY": -0.04205537928095516,
+            "approximateHeightMeters": 1.846477544214087
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2743478056463901,
+            "headPivotHeightMeters": 1.4943850582982894,
+            "leftShoeToeHeelDistanceMeters": 0.30932644974677775,
+            "shoeLowestY": -0.03506552545932685,
+            "approximateHeightMeters": 1.7406726546713351
+          }
+        },
+        {
+          "timeSeconds": 7.950000286102295,
+          "before": {
+            "shoulderJointSpanMeters": 0.3820853591738482,
+            "headPivotHeightMeters": 1.602901111917889,
+            "leftShoeToeHeelDistanceMeters": 0.3323958841853772,
+            "shoeLowestY": -0.04222379864618461,
+            "approximateHeightMeters": 1.8538403068990041
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.2741955473141951,
+            "headPivotHeightMeters": 1.504357367839626,
+            "leftShoeToeHeelDistanceMeters": 0.30936847154233227,
+            "shoeLowestY": -0.03507918875296406,
+            "approximateHeightMeters": 1.7481204286045235
+          }
+        },
+        {
+          "timeSeconds": 10.589400381088257,
+          "before": {
+            "shoulderJointSpanMeters": 0.3800578478017504,
+            "headPivotHeightMeters": 1.6054496667230072,
+            "leftShoeToeHeelDistanceMeters": 0.33240280746768835,
+            "shoeLowestY": -0.04177726249401115,
+            "approximateHeightMeters": 1.854437355522416
+          },
+          "after": {
+            "shoulderJointSpanMeters": 0.27271617135150666,
+            "headPivotHeightMeters": 1.5075522812053979,
+            "leftShoeToeHeelDistanceMeters": 0.3093789421530582,
+            "shoeLowestY": -0.03505191775301803,
+            "approximateHeightMeters": 1.7498074960011707
+          }
+        }
+      ]
+    }
+  ]
+}

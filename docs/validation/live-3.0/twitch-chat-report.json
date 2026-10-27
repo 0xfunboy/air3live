@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "tests": 18,
+  "failures": 0,
+  "createdAt": "2026-10-27T03:25:47.588305+00:00",
+  "method": "Node test runner with deterministic fake HTTPS responses, fake WebSocket EventTarget and controlled timers",
+  "actualTwitchOAuthAttempted": false,
+  "actualChannelConnected": false,
+  "chatMessagesSent": 0,
+  "scopesRequested": [
+    "user:read:chat"
+  ],
+  "guardContract": "saveTokens forwards guard; settings store evaluates currentSettings inside serialized write queue",
+  "sources": {
+    "studio-broadcast/src/twitch-chat.mjs": {
+      "sha256": "8d878e8b2cd24ba0cfbf3463ad601214d5165d03a13232cd9de13e5ab7d79101",
+      "bytes": 23151
+    },
+    "studio-broadcast/test/twitch-chat.test.mjs": {
+      "sha256": "325ec301bdf1941a092ecde71f48329318a6da7fdeb0d5cf20b5878d6396109d",
+      "bytes": 19886
+    },
+    "docs/TWITCH_CHAT_3.0.md": {
+      "sha256": "e6ced02af051c81a5a7431200046491beeb088f4d1b38d3bc892b9920219f6e9",
+      "bytes": 6247
+    },
+    "docs/validation/live-3.0/twitch-chat-tests.txt": {
+      "sha256": "54e0501caa0cc85cc3e08aef83ccb637705fb93d53a51c50eba89127759b27cf",
+      "bytes": 2027
+    }
+  }
+}

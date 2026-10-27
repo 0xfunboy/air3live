@@ -1,0 +1,191 @@
+{
+  "animationCount": 0,
+  "categories": [
+    {
+      "uid": "81bfbbfa2c9b4f218eed8609e3cf7aa6",
+      "name": "Fashion & Style",
+      "slug": "fashion-style",
+      "uri": "https://api.sketchfab.com/v3/categories/81bfbbfa2c9b4f218eed8609e3cf7aa6",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/87a0deda90ae1bcc407ee9613be69320-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/81bfbbfa2c9b4f218eed8609e3cf7aa6/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/81bfbbfa2c9b4f218eed8609e3cf7aa6/800x450.png"
+        }
+      ]
+    },
+    {
+      "uid": "93e6d27da62149c6b963039835f45997",
+      "name": "People",
+      "slug": "people",
+      "uri": "https://api.sketchfab.com/v3/categories/93e6d27da62149c6b963039835f45997",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/63980e30d4668c8fba3671a767c90954-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/93e6d27da62149c6b963039835f45997/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/93e6d27da62149c6b963039835f45997/800x450.png"
+        }
+      ]
+    }
+  ],
+  "commentCount": 5,
+  "createdAt": "2024-10-04T16:09:12.082068",
+  "embedUrl": "https://sketchfab.com/models/d3e0ba8904504d6fb5e247346a4e93de/embed",
+  "faceCount": 4922,
+  "isAgeRestricted": false,
+  "license": {
+    "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+    "label": "CC Attribution",
+    "fullName": "Creative Commons Attribution",
+    "requirements": "Author must be credited. Commercial use is allowed.",
+    "url": "http://creativecommons.org/licenses/by/4.0/",
+    "slug": "by"
+  },
+  "likeCount": 577,
+  "name": "Wavy White Ponytail (With Bones)",
+  "publishedAt": "2024-10-04T16:20:37.995086",
+  "soundCount": 0,
+  "staffpickedAt": null,
+  "tags": [
+    {
+      "name": "hair",
+      "slug": "hair",
+      "uri": "https://api.sketchfab.com/v3/tags/hair"
+    },
+    {
+      "name": "Roblox",
+      "slug": "roblox",
+      "uri": "https://api.sketchfab.com/v3/tags/roblox"
+    },
+    {
+      "name": "ponytail",
+      "slug": "ponytail",
+      "uri": "https://api.sketchfab.com/v3/tags/ponytail"
+    },
+    {
+      "name": "haircut",
+      "slug": "haircut",
+      "uri": "https://api.sketchfab.com/v3/tags/haircut"
+    },
+    {
+      "name": "hairstyle",
+      "slug": "hairstyle",
+      "uri": "https://api.sketchfab.com/v3/tags/hairstyle"
+    },
+    {
+      "name": "robloxstudio",
+      "slug": "robloxstudio",
+      "uri": "https://api.sketchfab.com/v3/tags/robloxstudio"
+    }
+  ],
+  "thumbnails": {
+    "images": [
+      {
+        "uid": "7fba03254a8d4d7cbb400445340eadca",
+        "width": 1920,
+        "height": 1080,
+        "size": 71257,
+        "url": "https://media.sketchfab.com/models/d3e0ba8904504d6fb5e247346a4e93de/thumbnails/5e3f7a52ef3c4b44968222494253946d/ac0e334115424b80b74bf1860a246189.jpeg"
+      },
+      {
+        "uid": "590cd901cfd2494e8bd08696fb7789b4",
+        "width": 1024,
+        "height": 576,
+        "size": 21198,
+        "url": "https://media.sketchfab.com/models/d3e0ba8904504d6fb5e247346a4e93de/thumbnails/5e3f7a52ef3c4b44968222494253946d/711bab9c9d634d038caeffed6d527372.jpeg"
+      },
+      {
+        "uid": "51b36b85db154728bc61dc5efc3585fd",
+        "width": 720,
+        "height": 405,
+        "size": 12140,
+        "url": "https://media.sketchfab.com/models/d3e0ba8904504d6fb5e247346a4e93de/thumbnails/5e3f7a52ef3c4b44968222494253946d/3d878e6b2c8d45eb8ae54b697b3ad86e.jpeg"
+      },
+      {
+        "uid": "633394d8bd6b42d98fecdb41c501e896",
+        "width": 256,
+        "height": 144,
+        "size": 2832,
+        "url": "https://media.sketchfab.com/models/d3e0ba8904504d6fb5e247346a4e93de/thumbnails/5e3f7a52ef3c4b44968222494253946d/25dac440cd5f4266b654d222939c32af.jpeg"
+      },
+      {
+        "uid": "7743017c706d47709adae5b24b426a94",
+        "width": 64,
+        "height": 36,
+        "size": 926,
+        "url": "https://media.sketchfab.com/models/d3e0ba8904504d6fb5e247346a4e93de/thumbnails/5e3f7a52ef3c4b44968222494253946d/f1b4fae2e1e54ff382328e3b8501ec61.jpeg"
+      }
+    ]
+  },
+  "uid": "d3e0ba8904504d6fb5e247346a4e93de",
+  "uri": "https://api.sketchfab.com/v3/models/d3e0ba8904504d6fb5e247346a4e93de",
+  "user": {
+    "uid": "d7e4bf253a0c4d138334e98087e9bc2a",
+    "username": "zHairezt",
+    "displayName": "zHairezt",
+    "account": "basic",
+    "profileUrl": "https://sketchfab.com/zHairezt",
+    "avatar": {
+      "uid": "377255049c5f461ba3f93dd735e2bc5c",
+      "uri": "https://api.sketchfab.com/v3/avatars/377255049c5f461ba3f93dd735e2bc5c",
+      "images": [
+        {
+          "width": 32,
+          "height": 32,
+          "size": 2629,
+          "url": "https://media.sketchfab.com/avatars/377255049c5f461ba3f93dd735e2bc5c/1fcbb8d7805a41f2b132ee59ba327181.png"
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "size": 5355,
+          "url": "https://media.sketchfab.com/avatars/377255049c5f461ba3f93dd735e2bc5c/aea4a82627bf434d96f2385aec3bde88.png"
+        },
+        {
+          "width": 90,
+          "height": 90,
+          "size": 16067,
+          "url": "https://media.sketchfab.com/avatars/377255049c5f461ba3f93dd735e2bc5c/a73dd5843fa4422ea64af5075c13a419.png"
+        },
+        {
+          "width": 100,
+          "height": 100,
+          "size": 19237,
+          "url": "https://media.sketchfab.com/avatars/377255049c5f461ba3f93dd735e2bc5c/6c219ee90f034f47b6b6f366c099a3ec.png"
+        }
+      ]
+    },
+    "uri": "https://api.sketchfab.com/v3/users/d7e4bf253a0c4d138334e98087e9bc2a"
+  },
+  "vertexCount": 2389,
+  "viewCount": 16129,
+  "viewerUrl": "https://sketchfab.com/3d-models/wavy-white-ponytail-with-bones-d3e0ba8904504d6fb5e247346a4e93de",
+  "isDownloadable": true,
+  "isProtected": false,
+  "description": "I got this hair from the Roblox Studio Marketplace\n\nand rigged by me :P\n\n\nHAVEEEEEEEEEEEEEEE FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUN",
+  "price": null,
+  "downloadCount": 5612,
+  "editorUrl": "https://sketchfab.com/models/d3e0ba8904504d6fb5e247346a4e93de/edit",
+  "status": {
+    "warning": {},
+    "processing": "SUCCEEDED"
+  },
+  "source": "website",
+  "hasCommentsDisabled": false,
+  "updatedAt": "2024-10-04T16:20:38.205775",
+  "pbrType": null,
+  "textureCount": 1,
+  "materialCount": 7
+}

@@ -1,0 +1,42 @@
+✔ encoder cancellation kills the pending probe and never tries a later codec (3.097675ms)
+✔ a previously cancelled encoder selection never spawns a process (3.795211ms)
+✔ redaction preserves typed telemetry and handles quotes, slashes, newlines and nested serialized strings (1.465565ms)
+✔ publication requires explicit output, while encoding uses audio and two-second GOP (2.456492ms)
+✔ stream URLs, keys and bearer values are redacted without exposing paths (0.483951ms)
+✔ software renderer is never reported as hardware (0.355833ms)
+✔ configuration rejects shared credentials and remote avatar paths (0.965119ms)
+✔ the Intel launcher encoder is accepted and receives QSV-compatible pixels and options (0.770904ms)
+✔ local login issues an HttpOnly same-site session; remote requests cannot use the local shortcut (4.014102ms)
+✔ browser mutations reject cross-origin, absent-origin and DNS-rebinding requests even with a session (1.400229ms)
+✔ operator bearer tokens work for server clients without an Origin and reject browser cross-origin use (4.238713ms)
+✔ public HTTPS origin requires a real operator credential and marks the cookie Secure (0.430884ms)
+✔ sessions expire, logout invalidates the exact cookie, and forged IDs never authenticate (0.427158ms)
+✔ login throttling limits failed remote credentials and resets after its time window (0.622145ms)
+✔ malformed login helpers fail as structured client errors and do not invent a session (0.405837ms)
+✔ first live initialization creates three private distinct credentials and never configures automatic streaming (15.379368ms)
+✔ migration preserves exact existing comments, keys, TTS and deployment settings, and is idempotent (10.349489ms)
+✔ concurrent initialization shares one operator token instead of rotating credentials on double launch (156.866215ms)
+✔ local control URLs use Twitch-documented localhost while custom hosts and HTTPS origins stay intact (0.514126ms)
+✔ stream environment uses the owned renderer and separate file/test/live modes (14.069739ms)
+✔ process status and logs redact encoder destinations and literal escaped credentials (13.941419ms)
+✔ stopping while the encoder preflight is pending prevents a late broadcast fork (3.470212ms)
+✔ only advancing encoder output reports running; stop settles commands and releases the owned child (11.415676ms)
+✔ preview captures are requested only on demand and are throttled across polling clients (7.35848ms)
+✔ close cancels a never-settled preflight promptly and prevents a late fork and restart (3.107328ms)
+✔ an unconfirmed child exit produces a bounded stop failure while retaining ownership (41.856992ms)
+✔ stderr redacts credentials across chunk boundaries before shortening the diagnostic line (8.154474ms)
+✔ live destinations compose RTMPS/RTMP keys and Twitch bandwidth-test query without exposing secrets in the public form (4.260154ms)
+✔ live settings reject credential-bearing URLs, provider host spoofing, malformed scalar values and unknown fields (3.74125ms)
+✔ JSON prototype keys and non-plain inherited settings cannot cross the configuration boundary (0.606682ms)
+✔ OAuth tokens stay server-owned and are invalidated when the configured application identity changes (1.06824ms)
+✔ all private keys are absent from settings returned to the operator and copies cannot mutate active state (0.392607ms)
+✔ serialized settings updates preserve independent changes, persist private file permissions and recover after rejected writes (18.721828ms)
+✔ saved settings preserve OAuth on restart but unknown fields cannot enlarge the accepted schema (6.412343ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 302.032768

@@ -1,0 +1,21 @@
+[Unit]
+Description=AIR3 narration gateway
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=6
+
+[Service]
+Type=simple
+User=air3
+WorkingDirectory=/opt/air3/studio-broadcast
+EnvironmentFile=/opt/air3/studio-broadcast/.env
+ExecStart=/usr/bin/node src/main.mjs
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+KillMode=control-group
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,41 @@
+{
+  "name": "air3-studio-broadcast",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "#AIR3 independent live gateway, control room and headless broadcaster",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "init": "node scripts/init-env.mjs",
+    "start": "node --env-file=.env src/main.mjs",
+    "broadcast": "node --env-file=.env src/broadcast.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "browser:install": "node scripts/install-browser.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "smoke:avatar": "node scripts/smoke-avatar.mjs",
+    "preview": "node ../tools/preview-server.mjs --studio .",
+    "sync:metadata": "node scripts/sync-metadata-assets.mjs",
+    "capture:patch": "node scripts/patch-capture.mjs",
+    "postinstall": "node scripts/patch-capture.mjs",
+    "build": "node scripts/build.mjs",
+    "qa:logs": "node scripts/export-qa-logs.mjs",
+    "qa:visual": "node scripts/qa-visual.mjs",
+    "verify": "npm run check && npm test && npm run build",
+    "live": "node ../scripts/start-live.mjs",
+    "qa:live": "node scripts/qa-live.mjs",
+    "qa:rtmp": "node scripts/qa-rtmp.mjs"
+  },
+  "dependencies": {
+    "@puppeteer/browsers": "2.13.2",
+    "chart.js": "4.4.3",
+    "puppeteer-core": "24.43.1",
+    "puppeteer-stream": "3.0.23",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

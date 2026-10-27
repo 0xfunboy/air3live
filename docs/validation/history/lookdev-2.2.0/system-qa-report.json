@@ -1,0 +1,684 @@
+{
+  "schema": "air3.measured-system-qa.v1",
+  "timestamp": "2026-10-25T03:39:39.469Z",
+  "environment": {
+    "os": "linux",
+    "release": "6.18.55",
+    "arch": "x64",
+    "node": "v24.22.1",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "logicalCpus": 9,
+    "gpu": "not measured by this script",
+    "encoder": "not measured by this script"
+  },
+  "tests": {
+    "exitCode": 0,
+    "tests": 90,
+    "passed": 90,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 4495
+  },
+  "syntax": {
+    "exitCode": 0,
+    "modules": 88,
+    "durationMs": 2290
+  },
+  "build": {
+    "exitCode": 0,
+    "durationMs": 306
+  },
+  "passed": true,
+  "scope": "Studio service only. dApp and Eliza are unchanged source snapshots; no build of those repositories is claimed.",
+  "frontendBuild": {
+    "schema": "air3.frontend-build.v1",
+    "builtAt": "2026-10-25T03:39:32.674Z",
+    "node": "v24.22.1",
+    "esbuild": "0.28.2",
+    "inputs": [
+      {
+        "path": "public/air3-attention.mjs",
+        "bytes": 8830,
+        "sha256": "ea1e33cd14300879e1d104ec8866fc7943ac715497bfd7bb8dea86f4270a783d"
+      },
+      {
+        "path": "public/air3-avatar.mjs",
+        "bytes": 18558,
+        "sha256": "59260a2fb70366dc29ffb21159db2bd69ff2e724e78cb29d91c87c501580d1af"
+      },
+      {
+        "path": "public/air3-face.mjs",
+        "bytes": 14631,
+        "sha256": "bf67004472684e6eae68b962a6f5b91fb54f29250fac94b56ec0fd261701ae2b"
+      },
+      {
+        "path": "public/air3-footwear.mjs",
+        "bytes": 11797,
+        "sha256": "3e2a7b6094ec2bef2918f1d60761ef6fce4acab77e1a47aea5499d6af074176c"
+      },
+      {
+        "path": "public/air3-hair-wardrobe.mjs",
+        "bytes": 15578,
+        "sha256": "0a75edb9679dfc22f61863249a7669ff6fae7cee482f298be2d35072f537a7c6"
+      },
+      {
+        "path": "public/air3-hair.mjs",
+        "bytes": 22339,
+        "sha256": "64d6e989424bc9eb9211a58139079ba5f5219d7841f176ecd800c78bd67dcafa"
+      },
+      {
+        "path": "public/air3-locomotion.mjs",
+        "bytes": 7744,
+        "sha256": "f74716da0db6c3ff6e79c206e625379fe2649df476dc4f25a8ab28ce67c677e4"
+      },
+      {
+        "path": "public/air3-stage-motion.mjs",
+        "bytes": 21333,
+        "sha256": "d5567c84be2ae7a53413edabaf25af0a3823f1554dee3634334241fd65303236"
+      },
+      {
+        "path": "public/app.mjs",
+        "bytes": 19805,
+        "sha256": "5825bbba6c6d20b5dbab71c306a9b0531c2430ca5560796b03df05f999eaa4b2"
+      },
+      {
+        "path": "public/assets/air3/motion/accad-female1.mjs",
+        "bytes": 503685,
+        "sha256": "c2dde49358f33b11913cd959e1ff2bc6af9f2931cc05e65442de202806e10ad1"
+      },
+      {
+        "path": "public/avatar-materials.mjs",
+        "bytes": 12085,
+        "sha256": "6fb54398f54892de493109b9a71781eeefbec489bd6e49fa4cdabb47648a9562"
+      },
+      {
+        "path": "public/data.mjs",
+        "bytes": 6950,
+        "sha256": "d99246963e242514d9e360fce7a28f960516351b9d161a79e60fde4899a10bd9"
+      },
+      {
+        "path": "public/health-worker.mjs",
+        "bytes": 1384,
+        "sha256": "99d2a59a1171635574df2b529fde30b10dc996f90722b35e52859b0d0e513340"
+      },
+      {
+        "path": "public/lip-sync.mjs",
+        "bytes": 3017,
+        "sha256": "14a176477ab81e0c015dc9828957ca65ca04438f9f2dae7bf460f325d9980730"
+      },
+      {
+        "path": "public/look-controller.mjs",
+        "bytes": 6672,
+        "sha256": "65b65a49e512107c622b8155f3660ebca6a3fdf8a38fed20648d711cfd56de8b"
+      },
+      {
+        "path": "public/look-controls.mjs",
+        "bytes": 11380,
+        "sha256": "21a4209ad237ad4b0784e2a898be9b096efb47fb3298336e29ec6f7d5af61cf1"
+      },
+      {
+        "path": "public/look-presets.mjs",
+        "bytes": 5205,
+        "sha256": "d5e37ec13834058d569f200313b9781db9a51b4128047b304e52caca92f87886"
+      },
+      {
+        "path": "public/monitors.mjs",
+        "bytes": 9876,
+        "sha256": "1dbbac662963732b0d95999556719d7a68496aecbd295813ff3516390e12572e"
+      },
+      {
+        "path": "public/preview/viewer.mjs",
+        "bytes": 16724,
+        "sha256": "20d6cfd742c4867e0395bf90c8b18c5a94aef632d8699088f55bb3717bbcb4a6"
+      },
+      {
+        "path": "public/pure.mjs",
+        "bytes": 6882,
+        "sha256": "df1d7cc83213d905d4a3b19efd6ad93b830667dbb7dd98ddada40bebdd2b8f02"
+      },
+      {
+        "path": "public/speech-player.mjs",
+        "bytes": 13141,
+        "sha256": "f9c52457f7476d7b6053bb3fffe615e40f805b88d4ce3414bff862c122140048"
+      },
+      {
+        "path": "public/studio-lighting.mjs",
+        "bytes": 5861,
+        "sha256": "41733af4ce7de8f349bd33e3218d8b0ab59956c32f2070dab84cebc0b0d21cb1"
+      },
+      {
+        "path": "public/studio-rendering.mjs",
+        "bytes": 11950,
+        "sha256": "375b0a998e296ee4505881e803df06ce324dfde15fb8b3170245be7c3a6a39b3"
+      },
+      {
+        "path": "public/studio-scene.mjs",
+        "bytes": 32561,
+        "sha256": "6e13d25c87e90586ed43ee64e5e08991323c01c3e0e65baa503d118c936713c4"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "public/build/app.js",
+        "bytes": 67878,
+        "sha256": "61c231db628ea9cc5cbd4c9f2c75d3f3e2c06d823e8ca0e53ad56a2c4ffff9b4"
+      },
+      {
+        "path": "public/build/health.js",
+        "bytes": 694,
+        "sha256": "c3b0210057f80fa8371fa3cd0ff9b18e4da4fb9b1183a74612c99d3650d6debe"
+      },
+      {
+        "path": "public/build/preview.js",
+        "bytes": 10706,
+        "sha256": "b604b12eedf029115f108d3a1c19d2159ca3a456e26695a1214c1e7a0831d292"
+      },
+      {
+        "path": "public/build/shared-C4QLRHKW.js",
+        "bytes": 553122,
+        "sha256": "1b90ea53a1be538327a0e95796cdf9fcd0c5b246876f0deb24d9f0f211add1bd"
+      },
+      {
+        "path": "public/build/shared-IUPYLFTI.js",
+        "bytes": 4402,
+        "sha256": "86e688e2e69c4e98b3cb355fff00d7e293ef390b9f772559d47569c80a4b603d"
+      }
+    ],
+    "assets": [
+      {
+        "path": "public/assets/air3/AIR3-ASSET-VERSION.json",
+        "bytes": 194,
+        "sha256": "b5f78c7ee3bf9592f24ca414de95b95490a049ea5e436c25f9090d62284128c9"
+      },
+      {
+        "path": "public/assets/air3/branding/airewardrop-mark.png",
+        "bytes": 110479,
+        "sha256": "80b427076b3c1dd1555646b862d6e52742e020b5a9ec52eaac64cb56d79b3dd1"
+      },
+      {
+        "path": "public/assets/air3/demo/PROVENANCE.json",
+        "bytes": 764,
+        "sha256": "469f57a27c1b2c63c9f9dffcdf532acc3bf5a147fc4fca5667f9921ffe2895be"
+      },
+      {
+        "path": "public/assets/air3/demo/voice-reference.json",
+        "bytes": 5862,
+        "sha256": "a140690670f6e948e4f154c813279227882924d23893b8a7ae67b47dbb7cd03c"
+      },
+      {
+        "path": "public/assets/air3/demo/voice-reference.wav",
+        "bytes": 576078,
+        "sha256": "efbd6e9372b9cd8ddb598747a3d2efcd1b5df4620c297127b7f7b42e0b1dffd8"
+      },
+      {
+        "path": "public/assets/air3/footwear/assets-manifest.json",
+        "bytes": 2646,
+        "sha256": "cac1dd32056d5e05028962e0b881151dc2bbd6d7f5620b394fa826950ecd4afc"
+      },
+      {
+        "path": "public/assets/air3/footwear/boot.glb",
+        "bytes": 3206212,
+        "sha256": "050c5385ccf4700ed095f3f0d025447f30f6abb2dde77b3569ee6b8c53dbe829"
+      },
+      {
+        "path": "public/assets/air3/footwear/shoes-test.glb",
+        "bytes": 1117592,
+        "sha256": "59dd3a8981b500cd6c1e79f4a02b4ae37a1606ae81065957d154026ea0e2e08e"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-alpha.png",
+        "bytes": 1003494,
+        "sha256": "fde103729e4aa5dcd39bb389bf12949f72cdd45d1f66905cf1558268a3756966"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-auburn.webp",
+        "bytes": 247552,
+        "sha256": "5f09b84880d943a8c85b24778e5801e358be32b49915b06b3c7ff5731f726b84"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-black.webp",
+        "bytes": 130082,
+        "sha256": "0576d9c784e338b1545b7e6c8fc530974a3165db656028eb0d3f78c9346ae94f"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-blonde.webp",
+        "bytes": 350482,
+        "sha256": "7e0e9a39914dcce60da580cb76c5a308b757c4534f516777729379332db694fd"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-chestnut.webp",
+        "bytes": 250888,
+        "sha256": "5e0d90f88d2344973dccf0bb22de280d5c3a15f3ab109e7331dd9d0c31bfe019"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-copper.webp",
+        "bytes": 272218,
+        "sha256": "4c050275d4b82d3f7161951332875ccf4212f171d0d5c1bd75256f954fa1820c"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-dark-brown.webp",
+        "bytes": 212910,
+        "sha256": "c0e975cd3901431114a022e028145c570cf7fdd96c18393c8bccd3233b2d63ba"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis-normal.png",
+        "bytes": 949625,
+        "sha256": "4449f49bc02981e88c86e6673278ad706a6a9fd2e497d73d3e80cb37cf30689e"
+      },
+      {
+        "path": "public/assets/air3/hair/artemis.glb",
+        "bytes": 533616,
+        "sha256": "7d18ac158ac25dcab7808e689acb0b230ef06a9dd434de96e4be61ee603f8c67"
+      },
+      {
+        "path": "public/assets/air3/hair/manifest.json",
+        "bytes": 5659,
+        "sha256": "5f8ba5783bf3971313c6f98c21739159635f31d169ad9a64f3eae88417266bbe"
+      },
+      {
+        "path": "public/assets/air3/hair/wavy-source.png",
+        "bytes": 131717,
+        "sha256": "9e21c43fd8d4350cdb1e31aaeb8ff5c33fcacb63ad56152c068866ef7a3eb5c0"
+      },
+      {
+        "path": "public/assets/air3/hair/wavy.glb",
+        "bytes": 318136,
+        "sha256": "c17dfbd513a8d9525a4b86d9cc37d9719bd873a1275f6019c599cd9c15ca06a2"
+      },
+      {
+        "path": "public/assets/air3/metadata/air3-missing-metadata.json",
+        "bytes": 678117,
+        "sha256": "8262c3d929646a2049a6a90e887faa94c7a580dd709ea1cb13a875a02eae5645"
+      },
+      {
+        "path": "public/assets/air3/metadata/material-bake-report.json",
+        "bytes": 8693,
+        "sha256": "5ff0bc6109278e07750712dc6ac458d05e63c0a70a4722f25fe7d981c5869e26"
+      },
+      {
+        "path": "public/assets/air3/models/AIR3-runtime.glb",
+        "bytes": 21666344,
+        "sha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d"
+      },
+      {
+        "path": "public/assets/air3/models/Mod_16x9_moniotr.glb",
+        "bytes": 9380,
+        "sha256": "8a6454e4266d0e82ed2763de09cfb874204f3ddc3204291a5946bc237069246f"
+      },
+      {
+        "path": "public/assets/air3/models/SM_Entrance_Chair.glb",
+        "bytes": 96816,
+        "sha256": "f1ce11c01d9661638b33535115adc547a62e58c29547647d2766be82dd1daa61"
+      },
+      {
+        "path": "public/assets/air3/models/SM_Entrance_MiddleTable.glb",
+        "bytes": 107396,
+        "sha256": "8a77768929e39740026215c936f540ca3cb8d4ee1d8976d1a8359be0c3c74b67"
+      },
+      {
+        "path": "public/assets/air3/models/SM_Keyboard.glb",
+        "bytes": 15756,
+        "sha256": "2ba103016fbc530e5c02e746819dd78ba02fb2f5d0bf537204022cea9a259e1d"
+      },
+      {
+        "path": "public/assets/air3/models/SM_Laptop.glb",
+        "bytes": 15744,
+        "sha256": "c362554d65bf28f84293bd22eb6ca5549baf586d66578c824180a5b401123724"
+      },
+      {
+        "path": "public/assets/air3/motion/accad-female1.mjs",
+        "bytes": 503685,
+        "sha256": "c2dde49358f33b11913cd959e1ff2bc6af9f2931cc05e65442de202806e10ad1"
+      },
+      {
+        "path": "public/assets/air3/presets/default-look.json",
+        "bytes": 1763,
+        "sha256": "466998d8964ed3fb95956c06fa895bc3a12f088e4a6ee077d9bcebc71c8db7f7"
+      },
+      {
+        "path": "public/assets/air3/textures/color/1.webp",
+        "bytes": 1212628,
+        "sha256": "0c5d42856d9dbef86e11064ab11b1d057eaf34aad53fc74a4e04a0caec8a22b3"
+      },
+      {
+        "path": "public/assets/air3/textures/color/BodyBaseColor.webp",
+        "bytes": 316748,
+        "sha256": "a2b80c3d84eb8822bd3f281cee778d8d8bcc3b0cd81c231af69fb29585a84bb5"
+      },
+      {
+        "path": "public/assets/air3/textures/color/FaceColor_CM1.webp",
+        "bytes": 306712,
+        "sha256": "3d2d40ceb6fd4c1d731590b63382dfdc316e35755e55101fbc4e9e0b959ab1a0"
+      },
+      {
+        "path": "public/assets/air3/textures/color/FaceColor_CM2.webp",
+        "bytes": 305802,
+        "sha256": "b139880a4a32d6478028576adfe3ff2b080bef8f0d716c288d42fdf9eaf4851c"
+      },
+      {
+        "path": "public/assets/air3/textures/color/FaceColor_CM3.webp",
+        "bytes": 305186,
+        "sha256": "0045aac730485e581c995eec009d177c835ffd570dfd1493cbc8ddab4da11aeb"
+      },
+      {
+        "path": "public/assets/air3/textures/color/FaceColor_MAIN_LOD.webp",
+        "bytes": 305798,
+        "sha256": "f80a4aefb864b554607c6a18651697c770125a1ca3edb8d8428ce3846f9455d6"
+      },
+      {
+        "path": "public/assets/air3/textures/color/FaceColor_MAIN.webp",
+        "bytes": 306840,
+        "sha256": "73d6d4e9b8ffdaa683681ea9dcf675323430bb44e69601c9cbbc998bf9675e73"
+      },
+      {
+        "path": "public/assets/air3/textures/color/T_EntranceBigMonitor.webp",
+        "bytes": 134570,
+        "sha256": "beb47f8d1ff4f194d45cbcb82df86d3ba159facb0a4fed349d7ea6a28e5aedd0"
+      },
+      {
+        "path": "public/assets/air3/textures/color/T_EntranceKeyboard.webp",
+        "bytes": 32282,
+        "sha256": "0dfbb586d43c150a63f3abceeecce91554c68e47442aee57cb9d72344bf2787e"
+      },
+      {
+        "path": "public/assets/air3/textures/color/T_EntranceLaptop.webp",
+        "bytes": 72156,
+        "sha256": "b293438635cd5d211219dc317889ebd5ffa54df8893baa5cbeaa94cac8e5699e"
+      },
+      {
+        "path": "public/assets/air3/textures/color/T_EntranceMiddleTable.webp",
+        "bytes": 15362,
+        "sha256": "46f8fa55709d0390ad259f2a921e815239a99263e38aa76cafcdd836e5a8b816"
+      },
+      {
+        "path": "public/assets/air3/textures/color/T_MONITOR_SCREEN1.webp",
+        "bytes": 107172,
+        "sha256": "d1f99265e3ab1a7d3ae8f45ecbe7938ec33d0bba8812e71fead3c65a6d126140"
+      },
+      {
+        "path": "public/assets/air3/textures/color/Unnamed_albedo.webp",
+        "bytes": 1464630,
+        "sha256": "1281eeca8855df8fc96b6fc785629765e10151e2d9388c30217859f0ce727065"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceCavity_MAIN.png",
+        "bytes": 1044965,
+        "sha256": "b7a569f1cf5d1fa6aef6e378b64e70a6becc8f5d63e7bd766f9064a7e18c48b8"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceEyeLipstickMask.png",
+        "bytes": 36236,
+        "sha256": "eb943208aa7e2edd1da3d050dd967d0608ed19b65dae22b385d6a3c33c153cc6"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceFoundationBlusherMask.png",
+        "bytes": 257106,
+        "sha256": "c78fee2bd013609f197e7393c57b6bbc92b7fe44a3923dc1b48afce58697b4e7"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceNormal_MAIN_LOD.png",
+        "bytes": 5540440,
+        "sha256": "110b731c50bce738a4df07bec15717ed30cd3efd2f1f866785852a51430c4f39"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceNormal_MAIN.png",
+        "bytes": 5535150,
+        "sha256": "401d7a3c91e4b6b033b3e5fcc04504f5b8a21936567d26c9a737eb9c103a5642"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceNormal_WM1.png",
+        "bytes": 5561644,
+        "sha256": "1787b7f2efedbb31af2db2318a9a44d0b4412aca15b836f0c312eca5f6587fe3"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceNormal_WM2.png",
+        "bytes": 5580656,
+        "sha256": "614cc663e7913bb8619912e53b8144b3cbb336007bfec5c274accda7e5668950"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceNormal_WM3.png",
+        "bytes": 5506670,
+        "sha256": "81cf03af79062bb9b1d5665766ecd6f92a5b258f867f39716c4d1bf72e26cf72"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceRoughness_MAIN.png",
+        "bytes": 741928,
+        "sha256": "a67153dbc3c07e10b822189a249b79cd076464acfbada1b475f079d9a4d9bdb7"
+      },
+      {
+        "path": "public/assets/air3/textures/data/FaceRoughness_ORM.png",
+        "bytes": 742534,
+        "sha256": "54809fd6d00df2f992d18cc599b46d5911a42ec6629d9e70c0613406ea643197"
+      },
+      {
+        "path": "public/assets/air3/textures/data/T_BakedNormal_LOD3.png",
+        "bytes": 65489,
+        "sha256": "22620177a606f1c1976cce819bac8df8cbdc444a274ac74ed848fc99f996e8d2"
+      },
+      {
+        "path": "public/assets/air3/textures/data/T_BakedNormal_LOD4.png",
+        "bytes": 71857,
+        "sha256": "dd6d1c8f8b07d8f609ade6026886eeb76f60e2a4c3350446de71e2c1fd6dd504"
+      },
+      {
+        "path": "public/assets/air3/textures/data/T_BakedNormal_LOD5.png",
+        "bytes": 75572,
+        "sha256": "da39a39c727cd2d21f26c0b143dde4dbe0280c720718dbd1aab638f8538693ae"
+      },
+      {
+        "path": "public/assets/air3/textures/data/T_Entrance_Keyboard_AO.png",
+        "bytes": 321820,
+        "sha256": "5dbfa990c2c6a4adfa6b04ecbe2e298075e295b4a79f97ef70428a8ff4f670e3"
+      },
+      {
+        "path": "public/assets/air3/textures/DefaultTexture__88bf471744.png",
+        "bytes": 29334,
+        "sha256": "419d93e5d7b7de8efd84800724ebef5f26569b197a27c111eeccfb9c9b1665b8"
+      },
+      {
+        "path": "public/assets/air3/textures/DefaultTexture.png",
+        "bytes": 29334,
+        "sha256": "419d93e5d7b7de8efd84800724ebef5f26569b197a27c111eeccfb9c9b1665b8"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyebrows_M_Shaded_CardsAtlas_Attribute__84fa339495.png",
+        "bytes": 6820748,
+        "sha256": "d61407a0869098338e5657ce7f63f07f6387ece62304a27259c9c16c7372ec1b"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyebrows_M_Shaded_CardsAtlas_Attribute.png",
+        "bytes": 6820748,
+        "sha256": "d61407a0869098338e5657ce7f63f07f6387ece62304a27259c9c16c7372ec1b"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyebrows_M_Shaded_CardsAtlas_Tangent__d5ee90738c.png",
+        "bytes": 463022,
+        "sha256": "2b782e83662223c16bc6a76a2ef5d6613f3842b97cc3b5f5482e50b3583fb214"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyebrows_M_Shaded_CardsAtlas_Tangent.png",
+        "bytes": 463022,
+        "sha256": "2b782e83662223c16bc6a76a2ef5d6613f3842b97cc3b5f5482e50b3583fb214"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyelashes_L_Curl_Coverage__09972f4e60.png",
+        "bytes": 442658,
+        "sha256": "960d9fc297f629ed8949a55d66326f8bb82100a684b0e0de82953256fd49c70b"
+      },
+      {
+        "path": "public/assets/air3/textures/Eyelashes_L_Curl_Coverage.png",
+        "bytes": 442658,
+        "sha256": "960d9fc297f629ed8949a55d66326f8bb82100a684b0e0de82953256fd49c70b"
+      },
+      {
+        "path": "public/assets/air3/textures/Hair_S_UpdoBuns_CardsAtlas_Attribute__6ed0c137d2.png",
+        "bytes": 16843696,
+        "sha256": "5b94db124992abb927bac92e134772a3b0b93efd352b3e12859d21c310fc8508"
+      },
+      {
+        "path": "public/assets/air3/textures/Hair_S_UpdoBuns_CardsAtlas_Attribute.png",
+        "bytes": 16843696,
+        "sha256": "5b94db124992abb927bac92e134772a3b0b93efd352b3e12859d21c310fc8508"
+      },
+      {
+        "path": "public/assets/air3/textures/Hair_S_UpdoBuns_CardsAtlas_Tangent__3e69afb824.png",
+        "bytes": 321250,
+        "sha256": "328af0e868ba3f00d2871625a9dfe15031610834cdfc2fa916cbf507839c4ac9"
+      },
+      {
+        "path": "public/assets/air3/textures/Hair_S_UpdoBuns_CardsAtlas_Tangent.png",
+        "bytes": 321250,
+        "sha256": "328af0e868ba3f00d2871625a9dfe15031610834cdfc2fa916cbf507839c4ac9"
+      },
+      {
+        "path": "public/assets/air3/textures/render/BrowsAnisotropy.png",
+        "bytes": 222145,
+        "sha256": "c2a61330d38cca55a4b290843d0d1b08cf7a7b763d1604136c5df37200bcdeb8"
+      },
+      {
+        "path": "public/assets/air3/textures/render/BrowsColorCoverage.webp",
+        "bytes": 1174462,
+        "sha256": "453cbe19ff420b00c4cc07ec38f5f6427593cb1a5e7fb39b7a1374badcecf182"
+      },
+      {
+        "path": "public/assets/air3/textures/render/ClothWeave.png",
+        "bytes": 802,
+        "sha256": "0a18525a19999791f91f4980011fa9769f4134e73ca1e42679fce13e38f679bd"
+      },
+      {
+        "path": "public/assets/air3/textures/render/EyeColor.webp",
+        "bytes": 63846,
+        "sha256": "04cd78017b606a34c01d3702bbf26eb10ebd9c43db5326a04e42bda857d7f1dc"
+      },
+      {
+        "path": "public/assets/air3/textures/render/EyeNormal.png",
+        "bytes": 368049,
+        "sha256": "e24e20421d9f4db33d0919d9a34d70d4f89b2edde95e29a91a6eb482077cf22d"
+      },
+      {
+        "path": "public/assets/air3/textures/render/FaceBeautyColor.webp",
+        "bytes": 284680,
+        "sha256": "f5c0e7b4e2c699664df0cf4f4228095d3e988706a3622b3adc2fbf723302fa00"
+      },
+      {
+        "path": "public/assets/air3/textures/render/FaceBeautyORM.png",
+        "bytes": 733519,
+        "sha256": "cdf25a6a09ee11a3a72d67e148f00534fd78a292c035e14f684ac4ccec87d2ef"
+      },
+      {
+        "path": "public/assets/air3/textures/render/HairAnisotropy.png",
+        "bytes": 101228,
+        "sha256": "2b02c87b4d9a05b2666f919901311aff0d5931e8bb697377561b3012f5233abe"
+      },
+      {
+        "path": "public/assets/air3/textures/render/HairColorCoverage.webp",
+        "bytes": 804784,
+        "sha256": "9f3838b59cec8c9113c0a28a881bfb3512e325a16051c29a29f6d567de29547e"
+      },
+      {
+        "path": "public/assets/air3/textures/render/LashesCoverage.png",
+        "bytes": 256369,
+        "sha256": "a89a1b07a999dfe2b2d522fe8ae2de80ab22bcdaa64f418840329e962353beb9"
+      },
+      {
+        "path": "public/assets/air3/textures/render/MouthColor.webp",
+        "bytes": 1290,
+        "sha256": "56efcd494c760cb7d041e9b1112fc8d7b2b858d429c027aabcd1651eb995fe1d"
+      },
+      {
+        "path": "public/assets/air3/textures/render/MouthORM.png",
+        "bytes": 1600,
+        "sha256": "d84e56becb665246a4a8276d19c190b16c1b23b49cc1c8accf497720e10bdc3c"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Iris_A_H__eaf366aa78.png",
+        "bytes": 246052,
+        "sha256": "7f10c9f9e6c08b6f5731d2afb4427c2140c2e8593e3bb9a967819f3769ce5ace"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Iris_A_H.png",
+        "bytes": 246052,
+        "sha256": "7f10c9f9e6c08b6f5731d2afb4427c2140c2e8593e3bb9a967819f3769ce5ace"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Iris_A_M__07f8b38c91.png",
+        "bytes": 1756245,
+        "sha256": "73c3d3ed6d165664d3bdd495819e79e6cbfddc3962ba186b418936c0ee603029"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Iris_A_M.png",
+        "bytes": 1756245,
+        "sha256": "73c3d3ed6d165664d3bdd495819e79e6cbfddc3962ba186b418936c0ee603029"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Sclera_D__71622ea133.png",
+        "bytes": 3513309,
+        "sha256": "fed8f33529d93acb5607c68396be92349cc410f8f7656b4597e310dadaba4609"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Sclera_D.png",
+        "bytes": 3513309,
+        "sha256": "fed8f33529d93acb5607c68396be92349cc410f8f7656b4597e310dadaba4609"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Sclera_N__6e30201483.png",
+        "bytes": 1484901,
+        "sha256": "43e0d9842f5c78eaa473a88b8a96c2ea32c0e50a44d1868cafa52f55c50601ba"
+      },
+      {
+        "path": "public/assets/air3/textures/T_Sclera_N.png",
+        "bytes": 1484901,
+        "sha256": "43e0d9842f5c78eaa473a88b8a96c2ea32c0e50a44d1868cafa52f55c50601ba"
+      }
+    ],
+    "externalDependencies": [
+      "three@0.186.1"
+    ],
+    "validatedModelImages": [
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/BodyBaseColor.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/Unnamed_albedo.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/1.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/FaceColor_MAIN.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/data/FaceRoughness_ORM.png"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/data/FaceNormal_MAIN.png"
+      },
+      {
+        "model": "SM_Entrance_MiddleTable.glb",
+        "image": "textures/color/T_EntranceMiddleTable.webp"
+      },
+      {
+        "model": "SM_Keyboard.glb",
+        "image": "textures/color/T_EntranceKeyboard.webp"
+      },
+      {
+        "model": "SM_Laptop.glb",
+        "image": "textures/color/T_EntranceLaptop.webp"
+      }
+    ]
+  },
+  "postSuiteChecks": [
+    {
+      "path": "tools/prepare_footwear.mjs",
+      "sha256": "d0c740ffc81ce2c6b5bacb35771a44c602bece3e6ec04789aaeb98048de08c9b",
+      "exitCode": 0,
+      "scope": "Converter portability amendment only; syntax validated and original runtime outputs reproduced byte-for-byte as recorded in converter-portability.json"
+    }
+  ]
+}

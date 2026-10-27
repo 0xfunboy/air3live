@@ -1,0 +1,29 @@
+{
+  "schema": "air3.footwear-sources.v1",
+  "assets": [
+    {
+      "filename": "boot.glb",
+      "bytes": 13914952,
+      "sha256": "9b984c04554fd014d02ead42c38393d6aa730731084a2b0030355f3d5374c4a7",
+      "provenance": {
+        "author": "Aquateknica (https://sketchfab.com/aquateknica)",
+        "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+        "source": "https://sketchfab.com/3d-models/boot-bddd4acad797461f9ac8156bbaf1c4bf",
+        "title": "Boot"
+      },
+      "received": "user attachment 2026-10-25"
+    },
+    {
+      "filename": "shoes_test.glb",
+      "bytes": 8108480,
+      "sha256": "af9237cebfd7019c8a921cf3c619ffb9f489d53a8ca197376cc19792431f4a1a",
+      "provenance": {
+        "author": "Bente Aimee (https://sketchfab.com/bentaimee)",
+        "license": "CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)",
+        "source": "https://sketchfab.com/3d-models/shoes-test-8a6dfbba461f4e7fb6b9119092572f14",
+        "title": "Shoes test"
+      },
+      "received": "user attachment 2026-10-25"
+    }
+  ]
+}

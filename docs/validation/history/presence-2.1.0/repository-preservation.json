@@ -1,0 +1,18 @@
+{
+  "source": "User supplied AIR3_Studio_Handoff_Codex_2026-10-24.zip",
+  "sourceSha256": "aeba32830ac5dabf9d80dca0bfc5fdf4a7f7b23507143c313ceb0d33a60c949a",
+  "repositories": {
+    "airewardrop-dapp-main": {
+      "files": 1430,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "airewardrop-eliza-main": {
+      "files": 475,
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "passed": true,
+  "sourceSha256": "7f2400e9d19cd712c067e067ac02db427e33f46fd2bb7619424c9224efb406c5",
+  "runtimeSha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d",
+  "runtimeBytes": 21666344,
+  "primitives": 20,
+  "geometryVertices": 177057,
+  "geometryAttributeArraysCompared": 143,
+  "positionsNormalsUVsIndicesAndSkinWeightsBitIdentical": true,
+  "allBindTransformsAndInverseBindMatricesIdentical": true,
+  "facialTargetsAdded": 29,
+  "notes": "No geometric enlargement of the head or shrinking of the shoes. Body shape is corrected by retargeting animation translations to the original destination bind offsets.",
+  "arrays": [
+    {
+      "mesh": "body__f_tal_unw_body",
+      "primitive": 0,
+      "attributes": {
+        "POSITION": "23e1b5b82ff017ae9c5aee32040eb094541aa1aee40aad05f811e6b30e6d0123",
+        "NORMAL": "c1bfa4b1643ea4038fc3db9beb7bf1d7eac6fee472b361776311cd06d1721fee",
+        "TANGENT": "988ecdae3ff54de624210f5e552d6a7cd0ec7d7dfee5ce845aa84f4e6dd45610",
+        "TEXCOORD_0": "102d7a8a05da30a95b9f52772c6b16c07d1566fdce3e2d0e8560ce27c61ede07",
+        "WEIGHTS_0": "2227206a4b5ed9d4898b3db4b526d036acd4e939a129ad1c560d10eb305651ef",
+        "JOINTS_0": "7a457e53adb52739c39e5ae7236b9dd405eeeadbc54b73941b57ee6023b8a42b",
+        "WEIGHTS_1": "9ecdcccf6d8104a090d7f4f2f0d2ee4c4fb03955c4751de3c86d56fd4345d6d1",
+        "JOINTS_1": "8d8cf1b0590cb55a34e9180290079c817517c0201615675af89815f4ee3c0612",
+        "WEIGHTS_2": "07f263f58b6ab941aa9f04f344ae3f9a3ac343d6fd7d12360d2a8c48698fa8b8",
+        "JOINTS_2": "99615acc913233c88d073ce15f3de999f0ca845283efdaa0aac451e7f78df455",
+        "_AIR3_WEIGHT_SUM_0": "3be2517a7ddf9ef9d1899f567eee59b52088d82ffd6dffd6cb911bc530fa1872"
+      },
+      "indexSha256": "e72493429e0684d0c917e057add258bb715795eab6015a5666e4e0e83648843e"
+    },
+    {
+      "mesh": "outfit__ScothSkirtWhitheShirtNewBalance",
+      "primitive": 0,
+      "attributes": {
+        "POSITION": "fcf0bc73f5987f92f2e2fe71b227742a43b05a2042270746ac3e5e5137974b6f",
+        "NORMAL": "a6095206e2974cdc37da7107e4eb75cff51f029fe38512946e4cce52559ef1ef",
+        "TANGENT": "ca164d90a85b771b74d65eda12e2821965beeb2913f429a7f292671ae5c258b5",
+        "TEXCOORD_0": "31ba8bca47866d303c7c0680fca9646f74cd96d1424d05222a7bd8a269ca4b4e",
+        "WEIGHTS_0": "9a2e709811c9b34d6f872e36d8087958a50a8b589a9a570bc4df047cfd653905",
+        "JOINTS_0": "46938685d4ba93fea46f3813c6a73f75dc7384cf37ef692618b813074936555b"
+      },
+      "indexSha256": "10ad37ffab61618661d650d78e5fc33f08ff960a273e95f785545a191a52d0f6"
+    },
+    {
+      "mesh": "outfit__ScothSkirtWhitheShirtNewBalance",
+      "primitive": 1,
+      "attributes": {
+        "POSITION": "7e4299af0a27983947b513db685d30634431c9993bcc913e1f85ea65fd7114c7",
+        "NORMAL": "7628bcbd7d007bcd172031f9b2801eb01a359aecf98149b8165cada2ed11ab9a",
+        "TANGENT": "c84cfffc49c9d4a887ccf54f7ed38dd37d9ccdcdc9283e182362c0f2afc3c442",
+        "TEXCOORD_0": "9a9aa4130c19596272d9959ffc37607b937df6888ee4fc132076446a9ba497a1",
+        "WEIGHTS_0": "df9c57b13eb85a84ce2c731ab00bc4b5a5ed4160e6777c21e3a8d892e6aa83f9",
+        "JOINTS_0": "92fb6e336c3f53bead12ad0201d94db91d47523ce9b09f0f5073e5c0bc91190d"
+      },
+      "indexSha256": "725cb9d324a91d420d5b9db7624646542412268f596a2880fe6bc777cb062d4d"
+    },
+    {
+      "mesh": "outfit__ScothSkirtWhitheShirtNewBalance",
+      "primitive": 2,
+      "attributes": {
+        "POSITION": "33063d4d87783633189d5a4d588479df47f18bc9ea9bb384a2d46379bf260b68",
+        "NORMAL": "fe2ed6431f974b395db9ecd6e9a5a88fa2bb700b2205bb4532a9c818d3b30231",
+        "TANGENT": "426340348cc1bc5e21741093a7bdf9e2d7e3aad5b03ad417b89269940c50ddfa",
+        "TEXCOORD_0": "7c6e52b3bdd5bd10323ed806e5927cab3c6529364aa23f220e82de96e021e5b0",
+        "WEIGHTS_0": "fbdbb3a71759d75ac6aed4fdf56dff831f13d72a321460c8fbd450f27d635156",
+        "JOINTS_0": "7b4a65a7302849c1ea5a9db7a552b06cb3f57d1079a4bf10afd97555e7d9976c"
+      },
+      "indexSha256": "888a66f4c7ea356a92289945cdcc51205969a5c3723b1290f438a6e8acf11806"
+    },
+    {
+      "mesh": "outfit__ScothSkirtWhitheShirtNewBalance",
+      "primitive": 3,
+      "attributes": {
+        "POSITION": "0182cce71dd9b4da6d2f847432d3585f2c71f14cf76e9389ca9d7b30fbb6d5db",
+        "NORMAL": "02ebce5104ce16aa20e7d82fd14423e3bdf4f07b51c250de68a3cafdddffd4b1",
+        "TANGENT": "980aca4f2c0870bdec91341d38555e3a5ddd92831b081939c3dcd8a67a5bc4e0",
+        "TEXCOORD_0": "1a339ca5fdc9affa9e79d383654ad38b2c110fb7574ef598fbaacbe76292f4ef",
+        "WEIGHTS_0": "bc9433f22b8d32c94497f98d816b2c700a6a36524e5a06fe5058e69f981eebdb",
+        "JOINTS_0": "20efd26915468edc5921df23fd6f1bd98e3117cf50f89a88eb31dcbfca0acfed"
+      },
+      "indexSha256": "4ddafa1dd630dc1e477b94821d57727e3f27062245b1f36cd2bca4e5b3120e52"
+    },
+    {
+      "mesh": "outfit__ScothSkirtWhitheShirtNewBalance",
+      "primitive": 4,
+      "attributes": {
+        "POSITION": "25e7089d67bb0f11284e160384fb017cc313ee261af9883fca2117bf65fbb2de",
+        "NORMAL": "a21754781c189a77170784905eacaaf5b46eb9ac10d6346a5037d85a7546bafb",
+        "TANGENT": "3c5a3d2e65deb0bbc1b2fb199d0212323085270f5a8e5fa05ac8f6ca904f39a3",
+        "TEXCOORD_0": "2b18a0378d29ebc43a5f0795682d85d0ff487f491e023d4b8722f5ced20d3c25",
+        "WEIGHTS_0": "42d9407b89329e8746a419f7e05ae1d57835488a62bc60b98718a08e299382a7",
+        "JOINTS_0": "b338329adddabde83ff90d60f28edfc5a1c0e6638ad9fb0cb25f86ae2c8e9a3c"
+      },
+      "indexSha256": "95f0c36200efba3620a1106186f92208760c2ff85594eab3c5ac46ca11b5ecdf"
+    },
+    {
+      "mesh": "outfit__ScothSkirtWhitheShirtNewBalance",
+      "primitive": 5,
+      "attributes": {
+        "POSITION": "f442ca7d72d96ba1da12170143d9f6ec53cf1b037251915cf3ab949c7c83cc3a",
+        "NORMAL": "1d3e9f7a52193cbf13773e1623ace5e613d1da0f5ca289ccd5edb10127f7c45f",
+        "TANGENT": "2e3bd30ef2cd7ebe79977be93fa507c499f75a86aa18fcb3c25b7d3894fd0939",
+        "TEXCOORD_0": "44fd7411e21584c1373f256bd9658230279aca7ee3a77f394cbc60caa57fec09",
+        "WEIGHTS_0": "bbcc38d34fe5ce5dde041f41af6db47b92e1d07a398c4e055da2e9f879282254",
+        "JOINTS_0": "b8d95014444a17eaeabb792f63e8a083a98ee9a7ec4cdf90c613060bb4774b45"
+      },
+      "indexSha256": "a908a627418e38126d1f018585a73e5352119bb8c62349b0188f3eb9ef67b6b8"
+    },
+    {
+      "mesh": "outfit__ScothSkirtWhitheShirtNewBalance",
+      "primitive": 6,
+      "attributes": {
+        "POSITION": "75760a207d86cc6ccb611ff306e894aeedacdd4b52d49cd8bb15e2b392533edc",
+        "NORMAL": "9671c19566219cca7499e05df263bfd11e857549e4671948044c27951f374048",
+        "TANGENT": "d24032a2480ea7ceef32d8d7d17e9a3f58ce9c36a970c4ed292908229e22182c",
+        "TEXCOORD_0": "08e04271770f0b7d8bee77806581f9d68298e625c052cf8c9b3d1748387c8877",
+        "WEIGHTS_0": "81000cdc051ed4670635b68fbbbed0172fb01b04c9ca81eac8971c9f1751ed4d",
+        "JOINTS_0": "558c356336487e21c2efc7ec169c69008a54fbe0d528dcc2cccfd108976e7ce0"
+      },
+      "indexSha256": "f0b095f83427fc1e3fe82722ffb83a15f8a9e487af28b664157833e7778f1e1d"
+    },
+    {
+      "mesh": "outfit__ScothSkirtWhitheShirtNewBalance",
+      "primitive": 7,
+      "attributes": {
+        "POSITION": "ff0151141c81471aeb158ca47cee966393c626727d053aef89896d9d00c469dc",
+        "NORMAL": "41c5cc46a57218b227b47f9eede24670ebbac4614bd4384be243db228be9b8ee",
+        "TANGENT": "b4617b6631a582c07f88a39defa6dae5fa330439f32b44af854c4d2161c7ffcc",
+        "TEXCOORD_0": "ef814689a88682f5710551f1540cd02c018f0e8b98dcd23b8ac688963a583106",
+        "WEIGHTS_0": "7e442f54c8be21b867af381997588398160720e096d26b75484b5ccdece10632",
+        "JOINTS_0": "34774f8aae6c1d222fe9ae73c5d06f446b5cf16be2bd77779267b66dd39e8f4f"
+      },
+      "indexSha256": "0c4cbd0cf268b82ed4b64cb5410573c3392a235183c915300a76937bcb152d89"
+    },
+    {
+      "mesh": "face__AI_MetaHumanIdentity_FaceMesh",
+      "primitive": 0,
+      "attributes": {
+        "POSITION": "832d36dda5bdd3b79e80e89917c7707502eb2936189b1bb886917bbbf7c70491",
+        "NORMAL": "e27f51dffa52d55a42e4cfb98784eaa871ceec4b053fe870fbeb8adc6d6a8b67",
+        "TANGENT": "ad8d181fcd28a2e5e1df15a6dc16d41484f218c21a2b9e711d0f248dfeff6081",
+        "TEXCOORD_0": "e21c7dabbd17ec949ac5029657727590f65636678f7aeea1a993483ccf3c10c6",
+        "WEIGHTS_0": "48f30f4d5782b44e0485e74ceddb0904a3630282f956d904851974f4649eae88",
+        "JOINTS_0": "e167b07ccdc57e89d6cc350d6867cfbbd7b777e92c156f7bd6316e43d1b9303c",
+        "WEIGHTS_1": "7f3ede87c4fddf47fdbed45724596f149c4b28550de1594632fe1e2431dd24f8",
+        "JOINTS_1": "0e5d8a5c1b812c06c27facb825acc9318de0c752e752420b02d017baa37c32cf",
+        "WEIGHTS_2": "720b1da1836edbade33b3fb11c70f0ead0c095c641e186c83d29f73844fa8458",
+        "JOINTS_2": "e078a5d2a72e9e6523fa4aa0e721294cf90d94e465f661873fba9f92f31fa6fe",
+        "_AIR3_WEIGHT_SUM_0": "aadbc17603c18b632fcda2a8fb282f381e3cd68ac26208b6d6b75ad464f4c672"
+      },
+      "indexSha256": "b2f461ccc5d4a6d13bed6e9e7691a24c195e0c0e5bd7873b1119133e3a0d308a"
+    },
+    {
+      "mesh": "face__AI_MetaHumanIdentity_FaceMesh",
+      "primitive": 1,
+      "attributes": {
+        "POSITION": "18b1d7a99fb3379a09f6027fbb4141c0848ec91d260f5949fae3621d8a831828",
+        "NORMAL": "7b315da54a7bbe9104a4662dfae65675a03c0043e1ec09b61592199aca3b1329",
+        "TANGENT": "ad5ca9a6747a527cc6482c3380d4355f321946618a1f177619ac088e06cc8468",
+        "TEXCOORD_0": "5438bde4eed7ccdcf27ec7cb9e63a4713e285e82b66dd69e90e7050bfd1a2072",
+        "WEIGHTS_0": "69d38c4d27a599a28554537dff5d6f2061c9f5d2a6212589d3b13de3dc5a2699",
+        "JOINTS_0": "5bde4c4ad77df2afbd890c7fd6af6bf8543228f5912c6c3c2d58e28f7f0e71c4",
+        "WEIGHTS_1": "dd6860f4aa02582108798c554af3561c1fe0f5cc33e12a144dcbfb7a20c8bcb6",
+        "JOINTS_1": "3fa5c5dc4ace3b4db740175a6e8c44a546ffea21c0089478ec44968b761139cd",
+        "_AIR3_WEIGHT_SUM_0": "3acc0a33b3e4522694f0caf3a675903ceb02b471d58197591ccb0a20d4a09681"
+      },
+      "indexSha256": "073b920367ed0277570b9f9367177934c407a23dc361ee2aef451b0a0ab7d2e6"
+    },
+    {
+      "mesh": "face__AI_MetaHumanIdentity_FaceMesh",
+      "primitive": 2,
+      "attributes": {
+        "POSITION": "616dbf7586ee39e32565b860fbcc6c2f9e1dd9b44a0173cbd05a9c0079fee958",
+        "NORMAL": "e3dde751642d7798024b25bc37702ce38f0158a3ad57318c8f9d37c8a3b054b0",
+        "TANGENT": "1a789c9c43e9acb4c49c471a13b9244683c7b4d568babb0dd601536f10138f92",
+        "TEXCOORD_0": "846862b70131043baee88212ca1c17039dfe544b247c1d6c7f22da9bcb6907e7",
+        "WEIGHTS_0": "a441b2abb68121e2ea01db1086065dd3c8713a01b5ca047ce5eed7cdfaf08a6e",
+        "JOINTS_0": "2a218242b922d3d818716156108d0971b8263accae332ca0149f202260d468d4"
+      },
+      "indexSha256": "ef0ee880c039d3dc3e44e2f831f42f089e015de7ad55db5b20cc872e878c3f0c"
+    },
+    {
+      "mesh": "face__AI_MetaHumanIdentity_FaceMesh",
+      "primitive": 3,
+      "attributes": {
+        "POSITION": "0de17749f35bfed1ba5f52d655cc3936bb8304d0e34e891fa5e3251d4026e02e",
+        "NORMAL": "c181e7dc37746b2fbf9e583e669ed6a19e5591f92409f2aa7bf01203c7604c0c",
+        "TANGENT": "ac25e7c464fdbd156681dbcc6b15a0c8f7b93970b1f68ad9ad11be9e608509a7",
+        "TEXCOORD_0": "f50044ada2f2de598e85fefde956e0abec6228b0aed8f3b6caaee11818fc6d96",
+        "WEIGHTS_0": "62416f37a2e97a928162cc343d23f6fa651a5369e708cf2abf92ef2380fb8f29",
+        "JOINTS_0": "94dc08e04182bc81142a62361503e481a7151a8203effd3b6f8365de3ed0eb28"
+      },
+      "indexSha256": "48ff71db1981b1d9022dcdcdf573d438e0c25616c0cd9cc3f743dba837c47564"
+    },
+    {
+      "mesh": "face__AI_MetaHumanIdentity_FaceMesh",
+      "primitive": 4,
+      "attributes": {
+        "POSITION": "8f4c3e959d7b2f93386b05c010d38b5e6b8e656c6dca2d8b2459f718d424c33d",
+        "NORMAL": "15ea9e0d400a9e472a59d232678e12be9d43657c97cf980ad28ee7482b0169c9",
+        "TANGENT": "3810415c593c080b7220731b2c2df7dfc5405ae2e2122687645be6c9d0e00a2f",
+        "TEXCOORD_0": "d2cc30b7e2a641110d9bc245be4ce071b6a2dbf212be3d61b665c77077b49109",
+        "WEIGHTS_0": "f4e0e769e362c1dd4f7f63b3a13b412386afee2026bcf7369f3d59346f00fa6f",
+        "JOINTS_0": "23a23d02c73318d6555ed36c84bc9b15a2a92cd8571bc2dfe872b48ba4992254"
+      },
+      "indexSha256": "97d3aa512ef75538fd885b5a4a84dc5030b720dfe773e3be1c8fe93b80223f66"
+    },
+    {
+      "mesh": "face__AI_MetaHumanIdentity_FaceMesh",
+      "primitive": 5,
+      "attributes": {
+        "POSITION": "c363b3f5f1346d37b1d9a086e793f34a3782989e42fb883cc35c0c1d019e5765",
+        "NORMAL": "a5ab9197d725d0d18e953795be84377e483e7b0d9ab295d46df58c5d59866c87",
+        "TANGENT": "256cc3e4920f36854f7a15747a8952924fad8dfce9625235d31ad1dffca88ff2",
+        "TEXCOORD_0": "d0622fd61f187f8b70c1c7db090c6ae5d91e227c4264407b65c1ed931368973e",
+        "WEIGHTS_0": "e8d22ec818ccd2c03b16b3d65ebd447398e7779bc8733f6df963f73dbbb2b7a8",
+        "JOINTS_0": "5abf523672b264c9f6f931e7005ad02de5a82674ec099e74b335ad0b24effbb3",
+        "WEIGHTS_1": "e6b3059935318da27c261612e2b98898326ede3e6b9e2542c4431eff3b35d89f",
+        "JOINTS_1": "10dd3b6d6b63fbc6c533c63e87aeff27c2c48850f9850fb179d7f31261d9954e",
+        "_AIR3_WEIGHT_SUM_0": "500ab820820eeb078526a747c7210cc9f41a70bf2f580a9f4901bb7f504da363"
+      },
+      "indexSha256": "73f0ee2b8e4b46618149f8bbe2622e32f877e6ed8b9076ff47788f3ee90e423e"
+    },
+    {
+      "mesh": "face__AI_MetaHumanIdentity_FaceMesh",
+      "primitive": 6,
+      "attributes": {
+        "POSITION": "febb94cb8dd3c11e1f4dd026cdd664accdeb0bd607aea26c6d7cf86b9c38f6cc",
+        "NORMAL": "bc4e437f134e4cae4f688e1c6fee10380fc37849c8f515849de80f2869882e30",
+        "TANGENT": "0435b4db1bdb1fbd7a69c8676084e898b0b6f0cab20b2899cde64bc4040a498a",
+        "TEXCOORD_0": "f7b9480170710e77f949b45a1d8289470cfe008f7e3b94bffa51ca55c70aeb01",
+        "WEIGHTS_0": "81ac14df868488550edf18c1e142dfb9591f16e5f4aa8ccfe7ffbb747325d6e9",
+        "JOINTS_0": "3b6bcea8e41851cd2015b0f52da9d0490b5db7ea485b3ffab89463c01b7c5a3e",
+        "WEIGHTS_1": "730c196712013f54d49a97b68275b5abe68274bd788310e305bed9e0d35b40c2",
+        "JOINTS_1": "539ff365e78b6c83acdec0d27ec980afe2c30e168e29bc4714d3827e69dd9c6c",
+        "_AIR3_WEIGHT_SUM_0": "8fb7d2147c988a9c0aa006a90dd8d351e7905cac6f3d4570087be3341311193e"
+      },
+      "indexSha256": "8eda18964d5bafa59666389d03bfc51d5cee3d5e803e419a0a02dde869fcec35"
+    },
+    {
+      "mesh": "face__AI_MetaHumanIdentity_FaceMesh",
+      "primitive": 7,
+      "attributes": {
+        "POSITION": "00d8c85f854feef0bfe04eb84bc54313a3cf34177a8f1d1727eaf988dcdbdfb4",
+        "NORMAL": "d0306aefb3eee165b006eb202f051330d0b18d0b051b1e6bf1da571ba35402d4",
+        "TANGENT": "6ff29204689d7db4a25231854b70ee2513462069fb88ab9a175d631449508de2",
+        "TEXCOORD_0": "7db4996a14442f8b11ca06726f6e9e1f1924bc76b112ff7dd8a198031253193f",
+        "WEIGHTS_0": "049a6e01016b8058f3f7461973ac4f123b7902f3df8df257bce90faeaeff5db4",
+        "JOINTS_0": "772f6964030a51e88d452b561bc9e77431853f933227505588da4aa263e636b0",
+        "WEIGHTS_1": "0f1d5cb11b53eebaf1c6c19d29433bb61845c24e12499694328e2a50e79a65ae",
+        "JOINTS_1": "a077808e200de5d5005a344e0a94724eaedacbf7866885747190b83b34cb3c56",
+        "_AIR3_WEIGHT_SUM_0": "ea2431fbe408d6acedff6aa668285c605e846f72d6d65c6edeeb6f71aa169510"
+      },
+      "indexSha256": "e3a5d046fa5b60621dbd6dcf8a83ed2d2cc8f0f0c02256463ed09ba5a98b1810"
+    },
+    {
+      "mesh": "face__AI_MetaHumanIdentity_FaceMesh",
+      "primitive": 8,
+      "attributes": {
+        "POSITION": "795eb698bec85ff24dcd6ffdf1295d8f8fe1d5178f09f945de67e33c8b9e9a84",
+        "NORMAL": "8851ce01583248e887c762969d04d4e77f341ed6663ec2f8a63faf1b75e219d0",
+        "TANGENT": "2677e95d92a2f83a55f2ed36f5a58ebb8a4dcc6d966f16587ad242567d92d2bd",
+        "TEXCOORD_0": "3ed63ff02e5ec744c49db26ab289b432eb1824c9c64d21acdda67fee2d6f8ffc",
+        "WEIGHTS_0": "a7f9f4f1d8dd4b51c2f5bd4abb5c843d80c3e7ba93a41623c1f367ea5333bb93",
+        "JOINTS_0": "f023080f589030212033b435ecf1c27a689992f0b3cc394350dbfec717ec0277",
+        "WEIGHTS_1": "4f5f0e6a54f8742431fa840bccb8dd2ca80eaea944291c6e14728a1ecee6d297",
+        "JOINTS_1": "870feb188f5c5c3fc034f1bf76fe867083c757e576a14e32b279346c2f16a134",
+        "_AIR3_WEIGHT_SUM_0": "2819c3238fe53b1d2009fae89c30a3c45629e3c17f3af57b29f7bb1d23ac1e34"
+      },
+      "indexSha256": "7e932c294525a3ece28021b013cfcc69286c28b0bcac3ba7863fa6aff81e27f9"
+    },
+    {
+      "mesh": "hair__Hair_S_UpdoBuns_CardsMesh_Group0_LOD0",
+      "primitive": 0,
+      "attributes": {
+        "POSITION": "4e39213bd775cc0ffe1803ec8163f22765246b39f2e4584a8587552cdd44c2c5",
+        "NORMAL": "30774334bfce204fc52d5ef4fe5f590f8c3c109cff1097bfc0a2216f0487e534",
+        "TANGENT": "0e8d140a8041e7ba55d89f0c41f94866793f3443b88d1a358e61b1ad7b0a6033",
+        "TEXCOORD_0": "5cbb8f1f2a6eddcf5e3472526d20f7bfa969e1690509136b454ab9d8946754e5",
+        "TEXCOORD_1": "33bde4c49016113fbd5871cd68f48ad1f0296ca12b74e554e9ecdd4a6b070a21"
+      },
+      "indexSha256": "d3797a1fe3dfc5828d7776b843a09f864f638d9a61aa51c996d09b85d8d16930"
+    },
+    {
+      "mesh": "brows__Eyebrows_M_Shaded_CardsMesh_Group0_LOD0",
+      "primitive": 0,
+      "attributes": {
+        "POSITION": "dce8bd125df334e2a6d4ee7a20dd442248bd36768ab99c866b52cd959f0af2c7",
+        "NORMAL": "567674110935c66856e4405b647ece8e8fc736e33becd675b1359fd5e80fd4f2",
+        "TANGENT": "61dfbbb3d01f435a8dba162e0e7ce597d6079c58ba87bac978b49f0da4c44db2",
+        "TEXCOORD_0": "91c193b74e198ff3218d17efb1526e09689cf76675b5d3fd92881de9f10922f3",
+        "TEXCOORD_1": "ddf551c69b617c526f44942a83f7e00b46c3eb2317d14cb1bf770fe081016c7d"
+      },
+      "indexSha256": "1d925c7b5911867a3b55d07d767f7d42c0cbf4867b26099e159e9f3a1ac84139"
+    }
+  ]
+}

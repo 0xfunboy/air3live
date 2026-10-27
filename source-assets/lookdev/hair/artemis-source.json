@@ -1,0 +1,206 @@
+{
+  "animationCount": 0,
+  "categories": [
+    {
+      "uid": "2d643ff5ed03405b9c34ecdffff9d8d8",
+      "name": "Characters & Creatures",
+      "slug": "characters-creatures",
+      "uri": "https://api.sketchfab.com/v3/categories/2d643ff5ed03405b9c34ecdffff9d8d8",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/f778c3dbe6efa00a06c257762c0e27ef-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/2d643ff5ed03405b9c34ecdffff9d8d8/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/2d643ff5ed03405b9c34ecdffff9d8d8/800x450.png"
+        }
+      ]
+    },
+    {
+      "uid": "81bfbbfa2c9b4f218eed8609e3cf7aa6",
+      "name": "Fashion & Style",
+      "slug": "fashion-style",
+      "uri": "https://api.sketchfab.com/v3/categories/81bfbbfa2c9b4f218eed8609e3cf7aa6",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/87a0deda90ae1bcc407ee9613be69320-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/81bfbbfa2c9b4f218eed8609e3cf7aa6/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/81bfbbfa2c9b4f218eed8609e3cf7aa6/800x450.png"
+        }
+      ]
+    }
+  ],
+  "commentCount": 34,
+  "createdAt": "2024-10-25T20:58:03.970502",
+  "embedUrl": "https://sketchfab.com/models/b15554b4b9934cd6adbcf8669f83f634/embed",
+  "faceCount": 5455,
+  "isAgeRestricted": false,
+  "license": {
+    "uri": "https://api.sketchfab.com/v3/licenses/bbfe3f7dbcdd4122b966b85b9786a989",
+    "label": "CC Attribution-NonCommercial",
+    "fullName": "Creative Commons Attribution-NonCommercial",
+    "requirements": "Author must be credited. No commercial use.",
+    "url": "http://creativecommons.org/licenses/by-nc/4.0/",
+    "slug": "by-nc"
+  },
+  "likeCount": 319,
+  "name": "Ponytail 1 (Artemis) - Character Hair (Free)",
+  "publishedAt": "2024-10-25T21:32:02.102036",
+  "soundCount": 0,
+  "staffpickedAt": null,
+  "tags": [
+    {
+      "name": "hair",
+      "slug": "hair",
+      "uri": "https://api.sketchfab.com/v3/tags/hair"
+    },
+    {
+      "name": "style",
+      "slug": "style",
+      "uri": "https://api.sketchfab.com/v3/tags/style"
+    },
+    {
+      "name": "fashion",
+      "slug": "fashion",
+      "uri": "https://api.sketchfab.com/v3/tags/fashion"
+    },
+    {
+      "name": "accessory",
+      "slug": "accessory",
+      "uri": "https://api.sketchfab.com/v3/tags/accessory"
+    },
+    {
+      "name": "ponytail",
+      "slug": "ponytail",
+      "uri": "https://api.sketchfab.com/v3/tags/ponytail"
+    },
+    {
+      "name": "character",
+      "slug": "character",
+      "uri": "https://api.sketchfab.com/v3/tags/character"
+    },
+    {
+      "name": "design",
+      "slug": "design",
+      "uri": "https://api.sketchfab.com/v3/tags/design"
+    },
+    {
+      "name": "characterdesign",
+      "slug": "characterdesign",
+      "uri": "https://api.sketchfab.com/v3/tags/characterdesign"
+    },
+    {
+      "name": "hairstyles",
+      "slug": "hairstyles",
+      "uri": "https://api.sketchfab.com/v3/tags/hairstyles"
+    }
+  ],
+  "thumbnails": {
+    "images": [
+      {
+        "uid": "5c348277dc6144daacbb1843dddd5c09",
+        "width": 1920,
+        "height": 1080,
+        "size": 166814,
+        "url": "https://media.sketchfab.com/models/b15554b4b9934cd6adbcf8669f83f634/thumbnails/6993a79bef914b86a12e3218abba8a40/9ff7b18193434e749e9cb5767a560b09.jpeg"
+      },
+      {
+        "uid": "7d498330121240dab5fa75dce1ba8151",
+        "width": 1024,
+        "height": 576,
+        "size": 51030,
+        "url": "https://media.sketchfab.com/models/b15554b4b9934cd6adbcf8669f83f634/thumbnails/6993a79bef914b86a12e3218abba8a40/42f1d168645743ad859bbcfce1b7a05a.jpeg"
+      },
+      {
+        "uid": "16f014794517431c976aa7c0f4e2c1f4",
+        "width": 720,
+        "height": 405,
+        "size": 28962,
+        "url": "https://media.sketchfab.com/models/b15554b4b9934cd6adbcf8669f83f634/thumbnails/6993a79bef914b86a12e3218abba8a40/c4185816bb34444b88c76861e618bc07.jpeg"
+      },
+      {
+        "uid": "e5acc96783d14993a63cf4d0e3b2ffe9",
+        "width": 256,
+        "height": 144,
+        "size": 5453,
+        "url": "https://media.sketchfab.com/models/b15554b4b9934cd6adbcf8669f83f634/thumbnails/6993a79bef914b86a12e3218abba8a40/b0b24eed8f144545983ada7be5591181.jpeg"
+      },
+      {
+        "uid": "c7001a8f002847a8a3fcea2bd2c74f2f",
+        "width": 64,
+        "height": 36,
+        "size": 1172,
+        "url": "https://media.sketchfab.com/models/b15554b4b9934cd6adbcf8669f83f634/thumbnails/6993a79bef914b86a12e3218abba8a40/2256dae51c404e1493e699c80185e85a.jpeg"
+      }
+    ]
+  },
+  "uid": "b15554b4b9934cd6adbcf8669f83f634",
+  "uri": "https://api.sketchfab.com/v3/models/b15554b4b9934cd6adbcf8669f83f634",
+  "user": {
+    "uid": "98f3c5ea80604af7946a79179eaac157",
+    "username": "continuumreed",
+    "displayName": "CT Reed",
+    "account": "basic",
+    "profileUrl": "https://sketchfab.com/continuumreed",
+    "avatar": {
+      "uid": "714858d09b134faa9d38e5e606ae57af",
+      "uri": "https://api.sketchfab.com/v3/avatars/714858d09b134faa9d38e5e606ae57af",
+      "images": [
+        {
+          "width": 32,
+          "height": 32,
+          "size": 1002,
+          "url": "https://media.sketchfab.com/avatars/714858d09b134faa9d38e5e606ae57af/9a56756db7a3478487f68508d9efcfcc.jpeg"
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "size": 1357,
+          "url": "https://media.sketchfab.com/avatars/714858d09b134faa9d38e5e606ae57af/db0641e2d1644eaa960042dcf03b7da9.jpeg"
+        },
+        {
+          "width": 90,
+          "height": 90,
+          "size": 2949,
+          "url": "https://media.sketchfab.com/avatars/714858d09b134faa9d38e5e606ae57af/eaf4def1c30c4ff9b476de947e2cd622.jpeg"
+        },
+        {
+          "width": 100,
+          "height": 100,
+          "size": 3344,
+          "url": "https://media.sketchfab.com/avatars/714858d09b134faa9d38e5e606ae57af/78abe8d9180d4d1f8a2c70cbccefd5ae.jpeg"
+        }
+      ]
+    },
+    "uri": "https://api.sketchfab.com/v3/users/98f3c5ea80604af7946a79179eaac157"
+  },
+  "vertexCount": 3979,
+  "viewCount": 10322,
+  "viewerUrl": "https://sketchfab.com/3d-models/ponytail-1-artemis-character-hair-free-b15554b4b9934cd6adbcf8669f83f634",
+  "isDownloadable": true,
+  "isProtected": false,
+  "description": "A ponytail with long side bangs, available in six different colors. \nRemixed from \"Arika the 1st Path\" by @antoinepavia (Thank you!) The user has since deleted their account, but it was licensed CC-BY. Mesh/hair alpha from original, hair texture new. It is rigged (simple, but functional). \nedit: Setting this to CC-NC for safety's sake, as a user pointed out, since I'm not sure where OP got their material! \n\nNote: This entire set is free because the character was never completed. However I got a bit further with this part and it shouldn't need much modification.\n\n---\n\nFree downloads will continue on Sketchfab as long as this site survives. I am not transferring my content to Fab due to Epic's business practices. If you\u2019re concerned about Sketchfab\u2019s future, [sign our petition](https://www.change.org/p/keep-sketchfab-alive-preserve-open-access-to-3d-art-museum-collections). If you\u2019re here for the free content, take it and enjoy. \n---",
+  "price": null,
+  "downloadCount": 3498,
+  "editorUrl": "https://sketchfab.com/models/b15554b4b9934cd6adbcf8669f83f634/edit",
+  "status": {
+    "warning": {},
+    "processing": "SUCCEEDED"
+  },
+  "source": "website",
+  "hasCommentsDisabled": false,
+  "updatedAt": "2024-10-26T00:30:23.848807",
+  "pbrType": null,
+  "textureCount": 4,
+  "materialCount": 1
+}

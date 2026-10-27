@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "browser": "Chrome148/ANGLE SwiftShader",
+  "scope": "Actual WebGL character preview with source-derived material profile. Numeric unit tests use a material-only in-memory substitute because Node has no image decoder.",
+  "runtimeSha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d",
+  "facialRigSha256": "7b31db4de9df718b16d50c9f5fd92ece29e2e60d16353d94c99ca969211040c0",
+  "javascriptErrors": [],
+  "visualChecks": [
+    {
+      "pose": "neutral",
+      "result": "eyes textured, relaxed upper lids, natural head geometry retained"
+    },
+    {
+      "pose": "blink",
+      "result": "both eyelids close with eyelash chains following"
+    },
+    {
+      "pose": "D",
+      "result": "jaw opens to calibrated0.23rad; lower teeth and tongue move with lower lip chain; upper teeth stable"
+    },
+    {
+      "pose": "F",
+      "result": "lips narrow and project forward; dental arch does not scale"
+    },
+    {
+      "pose": "G",
+      "result": "lower lip raises for labiodental shape"
+    },
+    {
+      "pose": "H",
+      "result": "bounded tongue articulation with small opening"
+    }
+  ],
+  "productionGpuBenchmark": false,
+  "rigLogicParity": false,
+  "notAFrameMatchedUnrealComparison": true
+}

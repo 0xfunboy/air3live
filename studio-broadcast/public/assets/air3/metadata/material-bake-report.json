@@ -1,0 +1,291 @@
+{
+  "schema": "air3.material-bake.v1",
+  "source_metadata_engine": "5.7.4-51494982+++UE5+Release-5.7",
+  "source_files_modified": false,
+  "source_images": {
+    "textures/color/FaceColor_MAIN.webp": {
+      "bytes": 306840,
+      "sha256": "73d6d4e9b8ffdaa683681ea9dcf675323430bb44e69601c9cbbc998bf9675e73"
+    },
+    "textures/data/FaceFoundationBlusherMask.png": {
+      "bytes": 257106,
+      "sha256": "c78fee2bd013609f197e7393c57b6bbc92b7fe44a3923dc1b48afce58697b4e7"
+    },
+    "textures/data/FaceEyeLipstickMask.png": {
+      "bytes": 36236,
+      "sha256": "eb943208aa7e2edd1da3d050dd967d0608ed19b65dae22b385d6a3c33c153cc6"
+    },
+    "textures/data/FaceRoughness_MAIN.png": {
+      "bytes": 741928,
+      "sha256": "a67153dbc3c07e10b822189a249b79cd076464acfbada1b475f079d9a4d9bdb7"
+    },
+    "textures/data/FaceCavity_MAIN.png": {
+      "bytes": 1044965,
+      "sha256": "b7a569f1cf5d1fa6aef6e378b64e70a6becc8f5d63e7bd766f9064a7e18c48b8"
+    },
+    "textures/Hair_S_UpdoBuns_CardsAtlas_Attribute.png": {
+      "bytes": 16843696,
+      "sha256": "5b94db124992abb927bac92e134772a3b0b93efd352b3e12859d21c310fc8508"
+    },
+    "textures/Hair_S_UpdoBuns_CardsAtlas_Tangent.png": {
+      "bytes": 321250,
+      "sha256": "328af0e868ba3f00d2871625a9dfe15031610834cdfc2fa916cbf507839c4ac9"
+    },
+    "textures/Eyebrows_M_Shaded_CardsAtlas_Attribute.png": {
+      "bytes": 6820748,
+      "sha256": "d61407a0869098338e5657ce7f63f07f6387ece62304a27259c9c16c7372ec1b"
+    },
+    "textures/Eyebrows_M_Shaded_CardsAtlas_Tangent.png": {
+      "bytes": 463022,
+      "sha256": "2b782e83662223c16bc6a76a2ef5d6613f3842b97cc3b5f5482e50b3583fb214"
+    },
+    "textures/Eyelashes_L_Curl_Coverage.png": {
+      "bytes": 442658,
+      "sha256": "960d9fc297f629ed8949a55d66326f8bb82100a684b0e0de82953256fd49c70b"
+    },
+    "textures/T_Sclera_D.png": {
+      "bytes": 3513309,
+      "sha256": "fed8f33529d93acb5607c68396be92349cc410f8f7656b4597e310dadaba4609"
+    },
+    "textures/T_Iris_A_M.png": {
+      "bytes": 1756245,
+      "sha256": "73c3d3ed6d165664d3bdd495819e79e6cbfddc3962ba186b418936c0ee603029"
+    },
+    "textures/T_Sclera_N.png": {
+      "bytes": 1484901,
+      "sha256": "43e0d9842f5c78eaa473a88b8a96c2ea32c0e50a44d1868cafa52f55c50601ba"
+    }
+  },
+  "outputs": [
+    {
+      "path": "textures/render/FaceBeautyColor.webp",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "bytes": 284680,
+      "sha256": "f5c0e7b4e2c699664df0cf4f4228095d3e988706a3622b3adc2fbf723302fa00",
+      "color_space": "sRGB"
+    },
+    {
+      "path": "textures/render/FaceBeautyORM.png",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 733519,
+      "sha256": "cdf25a6a09ee11a3a72d67e148f00534fd78a292c035e14f684ac4ccec87d2ef",
+      "color_space": "linear data"
+    },
+    {
+      "path": "textures/render/HairColorCoverage.webp",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "bytes": 804784,
+      "sha256": "9f3838b59cec8c9113c0a28a881bfb3512e325a16051c29a29f6d567de29547e",
+      "color_space": "sRGB"
+    },
+    {
+      "path": "textures/render/HairAnisotropy.png",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 101228,
+      "sha256": "2b02c87b4d9a05b2666f919901311aff0d5931e8bb697377561b3012f5233abe",
+      "color_space": "linear data"
+    },
+    {
+      "path": "textures/render/BrowsColorCoverage.webp",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "bytes": 1174462,
+      "sha256": "453cbe19ff420b00c4cc07ec38f5f6427593cb1a5e7fb39b7a1374badcecf182",
+      "color_space": "sRGB"
+    },
+    {
+      "path": "textures/render/BrowsAnisotropy.png",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 222145,
+      "sha256": "c2a61330d38cca55a4b290843d0d1b08cf7a7b763d1604136c5df37200bcdeb8",
+      "color_space": "linear data"
+    },
+    {
+      "path": "textures/render/LashesCoverage.png",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 256369,
+      "sha256": "a89a1b07a999dfe2b2d522fe8ae2de80ab22bcdaa64f418840329e962353beb9",
+      "color_space": "linear data"
+    },
+    {
+      "path": "textures/render/EyeColor.webp",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 63846,
+      "sha256": "04cd78017b606a34c01d3702bbf26eb10ebd9c43db5326a04e42bda857d7f1dc",
+      "color_space": "sRGB"
+    },
+    {
+      "path": "textures/render/EyeNormal.png",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 368049,
+      "sha256": "e24e20421d9f4db33d0919d9a34d70d4f89b2edde95e29a91a6eb482077cf22d",
+      "color_space": "linear data"
+    },
+    {
+      "path": "textures/render/MouthColor.webp",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 1290,
+      "sha256": "56efcd494c760cb7d041e9b1112fc8d7b2b858d429c027aabcd1651eb995fe1d",
+      "color_space": "sRGB"
+    },
+    {
+      "path": "textures/render/MouthORM.png",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 1600,
+      "sha256": "d84e56becb665246a4a8276d19c190b16c1b23b49cc1c8accf497720e10bdc3c",
+      "color_space": "linear data"
+    },
+    {
+      "path": "textures/render/ClothWeave.png",
+      "dimensions": [
+        128,
+        128
+      ],
+      "bytes": 802,
+      "sha256": "0a18525a19999791f91f4980011fa9769f4134e73ca1e42679fce13e38f679bd",
+      "color_space": "linear data"
+    }
+  ],
+  "output_bytes": 4012774,
+  "verified_channels": {
+    "FaceEyeLipstickMask": {
+      "R": "eye shadow",
+      "G": "eye liner",
+      "B": "lipstick"
+    },
+    "FaceFoundationBlusherMask": {
+      "R": "foundation",
+      "G": "concealer",
+      "B": "blusher"
+    },
+    "T_Iris_A_M": "packed data masks, not an albedo"
+  },
+  "face_source_parameters": {
+    "EyeMakeupTransparency": 0.0,
+    "EyeMakeup": 1.0,
+    "EyeMakeupRoughness": 0.35638296604156494,
+    "Lipstick": 1.0,
+    "LipstickRoughness": 0.332446813583374,
+    "LipstickTransparency": 0.6781914830207825,
+    "EyeMakeupMetalness": 0.7340425252914429,
+    "LipstickScattering": 0.5,
+    "EyeMakeupScattering": 0.20000000298023224,
+    "FoundationMakeupRoughness": 0.25,
+    "FoundationMakeupIntensity": 1.0,
+    "FoundationMakeupConcealerIntensity": 0.0,
+    "BlusherMakeupIntensity": 0.28989362716674805,
+    "BlusherMakeupRoughness": 0.5877659320831299,
+    "FoundationMakeup": 1.0,
+    "BlusherMakeup": 1.0
+  },
+  "face_source_vectors": {
+    "LipstickColor": [
+      1.0,
+      0.13333332538604736,
+      0.13333332538604736,
+      0.0
+    ],
+    "EyeMakeupPrimaryColor": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "EyeMakeupSecondaryColor": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "BlusherMakeupColor": [
+      0.34509798884391785,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "FoundationMakeupColor": [
+      0.7991030216217041,
+      0.2738732695579529,
+      0.13595063984394073,
+      1.0
+    ],
+    "ConcealerMakeupColor": [
+      1.0,
+      0.36699017882347107,
+      0.18217386305332184,
+      1.0
+    ]
+  },
+  "hair": [
+    {
+      "name": "Hair",
+      "coverage_channel": "Attribute.R",
+      "source_alpha": "constant 1; not coverage",
+      "tangent_alpha": "root-to-tip gradient",
+      "coverage_power": 0.5,
+      "opacity_multiplier_from_ue": 2.0,
+      "alpha_test": 0.33,
+      "coverage_fraction_at_test": 0.2432258129119873
+    },
+    {
+      "name": "Brows",
+      "coverage_channel": "Attribute.R",
+      "source_alpha": "constant 1; not coverage",
+      "tangent_alpha": "root-to-tip gradient",
+      "coverage_power": 0.5,
+      "opacity_multiplier_from_ue": 0.8,
+      "alpha_test": 0.2,
+      "coverage_fraction_at_test": 0.05502176284790039
+    }
+  ],
+  "eye_uv": {
+    "center": [
+      0.5,
+      0.5
+    ],
+    "iris_radius": 0.166,
+    "pupil_radius": 0.043,
+    "approximate_physical_iris_diameter_mm": 11.3,
+    "palette": "natural hazel, explicit art direction; missing original color-picker lookup texture"
+  },
+  "approximations": [
+    "UE material graphs were not supplied; compositing formulas are a documented visual reconstruction.",
+    "Foundation/eye-shadow opacity is restrained while preserving scanned luminance detail and body/neck matching; foundation chroma blends more strongly in the scan's highly red regions.",
+    "Packed tangent XY is projected into the card UV anisotropic BRDF; this is not UE Marschner hair shading.",
+    "Corneal appearance uses physical clearcoat and a bounded view-dependent iris offset, not full ocular ray refraction.",
+    "Original eye-color and teeth/gum palette lookup textures are missing; editable natural palettes are used.",
+    "No full skin subsurface-scattering or animated wrinkle-map shader is claimed."
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "date": "2026-10-24T11:33:18.783Z",
+  "desktop": false,
+  "displayVariable": false,
+  "stdin": "closed, unattended service mode",
+  "fixture": "12-second prerecorded speech from the supplied project, returned by a local TTS API fixture; native Rhubarb is actually executed",
+  "providerCalls": 2,
+  "completed": "finished",
+  "cancellation": "cancelled",
+  "completionElapsedMs": 27263,
+  "lipSync": "rhubarb:pocketSphinx",
+  "alignment": "generated from WAV during this test, not the precalculated demo JSON",
+  "avatar": "AIR3-runtime.glb",
+  "recording": "studio-2026-10-24T11-32-06-372Z-22aaecca.mkv",
+  "video": {
+    "codec": "h264",
+    "width": 960,
+    "height": 540,
+    "fps": "15/1",
+    "frames": 730
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRate": "48000",
+    "channels": 2,
+    "peakPcm16": 18190,
+    "nonSilentSamples": 255750
+  },
+  "durationSeconds": 49.621,
+  "renderer": {
+    "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "frameCount": 52,
+    "fps": 0.9,
+    "width": 960,
+    "height": 540,
+    "audioState": "running",
+    "currentJob": null,
+    "quality": "software",
+    "avatar": "#AIR3 · PBR materials · body animation",
+    "avatarRig": {
+      "profile": "AIR3 source geometry with translation-retargeted animations",
+      "extendedSkinMeshes": 7,
+      "preservedSkinInfluences": 12,
+      "idleClips": 3,
+      "talkClips": 4,
+      "motion": "idle",
+      "facialLipSync": {
+        "ready": true,
+        "articulation": "bounded skeletal poses plus source corrective morphs",
+        "controls": 35,
+        "sourceCorrectiveCount": 29,
+        "mouthCue": "X",
+        "emotion": "neutral",
+        "emotionIntensity": 0.35,
+        "blink": 0,
+        "phoneticTiming": "none",
+        "rigLogicParity": false
+      },
+      "rootOrientationLocked": true,
+      "footContactAnchors": 126,
+      "materials": {
+        "profile": "air3-materials-2026-10-24-v3",
+        "surfaces": {
+          "skin-body": 1,
+          "cloth": 7,
+          "shoes": 1,
+          "skin-face": 1,
+          "mouth": 1,
+          "tear-film": 2,
+          "eyes": 2,
+          "lashes": 1,
+          "waterline": 1,
+          "hair": 1,
+          "brows": 1
+        },
+        "source": "Supplied Unreal 5.7.4 material parameters and textures",
+        "normalY": -1,
+        "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+        "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+        "eyes": "Textured iris and sclera with clearcoat",
+        "limitations": [
+          "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+          "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+        ]
+      },
+      "normalY": -1
+    },
+    "environment": {
+      "source": "authored linear HDR softbox scene",
+      "pmrem": true,
+      "resolution": 128
+    },
+    "reflections": {
+      "mode": "environment reflection only"
+    },
+    "postprocessing": {
+      "output": "direct ACES/sRGB",
+      "ao": false,
+      "bloom": false
+    },
+    "lipSync": "none"
+  },
+  "limitations": [
+    "Software WebGL and libx264; CUDA/NVENC not tested",
+    "960x540 at 15fps encoding; renderer may run slower and encoder duplicate frames",
+    "No live RTMP/RTSP publication or external TTS inference",
+    "No GPU soak or Unreal parity certification"
+  ]
+}

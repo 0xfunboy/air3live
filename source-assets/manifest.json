@@ -1,0 +1,20 @@
+{
+  "sourceFiles": [
+    {
+      "file": "AIR3-runtime.before-quality.glb",
+      "bytes": 20546552,
+      "sha256": "7f2400e9d19cd712c067e067ac02db427e33f46fd2bb7619424c9224efb406c5"
+    },
+    {
+      "file": "AI_MetaHumanIdentity_FaceMesh.sparse.glb",
+      "bytes": 16118384,
+      "sha256": "e6b13792e0deffb3e9f3206fc6af770269be133990f0d4fce5387a66919e0ca3"
+    },
+    {
+      "file": "MT_Voice_Test.flac",
+      "bytes": 5137527,
+      "sha256": "a9dea84e35a81add5c63be76cddb90bb0752307f14e7070c76fcf6b3430f2593"
+    }
+  ],
+  "originalsModified": false
+}

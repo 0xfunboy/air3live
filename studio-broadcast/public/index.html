@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>airewardrop · Broadcast studio</title>
+  <link rel="icon" type="image/png" href="/assets/air3/branding/air3-emblem.png">
+  <link rel="stylesheet" href="/studio/styles.css">
+  <link rel="stylesheet" href="/studio/look-controls.css">
+  <link rel="stylesheet" href="/studio/live-titles.css">
+  <script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+  <script src="/vendor/chart.js/dist/chart.umd.js" defer></script>
+  <script type="module" src="/studio/build/app.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="operator masthead">
+      <div class="wordmark"><img class="project-lockup" src="/assets/air3/branding/air3-lockup.png" alt="#AIR3"><div><strong><span>BROADCAST STUDIO</span></strong><p>MARKET INTELLIGENCE / VIRTUAL PRESENTER</p></div></div>
+      <div class="clock"><span id="clock">--:--:-- UTC</span><small id="gateway-status">GATEWAY CONNECTING</small></div>
+    </header>
+    <main>
+      <section class="operator toolbar" aria-label="Studio controls">
+        <label>DATA FEED<select id="feed"><option value="track">AIRTrack · tracked trades</option><option value="auto">Auto-trading · automated trades</option></select></label>
+        <label>TIMEFRAME<select id="timeframe"><option>1m</option><option>5m</option><option>15m</option><option>30m</option><option selected>1h</option><option>4h</option><option>1d</option></select></label>
+        <label>CAMERA<select id="camera"><option value="auto">Automatic director</option><option value="wide">Studio wide</option><option value="presenter">Presenter</option><option value="screens">Market screens</option></select></label>
+        <label>QUALITY<select id="quality"><option value="auto">Automatic</option><option value="high">High · reflections + AO</option><option value="balanced">Balanced · reflections</option><option value="software">Software · preview</option></select></label>
+        <label>ESPRESSIONE<select id="studio-emotion"><option value="neutral">Neutra</option><option value="happy" selected>Leggermente felice</option><option value="sad">Leggermente triste</option><option value="surprised">Lieve stupore</option><option value="warm">Accogliente</option><option value="focused">Concentrata</option><option value="concerned">Preoccupata</option></select></label>
+        <label class="emotion-range">INTENSITÀ <output id="emotion-strength">100%</output><input id="emotion-intensity" type="range" min="0" max="1" step="0.05" value="1"></label>
+        <div class="buttons">
+          <button id="studio-audio-test" type="button" class="accent-btn" title="Riproduce l'audio di riferimento ed esegue il lip-sync fonetico con l'espressione selezionata">▶ TEST VOCE & LIP-SYNC</button>
+          <button id="next-trade" type="button">NEXT TRADE <span>↗</span></button>
+          <button id="refresh" type="button">REFRESH DATA</button>
+        </div>
+        <div class="mode-badge" id="mode-badge">MUTED OBSERVER</div>
+      </section>
+      <section class="operator stage-controls" aria-label="Presenza e movimento">
+        <label>DESTINAZIONE <select id="stage-target"><option value="left">Monitor sinistro</option><option value="center" selected>Monitor centrale</option><option value="right">Monitor destro</option></select></label>
+        <button id="stage-present" type="button" disabled>Presenta il monitor</button>
+        <button id="stage-home" type="button" disabled>Torna alla postazione</button>
+        <label class="check-label"><input id="eye-contact" type="checkbox" checked> Sguardo in camera</label>
+        <label class="check-label"><input id="stage-auto" type="checkbox" disabled> Movimenti automatici</label>
+        <button id="look-toggle" class="look-toggle" type="button" aria-expanded="false" aria-controls="look-panel" disabled>Luci e aspetto ⚙</button>
+        <button id="save-live-look" type="button" hidden>Salva look nella regia</button>
+        <a id="live-regia-link" href="/control" target="_blank" rel="noopener" hidden>Regia live ↗</a>
+        <span id="stage-state" role="status">Preparazione della presentatrice</span>
+      </section>
+      <aside id="look-panel" class="operator" hidden aria-label="Luci e aspetto"></aside>
+      <section class="program" aria-label="Program output">
+        <div id="viewport"></div>
+        <div class="program-top"><div class="program-brand"><img class="corporate-lockup" src="/assets/air3/branding/airewardrop-lockup.png" alt="AiRewardrop"></div><div class="program-state"><span id="data-led" class="led"></span><span id="feed-state">DATA UNAVAILABLE</span><span id="program-clock">--:-- UTC</span></div></div>
+        <div id="loading" class="loading"><img class="loading-mark" src="/assets/air3/branding/air3-emblem.png" alt="#AIR3"><strong>INITIALIZING STUDIO</strong><p>Connecting the scene and public data adapters.</p></div>
+        <div class="program-bottom"><div id="avatar-label" class="disclosure">INITIALIZING PRESENTER</div><div class="lower-third"><div><span class="eyebrow">NARRATION</span><strong id="speech-title">Muted preview</strong></div><p id="subtitle">This observer does not claim or play narration jobs.</p><span id="speech-progress">—</span></div><div class="program-footnote"><span id="market-age">NO FINANCIAL DATA LOADED</span><span id="lip-label">AUTONOMOUS MARKET STUDIO</span></div></div>
+      </section>
+      <section class="operator diagnostics" aria-label="Runtime diagnostics">
+        <article><h2>RENDER ENGINE</h2><strong id="render-stat">STARTING</strong><p id="gpu-stat">Waiting for a rendered frame</p></article>
+        <article><h2>PUBLIC DATA</h2><strong id="data-stat">NOT CONFIGURED</strong><p id="data-detail">Read-only HTTP + WebSocket</p></article>
+        <article><h2>NARRATION PLAYER</h2><strong id="audio-stat">MUTED OBSERVER</strong><p id="audio-detail">Player credentials are injected by the broadcaster.</p></article>
+        <article><h2>AVATAR / LIP SYNC</h2><strong id="avatar-stat">CALIBRATION MODEL</strong><p id="avatar-detail">Amplitude is a jaw fallback, not phoneme alignment.</p></article>
+      </section>
+      <p class="operator operator-note">OBS output: <a id="output-link" href="/studio?output=1" target="_blank" rel="noopener">open clean program view ↗</a><span>Use the voice test to hear the preview. The broadcast player has exclusive narration playback.</span></p>
+      <p id="notice" class="operator notice" role="status"></p>
+    </main>
+  </div>
+</body>
+</html>

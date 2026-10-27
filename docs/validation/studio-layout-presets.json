@@ -1,0 +1,166 @@
+[
+  {
+    "quality": "software",
+    "errors": [],
+    "failedRequests": [],
+    "diagnostics": {
+      "frameCount": 6,
+      "lastRenderedFrameAt": 1792840359075,
+      "lastFrameAt": 1792840359075,
+      "fps": 1.1,
+      "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "contextLost": false,
+      "renderer": "three.js/WebGL",
+      "width": 960,
+      "height": 540,
+      "drawCalls": 147,
+      "triangles": 38454,
+      "avatar": "Calibration mannequin",
+      "jawMorphs": 0,
+      "camera": "wide",
+      "avatarRig": null,
+      "quality": {
+        "name": "software",
+        "maxPixelRatio": 1,
+        "shadowSize": 512,
+        "reflectionSize": 0,
+        "reflectionInterval": 1,
+        "ao": false,
+        "bloom": false,
+        "msaa": 0,
+        "environmentSize": 128,
+        "requested": "software",
+        "softwareRenderer": true,
+        "selectionReason": "explicit selection"
+      },
+      "environment": {
+        "source": "authored linear HDR softbox scene",
+        "pmrem": true,
+        "resolution": 128
+      },
+      "reflections": {
+        "mode": "environment reflection only"
+      },
+      "postprocessing": {
+        "output": "direct ACES/sRGB",
+        "ao": false,
+        "bloom": false
+      },
+      "avatarMaterials": null
+    },
+    "passed": true
+  },
+  {
+    "quality": "balanced",
+    "errors": [],
+    "failedRequests": [],
+    "diagnostics": {
+      "frameCount": 5,
+      "lastRenderedFrameAt": 1792840371233,
+      "lastFrameAt": 1792840371233,
+      "fps": 0.4,
+      "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "contextLost": false,
+      "renderer": "three.js/WebGL",
+      "width": 960,
+      "height": 540,
+      "drawCalls": 386,
+      "triangles": 98610,
+      "avatar": "Calibration mannequin",
+      "jawMorphs": 0,
+      "camera": "wide",
+      "avatarRig": null,
+      "quality": {
+        "name": "balanced",
+        "maxPixelRatio": 1,
+        "shadowSize": 1024,
+        "reflectionSize": 512,
+        "reflectionInterval": 2,
+        "ao": false,
+        "bloom": true,
+        "msaa": 2,
+        "environmentSize": 256,
+        "requested": "balanced",
+        "softwareRenderer": true,
+        "selectionReason": "explicit selection"
+      },
+      "environment": {
+        "source": "authored linear HDR softbox scene",
+        "pmrem": true,
+        "resolution": 256
+      },
+      "reflections": {
+        "mode": "planar reflection",
+        "resolution": 512,
+        "updateEveryRenderedFrames": 2,
+        "softened": true
+      },
+      "postprocessing": {
+        "output": "linear half-float → ACES/sRGB",
+        "ao": false,
+        "bloom": "HDR threshold 1.50, strength 0.12",
+        "msaa": 2
+      },
+      "avatarMaterials": null
+    },
+    "passed": true
+  },
+  {
+    "quality": "high",
+    "errors": [],
+    "failedRequests": [],
+    "diagnostics": {
+      "frameCount": 5,
+      "lastRenderedFrameAt": 1792840391483,
+      "lastFrameAt": 1792840391483,
+      "fps": 0.5,
+      "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "contextLost": false,
+      "renderer": "three.js/WebGL",
+      "width": 960,
+      "height": 540,
+      "drawCalls": 468,
+      "triangles": 119832,
+      "avatar": "Calibration mannequin",
+      "jawMorphs": 0,
+      "camera": "wide",
+      "avatarRig": null,
+      "quality": {
+        "name": "high",
+        "maxPixelRatio": 1.25,
+        "shadowSize": 2048,
+        "reflectionSize": 1024,
+        "reflectionInterval": 1,
+        "ao": true,
+        "bloom": true,
+        "msaa": 4,
+        "environmentSize": 256,
+        "requested": "high",
+        "softwareRenderer": true,
+        "selectionReason": "explicit selection"
+      },
+      "environment": {
+        "source": "authored linear HDR softbox scene",
+        "pmrem": true,
+        "resolution": 256
+      },
+      "reflections": {
+        "mode": "planar reflection",
+        "resolution": 1024,
+        "updateEveryRenderedFrames": 1,
+        "softened": true
+      },
+      "postprocessing": {
+        "output": "linear half-float → ACES/sRGB",
+        "ao": "GTAO at 60% resolution, extended skin weights preserved",
+        "bloom": "HDR threshold 1.50, strength 0.12",
+        "msaa": 4
+      },
+      "avatarMaterials": null
+    },
+    "passed": true
+  }
+]

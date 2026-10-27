@@ -1,0 +1,1470 @@
+{
+  "passed": true,
+  "createdAt": "2026-10-25T11:11:02.565Z",
+  "browser": "Chrome/148.0.7778.97",
+  "renderer": "Chromium SwiftShader, 960×960, source modules",
+  "sources": {
+    "public/air3-clothing.mjs": {
+      "sha256": "4378256a57a06dc7d656003de7b222dea6ba66b5c1cdb946c468eb4bd0f7d70d",
+      "bytes": 6236
+    },
+    "public/air3-footwear.mjs": {
+      "sha256": "7a039be3bdcc9756d347083a41cf0eea64ad9c09399b734bda3dd7acfd2840cc",
+      "bytes": 15182
+    },
+    "public/air3-garment-mask.mjs": {
+      "sha256": "523983fecf63feef1cc8941d43beb239ec1a87acab4b745e9ba63e5e242b6aa6",
+      "bytes": 1752
+    },
+    "public/air3-avatar.mjs": {
+      "sha256": "59260a2fb70366dc29ffb21159db2bd69ff2e724e78cb29d91c87c501580d1af",
+      "bytes": 18558
+    },
+    "public/air3-locomotion.mjs": {
+      "sha256": "3ef84eb748d50db5676a35b01b99047cd18d5097f4490d292dc4903312b23899",
+      "bytes": 12227
+    },
+    "public/assets/air3/models/AIR3-runtime.glb": {
+      "sha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d",
+      "bytes": 21666344
+    },
+    "public/assets/air3/clothing/crop-top.glb": {
+      "sha256": "9c16dd73287bf0ed499aa2c0fc9656e7b6dc2fb54d31591e9394df881b1713e4",
+      "bytes": 2800172
+    },
+    "public/assets/air3/footwear/boot.glb": {
+      "sha256": "050c5385ccf4700ed095f3f0d025447f30f6abb2dde77b3569ee6b8c53dbe829",
+      "bytes": 3206212
+    },
+    "scripts/qa-wardrobe.mjs": {
+      "sha256": "c6b5703f95af1a9586b98af9204820fb8378b8b59ca5f8c93290991bedf49d91",
+      "bytes": 8825
+    },
+    "../tools/prepare_crop_top.py": {
+      "sha256": "3fab589ce020b4488cb4874b4c64a84510686a412e6e85542864535da3eb4402",
+      "bytes": 6457
+    },
+    "../source-assets/clothing/off_shoulder_top.glb": {
+      "sha256": "5ba16fe9583d908ff13e530200e32ea6dc947b8c993150d2e65a771e3265130f",
+      "bytes": 2483712
+    }
+  },
+  "errors": [],
+  "reports": [
+    {
+      "config": {
+        "shirt": "original",
+        "view": "front",
+        "solid": false
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "original",
+        "desired": "original",
+        "loading": false,
+        "error": null,
+        "triangles": null,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "original",
+        "view": "side",
+        "solid": false
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "original",
+        "desired": "original",
+        "loading": false,
+        "error": null,
+        "triangles": null,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "original",
+        "view": "back",
+        "solid": false
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "original",
+        "desired": "original",
+        "loading": false,
+        "error": null,
+        "triangles": null,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "view": "front",
+        "solid": false
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "view": "side",
+        "solid": false
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "view": "back",
+        "solid": false
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "relaxed",
+        "view": "front"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "relaxed",
+        "view": "side"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "relaxed",
+        "view": "rear-quarter"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "relaxed",
+        "view": "back"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "low-cut",
+        "view": "front"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "low-cut",
+        "desiredFit": "low-cut",
+        "loading": false,
+        "error": null,
+        "triangles": 30196,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "low-cut",
+        "view": "side"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "low-cut",
+        "desiredFit": "low-cut",
+        "loading": false,
+        "error": null,
+        "triangles": 30196,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "low-cut",
+        "view": "rear-quarter"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "low-cut",
+        "desiredFit": "low-cut",
+        "loading": false,
+        "error": null,
+        "triangles": 30196,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "low-cut",
+        "view": "back"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "low-cut",
+        "desiredFit": "low-cut",
+        "loading": false,
+        "error": null,
+        "triangles": 30196,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "crop-walk-0.2-front",
+        "shirt": "crop",
+        "area": "top",
+        "pose": "ACCAD_Walk_Female",
+        "time": 0.2,
+        "view": "front"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "crop-walk-0.2-back",
+        "shirt": "crop",
+        "area": "top",
+        "pose": "ACCAD_Walk_Female",
+        "time": 0.2,
+        "view": "back"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "crop-walk-0.7-front",
+        "shirt": "crop",
+        "area": "top",
+        "pose": "ACCAD_Walk_Female",
+        "time": 0.7,
+        "view": "front"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "crop-walk-0.7-back",
+        "shirt": "crop",
+        "area": "top",
+        "pose": "ACCAD_Walk_Female",
+        "time": 0.7,
+        "view": "back"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "boot-relaxed-walk-0.2",
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "relaxed",
+        "pose": "ACCAD_Walk_Female",
+        "time": 0.2,
+        "view": "rear-quarter"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "boot-relaxed-walk-0.7",
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "relaxed",
+        "pose": "ACCAD_Walk_Female",
+        "time": 0.7,
+        "view": "rear-quarter"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "boot-low-cut-walk-0.2",
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "low-cut",
+        "pose": "ACCAD_Walk_Female",
+        "time": 0.2,
+        "view": "rear-quarter"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "low-cut",
+        "desiredFit": "low-cut",
+        "loading": false,
+        "error": null,
+        "triangles": 30196,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "boot-low-cut-walk-0.7",
+        "shirt": "crop",
+        "area": "feet",
+        "fit": "low-cut",
+        "pose": "ACCAD_Walk_Female",
+        "time": 0.7,
+        "view": "rear-quarter"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "low-cut",
+        "desiredFit": "low-cut",
+        "loading": false,
+        "error": null,
+        "triangles": 30196,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 15098,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "crop-talk-front",
+        "shirt": "crop",
+        "area": "top",
+        "pose": "MH_Talk",
+        "time": 0.7,
+        "view": "front"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "crop-talk-back",
+        "shirt": "crop",
+        "area": "top",
+        "pose": "MH_Talk",
+        "time": 0.7,
+        "view": "back"
+      },
+      "top": {
+        "profile": "air3-supplied-crop-top-2026-10-25-v1",
+        "style": "crop",
+        "desired": "crop",
+        "loading": false,
+        "error": null,
+        "triangles": 12052,
+        "sourceShirtMeshes": 6,
+        "source": "DaaGHrii / Off Shoulder Top",
+        "license": "CC BY 4.0",
+        "bodyBoneScalesChanged": false,
+        "skinning": "surface-transferred normalized four body influences",
+        "clothPhysics": false
+      },
+      "footwear": {
+        "profile": "air3-fitted-footwear-2026-10-25-v2",
+        "style": "boot",
+        "desired": "boot",
+        "fit": "relaxed",
+        "desiredFit": "relaxed",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot:relaxed",
+          "boot:low-cut"
+        ]
+      },
+      "meshes": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "triangles": 20373,
+          "nonfinite": 0
+        },
+        {
+          "name": "AIR3_crop_top",
+          "triangles": 12052,
+          "nonfinite": 0
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "This is source-module geometry/material QA; compiled app interaction is tested separately.",
+    "Pose samples and visual inspection do not certify every possible cloth/body collision.",
+    "Garments use skinning and reversible body draw masks; no cloth physics or dynamic collision solver.",
+    "High-heeled footwear retains its authored sole and heel; the walking capture was not recorded specifically in these boots."
+  ]
+}

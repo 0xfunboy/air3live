@@ -1,0 +1,26 @@
+Command: node --test test/dapp-wallpanel.test.mjs
+Working directory: studio-broadcast
+External services: none; deterministic fetch fixtures and one HTTP server bound to 127.0.0.1
+
+✔ bridge configuration requires explicit public source and producer role, with bounded polling defaults (3.247976ms)
+✔ AIRTrack snapshots preserve actual prices and nulls; credentials go only to the bounded live POST (11.328147ms)
+✔ auto feed is explicit and never falls back to AIRTrack on failure (4.250671ms)
+✔ trade polling reuses candles for 15 seconds and reports for 60 seconds, with their ages disclosed (4.304109ms)
+✔ a changed selection waits for its own candles; failure leaves the old snapshot to expire (3.143612ms)
+✔ the default 12-second rotation retrieves candles for each newly selected signal (3.506867ms)
+✔ malformed, oversized or non-JSON source data never renews the wallpanel TTL (11.10571ms)
+✔ failures back off 4/8/16/30 seconds, recover to normal cadence, and do not overlap requests (7.62406ms)
+✔ manual poll calls join one in-flight cycle and stop prevents a late source response from publishing (1.034672ms)
+✔ request timeout aborts the source and destination errors expose only controlled codes (22.236949ms)
+✔ real HTTP redirects are rejected before any destination can receive a forwarded producer token (47.980408ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 300.751611
+
+CLI check: node adapters/dapp-wallpanel.mjs --help
+Exit code: 0; displayed usage without credentials or network access.

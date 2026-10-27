@@ -1,0 +1,13 @@
+{
+  "source": "off_shoulder_top.glb",
+  "bytes": 2483712,
+  "sha256": "5ba16fe9583d908ff13e530200e32ea6dc947b8c993150d2e65a771e3265130f",
+  "author": "DaaGHrii",
+  "title": "Off Shoulder Top",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "url": "https://sketchfab.com/3d-models/off-shoulder-top-5dac7be571c7464e802cc5aaa08a15c0",
+  "preservation": "Original uploaded GLB, unchanged",
+  "runtime": "studio-broadcast/public/assets/air3/clothing/crop-top.glb",
+  "changes": "Fitted in garment coordinates to existing avatar; surface-transferred body weights and collar-lining separation; original topology, UVs and embedded texture retained."
+}

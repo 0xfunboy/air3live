@@ -1,0 +1,480 @@
+{
+  "startedAt": 1792861802665,
+  "mode": "instrumented compiled worker; unchanged runtime files",
+  "server": [
+    {
+      "receivedAt": 1792861822800,
+      "finishedAt": 1792861822800,
+      "closedAt": 1792861822800
+    },
+    {
+      "receivedAt": 1792861825648,
+      "finishedAt": 1792861825648,
+      "closedAt": 1792861825648
+    },
+    {
+      "receivedAt": 1792861835646,
+      "finishedAt": 1792861835646,
+      "closedAt": 1792861835646
+    },
+    {
+      "receivedAt": 1792861848265,
+      "finishedAt": 1792861848266,
+      "closedAt": 1792861848266
+    },
+    {
+      "receivedAt": 1792861855646,
+      "finishedAt": 1792861855646,
+      "closedAt": 1792861855646
+    }
+  ],
+  "worker": [
+    {
+      "type": "health-diagnostic",
+      "phase": "fetch-start",
+      "probe": 1,
+      "wall": 1792861822798,
+      "monotonic": 17.200000002980232,
+      "elapsedMs": 0,
+      "callbackAt": 1792861822801
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "headers",
+      "probe": 1,
+      "wall": 1792861822808,
+      "monotonic": 27.899999998509884,
+      "elapsedMs": 10.699999995529652,
+      "status": 200,
+      "callbackAt": 1792861822809
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "probe-end",
+      "probe": 1,
+      "wall": 1792861822809,
+      "monotonic": 28.700000002980232,
+      "elapsedMs": 11.5,
+      "ok": true,
+      "callbackAt": 1792861822810
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "fetch-start",
+      "probe": 2,
+      "wall": 1792861825645,
+      "monotonic": 2864.2999999970198,
+      "elapsedMs": 0.09999999403953552,
+      "callbackAt": 1792861825647
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "headers",
+      "probe": 2,
+      "wall": 1792861825649,
+      "monotonic": 2868.7000000029802,
+      "elapsedMs": 4.5,
+      "status": 200,
+      "callbackAt": 1792861825653
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "probe-end",
+      "probe": 2,
+      "wall": 1792861825653,
+      "monotonic": 2871.89999999851,
+      "elapsedMs": 7.699999995529652,
+      "ok": true,
+      "callbackAt": 1792861825654
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "fetch-start",
+      "probe": 3,
+      "wall": 1792861835644,
+      "monotonic": 12863.29999999702,
+      "elapsedMs": 0,
+      "callbackAt": 1792861835645
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "headers",
+      "probe": 3,
+      "wall": 1792861835647,
+      "monotonic": 12866.70000000298,
+      "elapsedMs": 3.4000000059604645,
+      "status": 200,
+      "callbackAt": 1792861835648
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "probe-end",
+      "probe": 3,
+      "wall": 1792861835648,
+      "monotonic": 12867.89999999851,
+      "elapsedMs": 4.600000001490116,
+      "ok": true,
+      "callbackAt": 1792861835649
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "fetch-start",
+      "probe": 4,
+      "wall": 1792861848261,
+      "monotonic": 25480.79999999702,
+      "elapsedMs": 0.09999999403953552,
+      "callbackAt": 1792861848264
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "headers",
+      "probe": 4,
+      "wall": 1792861848267,
+      "monotonic": 25486.20000000298,
+      "elapsedMs": 5.5,
+      "status": 200,
+      "callbackAt": 1792861848268
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "probe-end",
+      "probe": 4,
+      "wall": 1792861848270,
+      "monotonic": 25489,
+      "elapsedMs": 8.299999997019768,
+      "ok": true,
+      "callbackAt": 1792861848271
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "fetch-start",
+      "probe": 5,
+      "wall": 1792861855644,
+      "monotonic": 32863.29999999702,
+      "elapsedMs": 0,
+      "callbackAt": 1792861855645
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "headers",
+      "probe": 5,
+      "wall": 1792861855649,
+      "monotonic": 32868.60000000149,
+      "elapsedMs": 5.300000004470348,
+      "status": 200,
+      "callbackAt": 1792861855651
+    },
+    {
+      "type": "health-diagnostic",
+      "phase": "probe-end",
+      "probe": 5,
+      "wall": 1792861855650,
+      "monotonic": 32869.5,
+      "elapsedMs": 6.200000002980232,
+      "ok": true,
+      "callbackAt": 1792861855651
+    }
+  ],
+  "network": [
+    {
+      "event": "request",
+      "label": "worker",
+      "id": "37339.66",
+      "timestamp": 53938.041592,
+      "wallTime": 1792861822.798661,
+      "callbackAt": 1792861822800
+    },
+    {
+      "event": "responseReceived",
+      "label": "worker",
+      "id": "37339.66",
+      "timestamp": 53938.051699,
+      "callbackAt": 1792861822809,
+      "status": 200,
+      "timing": {
+        "requestTime": 53938.041986,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": 0.053,
+        "dnsEnd": 0.058,
+        "connectStart": 0.058,
+        "connectEnd": 0.48,
+        "sslStart": -1,
+        "sslEnd": -1,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 0.796,
+        "sendEnd": 0.954,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 1.729,
+        "receiveHeadersEnd": 1.747
+      }
+    },
+    {
+      "event": "loadingFinished",
+      "label": "worker",
+      "id": "37339.66",
+      "timestamp": 53938.045557,
+      "callbackAt": 1792861822810
+    },
+    {
+      "event": "request",
+      "label": "worker",
+      "id": "37339.67",
+      "timestamp": 53940.888584,
+      "wallTime": 1792861825.645804,
+      "callbackAt": 1792861825648
+    },
+    {
+      "event": "responseReceived",
+      "label": "worker",
+      "id": "37339.67",
+      "timestamp": 53940.892532,
+      "callbackAt": 1792861825652,
+      "status": 200,
+      "timing": {
+        "requestTime": 53940.889645,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": -1,
+        "dnsEnd": -1,
+        "connectStart": -1,
+        "connectEnd": -1,
+        "sslStart": -1,
+        "sslEnd": -1,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 0.36,
+        "sendEnd": 0.454,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 1.717,
+        "receiveHeadersEnd": 1.752
+      }
+    },
+    {
+      "event": "loadingFailed",
+      "label": "worker",
+      "id": "37339.67",
+      "timestamp": 53940.89579,
+      "callbackAt": 1792861825654,
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "event": "request",
+      "label": "worker",
+      "id": "37339.68",
+      "timestamp": 53950.887543,
+      "wallTime": 1792861835.644627,
+      "callbackAt": 1792861835645
+    },
+    {
+      "event": "responseReceived",
+      "label": "worker",
+      "id": "37339.68",
+      "timestamp": 53950.890331,
+      "callbackAt": 1792861835648,
+      "status": 200,
+      "timing": {
+        "requestTime": 53950.88819,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": 0.188,
+        "dnsEnd": 0.331,
+        "connectStart": 0.331,
+        "connectEnd": 0.723,
+        "sslStart": -1,
+        "sslEnd": -1,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 0.831,
+        "sendEnd": 0.885,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 1.294,
+        "receiveHeadersEnd": 1.324
+      }
+    },
+    {
+      "event": "loadingFailed",
+      "label": "worker",
+      "id": "37339.68",
+      "timestamp": 53950.891751,
+      "callbackAt": 1792861835649,
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "event": "request",
+      "label": "worker",
+      "id": "37339.69",
+      "timestamp": 53963.505238,
+      "wallTime": 1792861848.262306,
+      "callbackAt": 1792861848264
+    },
+    {
+      "event": "responseReceived",
+      "label": "worker",
+      "id": "37339.69",
+      "timestamp": 53963.509815,
+      "callbackAt": 1792861848269,
+      "status": 200,
+      "timing": {
+        "requestTime": 53963.506566,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": 0.272,
+        "dnsEnd": 0.343,
+        "connectStart": 0.343,
+        "connectEnd": 0.505,
+        "sslStart": -1,
+        "sslEnd": -1,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 0.683,
+        "sendEnd": 0.891,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 2.56,
+        "receiveHeadersEnd": 2.596
+      }
+    },
+    {
+      "event": "loadingFailed",
+      "label": "worker",
+      "id": "37339.69",
+      "timestamp": 53963.512746,
+      "callbackAt": 1792861848271,
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "event": "request",
+      "label": "worker",
+      "id": "37339.70",
+      "timestamp": 53970.887565,
+      "wallTime": 1792861855.644648,
+      "callbackAt": 1792861855646
+    },
+    {
+      "event": "responseReceived",
+      "label": "worker",
+      "id": "37339.70",
+      "timestamp": 53970.892386,
+      "callbackAt": 1792861855651,
+      "status": 200,
+      "timing": {
+        "requestTime": 53970.888333,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": 0.316,
+        "dnsEnd": 0.43,
+        "connectStart": 0.43,
+        "connectEnd": 0.522,
+        "sslStart": -1,
+        "sslEnd": -1,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 0.643,
+        "sendEnd": 0.705,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 1.682,
+        "receiveHeadersEnd": 1.904
+      }
+    },
+    {
+      "event": "loadingFinished",
+      "label": "worker",
+      "id": "37339.70",
+      "timestamp": 53970.891866,
+      "callbackAt": 1792861855651
+    }
+  ],
+  "page": [
+    {
+      "requestFailed": "/api/health",
+      "error": "net::ERR_ABORTED",
+      "callbackAt": 1792861825654
+    },
+    {
+      "requestFailed": "/api/health",
+      "error": "net::ERR_ABORTED",
+      "callbackAt": 1792861835649
+    },
+    {
+      "requestFailed": "/api/health",
+      "error": "net::ERR_ABORTED",
+      "callbackAt": 1792861848271
+    }
+  ],
+  "steps": [
+    {
+      "name": "navigate",
+      "at": 1792861803494
+    },
+    {
+      "name": "ready",
+      "at": 1792861815646
+    },
+    {
+      "name": "capture-0",
+      "at": 1792861822774,
+      "bytes": 513250,
+      "frameCount": 8,
+      "gatewayConnected": false,
+      "fps": 0.4
+    },
+    {
+      "name": "capture-1",
+      "at": 1792861828817,
+      "bytes": 513754,
+      "frameCount": 12,
+      "gatewayConnected": true,
+      "fps": 0.8
+    },
+    {
+      "name": "capture-2",
+      "at": 1792861834926,
+      "bytes": 431030,
+      "frameCount": 16,
+      "gatewayConnected": true,
+      "fps": 0.8
+    },
+    {
+      "name": "capture-3",
+      "at": 1792861840611,
+      "bytes": 513462,
+      "frameCount": 20,
+      "gatewayConnected": true,
+      "fps": 0.9
+    },
+    {
+      "name": "capture-4",
+      "at": 1792861848249,
+      "bytes": 432150,
+      "frameCount": 25,
+      "gatewayConnected": true,
+      "fps": 0.9
+    }
+  ],
+  "final": {
+    "gatewayConnected": true,
+    "frameCount": 37,
+    "fps": 0.9
+  },
+  "teardownAt": 1792861861257,
+  "finishedAt": 1792861861878
+}

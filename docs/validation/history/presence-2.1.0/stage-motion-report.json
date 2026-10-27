@@ -1,0 +1,299 @@
+{
+  "schema": "airewardrop.stage-motion-mechanical-qa.v1",
+  "date": "2026-10-24T17:03:32.455Z",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "node": "v24.19.0",
+    "graphicalRenderer": "none; numerical skeleton test"
+  },
+  "sources": {
+    "public/assets/air3/models/AIR3-runtime.glb": {
+      "bytes": 21666344,
+      "sha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d"
+    },
+    "public/air3-stage-motion.mjs": {
+      "bytes": 22414,
+      "sha256": "60b146089c68539c1b061e72dfff7f2d549eb1a70d8f9c410c901162c00994a2"
+    },
+    "public/air3-avatar.mjs": {
+      "bytes": 17664,
+      "sha256": "49833b767d9d09684ae690dd9c478769694e479b6cd2566cbc487d7c329c7362"
+    },
+    "public/air3-hair.mjs": {
+      "bytes": 22339,
+      "sha256": "64d6e989424bc9eb9211a58139079ba5f5219d7841f176ecd800c78bd67dcafa"
+    },
+    "public/studio-scene.mjs": {
+      "bytes": 31976,
+      "sha256": "bb692586f1cd4f00bcb4aac67f935a681d720812166d4d37e5d300853beb48ee"
+    }
+  },
+  "avatarFit": {
+    "method": "create hair before rig; precise traverseVisible bounds as in StudioScene.loadAvatar",
+    "sourceVisibleBounds": {
+      "min": [
+        -0.23215181772818697,
+        -0.03498288817640652,
+        -0.163472325943774
+      ],
+      "max": [
+        0.2864436617427546,
+        1.6723332275562068,
+        0.25287362912060907
+      ]
+    },
+    "sourceVisibleHeightMetres": 1.7073161157326133,
+    "uniformScale": 1.0308577209468792,
+    "requestedVisibleHeightMetres": 1.76,
+    "hairstyle": {
+      "profile": "air3-short-ponytail-2026-10-24-v7",
+      "legacyBunHidden": true,
+      "scalpFit": "copied source scalp cards settled toward scanned cranial geometry; bun removed",
+      "style": "short rear ponytail with feathered hairline and shoulder wisps",
+      "meshes": 4,
+      "triangles": 59282,
+      "boundTo": "body__head",
+      "secondaryMotion": "bounded critically damped strand lag",
+      "sourceGeometryModified": false,
+      "hybridSourceCards": true,
+      "geometricFramingFibres": 112,
+      "fibreTriangles": 14784,
+      "collisions": false
+    }
+  },
+  "deltaSeconds": 0.04,
+  "wallTimeMilliseconds": 5512.398881,
+  "metrics": {
+    "simulatedFrames": 2545,
+    "maximumSwingLiftMetres": 0.04799999999999999,
+    "maximumPlantedAnkleErrorMetres": 0.0018191313674432558,
+    "maximumPlantedAnkleYawOffsetDegrees": 44.690708020204234,
+    "maximumPlantedDisplacementPerFrameMetres": 0.00046127423622043044,
+    "maximumPelvisLoweringMetres": 0.05114596823145878,
+    "minimumDeskClearanceMetres": 1.0438775862703469,
+    "reversedKneeSamples": 0,
+    "nonfiniteTransforms": 0
+  },
+  "journeys": [
+    {
+      "target": "left",
+      "outwardSimulatedSeconds": 10.4,
+      "returnSimulatedSeconds": 9.88,
+      "arrived": true,
+      "returned": true,
+      "sourceGroundingRestored": true,
+      "presentation": {
+        "position": [
+          -2.5,
+          0.005,
+          -0.85
+        ],
+        "pointingSide": "r",
+        "pointWeight": 0.819995875026402,
+        "minimumFlexMetres": 0.005000000096598352,
+        "resolvedPelvisDropMetres": 0.005000000096598352,
+        "kneeFlexionDegrees": {
+          "l": 16.713948969722225,
+          "r": 18.879234136806048
+        },
+        "wristRotationFromInitialPoseDegrees": 15.739716632612472
+      }
+    },
+    {
+      "target": "center",
+      "outwardSimulatedSeconds": 13.52,
+      "returnSimulatedSeconds": 10.92,
+      "arrived": true,
+      "returned": true,
+      "sourceGroundingRestored": true,
+      "presentation": {
+        "position": [
+          -0.8,
+          0.005,
+          -1.85
+        ],
+        "pointingSide": "l",
+        "pointWeight": 0.819995875026402,
+        "minimumFlexMetres": 0.005000000096598352,
+        "resolvedPelvisDropMetres": 0.005000000096598352,
+        "kneeFlexionDegrees": {
+          "l": 17.11161070031102,
+          "r": 18.712405502116553
+        },
+        "wristRotationFromInitialPoseDegrees": 24.22560437578277
+      }
+    },
+    {
+      "target": "right",
+      "outwardSimulatedSeconds": 17.68,
+      "returnSimulatedSeconds": 17.16,
+      "arrived": true,
+      "returned": true,
+      "sourceGroundingRestored": true,
+      "presentation": {
+        "position": [
+          2.45,
+          0.005,
+          -0.85
+        ],
+        "pointingSide": "l",
+        "pointWeight": 0.819995875026402,
+        "minimumFlexMetres": 0.005000000096598352,
+        "resolvedPelvisDropMetres": 0.005000000096598352,
+        "kneeFlexionDegrees": {
+          "l": 16.55166359570987,
+          "r": 19.187468111602755
+        },
+        "wristRotationFromInitialPoseDegrees": 29.339896854344325
+      }
+    },
+    {
+      "target": "cancel-right-return-home",
+      "returned": true,
+      "returnSimulatedSeconds": 6.24
+    }
+  ],
+  "speechSwitches": [
+    {
+      "simulatedFrame": 130,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk"
+    },
+    {
+      "simulatedFrame": 200,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle01_UE"
+    },
+    {
+      "simulatedFrame": 350,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk01"
+    },
+    {
+      "simulatedFrame": 420,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle02_UE"
+    },
+    {
+      "simulatedFrame": 570,
+      "speech": "playing",
+      "stagePhase": "home",
+      "clip": "MH_Talk02"
+    },
+    {
+      "simulatedFrame": 640,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle03_UE"
+    },
+    {
+      "simulatedFrame": 790,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk03"
+    },
+    {
+      "simulatedFrame": 860,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle01_UE"
+    },
+    {
+      "simulatedFrame": 1010,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk"
+    },
+    {
+      "simulatedFrame": 1080,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle02_UE"
+    },
+    {
+      "simulatedFrame": 1230,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk01"
+    },
+    {
+      "simulatedFrame": 1300,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle03_UE"
+    },
+    {
+      "simulatedFrame": 1450,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk02"
+    },
+    {
+      "simulatedFrame": 1520,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle01_UE"
+    },
+    {
+      "simulatedFrame": 1670,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk03"
+    },
+    {
+      "simulatedFrame": 1740,
+      "speech": "idle",
+      "stagePhase": "presenting",
+      "clip": "MH_Idle02_UE"
+    },
+    {
+      "simulatedFrame": 1890,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk"
+    },
+    {
+      "simulatedFrame": 1960,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle03_UE"
+    },
+    {
+      "simulatedFrame": 2110,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk01"
+    },
+    {
+      "simulatedFrame": 2180,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle01_UE"
+    },
+    {
+      "simulatedFrame": 2330,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk02"
+    },
+    {
+      "simulatedFrame": 2400,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle02_UE"
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Fixed simulation time; not a realtime performance measurement",
+    "Speech phase/cue events exercise body clip transitions; no audio is rendered in this numerical test",
+    "No cloth, hair collision or full sole contact physics",
+    "Uses the GLB geometry, current authored hairstyle and visible-bounds scale; raster textures replaced only for numerical Node execution"
+  ],
+  "error": null
+}

@@ -1,0 +1,609 @@
+{
+  "schema": "air3.footwear-visual-qa.v1",
+  "passed": true,
+  "date": "2026-10-25T03:22:24.967Z",
+  "browser": "Chrome/148.0.7778.97",
+  "sourceHash": "3e2a7b6094ec2bef2918f1d60761ef6fce4acab77e1a47aea5499d6af074176c",
+  "assets": {
+    "boot.glb": "050c5385ccf4700ed095f3f0d025447f30f6abb2dde77b3569ee6b8c53dbe829",
+    "shoes-test.glb": "59dd3a8981b500cd6c1e79f4a02b4ae37a1606ae81065957d154026ea0e2e08e"
+  },
+  "errors": [],
+  "reports": [
+    {
+      "style": "original",
+      "view": "front",
+      "diagnostics": {
+        "profile": "air3-fitted-footwear-2026-10-25-v1",
+        "style": "original",
+        "desired": "original",
+        "loading": false,
+        "error": null,
+        "triangles": 0,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot"
+        ]
+      },
+      "bounds": []
+    },
+    {
+      "style": "original",
+      "view": "side",
+      "diagnostics": {
+        "profile": "air3-fitted-footwear-2026-10-25-v1",
+        "style": "original",
+        "desired": "original",
+        "loading": false,
+        "error": null,
+        "triangles": 0,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot"
+        ]
+      },
+      "bounds": []
+    },
+    {
+      "style": "original",
+      "view": "full",
+      "diagnostics": {
+        "profile": "air3-fitted-footwear-2026-10-25-v1",
+        "style": "original",
+        "desired": "original",
+        "loading": false,
+        "error": null,
+        "triangles": 0,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot"
+        ]
+      },
+      "bounds": []
+    },
+    {
+      "style": "boot",
+      "view": "front",
+      "diagnostics": {
+        "profile": "air3-fitted-footwear-2026-10-25-v1",
+        "style": "boot",
+        "desired": "boot",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot"
+        ]
+      },
+      "bounds": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "min": [
+            0.1329568738503721,
+            -0.033856980750828033,
+            -0.09007799580219272
+          ],
+          "max": [
+            0.2574236437304004,
+            0.24039457856825344,
+            0.15151790684020133
+          ],
+          "triangles": 20373
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "min": [
+            -0.14614672123054073,
+            -0.03496015179398956,
+            -0.047177186012771474
+          ],
+          "max": [
+            -0.042151816757424986,
+            0.24043314033083715,
+            0.20304124808665935
+          ],
+          "triangles": 20373
+        }
+      ]
+    },
+    {
+      "style": "boot",
+      "view": "side",
+      "diagnostics": {
+        "profile": "air3-fitted-footwear-2026-10-25-v1",
+        "style": "boot",
+        "desired": "boot",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot"
+        ]
+      },
+      "bounds": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "min": [
+            0.1329568738503721,
+            -0.033856980750828145,
+            -0.09007799580219272
+          ],
+          "max": [
+            0.2574236437304004,
+            0.24039457856825333,
+            0.15151790684020133
+          ],
+          "triangles": 20373
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "min": [
+            -0.14614672123054073,
+            -0.03496015179398968,
+            -0.047177186012771474
+          ],
+          "max": [
+            -0.042151816757424986,
+            0.24043314033083704,
+            0.20304124808665935
+          ],
+          "triangles": 20373
+        }
+      ]
+    },
+    {
+      "style": "boot",
+      "view": "full",
+      "diagnostics": {
+        "profile": "air3-fitted-footwear-2026-10-25-v1",
+        "style": "boot",
+        "desired": "boot",
+        "loading": false,
+        "error": null,
+        "triangles": 40746,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": true,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": false,
+        "cachedStyles": [
+          "boot"
+        ]
+      },
+      "bounds": [
+        {
+          "name": "AIR3_boot_l_footwear-boot-0",
+          "min": [
+            0.1329568738503721,
+            -0.033856980750828033,
+            -0.09007799580219272
+          ],
+          "max": [
+            0.2574236437304004,
+            0.24039457856825344,
+            0.15151790684020133
+          ],
+          "triangles": 20373
+        },
+        {
+          "name": "AIR3_boot_r_footwear-boot-0",
+          "min": [
+            -0.14614672123054073,
+            -0.03496015179398956,
+            -0.047177186012771474
+          ],
+          "max": [
+            -0.042151816757424986,
+            0.24043314033083715,
+            0.20304124808665935
+          ],
+          "triangles": 20373
+        }
+      ]
+    },
+    {
+      "style": "shoes-test",
+      "view": "front",
+      "diagnostics": {
+        "profile": "air3-fitted-footwear-2026-10-25-v1",
+        "style": "shoes-test",
+        "desired": "shoes-test",
+        "loading": false,
+        "error": null,
+        "triangles": 30644,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": false,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": true,
+        "cachedStyles": [
+          "boot",
+          "shoes-test"
+        ]
+      },
+      "bounds": [
+        {
+          "name": "AIR3_shoes-test_l_fitting-foot",
+          "min": [
+            0.14218304845802135,
+            -0.03298858364967301,
+            -0.0696529431604035
+          ],
+          "max": [
+            0.24714959503094963,
+            0.2323361706214484,
+            0.14280890323980433
+          ],
+          "triangles": 4015
+        },
+        {
+          "name": "AIR3_shoes-test_l_footwear-shoes-test-1",
+          "min": [
+            0.2067090536764784,
+            -0.021496853443292798,
+            0.07655735158174684
+          ],
+          "max": [
+            0.25378923386204966,
+            -0.012512858760928508,
+            0.15425876968239643
+          ],
+          "triangles": 192
+        },
+        {
+          "name": "AIR3_shoes-test_l_footwear-shoes-test-4",
+          "min": [
+            0.13345602340899712,
+            -0.033566870095409714,
+            -0.08097514536752118
+          ],
+          "max": [
+            0.2578656231575251,
+            0.201451197510284,
+            0.15672966504417238
+          ],
+          "triangles": 11115
+        },
+        {
+          "name": "AIR3_shoes-test_r_fitting-foot",
+          "min": [
+            -0.13528461487240706,
+            -0.03408299880413813,
+            -0.02988124117853808
+          ],
+          "max": [
+            -0.05345935756986808,
+            0.23312497618006606,
+            0.19114749385356777
+          ],
+          "triangles": 4015
+        },
+        {
+          "name": "AIR3_shoes-test_r_footwear-shoes-test-1",
+          "min": [
+            -0.13797012956787913,
+            -0.022581011737834864,
+            0.1357453414722981
+          ],
+          "max": [
+            -0.07783805514583501,
+            -0.013607621733133835,
+            0.2021352452442089
+          ],
+          "triangles": 192
+        },
+        {
+          "name": "AIR3_shoes-test_r_footwear-shoes-test-4",
+          "min": [
+            -0.14342624131810638,
+            -0.03470856793576859,
+            -0.04260891124477691
+          ],
+          "max": [
+            -0.044150997202185904,
+            0.20048363031713376,
+            0.20764513976863333
+          ],
+          "triangles": 11115
+        }
+      ]
+    },
+    {
+      "style": "shoes-test",
+      "view": "side",
+      "diagnostics": {
+        "profile": "air3-fitted-footwear-2026-10-25-v1",
+        "style": "shoes-test",
+        "desired": "shoes-test",
+        "loading": false,
+        "error": null,
+        "triangles": 30644,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": false,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": true,
+        "cachedStyles": [
+          "boot",
+          "shoes-test"
+        ]
+      },
+      "bounds": [
+        {
+          "name": "AIR3_shoes-test_l_fitting-foot",
+          "min": [
+            0.14218304845802135,
+            -0.0329885836496729,
+            -0.0696529431604035
+          ],
+          "max": [
+            0.24714959503094963,
+            0.2323361706214485,
+            0.14280890323980433
+          ],
+          "triangles": 4015
+        },
+        {
+          "name": "AIR3_shoes-test_l_footwear-shoes-test-1",
+          "min": [
+            0.2067090536764784,
+            -0.021496853443292687,
+            0.07655735158174684
+          ],
+          "max": [
+            0.25378923386204966,
+            -0.012512858760928395,
+            0.15425876968239643
+          ],
+          "triangles": 192
+        },
+        {
+          "name": "AIR3_shoes-test_l_footwear-shoes-test-4",
+          "min": [
+            0.13345602340899712,
+            -0.0335668700954096,
+            -0.08097514536752118
+          ],
+          "max": [
+            0.2578656231575251,
+            0.20145119751028412,
+            0.15672966504417238
+          ],
+          "triangles": 11115
+        },
+        {
+          "name": "AIR3_shoes-test_r_fitting-foot",
+          "min": [
+            -0.13528461487240706,
+            -0.03408299880413802,
+            -0.02988124117853808
+          ],
+          "max": [
+            -0.05345935756986808,
+            0.23312497618006617,
+            0.19114749385356777
+          ],
+          "triangles": 4015
+        },
+        {
+          "name": "AIR3_shoes-test_r_footwear-shoes-test-1",
+          "min": [
+            -0.13797012956787913,
+            -0.022581011737834753,
+            0.1357453414722981
+          ],
+          "max": [
+            -0.07783805514583501,
+            -0.013607621733133724,
+            0.2021352452442089
+          ],
+          "triangles": 192
+        },
+        {
+          "name": "AIR3_shoes-test_r_footwear-shoes-test-4",
+          "min": [
+            -0.14342624131810638,
+            -0.03470856793576848,
+            -0.04260891124477691
+          ],
+          "max": [
+            -0.044150997202185904,
+            0.20048363031713387,
+            0.20764513976863333
+          ],
+          "triangles": 11115
+        }
+      ]
+    },
+    {
+      "style": "shoes-test",
+      "view": "full",
+      "diagnostics": {
+        "profile": "air3-fitted-footwear-2026-10-25-v1",
+        "style": "shoes-test",
+        "desired": "shoes-test",
+        "loading": false,
+        "error": null,
+        "triangles": 30644,
+        "originalShoeMeshes": 1,
+        "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+        "boneScalesChanged": false,
+        "commercialUse": false,
+        "originalSoleY": -0.03498281538486481,
+        "fittingFoot": true,
+        "cachedStyles": [
+          "boot",
+          "shoes-test"
+        ]
+      },
+      "bounds": [
+        {
+          "name": "AIR3_shoes-test_l_fitting-foot",
+          "min": [
+            0.14218304845802135,
+            -0.03298858364967301,
+            -0.0696529431604035
+          ],
+          "max": [
+            0.24714959503094963,
+            0.2323361706214484,
+            0.14280890323980433
+          ],
+          "triangles": 4015
+        },
+        {
+          "name": "AIR3_shoes-test_l_footwear-shoes-test-1",
+          "min": [
+            0.2067090536764784,
+            -0.021496853443292798,
+            0.07655735158174684
+          ],
+          "max": [
+            0.25378923386204966,
+            -0.012512858760928508,
+            0.15425876968239643
+          ],
+          "triangles": 192
+        },
+        {
+          "name": "AIR3_shoes-test_l_footwear-shoes-test-4",
+          "min": [
+            0.13345602340899712,
+            -0.033566870095409714,
+            -0.08097514536752118
+          ],
+          "max": [
+            0.2578656231575251,
+            0.201451197510284,
+            0.15672966504417238
+          ],
+          "triangles": 11115
+        },
+        {
+          "name": "AIR3_shoes-test_r_fitting-foot",
+          "min": [
+            -0.13528461487240706,
+            -0.03408299880413813,
+            -0.02988124117853808
+          ],
+          "max": [
+            -0.05345935756986808,
+            0.23312497618006606,
+            0.19114749385356777
+          ],
+          "triangles": 4015
+        },
+        {
+          "name": "AIR3_shoes-test_r_footwear-shoes-test-1",
+          "min": [
+            -0.13797012956787913,
+            -0.022581011737834864,
+            0.1357453414722981
+          ],
+          "max": [
+            -0.07783805514583501,
+            -0.013607621733133835,
+            0.2021352452442089
+          ],
+          "triangles": 192
+        },
+        {
+          "name": "AIR3_shoes-test_r_footwear-shoes-test-4",
+          "min": [
+            -0.14342624131810638,
+            -0.03470856793576859,
+            -0.04260891124477691
+          ],
+          "max": [
+            -0.044150997202185904,
+            0.20048363031713376,
+            0.20764513976863333
+          ],
+          "triangles": 11115
+        }
+      ]
+    }
+  ],
+  "initialRace": {
+    "duplicateLoadCoalesced": true,
+    "originalWon": true,
+    "completed": [
+      false,
+      false
+    ],
+    "state": {
+      "style": "original",
+      "desired": "original",
+      "loading": false,
+      "error": null
+    }
+  },
+  "switching": {
+    "unknownRejected": true,
+    "lastSelectionWins": true,
+    "originalRestored": true,
+    "state": {
+      "style": "original",
+      "desired": "original",
+      "loading": false,
+      "error": null
+    },
+    "diagnostics": {
+      "profile": "air3-fitted-footwear-2026-10-25-v1",
+      "style": "original",
+      "desired": "original",
+      "loading": false,
+      "error": null,
+      "triangles": 0,
+      "originalShoeMeshes": 1,
+      "skeleton": "existing MetaHuman body bones; foot/calf/ball weights",
+      "boneScalesChanged": false,
+      "commercialUse": true,
+      "originalSoleY": -0.03498281538486481,
+      "fittingFoot": false,
+      "cachedStyles": [
+        "boot",
+        "shoes-test"
+      ]
+    }
+  },
+  "disposedWhileLoading": {
+    "applied": false,
+    "accessoryGroupsAfterDispose": 0
+  },
+  "limitations": [
+    "Source-module WebGL fitting check; final compiled app is covered separately",
+    "SwiftShader functional rendering is not a GPU performance benchmark",
+    "Open-toe item is a noncommercial demo; supplied toe fitting patch, no high-heel-specific mocap"
+  ]
+}

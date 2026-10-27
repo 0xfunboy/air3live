@@ -1,0 +1,188 @@
+{
+  "schema": "air3.hair-assets.v1",
+  "styles": {
+    "artemis": {
+      "sourceBytes": 6093372,
+      "geometryBytes": 533616,
+      "triangles": 5455,
+      "vertices": 4042,
+      "joints": 33,
+      "geometryChanged": false,
+      "positionsNormalsUVsIndicesWeightsAndBindMatricesUnchanged": true,
+      "unusedJointSlotsCanonicalized": 9267,
+      "sourceSha256": "9452903dd16ee1e0fd5403990273509392c7c6768ed6ebf84487202b43531108",
+      "attribution": {
+        "title": "Ponytail 1 (Artemis) - Character Hair (Free)",
+        "author": "CT Reed",
+        "username": "continuumreed",
+        "url": "https://sketchfab.com/3d-models/ponytail-1-artemis-character-hair-free-b15554b4b9934cd6adbcf8669f83f634",
+        "license": {
+          "uri": "https://api.sketchfab.com/v3/licenses/bbfe3f7dbcdd4122b966b85b9786a989",
+          "label": "CC Attribution-NonCommercial",
+          "fullName": "Creative Commons Attribution-NonCommercial",
+          "requirements": "Author must be credited. No commercial use.",
+          "url": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "slug": "by-nc"
+        },
+        "retrieved": "2026-10-25"
+      },
+      "fitNotes": "Hairstyle-only cranial fit; source-space fringe offset0.045m, opposed bends0.12/-0.10radians. See air3-hair-wardrobe.mjs."
+    },
+    "wavy": {
+      "sourceBytes": 450528,
+      "geometryBytes": 318136,
+      "triangles": 4922,
+      "vertices": 4323,
+      "joints": 17,
+      "geometryChanged": false,
+      "positionsNormalsUVsIndicesWeightsAndBindMatricesUnchanged": true,
+      "unusedJointSlotsCanonicalized": 9791,
+      "sourceSha256": "5d98107bd3e51fb9e58644d9167092976d5b8f44be23ebf41740144c30925154",
+      "attribution": {
+        "title": "Wavy White Ponytail (With Bones)",
+        "author": "zHairezt",
+        "username": "zHairezt",
+        "url": "https://sketchfab.com/3d-models/wavy-white-ponytail-with-bones-d3e0ba8904504d6fb5e247346a4e93de",
+        "license": {
+          "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+          "label": "CC Attribution",
+          "fullName": "Creative Commons Attribution",
+          "requirements": "Author must be credited. Commercial use is allowed.",
+          "url": "http://creativecommons.org/licenses/by/4.0/",
+          "slug": "by"
+        },
+        "retrieved": "2026-10-25"
+      },
+      "fitNotes": "Hairstyle-only cranial fit; first tail bone length0.70. See air3-hair-wardrobe.mjs for current fitting transforms."
+    }
+  },
+  "colors": [
+    {
+      "id": "copper",
+      "authorTexture": 1,
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 272218,
+      "file": "artemis-copper.webp"
+    },
+    {
+      "id": "auburn",
+      "authorTexture": 2,
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 247552,
+      "file": "artemis-auburn.webp"
+    },
+    {
+      "id": "blonde",
+      "authorTexture": 3,
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 350482,
+      "file": "artemis-blonde.webp"
+    },
+    {
+      "id": "chestnut",
+      "authorTexture": 4,
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 250888,
+      "file": "artemis-chestnut.webp"
+    },
+    {
+      "id": "dark-brown",
+      "authorTexture": 5,
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 212910,
+      "file": "artemis-dark-brown.webp"
+    },
+    {
+      "id": "black",
+      "authorTexture": 6,
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 130082,
+      "file": "artemis-black.webp"
+    }
+  ],
+  "duplicates": [
+    "ponytail_1_artemis_-_character_hair_free (1).glb is byte-identical; not duplicated"
+  ],
+  "runtimeFiles": [
+    {
+      "file": "artemis-alpha.png",
+      "bytes": 1003494,
+      "sha256": "fde103729e4aa5dcd39bb389bf12949f72cdd45d1f66905cf1558268a3756966"
+    },
+    {
+      "file": "artemis-auburn.webp",
+      "bytes": 247552,
+      "sha256": "5f09b84880d943a8c85b24778e5801e358be32b49915b06b3c7ff5731f726b84"
+    },
+    {
+      "file": "artemis-black.webp",
+      "bytes": 130082,
+      "sha256": "0576d9c784e338b1545b7e6c8fc530974a3165db656028eb0d3f78c9346ae94f"
+    },
+    {
+      "file": "artemis-blonde.webp",
+      "bytes": 350482,
+      "sha256": "7e0e9a39914dcce60da580cb76c5a308b757c4534f516777729379332db694fd"
+    },
+    {
+      "file": "artemis-chestnut.webp",
+      "bytes": 250888,
+      "sha256": "5e0d90f88d2344973dccf0bb22de280d5c3a15f3ab109e7331dd9d0c31bfe019"
+    },
+    {
+      "file": "artemis-copper.webp",
+      "bytes": 272218,
+      "sha256": "4c050275d4b82d3f7161951332875ccf4212f171d0d5c1bd75256f954fa1820c"
+    },
+    {
+      "file": "artemis-dark-brown.webp",
+      "bytes": 212910,
+      "sha256": "c0e975cd3901431114a022e028145c570cf7fdd96c18393c8bccd3233b2d63ba"
+    },
+    {
+      "file": "artemis-normal.png",
+      "bytes": 949625,
+      "sha256": "4449f49bc02981e88c86e6673278ad706a6a9fd2e497d73d3e80cb37cf30689e"
+    },
+    {
+      "file": "artemis.glb",
+      "bytes": 533616,
+      "sha256": "7d18ac158ac25dcab7808e689acb0b230ef06a9dd434de96e4be61ee603f8c67"
+    },
+    {
+      "file": "wavy-source.png",
+      "bytes": 131717,
+      "sha256": "9e21c43fd8d4350cdb1e31aaeb8ff5c33fcacb63ad56152c068866ef7a3eb5c0"
+    },
+    {
+      "file": "wavy.glb",
+      "bytes": 318136,
+      "sha256": "c17dfbd513a8d9525a4b86d9cc37d9719bd873a1275f6019c599cd9c15ca06a2"
+    }
+  ],
+  "runtimeTotalBytes": 4400720,
+  "mapOrientation": {
+    "artemis-color": "source FBX: flipY=true",
+    "artemis-alpha": "source FBX: flipY=true",
+    "artemis-normal": "extracted GLB: flipY=false",
+    "wavy": "extracted GLB: flipY=false"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "air3.live.launcher.qa.v1",
+  "date": "2026-10-27T03:43:47.153Z",
+  "node": "v24.22.1",
+  "platform": "linux",
+  "kind": "real-local-gateway-no-broadcast",
+  "checks": {
+    "outputIsOnlyControlUrl": true,
+    "noAutomaticBroadcast": true,
+    "externalFeedsDisabled": true,
+    "loopbackSessionWorks": true,
+    "localhostCallbackMatchesSessionOrigin": true,
+    "occupiedPortPreservesExistingInstance": true,
+    "gracefulOwnedGatewayShutdown": true
+  },
+  "failures": [],
+  "sourceHashes": {
+    "scripts/start-live.mjs": "a31a3fcbabd9765e26ac1c766e4de1b4152cc284ba6b360b9b15f9888bc415ab",
+    "scripts/launcher-runtime.mjs": "bc8a6f00079dc1ea6ff5ee25fe3d39dcb7fb81430eec539b74d03b473d7d1945",
+    "scripts/launcher-shutdown.mjs": "52e369ae6a7eec2140a0214205818a1b0a30c03cbc413f36ddd6789f11b8ab0a",
+    "studio-broadcast/src/main.mjs": "a1ea6fa763a19f386635a775ee34a8681320a51b005e65ae2f31444106fcda37"
+  }
+}

@@ -1,0 +1,2192 @@
+{
+  "schema": "air3.compiled-visual-qa.v1",
+  "date": "2026-10-24T16:42:35.270Z",
+  "build": {
+    "schema": "air3.frontend-build.v1",
+    "builtAt": "2026-10-24T16:40:43.285Z",
+    "node": "v24.19.0",
+    "esbuild": "0.28.2",
+    "inputs": [
+      {
+        "path": "public/air3-attention.mjs",
+        "bytes": 8830,
+        "sha256": "ea1e33cd14300879e1d104ec8866fc7943ac715497bfd7bb8dea86f4270a783d"
+      },
+      {
+        "path": "public/air3-avatar.mjs",
+        "bytes": 17664,
+        "sha256": "49833b767d9d09684ae690dd9c478769694e479b6cd2566cbc487d7c329c7362"
+      },
+      {
+        "path": "public/air3-face.mjs",
+        "bytes": 14631,
+        "sha256": "bf67004472684e6eae68b962a6f5b91fb54f29250fac94b56ec0fd261701ae2b"
+      },
+      {
+        "path": "public/air3-hair.mjs",
+        "bytes": 18864,
+        "sha256": "eb2b0bfa6bc940c6babcfb80a448c11fd474c50a74ea42fb1f4e66ff3e115c24"
+      },
+      {
+        "path": "public/air3-stage-motion.mjs",
+        "bytes": 21151,
+        "sha256": "b3254333e86b1a485e8e06d008de13e7d580c6633a7df709610ca184e7e4eb37"
+      },
+      {
+        "path": "public/app.mjs",
+        "bytes": 17948,
+        "sha256": "20dd56204aa55a738c447be0c54aa3db8a4f8bcfdc9030e1727511ce1490907b"
+      },
+      {
+        "path": "public/avatar-materials.mjs",
+        "bytes": 11931,
+        "sha256": "855293477b72f26440ea5b74e3142aa0ce63949f4960baf4766e4a1b38a79c10"
+      },
+      {
+        "path": "public/data.mjs",
+        "bytes": 6950,
+        "sha256": "d99246963e242514d9e360fce7a28f960516351b9d161a79e60fde4899a10bd9"
+      },
+      {
+        "path": "public/health-worker.mjs",
+        "bytes": 639,
+        "sha256": "cb2bc8142307a231329b2302110ea690163dc9e70f1303d70e7dd54ff817406f"
+      },
+      {
+        "path": "public/lip-sync.mjs",
+        "bytes": 3017,
+        "sha256": "14a176477ab81e0c015dc9828957ca65ca04438f9f2dae7bf460f325d9980730"
+      },
+      {
+        "path": "public/monitors.mjs",
+        "bytes": 9876,
+        "sha256": "1dbbac662963732b0d95999556719d7a68496aecbd295813ff3516390e12572e"
+      },
+      {
+        "path": "public/preview/viewer.mjs",
+        "bytes": 13408,
+        "sha256": "fa1752ff47a41827a863fb2ea35d23bdc0fd76c9ade44d52c67aeb7a8e4e6304"
+      },
+      {
+        "path": "public/pure.mjs",
+        "bytes": 6882,
+        "sha256": "df1d7cc83213d905d4a3b19efd6ad93b830667dbb7dd98ddada40bebdd2b8f02"
+      },
+      {
+        "path": "public/speech-player.mjs",
+        "bytes": 13141,
+        "sha256": "f9c52457f7476d7b6053bb3fffe615e40f805b88d4ce3414bff862c122140048"
+      },
+      {
+        "path": "public/studio-rendering.mjs",
+        "bytes": 11950,
+        "sha256": "375b0a998e296ee4505881e803df06ce324dfde15fb8b3170245be7c3a6a39b3"
+      },
+      {
+        "path": "public/studio-scene.mjs",
+        "bytes": 31976,
+        "sha256": "bb692586f1cd4f00bcb4aac67f935a681d720812166d4d37e5d300853beb48ee"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "public/build/app.js",
+        "bytes": 65357,
+        "sha256": "ba0d7a7d0223e5342c9aa1402148901c2f766ad40fda29572ecab8af0a49b052"
+      },
+      {
+        "path": "public/build/health.js",
+        "bytes": 290,
+        "sha256": "87d44f1f16db0d04d4d265ddd8308780b1444eae687c922c70ec28c2e0f6f7bb"
+      },
+      {
+        "path": "public/build/preview.js",
+        "bytes": 8837,
+        "sha256": "f32f132d761027ab29328a9bea5a33769cfa5d844ef0d0d8da00c525b1f08b2c"
+      },
+      {
+        "path": "public/build/shared-IUPYLFTI.js",
+        "bytes": 4402,
+        "sha256": "86e688e2e69c4e98b3cb355fff00d7e293ef390b9f772559d47569c80a4b603d"
+      },
+      {
+        "path": "public/build/shared-KQ4OK2DR.js",
+        "bytes": 53718,
+        "sha256": "bfe11e4a3d16bf02190948a9edb3dbc1e87371c6ef0656915211636918db96f5"
+      }
+    ],
+    "externalDependencies": [
+      "three@0.186.1"
+    ],
+    "validatedModelImages": [
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/BodyBaseColor.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/Unnamed_albedo.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/1.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/color/FaceColor_MAIN.webp"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/data/FaceRoughness_ORM.png"
+      },
+      {
+        "model": "AIR3-runtime.glb",
+        "image": "textures/data/FaceNormal_MAIN.png"
+      },
+      {
+        "model": "SM_Entrance_MiddleTable.glb",
+        "image": "textures/color/T_EntranceMiddleTable.webp"
+      },
+      {
+        "model": "SM_Keyboard.glb",
+        "image": "textures/color/T_EntranceKeyboard.webp"
+      },
+      {
+        "model": "SM_Laptop.glb",
+        "image": "textures/color/T_EntranceLaptop.webp"
+      }
+    ]
+  },
+  "captures": [
+    {
+      "file": "renders/avatar-front.png",
+      "bytes": 273336,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/avatar-side.png",
+      "bytes": 222024,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/avatar-face.png",
+      "bytes": 488700,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/avatar-blink.png",
+      "bytes": 486454,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/avatar-speech-D.png",
+      "bytes": 491635,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/avatar-warm.png",
+      "bytes": 488622,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/avatar-surprised.png",
+      "bytes": 489641,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/avatar-eye-contact-threequarter.png",
+      "bytes": 247263,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/studio-software-wide.png",
+      "bytes": 384473,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/studio-software-presenter.png",
+      "bytes": 322370,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/studio-balanced-wide.png",
+      "bytes": 638667,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/studio-balanced-presenter.png",
+      "bytes": 460761,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/studio-walking-left.png",
+      "bytes": 638132,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/studio-present-monitor-left.png",
+      "bytes": 515020,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/studio-present-monitor-right.png",
+      "bytes": 427203,
+      "source": "WebGL canvas, no browser interface"
+    },
+    {
+      "file": "renders/studio-present-monitor-center.png",
+      "bytes": 478237,
+      "source": "WebGL canvas, no browser interface"
+    }
+  ],
+  "preview": {
+    "errors": [],
+    "failedRequests": [],
+    "httpErrors": [],
+    "ready": {
+      "profile": "AIR3 source geometry with translation-retargeted animations",
+      "extendedSkinMeshes": 7,
+      "preservedSkinInfluences": 12,
+      "idleClips": 3,
+      "talkClips": 4,
+      "motion": "idle",
+      "facialLipSync": {
+        "ready": true,
+        "articulation": "bounded skeletal poses plus source corrective morphs",
+        "controls": 35,
+        "sourceCorrectiveCount": 29,
+        "mouthCue": "X",
+        "emotion": "happy",
+        "emotionIntensity": 0.35,
+        "blink": 0,
+        "microExpressions": true,
+        "microSmile": 0.055,
+        "mouthInterpolation": "bounded exponential damping",
+        "phoneticTiming": "external timeline or amplitude fallback",
+        "rigLogicParity": false
+      },
+      "attention": {
+        "ready": true,
+        "enabled": true,
+        "target": "unconfigured",
+        "lensContact": false,
+        "headYawDegrees": 0,
+        "headPitchDegrees": 0,
+        "eyeYawDegrees": {
+          "left": 0,
+          "right": 0
+        },
+        "eyePitchDegrees": {
+          "left": 0,
+          "right": 0
+        },
+        "limitsDegrees": {
+          "headYaw": 48,
+          "headPitch": [
+            -18,
+            20
+          ],
+          "eyeYaw": 24,
+          "eyePitch": 17
+        },
+        "calibratedAxes": true,
+        "headTimeConstantSeconds": 0.3,
+        "eyeTimeConstantSeconds": 0.025,
+        "cameraAssigned": true,
+        "proceduralGlance": 0
+      },
+      "motionBlend": {
+        "mode": "normalized continuous weights",
+        "timeConstantSeconds": 0.18,
+        "contributingActions": 1,
+        "weightSum": 1
+      },
+      "rootOrientationLocked": true,
+      "footContactAnchors": 126,
+      "materials": {
+        "profile": "air3-materials-2026-10-24-v4-blue-iris",
+        "surfaces": {
+          "skin-body": 1,
+          "cloth": 7,
+          "shoes": 1,
+          "skin-face": 1,
+          "mouth": 1,
+          "tear-film": 2,
+          "eyes": 2,
+          "lashes": 1,
+          "waterline": 1,
+          "hair": 1,
+          "brows": 1
+        },
+        "source": "Supplied Unreal 5.7.4 material parameters and textures",
+        "normalY": -1,
+        "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+        "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+        "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+        "limitations": [
+          "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+          "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+        ]
+      },
+      "normalY": -1,
+      "frames": 8,
+      "modelTriangles": 269566,
+      "sourceModelTriangles": 267252,
+      "hair": {
+        "profile": "air3-short-ponytail-2026-10-24-v5",
+        "legacyBunHidden": true,
+        "scalpFit": "copied source scalp cards settled toward scanned cranial geometry; bun removed",
+        "style": "short rear ponytail with feathered hairline and shoulder wisps",
+        "meshes": 4,
+        "triangles": 46514,
+        "boundTo": "body__head",
+        "secondaryMotion": "bounded critically damped strand lag",
+        "sourceGeometryModified": false,
+        "hybridSourceCards": true,
+        "collisions": false
+      },
+      "calls": 42,
+      "renderedTriangles": 537168,
+      "textures": 30,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "quality": "software",
+      "errors": [],
+      "demoPlaying": false
+    },
+    "skinWeights": [
+      {
+        "name": "body__root_mesh",
+        "minWeightSum": 0.9999999408610165,
+        "maxWeightSum": 1.000000063329935,
+        "skinAdapter": true
+      },
+      {
+        "name": "outfit__ScothSkirtWhitheShirtNewBalance",
+        "minWeightSum": 1,
+        "maxWeightSum": 1.0000000521540642,
+        "skinAdapter": false
+      },
+      {
+        "name": "outfit__ScothSkirtWhitheShirtNewBalance_1",
+        "minWeightSum": 1.0000000037252903,
+        "maxWeightSum": 1.0000000521540642,
+        "skinAdapter": false
+      },
+      {
+        "name": "outfit__ScothSkirtWhitheShirtNewBalance_2",
+        "minWeightSum": 1.0000000037252903,
+        "maxWeightSum": 1.0000000521540642,
+        "skinAdapter": false
+      },
+      {
+        "name": "outfit__ScothSkirtWhitheShirtNewBalance_3",
+        "minWeightSum": 1.0000000018626451,
+        "maxWeightSum": 1.0000000521540642,
+        "skinAdapter": false
+      },
+      {
+        "name": "outfit__ScothSkirtWhitheShirtNewBalance_4",
+        "minWeightSum": 1.0000000009313226,
+        "maxWeightSum": 1.0000000521540642,
+        "skinAdapter": false
+      },
+      {
+        "name": "outfit__ScothSkirtWhitheShirtNewBalance_5",
+        "minWeightSum": 1.0000000009313226,
+        "maxWeightSum": 1.0000000521540642,
+        "skinAdapter": false
+      },
+      {
+        "name": "outfit__ScothSkirtWhitheShirtNewBalance_6",
+        "minWeightSum": 1.0000000055879354,
+        "maxWeightSum": 1.0000000456348062,
+        "skinAdapter": false
+      },
+      {
+        "name": "outfit__ScothSkirtWhitheShirtNewBalance_7",
+        "minWeightSum": 1.0000000037252903,
+        "maxWeightSum": 1.0000000456348062,
+        "skinAdapter": false
+      },
+      {
+        "name": "face__AI_MetaHumanIdentity_FaceMesh",
+        "minWeightSum": 0.9999999408610165,
+        "maxWeightSum": 1.000000069849193,
+        "skinAdapter": true
+      },
+      {
+        "name": "face__AI_MetaHumanIdentity_FaceMesh_1",
+        "minWeightSum": 0.9999999417923391,
+        "maxWeightSum": 1.0000000558793545,
+        "skinAdapter": true
+      },
+      {
+        "name": "face__AI_MetaHumanIdentity_FaceMesh_2",
+        "minWeightSum": 1,
+        "maxWeightSum": 1,
+        "skinAdapter": false
+      },
+      {
+        "name": "face__AI_MetaHumanIdentity_FaceMesh_3",
+        "minWeightSum": 1,
+        "maxWeightSum": 1.0000000298023224,
+        "skinAdapter": false
+      },
+      {
+        "name": "face__AI_MetaHumanIdentity_FaceMesh_4",
+        "minWeightSum": 1,
+        "maxWeightSum": 1.0000000298023224,
+        "skinAdapter": false
+      },
+      {
+        "name": "face__AI_MetaHumanIdentity_FaceMesh_5",
+        "minWeightSum": 0.9999999441206455,
+        "maxWeightSum": 1.000000050291419,
+        "skinAdapter": true
+      },
+      {
+        "name": "face__AI_MetaHumanIdentity_FaceMesh_6",
+        "minWeightSum": 0.9999999408610165,
+        "maxWeightSum": 1.0000000493600965,
+        "skinAdapter": true
+      },
+      {
+        "name": "face__AI_MetaHumanIdentity_FaceMesh_7",
+        "minWeightSum": 0.9999999422580004,
+        "maxWeightSum": 1.0000000381842256,
+        "skinAdapter": true
+      },
+      {
+        "name": "face__AI_MetaHumanIdentity_FaceMesh_8",
+        "minWeightSum": 0.9999999408610165,
+        "maxWeightSum": 1.0000000484287739,
+        "skinAdapter": true
+      }
+    ],
+    "clips": [
+      "MH_Idle01_UE",
+      "MH_Idle02_UE",
+      "MH_Idle03_UE",
+      "MH_Talk",
+      "MH_Talk01",
+      "MH_Talk02",
+      "MH_Talk03"
+    ],
+    "final": {
+      "profile": "AIR3 source geometry with translation-retargeted animations",
+      "extendedSkinMeshes": 7,
+      "preservedSkinInfluences": 12,
+      "idleClips": 3,
+      "talkClips": 4,
+      "motion": "idle",
+      "facialLipSync": {
+        "ready": true,
+        "articulation": "bounded skeletal poses plus source corrective morphs",
+        "controls": 35,
+        "sourceCorrectiveCount": 29,
+        "mouthCue": "X",
+        "emotion": "surprised",
+        "emotionIntensity": 0.3,
+        "blink": 0,
+        "microExpressions": true,
+        "microSmile": 0,
+        "mouthInterpolation": "bounded exponential damping",
+        "phoneticTiming": "external timeline or amplitude fallback",
+        "rigLogicParity": false
+      },
+      "attention": {
+        "ready": true,
+        "enabled": true,
+        "target": "camera",
+        "lensContact": true,
+        "headYawDegrees": 3.780056125232385,
+        "headPitchDegrees": 4.268775767669843,
+        "eyeYawDegrees": {
+          "left": 0.9033221719309112,
+          "right": 1.7191299083899905
+        },
+        "eyePitchDegrees": {
+          "left": 2.0124174254502942,
+          "right": 2.01120699574476
+        },
+        "limitsDegrees": {
+          "headYaw": 48,
+          "headPitch": [
+            -18,
+            20
+          ],
+          "eyeYaw": 24,
+          "eyePitch": 17
+        },
+        "calibratedAxes": true,
+        "headTimeConstantSeconds": 0.3,
+        "eyeTimeConstantSeconds": 0.025,
+        "cameraAssigned": true,
+        "proceduralGlance": 0
+      },
+      "motionBlend": {
+        "mode": "normalized continuous weights",
+        "timeConstantSeconds": 0.18,
+        "contributingActions": 1,
+        "weightSum": 1
+      },
+      "rootOrientationLocked": true,
+      "footContactAnchors": 126,
+      "materials": {
+        "profile": "air3-materials-2026-10-24-v4-blue-iris",
+        "surfaces": {
+          "skin-body": 1,
+          "cloth": 7,
+          "shoes": 1,
+          "skin-face": 1,
+          "mouth": 1,
+          "tear-film": 2,
+          "eyes": 2,
+          "lashes": 1,
+          "waterline": 1,
+          "hair": 1,
+          "brows": 1
+        },
+        "source": "Supplied Unreal 5.7.4 material parameters and textures",
+        "normalY": -1,
+        "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+        "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+        "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+        "limitations": [
+          "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+          "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+        ]
+      },
+      "normalY": -1,
+      "frames": 25,
+      "modelTriangles": 269566,
+      "sourceModelTriangles": 267252,
+      "hair": {
+        "profile": "air3-short-ponytail-2026-10-24-v5",
+        "legacyBunHidden": true,
+        "scalpFit": "copied source scalp cards settled toward scanned cranial geometry; bun removed",
+        "style": "short rear ponytail with feathered hairline and shoulder wisps",
+        "meshes": 4,
+        "triangles": 46514,
+        "boundTo": "body__head",
+        "secondaryMotion": "bounded critically damped strand lag",
+        "sourceGeometryModified": false,
+        "hybridSourceCards": true,
+        "collisions": false
+      },
+      "calls": 42,
+      "renderedTriangles": 537168,
+      "textures": 30,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "quality": "software",
+      "errors": [],
+      "demoPlaying": false
+    }
+  },
+  "studio": [
+    {
+      "quality": "software",
+      "errors": [],
+      "failedRequests": [],
+      "httpErrors": [],
+      "ready": {
+        "ready": true,
+        "frameCount": 5,
+        "lastRenderedFrameAt": 1792860221907,
+        "lastFrameAt": 1792860221907,
+        "fps": 0.2,
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contextLost": false,
+        "renderer": "three.js/WebGL",
+        "width": 960,
+        "height": 540,
+        "drawCalls": 149,
+        "triangles": 566196,
+        "avatar": "airewardrop · live presenter",
+        "jawMorphs": 0,
+        "camera": "wide",
+        "effectiveCamera": "wide",
+        "avatarRig": {
+          "profile": "AIR3 source geometry with translation-retargeted animations",
+          "extendedSkinMeshes": 7,
+          "preservedSkinInfluences": 12,
+          "idleClips": 3,
+          "talkClips": 4,
+          "motion": "idle",
+          "facialLipSync": {
+            "ready": true,
+            "articulation": "bounded skeletal poses plus source corrective morphs",
+            "controls": 35,
+            "sourceCorrectiveCount": 29,
+            "mouthCue": "X",
+            "emotion": "warm",
+            "emotionIntensity": 0.35,
+            "blink": 0,
+            "microExpressions": true,
+            "microSmile": 0.055,
+            "mouthInterpolation": "bounded exponential damping",
+            "phoneticTiming": "none",
+            "rigLogicParity": false
+          },
+          "attention": {
+            "ready": true,
+            "enabled": true,
+            "target": "camera",
+            "lensContact": true,
+            "headYawDegrees": 5.4428730957977,
+            "headPitchDegrees": 4.6723273557352725,
+            "eyeYawDegrees": {
+              "left": 10.232308018186846,
+              "right": 10.619355904394414
+            },
+            "eyePitchDegrees": {
+              "left": 10.165803683087688,
+              "right": 10.15273478233483
+            },
+            "limitsDegrees": {
+              "headYaw": 48,
+              "headPitch": [
+                -18,
+                20
+              ],
+              "eyeYaw": 24,
+              "eyePitch": 17
+            },
+            "calibratedAxes": true,
+            "headTimeConstantSeconds": 0.3,
+            "eyeTimeConstantSeconds": 0.025,
+            "cameraAssigned": true,
+            "proceduralGlance": 0
+          },
+          "motionBlend": {
+            "mode": "normalized continuous weights",
+            "timeConstantSeconds": 0.18,
+            "contributingActions": 1,
+            "weightSum": 1
+          },
+          "rootOrientationLocked": true,
+          "footContactAnchors": 126,
+          "materials": {
+            "profile": "air3-materials-2026-10-24-v4-blue-iris",
+            "surfaces": {
+              "skin-body": 1,
+              "cloth": 7,
+              "shoes": 1,
+              "skin-face": 1,
+              "mouth": 1,
+              "tear-film": 2,
+              "eyes": 2,
+              "lashes": 1,
+              "waterline": 1,
+              "hair": 1,
+              "brows": 1
+            },
+            "source": "Supplied Unreal 5.7.4 material parameters and textures",
+            "normalY": -1,
+            "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+            "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+            "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+            "limitations": [
+              "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+              "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+            ]
+          },
+          "normalY": -1
+        },
+        "quality": {
+          "name": "software",
+          "maxPixelRatio": 1,
+          "shadowSize": 512,
+          "reflectionSize": 0,
+          "reflectionInterval": 1,
+          "ao": false,
+          "bloom": false,
+          "msaa": 0,
+          "environmentSize": 128,
+          "requested": "software",
+          "softwareRenderer": true,
+          "selectionReason": "explicit selection"
+        },
+        "environment": {
+          "source": "authored linear HDR softbox scene",
+          "pmrem": true,
+          "resolution": 128
+        },
+        "reflections": {
+          "mode": "environment reflection only"
+        },
+        "postprocessing": {
+          "output": "direct ACES/sRGB",
+          "ao": false,
+          "bloom": false
+        },
+        "stageLayout": {
+          "home": [
+            -0.75,
+            0.005,
+            0.65
+          ],
+          "monitorTargets": {
+            "left": [
+              -3.55,
+              1.95,
+              -2.3
+            ],
+            "center": [
+              0,
+              2.15,
+              -3.55
+            ],
+            "right": [
+              3.55,
+              1.95,
+              -2.3
+            ]
+          },
+          "monitorSpots": {
+            "left": [
+              -2.5,
+              0.005,
+              -0.85
+            ],
+            "center": [
+              -0.8,
+              0.005,
+              -1.85
+            ],
+            "right": [
+              2.45,
+              0.005,
+              -0.85
+            ]
+          },
+          "routes": {
+            "left": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -1.55,
+                0.005,
+                -0.15
+              ],
+              [
+                -2.5,
+                0.005,
+                -0.85
+              ]
+            ],
+            "center": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -0.9,
+                0.005,
+                -0.75
+              ],
+              [
+                -0.8,
+                0.005,
+                -1.85
+              ]
+            ],
+            "right": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -0.65,
+                0.005,
+                -0.45
+              ],
+              [
+                0.75,
+                0.005,
+                -0.75
+              ],
+              [
+                2.45,
+                0.005,
+                -0.85
+              ]
+            ]
+          },
+          "desk": {
+            "center": [
+              1.65,
+              0,
+              1.2
+            ],
+            "halfSize": [
+              1.35,
+              0.56,
+              0.57
+            ]
+          },
+          "monitorWidths": {
+            "left": 2.7,
+            "center": 3.45,
+            "right": 2.7
+          }
+        },
+        "stageMotion": {
+          "ready": true,
+          "enabled": false,
+          "phase": "home",
+          "moving": false,
+          "target": null,
+          "pendingTarget": null,
+          "returning": false,
+          "position": [
+            -0.75,
+            0.005,
+            0.65
+          ],
+          "heading": 0.05,
+          "speed": 0,
+          "steps": 0,
+          "swingFoot": null,
+          "contacts": {
+            "l": {
+              "stance": true,
+              "target": [
+                -0.602390510205271,
+                0.11910396598255102,
+                0.5742196036526118
+              ],
+              "errorMetres": 0
+            },
+            "r": {
+              "stance": true,
+              "target": [
+                -0.871197842020364,
+                0.11786902161501156,
+                0.6305202688145259
+              ],
+              "errorMetres": 0
+            }
+          },
+          "maximumPlantedAnkleErrorMetres": 0,
+          "pelvisDrop": 0,
+          "pointWeight": 0,
+          "pointingSide": null,
+          "method": "procedural alternating steps, world-space two-bone IK and bounded open-hand presentation",
+          "motionCapture": false,
+          "clothSimulation": false
+        },
+        "hair": {
+          "profile": "air3-short-ponytail-2026-10-24-v5",
+          "legacyBunHidden": true,
+          "scalpFit": "copied source scalp cards settled toward scanned cranial geometry; bun removed",
+          "style": "short rear ponytail with feathered hairline and shoulder wisps",
+          "meshes": 4,
+          "triangles": 46514,
+          "boundTo": "body__head",
+          "secondaryMotion": "bounded critically damped strand lag",
+          "sourceGeometryModified": false,
+          "hybridSourceCards": true,
+          "collisions": false
+        },
+        "avatarMaterials": {
+          "profile": "air3-materials-2026-10-24-v4-blue-iris",
+          "surfaces": {
+            "skin-body": 1,
+            "cloth": 7,
+            "shoes": 1,
+            "skin-face": 1,
+            "mouth": 1,
+            "tear-film": 2,
+            "eyes": 2,
+            "lashes": 1,
+            "waterline": 1,
+            "hair": 1,
+            "brows": 1
+          },
+          "source": "Supplied Unreal 5.7.4 material parameters and textures",
+          "normalY": -1,
+          "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+          "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+          "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+          "limitations": [
+            "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+            "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+          ]
+        },
+        "audioState": "not-created",
+        "currentJob": null,
+        "speech": {
+          "phase": "observer",
+          "connected": false,
+          "currentJob": null,
+          "text": "",
+          "error": "",
+          "audioState": "not-created",
+          "elapsed": 0,
+          "duration": 0,
+          "amplitude": 0,
+          "lipSync": "none",
+          "mouthCue": "X",
+          "mouthWeights": null,
+          "presentation": null,
+          "audioArmed": false
+        },
+        "gatewayConnected": false,
+        "data": {
+          "mode": "track",
+          "websocket": "disabled",
+          "snapshotAt": 0,
+          "chartAt": 0,
+          "reportAt": 0,
+          "stale": true
+        }
+      },
+      "final": {
+        "ready": true,
+        "frameCount": 10,
+        "lastRenderedFrameAt": 1792860234329,
+        "lastFrameAt": 1792860234329,
+        "fps": 0.4,
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contextLost": false,
+        "renderer": "three.js/WebGL",
+        "width": 960,
+        "height": 540,
+        "drawCalls": 110,
+        "triangles": 559938,
+        "avatar": "airewardrop · live presenter",
+        "jawMorphs": 0,
+        "camera": "presenter",
+        "effectiveCamera": "presenter",
+        "avatarRig": {
+          "profile": "AIR3 source geometry with translation-retargeted animations",
+          "extendedSkinMeshes": 7,
+          "preservedSkinInfluences": 12,
+          "idleClips": 3,
+          "talkClips": 4,
+          "motion": "idle",
+          "facialLipSync": {
+            "ready": true,
+            "articulation": "bounded skeletal poses plus source corrective morphs",
+            "controls": 35,
+            "sourceCorrectiveCount": 29,
+            "mouthCue": "X",
+            "emotion": "warm",
+            "emotionIntensity": 0.35,
+            "blink": 0,
+            "microExpressions": true,
+            "microSmile": 0.055,
+            "mouthInterpolation": "bounded exponential damping",
+            "phoneticTiming": "none",
+            "rigLogicParity": false
+          },
+          "attention": {
+            "ready": true,
+            "enabled": true,
+            "target": "camera",
+            "lensContact": true,
+            "headYawDegrees": -12.46625748530008,
+            "headPitchDegrees": 6.036944971379088,
+            "eyeYawDegrees": {
+              "left": -13.19597436149251,
+              "right": -11.640374714883704
+            },
+            "eyePitchDegrees": {
+              "left": 1.0818624748387238,
+              "right": 1.0874347354558866
+            },
+            "limitsDegrees": {
+              "headYaw": 48,
+              "headPitch": [
+                -18,
+                20
+              ],
+              "eyeYaw": 24,
+              "eyePitch": 17
+            },
+            "calibratedAxes": true,
+            "headTimeConstantSeconds": 0.3,
+            "eyeTimeConstantSeconds": 0.025,
+            "cameraAssigned": true,
+            "proceduralGlance": 0
+          },
+          "motionBlend": {
+            "mode": "normalized continuous weights",
+            "timeConstantSeconds": 0.18,
+            "contributingActions": 1,
+            "weightSum": 1
+          },
+          "rootOrientationLocked": true,
+          "footContactAnchors": 126,
+          "materials": {
+            "profile": "air3-materials-2026-10-24-v4-blue-iris",
+            "surfaces": {
+              "skin-body": 1,
+              "cloth": 7,
+              "shoes": 1,
+              "skin-face": 1,
+              "mouth": 1,
+              "tear-film": 2,
+              "eyes": 2,
+              "lashes": 1,
+              "waterline": 1,
+              "hair": 1,
+              "brows": 1
+            },
+            "source": "Supplied Unreal 5.7.4 material parameters and textures",
+            "normalY": -1,
+            "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+            "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+            "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+            "limitations": [
+              "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+              "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+            ]
+          },
+          "normalY": -1
+        },
+        "quality": {
+          "name": "software",
+          "maxPixelRatio": 1,
+          "shadowSize": 512,
+          "reflectionSize": 0,
+          "reflectionInterval": 1,
+          "ao": false,
+          "bloom": false,
+          "msaa": 0,
+          "environmentSize": 128,
+          "requested": "software",
+          "softwareRenderer": true,
+          "selectionReason": "explicit selection"
+        },
+        "environment": {
+          "source": "authored linear HDR softbox scene",
+          "pmrem": true,
+          "resolution": 128
+        },
+        "reflections": {
+          "mode": "environment reflection only"
+        },
+        "postprocessing": {
+          "output": "direct ACES/sRGB",
+          "ao": false,
+          "bloom": false
+        },
+        "stageLayout": {
+          "home": [
+            -0.75,
+            0.005,
+            0.65
+          ],
+          "monitorTargets": {
+            "left": [
+              -3.55,
+              1.95,
+              -2.3
+            ],
+            "center": [
+              0,
+              2.15,
+              -3.55
+            ],
+            "right": [
+              3.55,
+              1.95,
+              -2.3
+            ]
+          },
+          "monitorSpots": {
+            "left": [
+              -2.5,
+              0.005,
+              -0.85
+            ],
+            "center": [
+              -0.8,
+              0.005,
+              -1.85
+            ],
+            "right": [
+              2.45,
+              0.005,
+              -0.85
+            ]
+          },
+          "routes": {
+            "left": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -1.55,
+                0.005,
+                -0.15
+              ],
+              [
+                -2.5,
+                0.005,
+                -0.85
+              ]
+            ],
+            "center": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -0.9,
+                0.005,
+                -0.75
+              ],
+              [
+                -0.8,
+                0.005,
+                -1.85
+              ]
+            ],
+            "right": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -0.65,
+                0.005,
+                -0.45
+              ],
+              [
+                0.75,
+                0.005,
+                -0.75
+              ],
+              [
+                2.45,
+                0.005,
+                -0.85
+              ]
+            ]
+          },
+          "desk": {
+            "center": [
+              1.65,
+              0,
+              1.2
+            ],
+            "halfSize": [
+              1.35,
+              0.56,
+              0.57
+            ]
+          },
+          "monitorWidths": {
+            "left": 2.7,
+            "center": 3.45,
+            "right": 2.7
+          }
+        },
+        "stageMotion": {
+          "ready": true,
+          "enabled": false,
+          "phase": "home",
+          "moving": false,
+          "target": null,
+          "pendingTarget": null,
+          "returning": false,
+          "position": [
+            -0.75,
+            0.005,
+            0.65
+          ],
+          "heading": 0.05,
+          "speed": 0,
+          "steps": 0,
+          "swingFoot": null,
+          "contacts": {
+            "l": {
+              "stance": true,
+              "target": [
+                -0.602390510205271,
+                0.11910396598255102,
+                0.5742196036526118
+              ],
+              "errorMetres": 0
+            },
+            "r": {
+              "stance": true,
+              "target": [
+                -0.871197842020364,
+                0.11786902161501156,
+                0.6305202688145259
+              ],
+              "errorMetres": 0
+            }
+          },
+          "maximumPlantedAnkleErrorMetres": 0,
+          "pelvisDrop": 0,
+          "pointWeight": 0,
+          "pointingSide": null,
+          "method": "procedural alternating steps, world-space two-bone IK and bounded open-hand presentation",
+          "motionCapture": false,
+          "clothSimulation": false
+        },
+        "hair": {
+          "profile": "air3-short-ponytail-2026-10-24-v5",
+          "legacyBunHidden": true,
+          "scalpFit": "copied source scalp cards settled toward scanned cranial geometry; bun removed",
+          "style": "short rear ponytail with feathered hairline and shoulder wisps",
+          "meshes": 4,
+          "triangles": 46514,
+          "boundTo": "body__head",
+          "secondaryMotion": "bounded critically damped strand lag",
+          "sourceGeometryModified": false,
+          "hybridSourceCards": true,
+          "collisions": false
+        },
+        "avatarMaterials": {
+          "profile": "air3-materials-2026-10-24-v4-blue-iris",
+          "surfaces": {
+            "skin-body": 1,
+            "cloth": 7,
+            "shoes": 1,
+            "skin-face": 1,
+            "mouth": 1,
+            "tear-film": 2,
+            "eyes": 2,
+            "lashes": 1,
+            "waterline": 1,
+            "hair": 1,
+            "brows": 1
+          },
+          "source": "Supplied Unreal 5.7.4 material parameters and textures",
+          "normalY": -1,
+          "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+          "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+          "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+          "limitations": [
+            "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+            "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+          ]
+        },
+        "audioState": "not-created",
+        "currentJob": null,
+        "speech": {
+          "phase": "observer",
+          "connected": false,
+          "currentJob": null,
+          "text": "",
+          "error": "",
+          "audioState": "not-created",
+          "elapsed": 0,
+          "duration": 0,
+          "amplitude": 0,
+          "lipSync": "none",
+          "mouthCue": "X",
+          "mouthWeights": null,
+          "presentation": null,
+          "audioArmed": false
+        },
+        "gatewayConnected": true,
+        "data": {
+          "mode": "track",
+          "websocket": "disabled",
+          "snapshotAt": 0,
+          "chartAt": 0,
+          "reportAt": 0,
+          "stale": true
+        }
+      }
+    },
+    {
+      "quality": "balanced",
+      "errors": [],
+      "failedRequests": [
+        {
+          "path": "/api/health",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "ready": {
+        "ready": true,
+        "frameCount": 5,
+        "lastRenderedFrameAt": 1792860253335,
+        "lastFrameAt": 1792860253335,
+        "fps": 0.1,
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contextLost": false,
+        "renderer": "three.js/WebGL",
+        "width": 960,
+        "height": 540,
+        "drawCalls": 399,
+        "triangles": 1427730,
+        "avatar": "airewardrop · live presenter",
+        "jawMorphs": 0,
+        "camera": "wide",
+        "effectiveCamera": "wide",
+        "avatarRig": {
+          "profile": "AIR3 source geometry with translation-retargeted animations",
+          "extendedSkinMeshes": 7,
+          "preservedSkinInfluences": 12,
+          "idleClips": 3,
+          "talkClips": 4,
+          "motion": "idle",
+          "facialLipSync": {
+            "ready": true,
+            "articulation": "bounded skeletal poses plus source corrective morphs",
+            "controls": 35,
+            "sourceCorrectiveCount": 29,
+            "mouthCue": "X",
+            "emotion": "warm",
+            "emotionIntensity": 0.35,
+            "blink": 0,
+            "microExpressions": true,
+            "microSmile": 0.055,
+            "mouthInterpolation": "bounded exponential damping",
+            "phoneticTiming": "none",
+            "rigLogicParity": false
+          },
+          "attention": {
+            "ready": true,
+            "enabled": true,
+            "target": "camera",
+            "lensContact": true,
+            "headYawDegrees": 5.463993615785275,
+            "headPitchDegrees": 4.670656978542403,
+            "eyeYawDegrees": {
+              "left": 10.271865015260019,
+              "right": 10.65871877354209
+            },
+            "eyePitchDegrees": {
+              "left": 10.162264790008045,
+              "right": 10.149158742168378
+            },
+            "limitsDegrees": {
+              "headYaw": 48,
+              "headPitch": [
+                -18,
+                20
+              ],
+              "eyeYaw": 24,
+              "eyePitch": 17
+            },
+            "calibratedAxes": true,
+            "headTimeConstantSeconds": 0.3,
+            "eyeTimeConstantSeconds": 0.025,
+            "cameraAssigned": true,
+            "proceduralGlance": 0
+          },
+          "motionBlend": {
+            "mode": "normalized continuous weights",
+            "timeConstantSeconds": 0.18,
+            "contributingActions": 1,
+            "weightSum": 1
+          },
+          "rootOrientationLocked": true,
+          "footContactAnchors": 126,
+          "materials": {
+            "profile": "air3-materials-2026-10-24-v4-blue-iris",
+            "surfaces": {
+              "skin-body": 1,
+              "cloth": 7,
+              "shoes": 1,
+              "skin-face": 1,
+              "mouth": 1,
+              "tear-film": 2,
+              "eyes": 2,
+              "lashes": 1,
+              "waterline": 1,
+              "hair": 1,
+              "brows": 1
+            },
+            "source": "Supplied Unreal 5.7.4 material parameters and textures",
+            "normalY": -1,
+            "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+            "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+            "eyes": "Blue iris preserving source radial detail; sclera, clearcoat and bounded iris parallax",
+            "limitations": [
+              "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+              "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+            ]
+          },
+          "normalY": -1
+        },
+        "quality": {
+          "name": "balanced",
+          "maxPixelRatio": 1,
+          "shadowSize": 1024,
+          "reflectionSize": 512,
+          "reflectionInterval": 2,
+          "ao": false,
+          "bloom": true,
+          "msaa": 2,
+          "environmentSize": 256,
+          "requested": "balanced",
+          "softwareRenderer": true,
+          "selectionReason": "explicit selection"
+        },
+        "environment": {
+          "source": "authored linear HDR softbox scene",
+          "pmrem": true,
+          "resolution": 256
+        },
+        "reflections": {
+          "mode": "planar reflection",
+          "resolution": 512,
+          "updateEveryRenderedFrames": 2,
+          "softened": true
+        },
+        "postprocessing": {
+          "output": "linear half-float → ACES/sRGB",
+          "ao": false,
+          "bloom": "HDR threshold 1.50, strength 0.12",
+          "msaa": 2
+        },
+        "stageLayout": {
+          "home": [
+            -0.75,
+            0.005,
+            0.65
+          ],
+          "monitorTargets": {
+            "left": [
+              -3.55,
+              1.95,
+              -2.3
+            ],
+            "center": [
+              0,
+              2.15,
+              -3.55
+            ],
+            "right": [
+              3.55,
+              1.95,
+              -2.3
+            ]
+          },
+          "monitorSpots": {
+            "left": [
+              -2.5,
+              0.005,
+              -0.85
+            ],
+            "center": [
+              -0.8,
+              0.005,
+              -1.85
+            ],
+            "right": [
+              2.45,
+              0.005,
+              -0.85
+            ]
+          },
+          "routes": {
+            "left": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -1.55,
+                0.005,
+                -0.15
+              ],
+              [
+                -2.5,
+                0.005,
+                -0.85
+              ]
+            ],
+            "center": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -0.9,
+                0.005,
+                -0.75
+              ],
+              [
+                -0.8,
+                0.005,
+                -1.85
+              ]
+            ],
+            "right": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -0.65,
+                0.005,
+                -0.45
+              ],
+              [
+                0.75,
+                0.005,
+                -0.75
+              ],
+              [
+                2.45,
+                0.005,
+                -0.85
+              ]
+            ]
+          },
+          "desk": {
+            "center": [
+              1.65,
+              0,
+              1.2
+            ],
+            "halfSize": [
+              1.35,
+              0.56,
+              0.57
+            ]
+          },
+          "monitorWidths": {
+            "left": 2.7,
+            "center": 3.45,
+            "right": 2.7
+          }
+        },
+        "stageMotion": {
+          "ready": true,
+          "enabled": false,
+          "phase": "home",
+          "moving": false,
+          "target": null,
+          "pendingTarget": null,
+          "returning": false,
+          "position": [
+            -0.75,
+            0.005,
+            0.65
+          ],
+          "heading": 0.05,
+          "speed": 0,
+          "steps": 0,
+          "swingFoot": null,
+          "contacts": {
+            "l": {
+              "stance": true,
+              "target": [
+                -0.602390510205271,
+                0.11923383377578861,
+                0.5742196036526118
+              ],
+              "errorMetres": 0
+            },
+            "r": {
+              "stance": true,
+              "target": [
+                -0.871197842020364,
+                0.11799748385237374,
+                0.6305202688145259
+              ],
+              "errorMetres": 0
+            }
+          },
+          "maximumPlantedAnkleErrorMetres": 0,
+          "pelvisDrop": 0,
+          "pointWeight": 0,
+          "pointingSide": null,
+          "method": "procedural alternating steps, world-space two-bone IK and bounded open-hand presentation",
+          "motionCapture": false,
+          "clothSimulation": false
+        },
+        "hair": {
+          "profile": "air3-short-ponytail-2026-10-24-v5",
+          "legacyBunHidden": true,
+          "scalpFit": "copied source scalp cards settled toward scanned cranial geometry; bun removed",
+          "style": "short rear ponytail with feathered hairline and shoulder wisps",
+          "meshes": 4,
+          "triangles": 46514,
+          "boundTo": "body__head",
+          "secondaryMotion": "bounded critically damped strand lag",
+          "sourceGeometryModified": false,
+          "hybridSourceCards": true,
+          "collisions": false
+        },
+        "avatarMaterials": {
+          "profile": "air3-materials-2026-10-24-v4-blue-iris",
+          "surfaces": {
+            "skin-body": 1,
+            "cloth": 7,
+            "shoes": 1,
+            "skin-face": 1,
+            "mouth": 1,
+            "tear-film": 2,
+            "eyes": 2,
+            "lashes": 1,
+            "waterline": 1,
+            "hair": 1,
+            "brows": 1
+          },
+          "source": "Supplied Unreal 5.7.4 material parameters and textures",
+          "normalY": -1,
+          "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+          "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+          "eyes": "Blue iris preserving source radial detail; sclera, clearcoat and bounded iris parallax",
+          "limitations": [
+            "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+            "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+          ]
+        },
+        "audioState": "not-created",
+        "currentJob": null,
+        "speech": {
+          "phase": "observer",
+          "connected": false,
+          "currentJob": null,
+          "text": "",
+          "error": "",
+          "audioState": "not-created",
+          "elapsed": 0,
+          "duration": 0,
+          "amplitude": 0,
+          "lipSync": "none",
+          "mouthCue": "X",
+          "mouthWeights": null,
+          "presentation": null,
+          "audioArmed": false
+        },
+        "gatewayConnected": false,
+        "data": {
+          "mode": "track",
+          "websocket": "disabled",
+          "snapshotAt": 0,
+          "chartAt": 0,
+          "reportAt": 0,
+          "stale": true
+        }
+      },
+      "leftPresentation": {
+        "ready": true,
+        "enabled": false,
+        "phase": "presenting",
+        "moving": false,
+        "target": "left",
+        "pendingTarget": null,
+        "returning": false,
+        "position": [
+          -2.5,
+          0.005,
+          -0.85
+        ],
+        "heading": -1.2,
+        "speed": 0,
+        "steps": 21,
+        "swingFoot": null,
+        "contacts": {
+          "l": {
+            "stance": true,
+            "target": [
+              -2.3815409963836243,
+              0.11923383377578861,
+              -0.733816118113385
+            ],
+            "errorMetres": 4.871083751574258e-16
+          },
+          "r": {
+            "stance": true,
+            "target": [
+              -2.5197304245788734,
+              0.11799748385237374,
+              -0.971157282832642
+            ],
+            "errorMetres": 1.0175362097255202e-15
+          }
+        },
+        "maximumPlantedAnkleErrorMetres": 0.0015595357476819686,
+        "pelvisDrop": 0.034,
+        "pointWeight": 0.8199999999999994,
+        "pointingSide": "r",
+        "method": "procedural alternating steps, world-space two-bone IK and bounded open-hand presentation",
+        "motionCapture": false,
+        "clothSimulation": false
+      },
+      "rightPresentation": {
+        "ready": true,
+        "enabled": false,
+        "phase": "presenting",
+        "moving": false,
+        "target": "right",
+        "pendingTarget": null,
+        "returning": false,
+        "position": [
+          2.45,
+          0.005,
+          -0.85
+        ],
+        "heading": 1.2,
+        "speed": 0,
+        "steps": 76,
+        "swingFoot": null,
+        "contacts": {
+          "l": {
+            "stance": true,
+            "target": [
+              2.441127009571919,
+              0.11923383377578861,
+              -1.0156879596980137
+            ],
+            "errorMetres": 3.3306690738754696e-16
+          },
+          "r": {
+            "stance": true,
+            "target": [
+              2.38271180748035,
+              0.11799748385237374,
+              -0.747332205707486
+            ],
+            "errorMetres": 2.220446049250313e-16
+          }
+        },
+        "maximumPlantedAnkleErrorMetres": 0.0015595357476819686,
+        "pelvisDrop": 0.034,
+        "pointWeight": 0.8199999999999994,
+        "pointingSide": "l",
+        "method": "procedural alternating steps, world-space two-bone IK and bounded open-hand presentation",
+        "motionCapture": false,
+        "clothSimulation": false
+      },
+      "centerPresentation": {
+        "ready": true,
+        "enabled": false,
+        "phase": "presenting",
+        "moving": false,
+        "target": "center",
+        "pendingTarget": null,
+        "returning": false,
+        "position": [
+          -0.8,
+          0.005,
+          -1.85
+        ],
+        "heading": 1.2,
+        "speed": 0,
+        "steps": 138,
+        "swingFoot": null,
+        "contacts": {
+          "l": {
+            "stance": true,
+            "target": [
+              -0.808872990428081,
+              0.11923383377578861,
+              -2.0156879596980137
+            ],
+            "errorMetres": 1.5700924586837752e-16
+          },
+          "r": {
+            "stance": true,
+            "target": [
+              -0.8672881925196498,
+              0.11799748385237374,
+              -1.747332205707486
+            ],
+            "errorMetres": 3.3306690738754696e-16
+          }
+        },
+        "maximumPlantedAnkleErrorMetres": 0.0015595357476819686,
+        "pelvisDrop": 0.034,
+        "pointWeight": 0.8199999999999994,
+        "pointingSide": "l",
+        "method": "procedural alternating steps, world-space two-bone IK and bounded open-hand presentation",
+        "motionCapture": false,
+        "clothSimulation": false
+      },
+      "final": {
+        "ready": true,
+        "frameCount": 25,
+        "lastRenderedFrameAt": 1792860327475,
+        "lastFrameAt": 1792860327475,
+        "fps": 0.3,
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contextLost": false,
+        "renderer": "three.js/WebGL",
+        "width": 960,
+        "height": 540,
+        "drawCalls": 189,
+        "triangles": 845750,
+        "avatar": "airewardrop · live presenter",
+        "jawMorphs": 0,
+        "camera": "auto",
+        "effectiveCamera": "presentation",
+        "avatarRig": {
+          "profile": "AIR3 source geometry with translation-retargeted animations",
+          "extendedSkinMeshes": 7,
+          "preservedSkinInfluences": 12,
+          "idleClips": 3,
+          "talkClips": 4,
+          "motion": "idle",
+          "facialLipSync": {
+            "ready": true,
+            "articulation": "bounded skeletal poses plus source corrective morphs",
+            "controls": 35,
+            "sourceCorrectiveCount": 29,
+            "mouthCue": "X",
+            "emotion": "warm",
+            "emotionIntensity": 0.35,
+            "blink": 0,
+            "microExpressions": true,
+            "microSmile": 0.055,
+            "mouthInterpolation": "bounded exponential damping",
+            "phoneticTiming": "none",
+            "rigLogicParity": false
+          },
+          "attention": {
+            "ready": true,
+            "enabled": true,
+            "target": "camera",
+            "lensContact": false,
+            "headYawDegrees": -47.99998950146559,
+            "headPitchDegrees": 6.737534285430063,
+            "eyeYawDegrees": {
+              "left": -22.14947828417051,
+              "right": -21.485995701905047
+            },
+            "eyePitchDegrees": {
+              "left": 3.6956045683340397,
+              "right": 3.712054917888267
+            },
+            "limitsDegrees": {
+              "headYaw": 48,
+              "headPitch": [
+                -18,
+                20
+              ],
+              "eyeYaw": 24,
+              "eyePitch": 17
+            },
+            "calibratedAxes": true,
+            "headTimeConstantSeconds": 0.3,
+            "eyeTimeConstantSeconds": 0.025,
+            "cameraAssigned": true,
+            "proceduralGlance": 0
+          },
+          "motionBlend": {
+            "mode": "normalized continuous weights",
+            "timeConstantSeconds": 0.18,
+            "contributingActions": 1,
+            "weightSum": 1
+          },
+          "rootOrientationLocked": true,
+          "footContactAnchors": 126,
+          "materials": {
+            "profile": "air3-materials-2026-10-24-v4-blue-iris",
+            "surfaces": {
+              "skin-body": 1,
+              "cloth": 7,
+              "shoes": 1,
+              "skin-face": 1,
+              "mouth": 1,
+              "tear-film": 2,
+              "eyes": 2,
+              "lashes": 1,
+              "waterline": 1,
+              "hair": 1,
+              "brows": 1
+            },
+            "source": "Supplied Unreal 5.7.4 material parameters and textures",
+            "normalY": -1,
+            "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+            "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+            "eyes": "Blue iris preserving source radial detail; sclera, clearcoat and bounded iris parallax",
+            "limitations": [
+              "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+              "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+            ]
+          },
+          "normalY": -1
+        },
+        "quality": {
+          "name": "balanced",
+          "maxPixelRatio": 1,
+          "shadowSize": 1024,
+          "reflectionSize": 512,
+          "reflectionInterval": 2,
+          "ao": false,
+          "bloom": true,
+          "msaa": 2,
+          "environmentSize": 256,
+          "requested": "balanced",
+          "softwareRenderer": true,
+          "selectionReason": "explicit selection"
+        },
+        "environment": {
+          "source": "authored linear HDR softbox scene",
+          "pmrem": true,
+          "resolution": 256
+        },
+        "reflections": {
+          "mode": "planar reflection",
+          "resolution": 512,
+          "updateEveryRenderedFrames": 2,
+          "softened": true
+        },
+        "postprocessing": {
+          "output": "linear half-float → ACES/sRGB",
+          "ao": false,
+          "bloom": "HDR threshold 1.50, strength 0.12",
+          "msaa": 2
+        },
+        "stageLayout": {
+          "home": [
+            -0.75,
+            0.005,
+            0.65
+          ],
+          "monitorTargets": {
+            "left": [
+              -3.55,
+              1.95,
+              -2.3
+            ],
+            "center": [
+              0,
+              2.15,
+              -3.55
+            ],
+            "right": [
+              3.55,
+              1.95,
+              -2.3
+            ]
+          },
+          "monitorSpots": {
+            "left": [
+              -2.5,
+              0.005,
+              -0.85
+            ],
+            "center": [
+              -0.8,
+              0.005,
+              -1.85
+            ],
+            "right": [
+              2.45,
+              0.005,
+              -0.85
+            ]
+          },
+          "routes": {
+            "left": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -1.55,
+                0.005,
+                -0.15
+              ],
+              [
+                -2.5,
+                0.005,
+                -0.85
+              ]
+            ],
+            "center": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -0.9,
+                0.005,
+                -0.75
+              ],
+              [
+                -0.8,
+                0.005,
+                -1.85
+              ]
+            ],
+            "right": [
+              [
+                -0.75,
+                0.005,
+                0.65
+              ],
+              [
+                -0.65,
+                0.005,
+                -0.45
+              ],
+              [
+                0.75,
+                0.005,
+                -0.75
+              ],
+              [
+                2.45,
+                0.005,
+                -0.85
+              ]
+            ]
+          },
+          "desk": {
+            "center": [
+              1.65,
+              0,
+              1.2
+            ],
+            "halfSize": [
+              1.35,
+              0.56,
+              0.57
+            ]
+          },
+          "monitorWidths": {
+            "left": 2.7,
+            "center": 3.45,
+            "right": 2.7
+          }
+        },
+        "stageMotion": {
+          "ready": true,
+          "enabled": false,
+          "phase": "presenting",
+          "moving": false,
+          "target": "center",
+          "pendingTarget": null,
+          "returning": false,
+          "position": [
+            -0.8,
+            0.005,
+            -1.85
+          ],
+          "heading": 1.2,
+          "speed": 0,
+          "steps": 138,
+          "swingFoot": null,
+          "contacts": {
+            "l": {
+              "stance": true,
+              "target": [
+                -0.808872990428081,
+                0.11923383377578861,
+                -2.0156879596980137
+              ],
+              "errorMetres": 1.5700924586837752e-16
+            },
+            "r": {
+              "stance": true,
+              "target": [
+                -0.8672881925196498,
+                0.11799748385237374,
+                -1.747332205707486
+              ],
+              "errorMetres": 3.3306690738754696e-16
+            }
+          },
+          "maximumPlantedAnkleErrorMetres": 0.0015595357476819686,
+          "pelvisDrop": 0.034,
+          "pointWeight": 0.8199999999999994,
+          "pointingSide": "l",
+          "method": "procedural alternating steps, world-space two-bone IK and bounded open-hand presentation",
+          "motionCapture": false,
+          "clothSimulation": false
+        },
+        "hair": {
+          "profile": "air3-short-ponytail-2026-10-24-v5",
+          "legacyBunHidden": true,
+          "scalpFit": "copied source scalp cards settled toward scanned cranial geometry; bun removed",
+          "style": "short rear ponytail with feathered hairline and shoulder wisps",
+          "meshes": 4,
+          "triangles": 46514,
+          "boundTo": "body__head",
+          "secondaryMotion": "bounded critically damped strand lag",
+          "sourceGeometryModified": false,
+          "hybridSourceCards": true,
+          "collisions": false
+        },
+        "avatarMaterials": {
+          "profile": "air3-materials-2026-10-24-v4-blue-iris",
+          "surfaces": {
+            "skin-body": 1,
+            "cloth": 7,
+            "shoes": 1,
+            "skin-face": 1,
+            "mouth": 1,
+            "tear-film": 2,
+            "eyes": 2,
+            "lashes": 1,
+            "waterline": 1,
+            "hair": 1,
+            "brows": 1
+          },
+          "source": "Supplied Unreal 5.7.4 material parameters and textures",
+          "normalY": -1,
+          "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+          "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+          "eyes": "Blue iris preserving source radial detail; sclera, clearcoat and bounded iris parallax",
+          "limitations": [
+            "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+            "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+          ]
+        },
+        "audioState": "not-created",
+        "currentJob": null,
+        "speech": {
+          "phase": "observer",
+          "connected": false,
+          "currentJob": null,
+          "text": "",
+          "error": "",
+          "audioState": "not-created",
+          "elapsed": 0,
+          "duration": 0,
+          "amplitude": 0,
+          "lipSync": "none",
+          "mouthCue": "X",
+          "mouthWeights": null,
+          "presentation": null,
+          "audioArmed": false
+        },
+        "gatewayConnected": true,
+        "data": {
+          "mode": "track",
+          "websocket": "disabled",
+          "snapshotAt": 0,
+          "chartAt": 0,
+          "reportAt": 0,
+          "stale": true
+        }
+      }
+    }
+  ],
+  "passed": false,
+  "limitations": [
+    "Visual functional QA, not Unreal parity or a sustained GPU performance benchmark",
+    "Market feed is intentionally unconfigured; empty monitors are not invented market data",
+    "Some rig poses are deterministically advanced without intermediate rendering; these images do not measure real-time locomotion FPS"
+  ],
+  "browser": "Chrome/148.0.7778.97",
+  "error": "AssertionError [ERR_ASSERTION]: Studio has no browser, asset or health errors: balanced\n\n1 !== 0\n\n    at file:///workspace/scratch/e2605feface4/presence-upgrade/AIR3_Studio_Complete/studio-broadcast/scripts/qa-visual.mjs:121:12"
+}

@@ -1,0 +1,678 @@
+{
+  "schema": "air3.motion-refinement-qa.v1",
+  "date": "2026-10-25T11:09:24.274Z",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "node": "v24.22.1",
+    "graphicalRenderer": "none; real GLB skeleton"
+  },
+  "sources": {
+    "public/assets/air3/models/AIR3-runtime.glb": {
+      "bytes": 21666344,
+      "sha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d"
+    },
+    "public/air3-stage-motion.mjs": {
+      "bytes": 25977,
+      "sha256": "6ec3ecc42171c939d573bcad17b8ae3a68a09fc476adeddd4ce723622bf17921"
+    },
+    "public/air3-locomotion.mjs": {
+      "bytes": 12227,
+      "sha256": "3ef84eb748d50db5676a35b01b99047cd18d5097f4490d292dc4903312b23899"
+    },
+    "public/air3-avatar.mjs": {
+      "bytes": 18558,
+      "sha256": "59260a2fb70366dc29ffb21159db2bd69ff2e724e78cb29d91c87c501580d1af"
+    },
+    "public/studio-scene.mjs": {
+      "bytes": 33327,
+      "sha256": "57d0b412efb8ccb8196ab53f3886e8830073ad8e88a7dd8b5e498d7ba2c3e1ac"
+    },
+    "public/assets/air3/motion/accad-female1.mjs": {
+      "bytes": 513825,
+      "sha256": "259fe77eb411a1fa4208c63abfce3e3a5b3a9eaea0d83b8ed063786deb5853c9"
+    },
+    "../tools/retarget_accad_motion.py": {
+      "bytes": 14710,
+      "sha256": "5eb811cea4c4fb1f81c14b13cc7abfaf7f2cb56e50411203ad229aedeedbf4cd"
+    },
+    "scripts/qa-motion-refinement.mjs": {
+      "bytes": 8880,
+      "sha256": "40b6cc06b3355efda88dfa3d0b351ba5badfa2fec72d70a7f5e37f1be47a9cf7"
+    }
+  },
+  "fixture": {
+    "uniformScale": 1.0308577209468792,
+    "modelTranslation": [
+      -0.0271459225,
+      0.034982888,
+      -0.044700652
+    ],
+    "referenceAnimation": "MH_Idle01_UE frame 0",
+    "shoulderToNeckGapMetres": {
+      "l": 0.0696296521360995,
+      "r": 0.0702963630796265
+    },
+    "deltaSeconds": 0.016666666666666666,
+    "method": "Fixed previous-release base-avatar fit; no clothing/hair bounds dependency, no speech in this comparison. Speech/cancellation are exercised by qa-stage-motion."
+  },
+  "metrics": {
+    "maximumRootStepMetres": 0.019217950092938377,
+    "maximumRootAccelerationMetresPerSecondSquared": 6.877178197027611,
+    "maximumPelvisStepMetres": 0.019394243950276772,
+    "maximumFootStepMetres": 0.061857072499622266,
+    "maximumShoulderDropRelativeToNeckMetres": 0.013923900703573189,
+    "maximumSettledTurnPivotOffsetMetres": 0.002303419557631832,
+    "maximumSupportAnchorDriftMetres": 0.03541480328075989,
+    "maximumIKErrorMetres": 0.0003050892692084384,
+    "maximumOutgoingTurnSteps": 1,
+    "maximumReturnTurnSteps": 2,
+    "maximumTurnCaptureLoops": 0,
+    "settledTurnSamples": 259
+  },
+  "simulatedFrames": 3269,
+  "simulatedSeconds": 54.483333333333334,
+  "turnsObserved": 657,
+  "captureClipsExercised": [
+    "turnRight",
+    "start",
+    "walk",
+    "stop",
+    "turnLeft",
+    "stand",
+    "turnAround",
+    "turnAroundRight"
+  ],
+  "events": [
+    {
+      "frame": 1,
+      "seconds": 0.016666666666666666,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnRight",
+      "captureTime": 0.01422253609984136,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": 0.05,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 52,
+      "seconds": 0.8666666666666667,
+      "phase": "walking",
+      "action": "start",
+      "capture": "start",
+      "captureTime": 0,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": -2.356194490192345,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 180,
+      "seconds": 3,
+      "phase": "walking",
+      "action": "walk",
+      "capture": "walk",
+      "captureTime": 0.7352530199078329,
+      "position": [
+        -1.374589895263809,
+        0.005000000000000001,
+        0.026730182234352775
+      ],
+      "heading": -2.3401258674534136,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 240,
+      "seconds": 4,
+      "phase": "walking",
+      "action": "stop",
+      "capture": "stop",
+      "captureTime": 0.01879231384025962,
+      "position": [
+        -2.063723198258873,
+        0.005,
+        -0.5285328829275905
+      ],
+      "heading": -2.2058230621852104,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 360,
+      "seconds": 6,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnLeft",
+      "captureTime": 0,
+      "position": [
+        -2.5,
+        0.005,
+        -0.85
+      ],
+      "heading": -2.205823062184531,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 407,
+      "seconds": 6.783333333333333,
+      "phase": "presenting",
+      "action": "stand",
+      "capture": "stand",
+      "captureTime": 0,
+      "position": [
+        -2.5,
+        0.005,
+        -0.85
+      ],
+      "heading": -1.2,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 468,
+      "seconds": 7.8,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnAround",
+      "captureTime": 0.0171717,
+      "position": [
+        -2.5,
+        0.005,
+        -0.85
+      ],
+      "heading": -1.199999689478014,
+      "returning": true,
+      "plannedTurnSteps": 2
+    },
+    {
+      "frame": 566,
+      "seconds": 9.433333333333334,
+      "phase": "walking",
+      "action": "start",
+      "capture": "start",
+      "captureTime": 0,
+      "position": [
+        -2.5,
+        0.005,
+        -0.85
+      ],
+      "heading": 0.9357695914045828,
+      "returning": true,
+      "plannedTurnSteps": 2
+    },
+    {
+      "frame": 694,
+      "seconds": 11.566666666666666,
+      "phase": "walking",
+      "action": "walk",
+      "capture": "walk",
+      "captureTime": 0.735298882139754,
+      "position": [
+        -1.789726570142089,
+        0.005,
+        -0.32636272814620215
+      ],
+      "heading": 0.9304172933004994,
+      "returning": true,
+      "plannedTurnSteps": 2
+    },
+    {
+      "frame": 754,
+      "seconds": 12.566666666666666,
+      "phase": "walking",
+      "action": "stop",
+      "capture": "stop",
+      "captureTime": 0.01876839630066988,
+      "position": [
+        -1.133207741623341,
+        0.005,
+        0.26679225837665876
+      ],
+      "heading": 0.7853981633974481,
+      "returning": true,
+      "plannedTurnSteps": 2
+    },
+    {
+      "frame": 874,
+      "seconds": 14.566666666666666,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnRight",
+      "captureTime": 0,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": 0.7853981633974483,
+      "returning": true,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 921,
+      "seconds": 15.35,
+      "phase": "home",
+      "action": "stand",
+      "capture": "stand",
+      "captureTime": 0,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": 0.05,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 997,
+      "seconds": 16.616666666666667,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnRight",
+      "captureTime": 0.011093606028233022,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": 0.05,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1063,
+      "seconds": 17.716666666666665,
+      "phase": "walking",
+      "action": "start",
+      "capture": "start",
+      "captureTime": 0,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": -3.0348569809406576,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1202,
+      "seconds": 20.03333333333333,
+      "phase": "walking",
+      "action": "walk",
+      "capture": "walk",
+      "captureTime": 0.7342645282968557,
+      "position": [
+        -0.8520131951521135,
+        0.005,
+        -0.3021231547530576
+      ],
+      "heading": -3.034856980940658,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1267,
+      "seconds": 21.116666666666667,
+      "phase": "walking",
+      "action": "stop",
+      "capture": "stop",
+      "captureTime": 0.015761484253861806,
+      "position": [
+        -0.8535211167557412,
+        0.005,
+        -1.2612677156868475
+      ],
+      "heading": 3.050932766389048,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1398,
+      "seconds": 23.3,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnRight",
+      "captureTime": 0,
+      "position": [
+        -0.8,
+        0.005,
+        -1.85
+      ],
+      "heading": 3.050932766388839,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1445,
+      "seconds": 24.083333333333332,
+      "phase": "presenting",
+      "action": "stand",
+      "capture": "stand",
+      "captureTime": 0,
+      "position": [
+        -0.8,
+        0.005,
+        -1.85
+      ],
+      "heading": 1.2,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1506,
+      "seconds": 25.1,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnRight",
+      "captureTime": 0.0156695,
+      "position": [
+        -0.8,
+        0.005,
+        -1.85
+      ],
+      "heading": 1.2,
+      "returning": true,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1552,
+      "seconds": 25.866666666666667,
+      "phase": "walking",
+      "action": "start",
+      "capture": "start",
+      "captureTime": 0,
+      "position": [
+        -0.8,
+        0.005,
+        -1.85
+      ],
+      "heading": -0.09065988720074504,
+      "returning": true,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1691,
+      "seconds": 28.183333333333334,
+      "phase": "walking",
+      "action": "walk",
+      "capture": "walk",
+      "captureTime": 0.7339788921530621,
+      "position": [
+        -0.8816092654791535,
+        0.005000000000000001,
+        -0.8963659958811054
+      ],
+      "heading": -0.04143147042740044,
+      "returning": true,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1756,
+      "seconds": 29.266666666666666,
+      "phase": "walking",
+      "action": "stop",
+      "capture": "stop",
+      "captureTime": 0.015810646198697032,
+      "position": [
+        -0.8129742213338238,
+        0.005,
+        0.062240600884312935
+      ],
+      "heading": 0.10673567264913587,
+      "returning": true,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1887,
+      "seconds": 31.45,
+      "phase": "home",
+      "action": "stand",
+      "capture": "stand",
+      "captureTime": 0,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": 0.10673567264966861,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 1963,
+      "seconds": 32.71666666666667,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnLeft",
+      "captureTime": 0.011623606338302209,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": 0.1068171145646193,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 2026,
+      "seconds": 33.766666666666666,
+      "phase": "walking",
+      "action": "start",
+      "capture": "start",
+      "captureTime": 0,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": 3.050932766389048,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 2175,
+      "seconds": 36.25,
+      "phase": "walking",
+      "action": "walk",
+      "capture": "walk",
+      "captureTime": 0.7371025180440627,
+      "position": [
+        -0.5998012910831644,
+        0.004999999999999999,
+        -0.355604174669354
+      ],
+      "heading": 2.619058531092412,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 2342,
+      "seconds": 39.03333333333333,
+      "phase": "walking",
+      "action": "stop",
+      "capture": "stop",
+      "captureTime": 0.008207976024622263,
+      "position": [
+        1.8147655575978119,
+        0.005,
+        -0.8126332680939887
+      ],
+      "heading": 1.6295521495106196,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 2482,
+      "seconds": 41.36666666666667,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnRight",
+      "captureTime": 0,
+      "position": [
+        2.45,
+        0.005,
+        -0.85
+      ],
+      "heading": 1.6295521495109573,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 2529,
+      "seconds": 42.15,
+      "phase": "presenting",
+      "action": "stand",
+      "capture": "stand",
+      "captureTime": 0,
+      "position": [
+        2.45,
+        0.005,
+        -0.85
+      ],
+      "heading": 1.2,
+      "returning": false,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 2590,
+      "seconds": 43.166666666666664,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnAroundRight",
+      "captureTime": 0.0171717,
+      "position": [
+        2.45,
+        0.005,
+        -0.85
+      ],
+      "heading": 1.1999996056933262,
+      "returning": true,
+      "plannedTurnSteps": 2
+    },
+    {
+      "frame": 2688,
+      "seconds": 44.8,
+      "phase": "walking",
+      "action": "start",
+      "capture": "start",
+      "captureTime": 0,
+      "position": [
+        2.45,
+        0.005,
+        -0.85
+      ],
+      "heading": -1.512040504079174,
+      "returning": true,
+      "plannedTurnSteps": 2
+    },
+    {
+      "frame": 2837,
+      "seconds": 47.28333333333333,
+      "phase": "walking",
+      "action": "walk",
+      "capture": "walk",
+      "captureTime": 0.7423564886001983,
+      "position": [
+        1.4194576303609692,
+        0.005,
+        -0.7893798606094689
+      ],
+      "heading": -1.5120405040791738,
+      "returning": true,
+      "plannedTurnSteps": 2
+    },
+    {
+      "frame": 3007,
+      "seconds": 50.11666666666667,
+      "phase": "walking",
+      "action": "stop",
+      "capture": "stop",
+      "captureTime": 0.014482801371302466,
+      "position": [
+        -0.6928409207149447,
+        0.005,
+        0.021250127864391156
+      ],
+      "heading": -0.09065988720074485,
+      "returning": true,
+      "plannedTurnSteps": 2
+    },
+    {
+      "frame": 3147,
+      "seconds": 52.449999999999996,
+      "phase": "turning",
+      "action": "turn",
+      "capture": "turnLeft",
+      "captureTime": 0,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": -0.09065988720060414,
+      "returning": true,
+      "plannedTurnSteps": 1
+    },
+    {
+      "frame": 3194,
+      "seconds": 53.233333333333334,
+      "phase": "home",
+      "action": "stand",
+      "capture": "stand",
+      "captureTime": 0,
+      "position": [
+        -0.75,
+        0.005,
+        0.65
+      ],
+      "heading": 0.05,
+      "returning": false,
+      "plannedTurnSteps": 1
+    }
+  ],
+  "journeys": [
+    {
+      "target": "left",
+      "arrivalErrorMetres": 0,
+      "homeErrorMetres": 0,
+      "sourceGroundingRestored": true
+    },
+    {
+      "target": "center",
+      "arrivalErrorMetres": 0,
+      "homeErrorMetres": 0,
+      "sourceGroundingRestored": true
+    },
+    {
+      "target": "right",
+      "arrivalErrorMetres": 0,
+      "homeErrorMetres": 0,
+      "sourceGroundingRestored": true
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Finite deterministic 60 Hz sampling is not a GPU/FPS benchmark.",
+    "Foot step is full 3D displacement over one frame, including intended human swing velocity; it is not a sole-slip measurement.",
+    "Shoulder drop is the change of each upper-arm attachment relative to the neck, not total body vertical motion.",
+    "The turn step count describes the selected finite capture interval, not a contact-label counter; short turns use one step and reversal uses two.",
+    "Pose blending, angular and stride adaptation are not Unreal motion matching. Source optical contact labels and 20mm maximum pelvis correction do not provide perfect sole contact.",
+    "Raster images are substituted only in memory for Node; this report does not rate rendered appearance."
+  ],
+  "error": null
+}

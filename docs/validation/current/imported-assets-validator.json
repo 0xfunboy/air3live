@@ -1,0 +1,120 @@
+{
+  "schema": "air3.imported-assets-validator.v1",
+  "date": "2026-10-25T11:10:25.147Z",
+  "assets": [
+    {
+      "id": "avatar",
+      "path": "studio-broadcast/public/assets/air3/models/AIR3-runtime.glb",
+      "report": "docs/validation/current/avatar-gltf-validator.json",
+      "sha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d",
+      "bytes": 21666344,
+      "validatorVersion": "2.0.0-dev.3.10",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 951,
+      "hints": 0,
+      "stderr": "",
+      "issueCodes": {
+        "URI_GLB": 6,
+        "UNUSED_MESH_TANGENT": 19,
+        "UNUSED_OBJECT": 925,
+        "UNUSED_MESH_WEIGHTS": 1
+      }
+    },
+    {
+      "id": "hair-wavy",
+      "path": "studio-broadcast/public/assets/air3/hair/wavy.glb",
+      "report": "docs/validation/current/imported-assets/hair-wavy.json",
+      "sha256": "c17dfbd513a8d9525a4b86d9cc37d9719bd873a1275f6019c599cd9c15ca06a2",
+      "bytes": 318136,
+      "validatorVersion": "2.0.0-dev.3.10",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 7,
+      "infos": 8,
+      "hints": 0,
+      "stderr": "",
+      "issueCodes": {
+        "UNUSED_OBJECT": 7,
+        "NODE_EMPTY": 1,
+        "NODE_SKINNED_MESH_NON_ROOT": 7
+      }
+    },
+    {
+      "id": "hair-artemis",
+      "path": "studio-broadcast/public/assets/air3/hair/artemis.glb",
+      "report": "docs/validation/current/imported-assets/hair-artemis.json",
+      "sha256": "7d18ac158ac25dcab7808e689acb0b230ef06a9dd434de96e4be61ee603f8c67",
+      "bytes": 533616,
+      "validatorVersion": "2.0.0-dev.3.10",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 1,
+      "infos": 9,
+      "hints": 0,
+      "stderr": "",
+      "issueCodes": {
+        "UNUSED_MESH_TANGENT": 1,
+        "UNUSED_OBJECT": 7,
+        "NODE_EMPTY": 1,
+        "NODE_SKINNED_MESH_NON_ROOT": 1
+      }
+    },
+    {
+      "id": "footwear-boot",
+      "path": "studio-broadcast/public/assets/air3/footwear/boot.glb",
+      "report": "docs/validation/current/imported-assets/footwear-boot.json",
+      "sha256": "050c5385ccf4700ed095f3f0d025447f30f6abb2dde77b3569ee6b8c53dbe829",
+      "bytes": 3206212,
+      "validatorVersion": "2.0.0-dev.3.10",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0,
+      "hints": 4,
+      "stderr": "",
+      "issueCodes": {
+        "BUFFER_VIEW_TARGET_MISSING": 4
+      }
+    },
+    {
+      "id": "footwear-shoes-test",
+      "path": "studio-broadcast/public/assets/air3/footwear/shoes-test.glb",
+      "report": "docs/validation/current/imported-assets/footwear-shoes-test.json",
+      "sha256": "59dd3a8981b500cd6c1e79f4a02b4ae37a1606ae81065957d154026ea0e2e08e",
+      "bytes": 1117592,
+      "validatorVersion": "2.0.0-dev.3.10",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 2,
+      "hints": 11,
+      "stderr": "",
+      "issueCodes": {
+        "BUFFER_VIEW_TARGET_MISSING": 11,
+        "UNUSED_OBJECT": 2
+      }
+    },
+    {
+      "id": "clothing-crop",
+      "path": "studio-broadcast/public/assets/air3/clothing/crop-top.glb",
+      "report": "docs/validation/current/imported-assets/clothing-crop.json",
+      "sha256": "9c16dd73287bf0ed499aa2c0fc9656e7b6dc2fb54d31591e9394df881b1713e4",
+      "bytes": 2800172,
+      "validatorVersion": "2.0.0-dev.3.10",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 2,
+      "hints": 0,
+      "stderr": "",
+      "issueCodes": {
+        "UNUSED_OBJECT": 2
+      }
+    }
+  ],
+  "totalErrors": 0,
+  "totalWarnings": 8,
+  "passed": true
+}

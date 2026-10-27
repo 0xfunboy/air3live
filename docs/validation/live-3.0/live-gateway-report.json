@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "tests": 16,
+  "gatewayIntegrationTests": 12,
+  "editorialTests": 4,
+  "failures": 0,
+  "createdAt": "2026-10-27T03:31:39.899621+00:00",
+  "realComponents": [
+    "Loopback HTTP gateway",
+    "SQLite narration queue",
+    "Private settings file and serialized write guard",
+    "Editorial persistence and TTL",
+    "TTS request assembly with local WAV response"
+  ],
+  "explicitOfflineDoubles": [
+    "Broadcaster process factory (no child process or live platform)",
+    "Market factory (no external feed)",
+    "Twitch chat factory (no OAuth provider connection)",
+    "TTS fetch provider (WAV generated inside test)"
+  ],
+  "externalNetworkCalls": 0,
+  "streamStartedOnPublicPlatform": false,
+  "chatMessagesSent": 0,
+  "findings": [
+    "No blocking HTTP integration failures.",
+    "Operator UI message sorting and title-author fallback should include Twitch createdAt/userName; reported to root for its UI file."
+  ],
+  "sources": {
+    "studio-broadcast/test/live-gateway.test.mjs": {
+      "sha256": "56b947d0f4753bc6ea75d16ecc64a0536d04fb98993837d3fca257cfa7ad3a8d",
+      "bytes": 25788
+    },
+    "studio-broadcast/test/live-editorial.test.mjs": {
+      "sha256": "be1947dae3474b5be1ba6d11fb9572482a47c3e517581e75c7d395174b13365e",
+      "bytes": 4126
+    },
+    "studio-broadcast/src/gateway.mjs": {
+      "sha256": "d541463ebc4e60c4bd4d4c233b0e2ea701d549cd42b7722553cab09e7de48176",
+      "bytes": 15436
+    },
+    "studio-broadcast/src/live-service.mjs": {
+      "sha256": "39e377cfc28b4f088257763024e0aeec9cdde39c3a8d4ed98392d91ae0c200dd",
+      "bytes": 10862
+    },
+    "studio-broadcast/src/live-auth.mjs": {
+      "sha256": "ff6036e2a350c001a945f6c6c7f88102ea545b0d7571acf20ff9cf50e4544c0c",
+      "bytes": 3938
+    },
+    "studio-broadcast/src/live-settings.mjs": {
+      "sha256": "22b3797ae2d42db8d17c6ef672ded2641e7bb512afcd541ed1363820f28fe339",
+      "bytes": 9615
+    },
+    "studio-broadcast/src/live-editorial.mjs": {
+      "sha256": "eec3a16a81aae7529037bc96d37085be3febffd7568bad2e1fb80916a229615d",
+      "bytes": 2742
+    },
+    "studio-broadcast/src/twitch-chat.mjs": {
+      "sha256": "8d878e8b2cd24ba0cfbf3463ad601214d5165d03a13232cd9de13e5ab7d79101",
+      "bytes": 23151
+    },
+    "docs/validation/live-3.0/live-gateway-tests.txt": {
+      "sha256": "9343127628a7b1958a49d2823846f45e13eedf1974fba70a283bc95beb638cda",
+      "bytes": 1905
+    }
+  }
+}

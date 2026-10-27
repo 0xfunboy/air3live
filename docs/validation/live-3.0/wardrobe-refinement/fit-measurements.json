@@ -1,0 +1,24 @@
+{
+  "profile": "air3-off-shoulder-2026-10-27",
+  "outputSha256": "a7f45020f75d775a79ead6b1b8006f4ee89cc3f4ada3251efcebe6e4fd3735d7",
+  "sourceSha256": "5ba16fe9583d908ff13e530200e32ea6dc947b8c993150d2e65a771e3265130f",
+  "bodySha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d",
+  "comparison": "Frozen AIR3 Studio 2.3 fitted garment; identical avatar body",
+  "heightReductionRequestedPercent": 15,
+  "heightReductionAfterSurfaceFitPercent": 13.45268440246582,
+  "hemRaiseMillimetres": 41.55778884887695,
+  "upperExtentShiftMillimetres": -0.01633167266845703,
+  "frontNecklineBindEnvelopeSpanBeforeMillimetres": 14.345884323120117,
+  "frontNecklineBindEnvelopeSpanAfterMillimetres": 0.9865760803222656,
+  "authoredTextureUnchanged": true,
+  "authoredUVAndTopologyUnchanged": true,
+  "bodyGeometryChanged": false,
+  "rebuildByteIdentical": true,
+  "vertices": 6403,
+  "triangles": 12052,
+  "limitations": [
+    "Neckline metrics are measured in bind pose; skinning and perspective add natural curvature in a rendered pose.",
+    "Cloth uses skinning with a reversible body visibility mask, not a dynamic cloth collision solver.",
+    "White material remains shaded by the configured lights; backlit cloth will not display as unlit white."
+  ]
+}

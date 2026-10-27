@@ -1,0 +1,9 @@
+
+  public/build/app.js              64.6kb
+  public/build/shared-CBLIMTOB.js  54.4kb
+  public/build/preview.js           8.6kb
+  public/build/shared-IUPYLFTI.js   4.3kb
+  public/build/health.js            694b 
+
+⚡ Done in 32ms
+{"built":true,"compiler":"esbuild 0.28.2","sourceModules":16,"outputs":5,"bytes":135825,"modelImages":9}

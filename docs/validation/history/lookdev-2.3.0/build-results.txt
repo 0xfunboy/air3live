@@ -1,0 +1,9 @@
+
+  public/build/shared-NOO6SCFS.js  563.2kb
+  public/build/app.js               68.9kb
+  public/build/preview.js           11.0kb
+  public/build/shared-IUPYLFTI.js    4.3kb
+  public/build/health.js             694b 
+
+⚡ Done in 83ms
+{"built":true,"compiler":"esbuild 0.28.2","sourceModules":32,"outputs":5,"bytes":663642,"modelImages":9}

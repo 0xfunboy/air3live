@@ -1,0 +1,238 @@
+{
+  "passed": false,
+  "date": "2026-10-24T11:47:35.846Z",
+  "error": "AssertionError [ERR_ASSERTION]: Exactly one recording expected in a fresh QA directory\n\n2 !== 1\n\n    at file:///workspace/scratch/e2605feface4/quality-upgrade/AIR3_Studio_Complete/studio-broadcast/scripts/smoke-avatar.mjs:97:10",
+  "events": [
+    {
+      "at": "2026-10-24T11:46:16.701Z",
+      "event": "encoder-selected",
+      "encoder": "libx264",
+      "requested": "libx264",
+      "hardware": false
+    },
+    {
+      "at": "2026-10-24T11:46:36.529Z",
+      "event": "renderer-ready",
+      "diagnostics": {
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "frameCount": 5,
+        "fps": 0.5,
+        "width": 960,
+        "height": 540,
+        "audioState": "running",
+        "currentJob": null,
+        "quality": "software",
+        "avatar": "#AIR3 · PBR materials · body animation",
+        "avatarRig": {
+          "profile": "AIR3 source geometry with translation-retargeted animations",
+          "extendedSkinMeshes": 7,
+          "preservedSkinInfluences": 12,
+          "idleClips": 3,
+          "talkClips": 4,
+          "motion": "idle",
+          "facialLipSync": {
+            "ready": true,
+            "articulation": "bounded skeletal poses plus source corrective morphs",
+            "controls": 35,
+            "sourceCorrectiveCount": 29,
+            "mouthCue": "X",
+            "emotion": "neutral",
+            "emotionIntensity": 0.55,
+            "blink": 0,
+            "phoneticTiming": "none",
+            "rigLogicParity": false
+          },
+          "rootOrientationLocked": true,
+          "footContactAnchors": 126,
+          "materials": {
+            "profile": "air3-materials-2026-10-24-v3",
+            "surfaces": {
+              "skin-body": 1,
+              "cloth": 7,
+              "shoes": 1,
+              "skin-face": 1,
+              "mouth": 1,
+              "tear-film": 2,
+              "eyes": 2,
+              "lashes": 1,
+              "waterline": 1,
+              "hair": 1,
+              "brows": 1
+            },
+            "source": "Supplied Unreal 5.7.4 material parameters and textures",
+            "normalY": -1,
+            "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+            "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+            "eyes": "Textured iris and sclera with clearcoat",
+            "limitations": [
+              "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+              "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+            ]
+          },
+          "normalY": -1
+        },
+        "environment": {
+          "source": "authored linear HDR softbox scene",
+          "pmrem": true,
+          "resolution": 128
+        },
+        "reflections": {
+          "mode": "environment reflection only"
+        },
+        "postprocessing": {
+          "output": "direct ACES/sRGB",
+          "ao": false,
+          "bloom": false
+        },
+        "lipSync": "none"
+      },
+      "software": true
+    },
+    {
+      "at": "2026-10-24T11:46:38.101Z",
+      "event": "broadcast-running",
+      "mode": "file",
+      "recording": "/workspace/scratch/e2605feface4/quality-upgrade/AIR3_Studio_Complete/docs/validation/current/avatar-smoke/studio-2026-10-24T11-46-16-848Z-ede521a0.mkv",
+      "width": 960,
+      "height": 540,
+      "fps": 15,
+      "encoder": "libx264"
+    },
+    {
+      "at": "2026-10-24T11:46:40.106Z",
+      "event": "speech-playback",
+      "job": null,
+      "phase": "idle",
+      "lipSync": "none",
+      "elapsed": 0,
+      "duration": 0,
+      "mouthCue": "X"
+    },
+    {
+      "at": "2026-10-24T11:46:56.112Z",
+      "event": "speech-playback",
+      "job": "browser-qa-complete",
+      "phase": "playing",
+      "lipSync": "rhubarb:pocketSphinx",
+      "elapsed": 1.701496598639455,
+      "duration": 12,
+      "mouthCue": "C"
+    },
+    {
+      "at": "2026-10-24T11:47:08.122Z",
+      "event": "speech-playback",
+      "job": null,
+      "phase": "idle",
+      "lipSync": "none",
+      "elapsed": 0,
+      "duration": 0,
+      "mouthCue": "X"
+    },
+    {
+      "at": "2026-10-24T11:47:24.142Z",
+      "event": "speech-playback",
+      "job": "browser-qa-cancel",
+      "phase": "playing",
+      "lipSync": "rhubarb:pocketSphinx",
+      "elapsed": 1.422857142857147,
+      "duration": 12,
+      "mouthCue": "C"
+    },
+    {
+      "at": "2026-10-24T11:47:29.681Z",
+      "event": "speech-playback",
+      "job": null,
+      "phase": "idle",
+      "lipSync": "none",
+      "elapsed": 0,
+      "duration": 0,
+      "mouthCue": "X"
+    },
+    {
+      "at": "2026-10-24T11:47:31.745Z",
+      "event": "renderer-final",
+      "diagnostics": {
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "frameCount": 49,
+        "fps": 0.9,
+        "width": 960,
+        "height": 540,
+        "audioState": "running",
+        "currentJob": null,
+        "quality": "software",
+        "avatar": "#AIR3 · PBR materials · body animation",
+        "avatarRig": {
+          "profile": "AIR3 source geometry with translation-retargeted animations",
+          "extendedSkinMeshes": 7,
+          "preservedSkinInfluences": 12,
+          "idleClips": 3,
+          "talkClips": 4,
+          "motion": "idle",
+          "facialLipSync": {
+            "ready": true,
+            "articulation": "bounded skeletal poses plus source corrective morphs",
+            "controls": 35,
+            "sourceCorrectiveCount": 29,
+            "mouthCue": "X",
+            "emotion": "neutral",
+            "emotionIntensity": 0.35,
+            "blink": 0,
+            "phoneticTiming": "none",
+            "rigLogicParity": false
+          },
+          "rootOrientationLocked": true,
+          "footContactAnchors": 126,
+          "materials": {
+            "profile": "air3-materials-2026-10-24-v3",
+            "surfaces": {
+              "skin-body": 1,
+              "cloth": 7,
+              "shoes": 1,
+              "skin-face": 1,
+              "mouth": 1,
+              "tear-film": 2,
+              "eyes": 2,
+              "lashes": 1,
+              "waterline": 1,
+              "hair": 1,
+              "brows": 1
+            },
+            "source": "Supplied Unreal 5.7.4 material parameters and textures",
+            "normalY": -1,
+            "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+            "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+            "eyes": "Textured iris and sclera with clearcoat",
+            "limitations": [
+              "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+              "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+            ]
+          },
+          "normalY": -1
+        },
+        "environment": {
+          "source": "authored linear HDR softbox scene",
+          "pmrem": true,
+          "resolution": 128
+        },
+        "reflections": {
+          "mode": "environment reflection only"
+        },
+        "postprocessing": {
+          "output": "direct ACES/sRGB",
+          "ao": false,
+          "bloom": false
+        },
+        "lipSync": "none"
+      }
+    },
+    {
+      "at": "2026-10-24T11:47:31.831Z",
+      "event": "encoder-message",
+      "message": "[matroska,webm @ 0x5613b1d830c0] File ended prematurely at pos. 1000273 (0xf4351)"
+    },
+    {
+      "at": "2026-10-24T11:47:32.692Z",
+      "event": "broadcaster-stopped"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+✔ Twitch OAuth state is random, session bound, expiring and single use; grant stays server-only (27.16969ms)
+✔ OAuth rejects remote HTTP redirects, swapped redirect/client, missing session and wrong token scopes (3.824911ms)
+✔ chat validates initial authorization and subscribes only to the four read-only EventSub types (7.678405ms)
+✔ read-only cache deduplicates, caps at 200 and honors deletes, user clears and room clears (7.788847ms)
+✔ chat sanitizes controls and treats user text as data, ignoring foreign channel notifications (2.633137ms)
+✔ server-directed WebSocket handover preserves the old socket until welcome without resubscribing (1.682517ms)
+✔ ordinary disconnect resubscribes, heartbeat resets on keepalive and explicit stop cancels all retries (2.549463ms)
+✔ untrusted reconnect URLs never open a second connection and errors do not reflect token-bearing data (1.456724ms)
+✔ expired access is refreshed once, URL encoded and revalidated before use (1.646975ms)
+✔ hourly validation and revoked authorization end the live chat session (1.900489ms)
+✔ event revocation and authorization failure do not reconnect in an endless loop (1.729406ms)
+✔ clearing authorization prevents an in-flight OAuth callback from restoring credentials (0.993753ms)
+✔ configure avoids unnecessary reconnects, clears cache on channel changes and stops when disabled (2.026909ms)
+✔ concurrent unauthorized subscription requests share one refresh instead of racing token writes (1.721315ms)
+✔ stopping while initial validation is in flight cannot open a later WebSocket (0.781991ms)
+✔ rate limiting respects retry-after and never surfaces a remote credential-bearing error body (1.900658ms)
+✔ queued OAuth token persistence is guarded at write time against logout and client replacement (1.273355ms)
+✔ queued refresh cannot overwrite credentials issued by a newer login (2.862574ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 151.139384

@@ -1,0 +1,66 @@
+{
+  "source": "References supplied with AIR3_Studio_Handoff_Codex_2026-10-24.zip",
+  "files": [
+    {
+      "path": "source-assets/branding/image(2).png",
+      "sha256": "83bcd35e7f6e99a074a839154067f427f87cea7d95fa608523c50b9a528fd99b",
+      "bytes": 859052,
+      "source": "User supplied reference, unmodified pixels"
+    },
+    {
+      "path": "source-assets/branding/LogoAIRewadrop.png",
+      "sha256": "80b427076b3c1dd1555646b862d6e52742e020b5a9ec52eaac64cb56d79b3dd1",
+      "bytes": 110479,
+      "source": "User supplied reference, unmodified pixels"
+    },
+    {
+      "path": "source-assets/character_references/funboy_silver_notebook_behind_her_--ar_11_--v_7_066c5385-cb5d-43da-b6f4-1068ef987572.png",
+      "sha256": "125ea9cf1cecf7a114dc297dd8e7e38026949daa3a024a443c04a8be0d1ca649",
+      "bytes": 7913589,
+      "source": "User supplied reference, unmodified pixels"
+    },
+    {
+      "path": "source-assets/character_references/frame0.png",
+      "sha256": "ec1ca72938d84c8c87e0717743019d1cb5cddf82df8f09d55ef4265e4c2d58a2",
+      "bytes": 1753442,
+      "source": "User supplied reference, unmodified pixels"
+    },
+    {
+      "path": "source-assets/character_references/Generated Image September 17, 2025 - 3_08PM.png",
+      "sha256": "9ea22ae0b609ca002edfb6af66489b1f82d71b23d7d3995eec0852907ab908d6",
+      "bytes": 1837935,
+      "source": "User supplied reference, unmodified pixels"
+    },
+    {
+      "path": "source-assets/character_references/frame3.png",
+      "sha256": "daa348263f567fda5e5098e95e58ee4a4080bb0ed38a9f4eb3ef507ba9c39409",
+      "bytes": 1736159,
+      "source": "User supplied reference, unmodified pixels"
+    },
+    {
+      "path": "source-assets/character_references/frame1.png",
+      "sha256": "cdcb937974a873ce21b2318b9a3d0828f5be310fae4f7037cacc5f83c59b6b6c",
+      "bytes": 1710740,
+      "source": "User supplied reference, unmodified pixels"
+    },
+    {
+      "path": "source-assets/character_references/frame4.png",
+      "sha256": "133ac6f949591918770c354172e4b0aca04ed9882ffed2e0f7d6823fb02b110b",
+      "bytes": 1907467,
+      "source": "User supplied reference, unmodified pixels"
+    },
+    {
+      "path": "source-assets/character_references/frame2.png",
+      "sha256": "f745e151cd0a39a800e21d7c5ab2ec962a5efaeba80a3d31ae43eefcefe332a2",
+      "bytes": 2017500,
+      "source": "User supplied reference, unmodified pixels"
+    },
+    {
+      "path": "source-assets/character_references/frame5.png",
+      "sha256": "747f85df278bdf33713d6cf2526cdec580ce7eba90c638d07024437ceb85c17e",
+      "bytes": 1930377,
+      "source": "User supplied reference, unmodified pixels"
+    }
+  ],
+  "note": "Portraits guide style and are not photogrammetric scans or a promise of exact face reconstruction."
+}

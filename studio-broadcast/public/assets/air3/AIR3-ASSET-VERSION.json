@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "installedAt": "2026-10-24T10:25:14.372Z",
+  "requires": "air3-avatar.mjs",
+  "avatarUrl": "/assets/air3/models/AIR3-runtime.glb",
+  "facialControls": "pending calibration"
+}

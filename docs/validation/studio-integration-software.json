@@ -1,0 +1,481 @@
+{
+  "test": "final local studio integration and framing",
+  "date": "2026-10-24T11:21:06.243Z",
+  "quality": "balanced",
+  "errors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:5894/api/health",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5894/api/health",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5894/api/health",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5894/api/health",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5894/api/health",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    }
+  ],
+  "limitation": "SwiftShader only, no hardware performance certification",
+  "ready": {
+    "ready": true,
+    "frameCount": 5,
+    "lastRenderedFrameAt": 1792840908247,
+    "lastFrameAt": 1792840908247,
+    "fps": 0.1,
+    "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "contextLost": false,
+    "renderer": "three.js/WebGL",
+    "width": 1280,
+    "height": 720,
+    "drawCalls": 345,
+    "triangles": 1380982,
+    "avatar": "#AIR3 · PBR materials · body animation",
+    "jawMorphs": 0,
+    "camera": "wide",
+    "avatarRig": {
+      "profile": "AIR3 source geometry with translation-retargeted animations",
+      "extendedSkinMeshes": 7,
+      "preservedSkinInfluences": 12,
+      "idleClips": 3,
+      "talkClips": 4,
+      "motion": "idle",
+      "facialLipSync": {
+        "ready": true,
+        "articulation": "bounded skeletal poses plus source corrective morphs",
+        "controls": 35,
+        "sourceCorrectiveCount": 29,
+        "mouthCue": "X",
+        "emotion": "neutral",
+        "emotionIntensity": 0.55,
+        "blink": 0,
+        "phoneticTiming": "none",
+        "rigLogicParity": false
+      },
+      "rootOrientationLocked": true,
+      "footContactAnchors": 126,
+      "materials": {
+        "profile": "air3-materials-2026-10-24-v3",
+        "surfaces": {
+          "skin-body": 1,
+          "cloth": 7,
+          "shoes": 1,
+          "skin-face": 1,
+          "mouth": 1,
+          "tear-film": 2,
+          "eyes": 2,
+          "lashes": 1,
+          "waterline": 1,
+          "hair": 1,
+          "brows": 1
+        },
+        "source": "Supplied Unreal 5.7.4 material parameters and textures",
+        "normalY": -1,
+        "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+        "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+        "eyes": "Textured natural hazel iris, sclera, clearcoat and bounded iris parallax",
+        "limitations": [
+          "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+          "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+        ]
+      },
+      "normalY": -1
+    },
+    "quality": {
+      "name": "balanced",
+      "maxPixelRatio": 1,
+      "shadowSize": 1024,
+      "reflectionSize": 512,
+      "reflectionInterval": 2,
+      "ao": false,
+      "bloom": true,
+      "msaa": 2,
+      "environmentSize": 256,
+      "requested": "balanced",
+      "softwareRenderer": true,
+      "selectionReason": "explicit selection"
+    },
+    "environment": {
+      "source": "authored linear HDR softbox scene",
+      "pmrem": true,
+      "resolution": 256
+    },
+    "reflections": {
+      "mode": "planar reflection",
+      "resolution": 512,
+      "updateEveryRenderedFrames": 2,
+      "softened": true
+    },
+    "postprocessing": {
+      "output": "linear half-float → ACES/sRGB",
+      "ao": false,
+      "bloom": "HDR threshold 1.50, strength 0.12",
+      "msaa": 2
+    },
+    "avatarMaterials": {
+      "profile": "air3-materials-2026-10-24-v3",
+      "surfaces": {
+        "skin-body": 1,
+        "cloth": 7,
+        "shoes": 1,
+        "skin-face": 1,
+        "mouth": 1,
+        "tear-film": 2,
+        "eyes": 2,
+        "lashes": 1,
+        "waterline": 1,
+        "hair": 1,
+        "brows": 1
+      },
+      "source": "Supplied Unreal 5.7.4 material parameters and textures",
+      "normalY": -1,
+      "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+      "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+      "eyes": "Textured natural hazel iris, sclera, clearcoat and bounded iris parallax",
+      "limitations": [
+        "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+        "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+      ]
+    },
+    "audioState": "not-created",
+    "currentJob": null,
+    "speech": {
+      "phase": "observer",
+      "connected": false,
+      "currentJob": null,
+      "text": "",
+      "error": "",
+      "audioState": "not-created",
+      "elapsed": 0,
+      "duration": 0,
+      "amplitude": 0,
+      "lipSync": "none",
+      "mouthCue": "X",
+      "audioArmed": false
+    },
+    "gatewayConnected": false,
+    "data": {
+      "mode": "track",
+      "websocket": "disabled",
+      "snapshotAt": 0,
+      "chartAt": 0,
+      "reportAt": 0,
+      "stale": true
+    }
+  },
+  "wide": {
+    "ready": true,
+    "frameCount": 13,
+    "lastRenderedFrameAt": 1792840954967,
+    "lastFrameAt": 1792840954967,
+    "fps": 0.3,
+    "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "contextLost": false,
+    "renderer": "three.js/WebGL",
+    "width": 1280,
+    "height": 720,
+    "drawCalls": 345,
+    "triangles": 1380982,
+    "avatar": "#AIR3 · PBR materials · body animation",
+    "jawMorphs": 0,
+    "camera": "wide",
+    "avatarRig": {
+      "profile": "AIR3 source geometry with translation-retargeted animations",
+      "extendedSkinMeshes": 7,
+      "preservedSkinInfluences": 12,
+      "idleClips": 3,
+      "talkClips": 4,
+      "motion": "idle",
+      "facialLipSync": {
+        "ready": true,
+        "articulation": "bounded skeletal poses plus source corrective morphs",
+        "controls": 35,
+        "sourceCorrectiveCount": 29,
+        "mouthCue": "X",
+        "emotion": "neutral",
+        "emotionIntensity": 0.55,
+        "blink": 0,
+        "phoneticTiming": "none",
+        "rigLogicParity": false
+      },
+      "rootOrientationLocked": true,
+      "footContactAnchors": 126,
+      "materials": {
+        "profile": "air3-materials-2026-10-24-v3",
+        "surfaces": {
+          "skin-body": 1,
+          "cloth": 7,
+          "shoes": 1,
+          "skin-face": 1,
+          "mouth": 1,
+          "tear-film": 2,
+          "eyes": 2,
+          "lashes": 1,
+          "waterline": 1,
+          "hair": 1,
+          "brows": 1
+        },
+        "source": "Supplied Unreal 5.7.4 material parameters and textures",
+        "normalY": -1,
+        "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+        "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+        "eyes": "Textured natural hazel iris, sclera, clearcoat and bounded iris parallax",
+        "limitations": [
+          "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+          "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+        ]
+      },
+      "normalY": -1
+    },
+    "quality": {
+      "name": "balanced",
+      "maxPixelRatio": 1,
+      "shadowSize": 1024,
+      "reflectionSize": 512,
+      "reflectionInterval": 2,
+      "ao": false,
+      "bloom": true,
+      "msaa": 2,
+      "environmentSize": 256,
+      "requested": "balanced",
+      "softwareRenderer": true,
+      "selectionReason": "explicit selection"
+    },
+    "environment": {
+      "source": "authored linear HDR softbox scene",
+      "pmrem": true,
+      "resolution": 256
+    },
+    "reflections": {
+      "mode": "planar reflection",
+      "resolution": 512,
+      "updateEveryRenderedFrames": 2,
+      "softened": true
+    },
+    "postprocessing": {
+      "output": "linear half-float → ACES/sRGB",
+      "ao": false,
+      "bloom": "HDR threshold 1.50, strength 0.12",
+      "msaa": 2
+    },
+    "avatarMaterials": {
+      "profile": "air3-materials-2026-10-24-v3",
+      "surfaces": {
+        "skin-body": 1,
+        "cloth": 7,
+        "shoes": 1,
+        "skin-face": 1,
+        "mouth": 1,
+        "tear-film": 2,
+        "eyes": 2,
+        "lashes": 1,
+        "waterline": 1,
+        "hair": 1,
+        "brows": 1
+      },
+      "source": "Supplied Unreal 5.7.4 material parameters and textures",
+      "normalY": -1,
+      "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+      "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+      "eyes": "Textured natural hazel iris, sclera, clearcoat and bounded iris parallax",
+      "limitations": [
+        "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+        "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+      ]
+    },
+    "audioState": "not-created",
+    "currentJob": null,
+    "speech": {
+      "phase": "observer",
+      "connected": false,
+      "currentJob": null,
+      "text": "",
+      "error": "",
+      "audioState": "not-created",
+      "elapsed": 0,
+      "duration": 0,
+      "amplitude": 0,
+      "lipSync": "none",
+      "mouthCue": "X",
+      "audioArmed": false
+    },
+    "gatewayConnected": true,
+    "data": {
+      "mode": "track",
+      "websocket": "disabled",
+      "snapshotAt": 0,
+      "chartAt": 0,
+      "reportAt": 0,
+      "stale": true
+    }
+  },
+  "presenter": {
+    "ready": true,
+    "frameCount": 20,
+    "lastRenderedFrameAt": 1792840980107,
+    "lastFrameAt": 1792840980107,
+    "fps": 0.3,
+    "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "contextLost": false,
+    "renderer": "three.js/WebGL",
+    "width": 1280,
+    "height": 720,
+    "drawCalls": 156,
+    "triangles": 821376,
+    "avatar": "#AIR3 · PBR materials · body animation",
+    "jawMorphs": 0,
+    "camera": "presenter",
+    "avatarRig": {
+      "profile": "AIR3 source geometry with translation-retargeted animations",
+      "extendedSkinMeshes": 7,
+      "preservedSkinInfluences": 12,
+      "idleClips": 3,
+      "talkClips": 4,
+      "motion": "idle",
+      "facialLipSync": {
+        "ready": true,
+        "articulation": "bounded skeletal poses plus source corrective morphs",
+        "controls": 35,
+        "sourceCorrectiveCount": 29,
+        "mouthCue": "X",
+        "emotion": "neutral",
+        "emotionIntensity": 0.55,
+        "blink": 0,
+        "phoneticTiming": "none",
+        "rigLogicParity": false
+      },
+      "rootOrientationLocked": true,
+      "footContactAnchors": 126,
+      "materials": {
+        "profile": "air3-materials-2026-10-24-v3",
+        "surfaces": {
+          "skin-body": 1,
+          "cloth": 7,
+          "shoes": 1,
+          "skin-face": 1,
+          "mouth": 1,
+          "tear-film": 2,
+          "eyes": 2,
+          "lashes": 1,
+          "waterline": 1,
+          "hair": 1,
+          "brows": 1
+        },
+        "source": "Supplied Unreal 5.7.4 material parameters and textures",
+        "normalY": -1,
+        "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+        "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+        "eyes": "Textured natural hazel iris, sclera, clearcoat and bounded iris parallax",
+        "limitations": [
+          "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+          "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+        ]
+      },
+      "normalY": -1
+    },
+    "quality": {
+      "name": "balanced",
+      "maxPixelRatio": 1,
+      "shadowSize": 1024,
+      "reflectionSize": 512,
+      "reflectionInterval": 2,
+      "ao": false,
+      "bloom": true,
+      "msaa": 2,
+      "environmentSize": 256,
+      "requested": "balanced",
+      "softwareRenderer": true,
+      "selectionReason": "explicit selection"
+    },
+    "environment": {
+      "source": "authored linear HDR softbox scene",
+      "pmrem": true,
+      "resolution": 256
+    },
+    "reflections": {
+      "mode": "planar reflection",
+      "resolution": 512,
+      "updateEveryRenderedFrames": 2,
+      "softened": true
+    },
+    "postprocessing": {
+      "output": "linear half-float → ACES/sRGB",
+      "ao": false,
+      "bloom": "HDR threshold 1.50, strength 0.12",
+      "msaa": 2
+    },
+    "avatarMaterials": {
+      "profile": "air3-materials-2026-10-24-v3",
+      "surfaces": {
+        "skin-body": 1,
+        "cloth": 7,
+        "shoes": 1,
+        "skin-face": 1,
+        "mouth": 1,
+        "tear-film": 2,
+        "eyes": 2,
+        "lashes": 1,
+        "waterline": 1,
+        "hair": 1,
+        "brows": 1
+      },
+      "source": "Supplied Unreal 5.7.4 material parameters and textures",
+      "normalY": -1,
+      "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+      "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+      "eyes": "Textured natural hazel iris, sclera, clearcoat and bounded iris parallax",
+      "limitations": [
+        "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+        "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+      ]
+    },
+    "audioState": "not-created",
+    "currentJob": null,
+    "speech": {
+      "phase": "observer",
+      "connected": false,
+      "currentJob": null,
+      "text": "",
+      "error": "",
+      "audioState": "not-created",
+      "elapsed": 0,
+      "duration": 0,
+      "amplitude": 0,
+      "lipSync": "none",
+      "mouthCue": "X",
+      "audioArmed": false
+    },
+    "gatewayConnected": true,
+    "data": {
+      "mode": "track",
+      "websocket": "disabled",
+      "snapshotAt": 0,
+      "chartAt": 0,
+      "reportAt": 0,
+      "stale": true
+    }
+  },
+  "passed": false
+}

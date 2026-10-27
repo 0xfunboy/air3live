@@ -1,0 +1,101 @@
+{
+  "schema": "air3.footwear-assets.v1",
+  "generatedAt": "2026-10-25T03:13:50.405Z",
+  "converter": "meshoptimizer 0.24.0; attribute-aware simplification; no anatomy edits",
+  "assets": [
+    {
+      "id": "boot",
+      "source": "boot.glb",
+      "sourceBytes": 13914952,
+      "optimizedBytes": 3206212,
+      "trianglesBefore": 370422,
+      "trianglesAfter": 20373,
+      "sourceBounds": {
+        "min": [
+          -29.185129165649414,
+          -231.3743133544922,
+          -247.137451171875
+        ],
+        "max": [
+          63.19568634033203,
+          14.812556266784668,
+          -23.003894805908203
+        ]
+      },
+      "canonicalSize": [
+        0.10304215152319876,
+        0.2745984064288228,
+        0.25
+      ],
+      "meshes": [
+        {
+          "sourceMesh": 0,
+          "before": 370422,
+          "after": 20373,
+          "error": 0.0008801876101642847,
+          "proxy": false
+        }
+      ],
+      "license": {
+        "author": "Aquateknica (https://sketchfab.com/aquateknica)",
+        "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+        "source": "https://sketchfab.com/3d-models/boot-bddd4acad797461f9ac8156bbaf1c4bf",
+        "title": "Boot"
+      }
+    },
+    {
+      "id": "shoes-test",
+      "source": "shoes_test.glb",
+      "sourceBytes": 8108480,
+      "optimizedBytes": 1117592,
+      "trianglesBefore": 127862,
+      "trianglesAfter": 24700,
+      "sourceBounds": {
+        "min": [
+          -0.03910146653652191,
+          -0.022768909111618996,
+          -0.06180797889828682
+        ],
+        "max": [
+          0.06686783581972122,
+          0.2562677562236786,
+          0.11379890888929367
+        ]
+      },
+      "canonicalSize": [
+        0.15086154035772625,
+        0.3972461855722153,
+        0.25
+      ],
+      "meshes": [
+        {
+          "sourceMesh": 0,
+          "before": 111611,
+          "after": 13393,
+          "error": 0.00031970671261660755,
+          "proxy": true
+        },
+        {
+          "sourceMesh": 1,
+          "before": 660,
+          "after": 192,
+          "error": 0.008986766450107098,
+          "proxy": false
+        },
+        {
+          "sourceMesh": 4,
+          "before": 15591,
+          "after": 11115,
+          "error": 0.008874904364347458,
+          "proxy": false
+        }
+      ],
+      "license": {
+        "author": "Bente Aimee (https://sketchfab.com/bentaimee)",
+        "license": "CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)",
+        "source": "https://sketchfab.com/3d-models/shoes-test-8a6dfbba461f4e7fb6b9119092572f14",
+        "title": "Shoes test"
+      }
+    }
+  ]
+}

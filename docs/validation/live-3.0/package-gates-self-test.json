@@ -1,0 +1,20 @@
+{
+  "schema": "air3.package-gates-self-test.v1",
+  "at": "2026-10-27T03:51:23.584847+00:00",
+  "script": "tools/package_live_release.py",
+  "scriptSha256": "5e07349a6929ee68d1be163b7495bc75f46303950259e696ececf700bf32a794",
+  "syntaxPassed": true,
+  "exitCode": 0,
+  "selfTestPassed": true,
+  "fixtureFiles": 26,
+  "buildDriftRejected": true,
+  "postValidationDriftRejected": true,
+  "credentialAndRepositoryPathsExcluded": true,
+  "brandingAndSourceAssetsPreserved": true,
+  "dataTexturesPreserved": true,
+  "runtimeStateExcluded": true,
+  "validateOnlyRejectsExcludedRuntime": true,
+  "unlistedTemporaryDotfilesIgnored": true,
+  "checksumsAndCrcPassed": true,
+  "projectArchiveCreated": false
+}

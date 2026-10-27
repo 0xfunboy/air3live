@@ -1,0 +1,101 @@
+{
+  "schema": "air3.talk-shoulders-qa.v1",
+  "date": "2026-10-27T03:17:38.818Z",
+  "passed": true,
+  "sources": {
+    "public/assets/air3/models/AIR3-runtime.glb": {
+      "bytes": 21666344,
+      "sha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d"
+    },
+    "public/air3-avatar.mjs": {
+      "bytes": 19199,
+      "sha256": "e300f7fb43c2ae9511a5c70c02563a0f7716cff6cc95d89fb908c2804fe6aacf"
+    },
+    "public/air3-talk-shoulders.mjs": {
+      "bytes": 4884,
+      "sha256": "63e51c972a3ea54e55eb5733d3c4f7a685879a25db7eda52aa550e72f9f7298c"
+    },
+    "public/air3-stage-motion.mjs": {
+      "bytes": 25977,
+      "sha256": "6ec3ecc42171c939d573bcad17b8ae3a68a09fc476adeddd4ce723622bf17921"
+    },
+    "public/air3-locomotion.mjs": {
+      "bytes": 12227,
+      "sha256": "3ef84eb748d50db5676a35b01b99047cd18d5097f4490d292dc4903312b23899"
+    },
+    "test/fixtures/talk-shoulder-fixture.mjs": {
+      "bytes": 3950,
+      "sha256": "5e89dcaf14f5c95f77cc5593deebf3a7d541d1f87b948b36fdb705442dd799be"
+    },
+    "test/talk-shoulders.test.mjs": {
+      "bytes": 5082,
+      "sha256": "0da8fa47b8991f5fabd7db57dac2a932e0cbe41893a15345d58a41d70906a71c"
+    }
+  },
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "linux",
+    "arch": "x64",
+    "renderer": "none; actual delivered GLB skeleton and animation data"
+  },
+  "referenceClip": "MH_Idle01_UE frame 0",
+  "referenceNeckShoulderGapMetres": {
+    "l": 0.06754535637773773,
+    "r": 0.06819210997911207
+  },
+  "deltaSeconds": 0.016666666666666666,
+  "sampledFrames": 3731,
+  "clips": [
+    {
+      "name": "MH_Talk",
+      "duration": 32.93333435058594,
+      "samples": 1977,
+      "uncorrectedMaximumDropMetres": 0.01172475364225134,
+      "correctedMaximumDropMetres": 0.0071898693092431465,
+      "correctedMaximumRiseMetres": 0,
+      "worstOriginalTimeSeconds": 19.6
+    },
+    {
+      "name": "MH_Talk01",
+      "duration": 9.566666603088379,
+      "samples": 574,
+      "uncorrectedMaximumDropMetres": 0.04314789598527824,
+      "correctedMaximumDropMetres": 0.007999669335384318,
+      "correctedMaximumRiseMetres": 0.007617278046977427,
+      "worstOriginalTimeSeconds": 3
+    },
+    {
+      "name": "MH_Talk02",
+      "duration": 9.033333778381348,
+      "samples": 543,
+      "uncorrectedMaximumDropMetres": 0.0284184759639019,
+      "correctedMaximumDropMetres": 0.007986869942799402,
+      "correctedMaximumRiseMetres": 0.004668367758056791,
+      "worstOriginalTimeSeconds": 4.6
+    },
+    {
+      "name": "MH_Talk03",
+      "duration": 10.600000381469727,
+      "samples": 637,
+      "uncorrectedMaximumDropMetres": 0.03276668149322548,
+      "correctedMaximumDropMetres": 0.007995570012708564,
+      "correctedMaximumRiseMetres": 0.007368374848258696,
+      "worstOriginalTimeSeconds": 6.366666666666666
+    }
+  ],
+  "metrics": {
+    "maximumUncorrectedShoulderDropMetres": 0.04314789598527824,
+    "maximumCorrectedShoulderDropMetres": 0.007999669335384318,
+    "maximumCorrectedShoulderRiseMetres": 0.007617278046977427,
+    "maximumArmOrientationErrorRadians": 8.940696716308595e-8,
+    "maximumBonePositionDifferenceMetres": 0,
+    "maximumBoneScaleDifference": 0,
+    "maximumLowerBodyPositionDifferenceMetres": 0
+  },
+  "limitations": [
+    "Deterministic 60 Hz sampling is not a GPU performance benchmark.",
+    "The 8 mm envelope applies at full talk weight, before optional stage locomotion/pointing layers.",
+    "Shoulder drop is the upper-arm attachment height relative to the neck in avatar-local metres.",
+    "This is skeletal pose QA; source browser views and compiled preview QA verify rendered appearance separately."
+  ]
+}

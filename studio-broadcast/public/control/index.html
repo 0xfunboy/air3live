@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+  <title>#AIR3 · Regia live</title>
+  <link rel="icon" href="/assets/air3/branding/air3-emblem.png"><link rel="stylesheet" href="/studio/control/style.css">
+  <script type="module" src="/studio/build/control.js"></script>
+</head>
+<body>
+  <header class="masthead"><a class="brand" href="/control"><img src="/assets/air3/branding/air3-lockup.png" alt="#AIR3"><span>LIVE CONTROL ROOM<small>Studio indipendente · virtual presenter</small></span></a>
+    <div class="session-tools"><span id="connection" class="connection">Connessione…</span><button id="logout" class="text-button" hidden>Esci</button></div></header>
+  <main>
+    <section id="login-panel" class="login panel" hidden>
+      <p class="eyebrow">ACCESSO ALLA REGIA</p><h1>Il tuo studio, pronto per la diretta.</h1>
+      <p>Su questo computer puoi entrare direttamente. Per un server remoto usa la chiave operatore presente nel file di configurazione.</p>
+      <form id="login-form"><label>Chiave operatore<input id="operator-token" type="password" autocomplete="current-password" maxlength="256"></label><button class="primary">Entra nella regia</button></form>
+      <button id="local-login" class="secondary">Apri sul computer locale</button>
+    </section>
+    <div id="control-room" hidden>
+      <section class="broadcast-bar"><div><p class="eyebrow">PROGRAMMA</p><h1><span id="phase-dot" class="phase-dot"></span><span id="phase">Studio offline</span></h1><p id="destination-summary" class="muted">Configura una destinazione o registra una prova locale.</p></div>
+        <div class="live-actions"><button id="record" class="secondary">Registra prova</button><button id="go-live" class="live-button">● LIVE</button><button id="stop" class="stop-button" disabled>■ Arresta</button></div></section>
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <section class="program-grid">
+        <article class="program-panel panel"><div class="panel-header"><span class="eyebrow">USCITA PROGRAMMA</span><span id="preview-age" class="muted">Anteprima del renderer</span></div>
+          <div class="program-view"><img id="program-preview" alt="Anteprima del programma attualmente codificato" hidden><div id="preview-placeholder"><img src="/assets/air3/branding/air3-emblem.png" alt=""><h2>Pronta quando lo sei tu.</h2><p>Avvia una registrazione locale per verificare scena, titoli e audio.</p><a href="/studio" target="_blank" rel="noopener">Apri lo studio interattivo ↗</a></div></div>
+          <div class="metrics"><div><span>RENDER</span><strong id="render-fps">—</strong></div><div><span>ENCODER</span><strong id="encode-fps">—</strong></div><div><span>USCITA</span><strong id="output-rate">—</strong></div><div><span>DURATA</span><strong id="elapsed">00:00</strong></div></div>
+          <p class="preview-note">L’anteprima si aggiorna ogni pochi secondi. La fluidità effettiva è indicata da RENDER; il valore dell’encoder può includere fotogrammi duplicati.</p>
+        </article>
+        <aside class="scene-panel panel"><p class="eyebrow">PRESENTATRICE E REGIA</p><h2>Regia In Scena</h2>
+          <form id="scene-form">
+            <label>Inquadratura<select id="scene-camera"><option value="auto">Regia automatica (alterna inquadrature)</option><option value="wide">Campo largo studio</option><option value="presenter">Primo piano presentatrice</option><option value="screens">Schermi e Wallboard</option></select></label>
+            <label>Espressione facciale<select id="scene-emotion"><option value="happy">Lieve sorriso (naturale)</option><option value="warm">Accogliente e aperta</option><option value="focused">Concentrata / Analisi mercati</option><option value="surprised">Lieve stupore (breaking news)</option><option value="neutral">Neutra</option><option value="sad">Leggermente pensierosa</option><option value="concerned">Attenta / Prudente</option></select></label>
+            <label class="range-label">Intensità espressiva <output id="scene-intensity-output">100%</output><input id="scene-intensity" type="range" min="0" max="1" step="0.05" value="1"></label>
+            <div class="checks"><label><input id="scene-eye" type="checkbox" checked>Sguardo attivo verso telecamera</label><label><input id="scene-roaming" type="checkbox">Movimenti e posture naturali</label></div>
+            <button class="primary wide">Applica alla scena</button>
+          </form>
+          <div class="stage-actions">
+            <label>Presenta un monitor
+              <select id="stage-target">
+                <option value="center">Monitor Centrale · AIRdApp Wallboard</option>
+                <option value="right">Monitor Destro · Heatmap Liquidazioni</option>
+                <option value="left">Monitor Sinistro · Mercato Live</option>
+              </select>
+            </label>
+            <div class="two-buttons"><button id="stage-present">Vai al monitor</button><button id="stage-home">Torna al centro</button></div>
+          </div>
+          <button id="quick-voice-btn" type="button" class="accent-button wide" style="margin-top:14px">▶ Test Rapido Voce & Lip-Sync</button>
+        </aside>
+      </section>
+      <nav class="tabs" aria-label="Sezioni della regia"><button data-tab="stream" aria-current="page">01 · Destinazione 24/7</button><button data-tab="titles">02 · Titoli & Ticker</button><button data-tab="voice">03 · Voce AI</button><button data-tab="market">04 · Wallboard AIRdApp</button><button data-tab="chat">05 · Chat</button><button data-tab="diagnostics">06 · Verifiche & File</button></nav>
+      <section id="tab-stream" class="tab-content panel">
+        <div class="section-heading"><div><p class="eyebrow">TRASMISSIONE 24/7 · LIVE STREAMING</p><h2>Una sola uscita. Diretta continua perenne.</h2><p>Attiva la live una volta e lasciala attiva per sempre. In caso di calo di connessione, micro-drop o riavvio del server, il sistema di auto-recovery watchdog interviene e ristabilisce autonomamente la diretta senza necessità di intervento umano.</p></div><a class="external-link" href="https://app.restream.io/" target="_blank" rel="noopener">Apri Restream ↗</a></div>
+        <form id="stream-form" class="form-grid">
+          <label>Piattaforma di trasmissione<select id="stream-provider"><option value="restream">Restream.io (Multi-streaming automatico)</option><option value="twitch">Twitch diretto</option><option value="custom">Server RTMP personalizzato (YouTube, Kick, X, ecc.)</option></select></label>
+          <label class="span-2">URL Server RTMP(S)<input id="stream-server" type="text" placeholder="Incolla l’URL server (es. rtmps://live.restream.io/live)" maxlength="2048" autocomplete="off"></label>
+          <label class="span-2">Stream key <small id="stream-key-state">Non configurata</small><input id="stream-key" type="password" placeholder="Incolla la stream key della piattaforma" maxlength="1024" autocomplete="new-password"></label>
+          <label>Profilo video<select id="stream-profile"><option value="720p30">1280 × 720 · 30 fps (Basso consumo)</option><option value="1080p30" selected>1920 × 1080 · 30 fps (Consigliato Broadcast)</option><option value="1080p60">1920 × 1080 · 60 fps (Massima fluidità)</option></select></label>
+          <label>Bitrate video · kbit/s<input id="stream-bitrate" type="number" min="500" max="20000" step="100" value="4500"></label>
+          <label>Encoder Hardware<select id="stream-encoder"><option value="auto">Automatico (Rileva GPU NVIDIA / Intel Arc)</option><option value="h264_nvenc">NVIDIA NVENC (Massima efficienza)</option><option value="h264_qsv">Intel Quick Sync (Arc / Core Ultra)</option><option value="libx264">CPU Software · x264</option></select></label>
+          <label>Qualità 3D Studio<select id="stream-quality"><option value="high" selected>Alta fedeltà (Riflessi speculari & AO)</option><option value="balanced">Bilanciata</option><option value="auto">Adattiva automatica</option><option value="software">Compatibilità software</option></select></label>
+          <label class="check span-3"><input id="stream-auto-recovery" type="checkbox" checked><strong>Auto-Recovery 24/7</strong> — Watchdog permanente: riavvia automaticamente la diretta in caso di disconnessione o errore encoder per mantenere la live sempre attiva senza controllo umano.</label>
+          <div class="form-actions span-3"><button class="primary">Salva configurazione streaming</button><button id="preflight" type="button">Collaudo encoder</button><button id="twitch-test" type="button" hidden>Test banda Twitch</button><span class="muted">H.264 + AAC stereo · Keyframe ogni 2.0s</span></div>
+        </form><p class="help">Le chiavi restano protette nel servizio locale. Lasciare il campo vuoto preserva la chiave salvata.</p>
+      </section>
+      <section id="tab-titles" class="tab-content panel" hidden>
+        <div class="section-heading"><div><p class="eyebrow">TITOLAZIONE EDITORIALE</p><h2>Grafica sovraimpressa e Breaking News Ticker.</h2><p>Titolo principale, sottotitolo e barra scorrevole broadcast. Aggiornabili sia manualmente che in modo completamente autonomo da agenti AI (ElizaOS, AIRdApp Copilot) tramite REST API.</p></div></div>
+        <form id="titles-form" class="form-grid"><label>Etichetta canale<input id="title-label" maxlength="32" value="#AIR3 LIVE"></label><label class="span-2">Titolo principale<input id="title-main" maxlength="120" placeholder="Il punto sui mercati crypto"></label><label class="span-3">Sottotitolo / Notizia in primo piano<input id="title-subtitle" maxlength="220" placeholder="Analisi dei flussi di liquidità, segnali e posizioni aperte"></label><label class="span-3">Guida scorrevole Ticker · una notizia per riga<textarea id="title-ticker" rows="4" placeholder="Inserisci le notizie scorrevoli in tempo reale"></textarea></label><label>Velocità scorrimento · px/s<input id="title-speed" type="number" min="20" max="160" value="65"></label><label>Durata permanenza · secondi (0 = perenne)<input id="title-ttl" type="number" min="0" max="86400" value="0"></label><label class="check"><input id="title-enabled" type="checkbox" checked>Mostra grafica in onda</label><div class="form-actions span-3"><button class="primary">Pubblica titolazione</button><button id="titles-clear" type="button">Rimuovi grafica</button></div></form>
+        <p class="endpoint">Endpoint REST: <code>POST /api/live/titles</code> (pilotabile da ElizaOS o script esterni con producer token).</p>
+      </section>
+      <section id="tab-voice" class="tab-content panel" hidden>
+        <div class="section-heading"><div><p class="eyebrow">NARRAZIONE VOCALE & LIP-SYNC FONETICO</p><h2>Sintesi vocale AI sincronizzata alla bocca in tempo reale.</h2><p>Compatibile con qualsiasi endpoint OpenAI audio/speech (Kokoro, ElevenLabs, OpenAI). L'audio viene allineato foneticamente ai visemi del modello 3D AIR3 tramite il motore Rhubarb LipSync.</p></div></div>
+        <form id="voice-settings-form" class="form-grid"><label class="span-2">URL Server TTS (/v1)<input id="tts-url" type="url" required></label><label>Modello voce<input id="tts-model" maxlength="160" required></label><label>Voce italiana<input id="tts-it" maxlength="160" required></label><label>Voce inglese<input id="tts-en" maxlength="160" required></label><label>Velocità lettura<input id="tts-speed" type="number" min="0.5" max="2" step="0.05" value="1"></label><label class="span-2">API Key facoltativa<input id="tts-key" type="password" autocomplete="new-password" placeholder="Vuoto conserva la chiave salvata"></label><div class="form-actions"><button class="primary">Salva impostazioni voce</button></div></form>
+        <form id="narration-form" class="narration-form"><label>Invia discorso da leggere alla presentatrice<textarea id="narration-text" rows="3" maxlength="8000" placeholder="Scrivi il testo che la presentatrice deve pronunciare in diretta." required></textarea></label><div class="form-actions"><label>Lingua discorso<select id="narration-language"><option value="it">Italiano</option><option value="en">English</option></select></label><button class="primary">Metti in coda voce</button><button id="narration-cancel" type="button" disabled>Annulla lettura</button><button id="reference-audio" type="button">Test audio incluso</button></div><p id="narration-status" class="muted">Le letture inviate da ElizaOS o dall'operatore vengono riprodotte in sequenza FIFO con sincronizzazione visemi.</p></form>
+        <p class="endpoint">Endpoint REST: <code>POST /api/live/narrations</code> · <code>{"text": "...", "language": "it"}</code></p>
+      </section>
+      <section id="tab-market" class="tab-content panel" hidden>
+        <div class="section-heading"><div><p class="eyebrow">MONITOR DELLO STUDIO & FEED WALLBOARD</p><h2>Monitor Centrale: AIRdApp Wallboard (https://airdapp.airewardrop.xyz/wallboard)</h2><p>Il monitor centrale è sincronizzato in tempo reale con la Wallboard ufficiale di AIRdApp. Il monitor destro proietta la mappa di calore delle liquidazioni; il monitor sinistro traccia le quotazioni spot e futures.</p></div></div>
+        <form id="market-form" class="form-grid">
+          <label>Fonte Wallboard centrale<select id="market-wallpanel"><option value="external" selected>AIRdApp Wallboard ufficiale (https://airdapp.airewardrop.xyz/wallboard)</option><option value="market">Panoramica mercato pubblica sintetica</option></select></label>
+          <label>Provider Heatmap destra<select id="market-provider"><option value="binance">Binance Futures (Liquidazioni reali osservate · Gratuito)</option><option value="coinglass">CoinGlass Model3 (Richiede API Key)</option><option value="demo">Demo di prova</option></select></label>
+          <label>Asset di riferimento<select id="market-symbol"><option>BTCUSDT</option><option>ETHUSDT</option><option>SOLUSDT</option></select></label>
+          <label>Intervallo storico<select id="market-range"><option value="12h">12 ore</option><option value="24h">24 ore</option><option value="3d">3 giorni · CoinGlass</option><option value="7d">7 giorni · CoinGlass</option></select></label>
+          <label>CoinGlass API Key<input id="market-key" type="password" autocomplete="new-password" placeholder="Necessario solo per CoinGlass"></label>
+          <label class="check"><input id="market-enabled" type="checkbox" checked>Flussi dati monitor attivi</label>
+          <div class="form-actions span-3"><button class="primary">Aggiorna monitor di studio</button><span id="market-status" class="muted"></span></div>
+        </form>
+        <p class="endpoint">Wallpanel API: <code>POST /api/live/wallpanel</code> · Riceve aggiornamenti da AIRdApp Wallboard o feed esterni.</p>
+      </section>
+      <section id="tab-chat" class="tab-content panel" hidden>
+        <div class="section-heading"><div><p class="eyebrow">CONVERSAZIONE</p><h2>La chat Twitch, accanto alla regia.</h2><p>Funziona anche mentre il video passa da Restream. Per la lettura Twitch occorre autorizzare un’app Twitch; il flusso video usa separatamente la stream key.</p></div><span id="chat-state" class="pill">Non collegata</span></div>
+        <form id="chat-form" class="form-grid"><label>Canale Twitch<input id="chat-channel" placeholder="nomecanale" maxlength="25" autocomplete="off"></label><label>Client ID dell’app Twitch<input id="chat-client" maxlength="128" autocomplete="off"></label><label>Client secret<input id="chat-secret" type="password" maxlength="1024" autocomplete="new-password" placeholder="Vuoto mantiene quello salvato"></label><label class="check"><input id="chat-enabled" type="checkbox">Leggi la chat</label><div class="form-actions span-2"><button class="primary">Salva chat</button><button id="twitch-authorize" type="button">Collega con Twitch</button><button id="twitch-disconnect" type="button">Scollega</button></div></form>
+        <p class="help">Registra l’app nella <a href="https://dev.twitch.tv/console/apps" target="_blank" rel="noopener">console Twitch</a> con questo redirect: <code id="twitch-redirect"></code>. Consenso richiesto: lettura della chat.</p>
+        <div id="chat-messages" class="chat-messages" aria-live="polite"><p class="muted">I messaggi compariranno qui. Puoi scegliere manualmente quali trasformare in un titolo.</p></div>
+        <p class="endpoint">Altre chat o bridge Restream: <code>POST /api/live/chat/ingest</code>. I messaggi non avviano letture o comandi automaticamente.</p>
+      </section>
+      <section id="tab-diagnostics" class="tab-content panel" hidden><div class="section-heading"><div><p class="eyebrow">VERIFICA DEL FLUSSO</p><h2>Registrazioni e stato.</h2><p>Le registrazioni locali permettono di controllare l’uscita prima di usare una destinazione pubblica.</p></div><button id="reload-recordings">Aggiorna registrazioni</button></div><div id="recordings" class="recordings"></div><h3>Eventi della sessione</h3><pre id="events" class="event-log"></pre></section>
+      <footer> #AIR3 LIVE · renderer autonomo, voce su clock audio e controllo via API. <a href="/studio/preview/index.html" target="_blank" rel="noopener">Anteprima del personaggio ↗</a></footer>
+    </div>
+  </main>
+</body>
+</html>

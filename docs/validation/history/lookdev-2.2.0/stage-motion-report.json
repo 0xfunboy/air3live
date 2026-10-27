@@ -1,0 +1,511 @@
+{
+  "schema": "airewardrop.stage-motion-mocap-qa.v2",
+  "date": "2026-10-25T03:38:55.292Z",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "node": "v24.22.1",
+    "graphicalRenderer": "none; numerical skeleton test"
+  },
+  "sources": {
+    "public/assets/air3/models/AIR3-runtime.glb": {
+      "bytes": 21666344,
+      "sha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d"
+    },
+    "public/air3-stage-motion.mjs": {
+      "bytes": 21333,
+      "sha256": "d5567c84be2ae7a53413edabaf25af0a3823f1554dee3634334241fd65303236"
+    },
+    "public/air3-locomotion.mjs": {
+      "bytes": 7744,
+      "sha256": "f74716da0db6c3ff6e79c206e625379fe2649df476dc4f25a8ab28ce67c677e4"
+    },
+    "public/assets/air3/motion/accad-female1.mjs": {
+      "bytes": 503685,
+      "sha256": "c2dde49358f33b11913cd959e1ff2bc6af9f2931cc05e65442de202806e10ad1"
+    },
+    "../tools/retarget_accad_motion.py": {
+      "bytes": 12049,
+      "sha256": "64046a63d32b2774d8ed40ca3b0c68184a75cbb9988f6426e2e3a1c61b3ab538"
+    },
+    "public/air3-avatar.mjs": {
+      "bytes": 18558,
+      "sha256": "59260a2fb70366dc29ffb21159db2bd69ff2e724e78cb29d91c87c501580d1af"
+    },
+    "public/air3-hair.mjs": {
+      "bytes": 22339,
+      "sha256": "64d6e989424bc9eb9211a58139079ba5f5219d7841f176ecd800c78bd67dcafa"
+    },
+    "public/studio-scene.mjs": {
+      "bytes": 32561,
+      "sha256": "6e13d25c87e90586ed43ee64e5e08991323c01c3e0e65baa503d118c936713c4"
+    }
+  },
+  "motionCapture": true,
+  "captureClips": [
+    {
+      "id": "stand",
+      "name": "ACCAD_Stand_Female",
+      "label": "Fermo — cattura umana",
+      "source": "Female1_A01_Stand.bvh",
+      "duration": 2.999997,
+      "motionCapture": true,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "id": "start",
+      "name": "ACCAD_Start_Female",
+      "label": "Partenza — cattura umana",
+      "source": "Female1_B01_StandToWalk.bvh",
+      "duration": 1.9333314,
+      "motionCapture": true,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "id": "walk",
+      "name": "ACCAD_Walk_Female",
+      "label": "Camminata — cattura umana",
+      "source": "Female1_B03_Walk1.bvh",
+      "duration": 1.2333321,
+      "motionCapture": true,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "id": "stop",
+      "name": "ACCAD_Stop_Female",
+      "label": "Arresto — cattura umana",
+      "source": "Female1_B02_WalkToStandT2.bvh",
+      "duration": 1.8666648,
+      "motionCapture": true,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "id": "turnLeft",
+      "name": "ACCAD_TurnLeft_Female",
+      "label": "Svolta sinistra — cattura umana",
+      "source": "Female1_B09_WalkTurnLeft90.bvh",
+      "duration": 1.2999987,
+      "motionCapture": true,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "id": "turnRight",
+      "name": "ACCAD_TurnRight_Female",
+      "label": "Svolta destra — cattura umana",
+      "source": "Female1_B12_WalkTurnRight90.bvh",
+      "duration": 1.2999987,
+      "motionCapture": true,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "id": "turnAround",
+      "name": "ACCAD_TurnAround_Female",
+      "label": "Inversione — cattura umana",
+      "source": "Female1_B15_WalkTurnAround180.bvh",
+      "duration": 2.0333313,
+      "motionCapture": true,
+      "license": "CC-BY-3.0"
+    }
+  ],
+  "captureClipsExercised": [
+    "turnRight",
+    "start",
+    "walk",
+    "stop",
+    "turnLeft",
+    "stand",
+    "turnAround"
+  ],
+  "provenance": {
+    "schema": "air3.accad-retarget.v1",
+    "targetSha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d",
+    "sourceUrl": "https://accad.osu.edu/research/motion-lab/mocap-system-and-data",
+    "license": "https://creativecommons.org/licenses/by/3.0/",
+    "archiveUrl": "https://accad.osu.edu/sites/accad.osu.edu/files/Female1_bvh.zip",
+    "archiveSha256": "84543297a24fe9900449675837b5b7758c5208d0f56b699d10a3eb362a46530a",
+    "targetBones": [
+      "pelvis",
+      "spine_01",
+      "spine_02",
+      "spine_03",
+      "spine_04",
+      "spine_05",
+      "neck_01",
+      "neck_02",
+      "head",
+      "clavicle_l",
+      "upperarm_l",
+      "lowerarm_l",
+      "hand_l",
+      "thigh_l",
+      "calf_l",
+      "foot_l",
+      "ball_l",
+      "clavicle_r",
+      "upperarm_r",
+      "lowerarm_r",
+      "hand_r",
+      "thigh_r",
+      "calf_r",
+      "foot_r",
+      "ball_r"
+    ],
+    "legScale": 1.0310133284844984,
+    "method": "World-space bind-axis retarget; source skeletal rotations; locomotion yaw separated; optical floor drift correction; distributed smooth loop closure; no synthetic gait",
+    "clips": [
+      {
+        "id": "stand",
+        "source": "Female1_A01_Stand.bvh",
+        "sha256": "9cbbb4749b42922503fb24997d53f60d6c36b62f6c00a12d3c8a1a9cfd5987d4",
+        "frames": [
+          0,
+          90
+        ],
+        "samples": 91,
+        "duration": 2.999997,
+        "rootDistance": 0,
+        "meanSpeed": 0
+      },
+      {
+        "id": "start",
+        "source": "Female1_B01_StandToWalk.bvh",
+        "sha256": "457380654d973564439a1fb356d0d9b3b40b7fef050e9acee7335c5a6fe9ca99",
+        "frames": [
+          20,
+          78
+        ],
+        "samples": 59,
+        "duration": 1.9333314,
+        "rootDistance": 0.95146,
+        "meanSpeed": 0.48434
+      },
+      {
+        "id": "walk",
+        "source": "Female1_B03_Walk1.bvh",
+        "sha256": "10acc687217a734ed2cb06e4f8d8e842a86a0f5f6946c03db7a93f07eba5edd3",
+        "frames": [
+          92,
+          129
+        ],
+        "samples": 38,
+        "duration": 1.2333321,
+        "rootDistance": 1.37806,
+        "meanSpeed": 1.11993
+      },
+      {
+        "id": "stop",
+        "source": "Female1_B02_WalkToStandT2.bvh",
+        "sha256": "39860644791f5731aaf8ab5613a4aae642f6c0a0bafe472bb3786d41be038e10",
+        "frames": [
+          91,
+          147
+        ],
+        "samples": 57,
+        "duration": 1.8666648,
+        "rootDistance": 0.59983,
+        "meanSpeed": 0.32872
+      },
+      {
+        "id": "turnLeft",
+        "source": "Female1_B09_WalkTurnLeft90.bvh",
+        "sha256": "9930bf3df5f800fae554d235c9f077cb6427b6e06e18197a95b2e74c662f2b92",
+        "frames": [
+          80,
+          119
+        ],
+        "samples": 40,
+        "duration": 1.2999987,
+        "rootDistance": 1.15272,
+        "meanSpeed": 0.886
+      },
+      {
+        "id": "turnRight",
+        "source": "Female1_B12_WalkTurnRight90.bvh",
+        "sha256": "64ed9566a13ea24a89118fc94eaff139ddbf9ee3adc8b8b97452b3e07d1ac21a",
+        "frames": [
+          106,
+          145
+        ],
+        "samples": 40,
+        "duration": 1.2999987,
+        "rootDistance": 1.26607,
+        "meanSpeed": 0.96751
+      },
+      {
+        "id": "turnAround",
+        "source": "Female1_B15_WalkTurnAround180.bvh",
+        "sha256": "850f4a24e5aae2c8d6a22f4d03319c00a968858e63b53651ee3cd3209417e8d0",
+        "frames": [
+          137,
+          198
+        ],
+        "samples": 62,
+        "duration": 2.0333313,
+        "rootDistance": 0.97886,
+        "meanSpeed": 0.48222
+      }
+    ],
+    "outputBytes": 503685,
+    "outputSha256": "c2dde49358f33b11913cd959e1ff2bc6af9f2931cc05e65442de202806e10ad1"
+  },
+  "metricDefinitions": {
+    "maximumPlantedAnkleErrorMetres": "Error from the IK target, separate from support-anchor drift",
+    "maximumSupportAnchorDriftMetres": "Horizontal displacement of the grounded heel/forefoot marker from its original stance anchor",
+    "maximumPlantedPlanarFootYawOffsetDegrees": "True horizontal foot-to-ball heading relative to avatar route heading; recorded turns can exceed 45 degrees",
+    "maximumCapturedFootRotationErrorDegrees": "Rotation introduced by IK relative to the recorded foot pose; includes heel/toe roll",
+    "reversedKneeSamples": "Knee bend opposite the pole obtained from the recorded pose, not relative to the camera or global forward"
+  },
+  "avatarFit": {
+    "method": "precise traverseVisible base-avatar bounds with the preserved legacy hairstyle; attachment selection is tested separately in browser QA",
+    "sourceVisibleBounds": {
+      "min": [
+        -0.23215181772818697,
+        -0.03498288817640652,
+        -0.163472325943774
+      ],
+      "max": [
+        0.2864436617427546,
+        1.6723332275562068,
+        0.25287362912060907
+      ]
+    },
+    "sourceVisibleHeightMetres": 1.7073161157326133,
+    "uniformScale": 1.0308577209468792,
+    "requestedVisibleHeightMetres": 1.76,
+    "hairstyle": {
+      "profile": "air3-short-ponytail-2026-10-24-v7",
+      "legacyBunHidden": true,
+      "scalpFit": "copied source scalp cards settled toward scanned cranial geometry; bun removed",
+      "style": "short rear ponytail with feathered hairline and shoulder wisps",
+      "meshes": 4,
+      "triangles": 59282,
+      "boundTo": "body__head",
+      "secondaryMotion": "bounded critically damped strand lag",
+      "sourceGeometryModified": false,
+      "hybridSourceCards": true,
+      "geometricFramingFibres": 112,
+      "fibreTriangles": 14784,
+      "collisions": false
+    }
+  },
+  "deltaSeconds": 0.04,
+  "wallTimeMilliseconds": 3508.667073,
+  "metrics": {
+    "simulatedFrames": 2120,
+    "maximumSwingLiftMetres": 0.14726140562809242,
+    "maximumPlantedAnkleErrorMetres": 0.00019540132500591817,
+    "maximumPlantedPlanarFootYawOffsetDegrees": 69.26250106943216,
+    "maximumCapturedFootRotationErrorDegrees": 0.030630458569401012,
+    "maximumSupportAnchorDriftMetres": 0.011750037191189814,
+    "maximumPlantedDisplacementPerFrameMetres": 0.011750037191189801,
+    "maximumPelvisLoweringMetres": 0.019999999999999997,
+    "minimumDeskClearanceMetres": 1.0438772902971005,
+    "reversedKneeSamples": 0,
+    "nonfiniteTransforms": 0
+  },
+  "journeys": [
+    {
+      "target": "left",
+      "outwardSimulatedSeconds": 10.76,
+      "returnSimulatedSeconds": 12,
+      "arrived": true,
+      "returned": true,
+      "sourceGroundingRestored": true,
+      "presentation": {
+        "position": [
+          -2.5,
+          0.005,
+          -0.85
+        ],
+        "pointingSide": "r",
+        "pointWeight": 0.819995875026402,
+        "minimumFlexMetres": 0,
+        "resolvedPelvisDropMetres": 0.0028622145686059137,
+        "kneeFlexionDegrees": {
+          "l": 11.478621848476678,
+          "r": 12.328416626259951
+        },
+        "wristRotationFromInitialPoseDegrees": 41.20259685327263
+      }
+    },
+    {
+      "target": "center",
+      "outwardSimulatedSeconds": 10.8,
+      "returnSimulatedSeconds": 6.72,
+      "arrived": true,
+      "returned": true,
+      "sourceGroundingRestored": true,
+      "presentation": {
+        "position": [
+          -0.8,
+          0.005,
+          -1.85
+        ],
+        "pointingSide": "l",
+        "pointWeight": 0.819995875026402,
+        "minimumFlexMetres": 0,
+        "resolvedPelvisDropMetres": 0.0028622145686059137,
+        "kneeFlexionDegrees": {
+          "l": 11.478621848476678,
+          "r": 12.328416626260008
+        },
+        "wristRotationFromInitialPoseDegrees": 37.88131779599922
+      }
+    },
+    {
+      "target": "right",
+      "outwardSimulatedSeconds": 10.24,
+      "returnSimulatedSeconds": 11.200000000000001,
+      "arrived": true,
+      "returned": true,
+      "sourceGroundingRestored": true,
+      "presentation": {
+        "position": [
+          2.45,
+          0.005,
+          -0.85
+        ],
+        "pointingSide": "l",
+        "pointWeight": 0.819995875026402,
+        "minimumFlexMetres": 0,
+        "resolvedPelvisDropMetres": 0.0028622145686059137,
+        "kneeFlexionDegrees": {
+          "l": 11.478621848476621,
+          "r": 12.328416626260065
+        },
+        "wristRotationFromInitialPoseDegrees": 45.12508259313309
+      }
+    },
+    {
+      "target": "cancel-right-return-home",
+      "returned": true,
+      "returnSimulatedSeconds": 7.08
+    }
+  ],
+  "speechSwitches": [
+    {
+      "simulatedFrame": 130,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk"
+    },
+    {
+      "simulatedFrame": 200,
+      "speech": "idle",
+      "stagePhase": "turning",
+      "clip": "MH_Idle01_UE"
+    },
+    {
+      "simulatedFrame": 350,
+      "speech": "playing",
+      "stagePhase": "turning",
+      "clip": "MH_Talk01"
+    },
+    {
+      "simulatedFrame": 420,
+      "speech": "idle",
+      "stagePhase": "turning",
+      "clip": "MH_Idle02_UE"
+    },
+    {
+      "simulatedFrame": 570,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk02"
+    },
+    {
+      "simulatedFrame": 640,
+      "speech": "idle",
+      "stagePhase": "home",
+      "clip": "MH_Idle03_UE"
+    },
+    {
+      "simulatedFrame": 790,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk03"
+    },
+    {
+      "simulatedFrame": 860,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle01_UE"
+    },
+    {
+      "simulatedFrame": 1010,
+      "speech": "playing",
+      "stagePhase": "turning",
+      "clip": "MH_Talk"
+    },
+    {
+      "simulatedFrame": 1080,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle02_UE"
+    },
+    {
+      "simulatedFrame": 1230,
+      "speech": "playing",
+      "stagePhase": "turning",
+      "clip": "MH_Talk01"
+    },
+    {
+      "simulatedFrame": 1300,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle03_UE"
+    },
+    {
+      "simulatedFrame": 1450,
+      "speech": "playing",
+      "stagePhase": "presenting",
+      "clip": "MH_Talk02"
+    },
+    {
+      "simulatedFrame": 1520,
+      "speech": "idle",
+      "stagePhase": "turning",
+      "clip": "MH_Idle01_UE"
+    },
+    {
+      "simulatedFrame": 1670,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk03"
+    },
+    {
+      "simulatedFrame": 1740,
+      "speech": "idle",
+      "stagePhase": "walking",
+      "clip": "MH_Idle02_UE"
+    },
+    {
+      "simulatedFrame": 1890,
+      "speech": "playing",
+      "stagePhase": "walking",
+      "clip": "MH_Talk"
+    },
+    {
+      "simulatedFrame": 1960,
+      "speech": "idle",
+      "stagePhase": "turning",
+      "clip": "MH_Idle03_UE"
+    },
+    {
+      "simulatedFrame": 2110,
+      "speech": "playing",
+      "stagePhase": "turning",
+      "clip": "MH_Talk01"
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Fixed simulation time; not a realtime performance measurement",
+    "Speech phase/cue events exercise body clip transitions; no audio is rendered in this numerical test",
+    "No cloth, hair collision or full sole contact physics",
+    "Uses actual GLB bones, skin and base visible-bounds scale; raster textures replaced only for numerical Node execution",
+    "Source turns are spatially shortened for the studio and the pelvis has at most 20mm of reach correction; this is not Unreal motion matching or perfect contact physics",
+    "Source contact labels require a grounded heel/forefoot marker below 12cm/s; unlabelled rolling/transitional frames are not asserted as fixed contacts"
+  ],
+  "error": null
+}

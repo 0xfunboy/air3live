@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-24T17:00:39.172Z",
+  "source": "source preview; pure WebGL captures; matching V6 cameras",
+  "quality": "balanced",
+  "browser": "Chrome/148.0.7778.97",
+  "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "errors": [],
+  "failedRequests": [],
+  "diagnostics": {
+    "profile": "air3-short-ponytail-2026-10-24-v7",
+    "legacyBunHidden": true,
+    "scalpFit": "copied source scalp cards settled toward scanned cranial geometry; bun removed",
+    "style": "short rear ponytail with feathered hairline and shoulder wisps",
+    "meshes": 4,
+    "triangles": 59282,
+    "boundTo": "body__head",
+    "secondaryMotion": "bounded critically damped strand lag",
+    "sourceGeometryModified": false,
+    "hybridSourceCards": true,
+    "geometricFramingFibres": 112,
+    "fibreTriangles": 14784,
+    "collisions": false
+  },
+  "passed": true
+}

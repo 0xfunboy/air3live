@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Local Environment and Credentials
+.env
+*.env
+!.env.example
+.browser-path
+studio-broadcast/.browser-path
+studio-broadcast/.env
+
+# Local Runtime Data and Cache
+.cache/
+.tmp/
+studio-broadcast/.tmp/
+data/
+studio-broadcast/data/
+
+# Video Recordings and Temporary Media
+recordings/
+studio-broadcast/recordings/
+*.mkv
+*.mp4
+*.wav
+*.part-*
+
+# Logs
+*.log
+*.log.*
+live-session.log*
+
+# Backups and OS junk
+asset-backups/
+.DS_Store
+Thumbs.db
+desktop.ini

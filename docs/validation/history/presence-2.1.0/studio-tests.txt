@@ -1,0 +1,455 @@
+TAP version 13
+# Subtest: camera attention follows a real world lens with bounded neck and binocular eye rotations
+ok 1 - camera attention follows a real world lens with bounded neck and binocular eye rotations
+  ---
+  duration_ms: 1592.147129
+  type: 'test'
+  ...
+# Subtest: pose layers cannot accumulate, and interrupted motion fades remain normalized
+ok 2 - pose layers cannot accumulate, and interrupted motion fades remain normalized
+  ---
+  duration_ms: 683.058126
+  type: 'test'
+  ...
+# Subtest: audio-clock coarticulation is continuous through cue changes and preserves silence
+ok 3 - audio-clock coarticulation is continuous through cue changes and preserves silence
+  ---
+  duration_ms: 14.849493
+  type: 'test'
+  ...
+# Subtest: actual avatar: retargeting, complete skinning and bounded facial controls
+    # Subtest: all seven delivered clips carry destination translation retarget metadata
+    ok 1 - all seven delivered clips carry destination translation retarget metadata
+      ---
+      duration_ms: 1.176416
+      type: 'test'
+      ...
+    # Subtest: animation never restores the wider foreign shoulder and longer foot segments
+    ok 2 - animation never restores the wider foreign shoulder and longer foot segments
+      ---
+      duration_ms: 93.121821
+      type: 'test'
+      ...
+    # Subtest: twelve-weight restoration remains normalized and idempotent
+    ok 3 - twelve-weight restoration remains normalized and idempotent
+      ---
+      duration_ms: 19.428483
+      type: 'test'
+      ...
+    # Subtest: skin shader composes with the eye/hair shader and supports normal passes
+    ok 4 - skin shader composes with the eye/hair shader and supports normal passes
+      ---
+      duration_ms: 0.812922
+      type: 'test'
+      ...
+    # Subtest: named morph subset is bounded and ready for the supplied face
+    ok 5 - named morph subset is bounded and ready for the supplied face
+      ---
+      duration_ms: 0.163454
+      type: 'test'
+      ...
+    # Subtest: jaw articulation moves lower teeth and tongue while keeping upper teeth fixed
+    ok 6 - jaw articulation moves lower teeth and tongue while keeping upper teeth fixed
+      ---
+      duration_ms: 6.551624
+      type: 'test'
+      ...
+    # Subtest: all nine audio cues produce finite bounded controls and reset without accumulation
+    ok 7 - all nine audio cues produce finite bounded controls and reset without accumulation
+      ---
+      duration_ms: 55.459323
+      type: 'test'
+      ...
+    # Subtest: foot grounding is invariant under a stage transform
+    ok 8 - foot grounding is invariant under a stage transform
+      ---
+      duration_ms: 4.984515
+      type: 'test'
+      ...
+    1..8
+ok 4 - actual avatar: retargeting, complete skinning and bounded facial controls
+  ---
+  duration_ms: 667.659946
+  type: 'test'
+  ...
+# Subtest: capture lock 1 releases after a thrown setup step and the next session starts
+ok 5 - capture lock 1 releases after a thrown setup step and the next session starts
+  ---
+  duration_ms: 113.002273
+  type: 'test'
+  ...
+# Subtest: capture lock 2 releases after a thrown setup step and the next session starts
+ok 6 - capture lock 2 releases after a thrown setup step and the next session starts
+  ---
+  duration_ms: 108.69361
+  type: 'test'
+  ...
+# Subtest: capture listener errors other than an occupied port reject startup
+ok 7 - capture listener errors other than an occupied port reject startup
+  ---
+  duration_ms: 1.957765
+  type: 'test'
+  ...
+# Subtest: publication requires explicit output, while encoding uses audio and two-second GOP
+ok 8 - publication requires explicit output, while encoding uses audio and two-second GOP
+  ---
+  duration_ms: 2.799898
+  type: 'test'
+  ...
+# Subtest: stream URLs, keys and bearer values are redacted without exposing paths
+ok 9 - stream URLs, keys and bearer values are redacted without exposing paths
+  ---
+  duration_ms: 0.884747
+  type: 'test'
+  ...
+# Subtest: software renderer is never reported as hardware
+ok 10 - software renderer is never reported as hardware
+  ---
+  duration_ms: 0.919867
+  type: 'test'
+  ...
+# Subtest: configuration rejects shared credentials and remote avatar paths
+ok 11 - configuration rejects shared credentials and remote avatar paths
+  ---
+  duration_ms: 1.634334
+  type: 'test'
+  ...
+# Subtest: the Intel launcher encoder is accepted and receives QSV-compatible pixels and options
+ok 12 - the Intel launcher encoder is accepted and receives QSV-compatible pixels and options
+  ---
+  duration_ms: 0.956458
+  type: 'test'
+  ...
+# Subtest: missing financial values stay unknown; invalid trades are rejected
+ok 13 - missing financial values stay unknown; invalid trades are rejected
+  ---
+  duration_ms: 2.298207
+  type: 'test'
+  ...
+# Subtest: OHLCV accepts valid candles only, deduplicates time and sorts without invented prices
+ok 14 - OHLCV accepts valid candles only, deduplicates time and sorts without invented prices
+  ---
+  duration_ms: 0.478938
+  type: 'test'
+  ...
+# Subtest: dApp base and socket endpoints preserve prefix and never accept embedded credentials
+ok 15 - dApp base and socket endpoints preserve prefix and never accept embedded credentials
+  ---
+  duration_ms: 0.740037
+  type: 'test'
+  ...
+# Subtest: staleness and backoff have finite predictable bounds
+ok 16 - staleness and backoff have finite predictable bounds
+  ---
+  duration_ms: 0.556325
+  type: 'test'
+  ...
+# Subtest: narration audio is restricted to the exact same-origin job path
+ok 17 - narration audio is restricted to the exact same-origin job path
+  ---
+  duration_ms: 0.663453
+  type: 'test'
+  ...
+# Subtest: bounded fetch rejects an oversized chunked response before reading the full body
+ok 18 - bounded fetch rejects an oversized chunked response before reading the full body
+  ---
+  duration_ms: 41.594552
+  type: 'test'
+  ...
+# Subtest: selection and timeframe changes clear previous candles before new data arrives
+ok 19 - selection and timeframe changes clear previous candles before new data arrives
+  ---
+  duration_ms: 1.19153
+  type: 'test'
+  ...
+# Subtest: stopped data adapter cannot apply a late network response
+ok 20 - stopped data adapter cannot apply a late network response
+  ---
+  duration_ms: 2.311659
+  type: 'test'
+  ...
+# Subtest: adapter accepts the original dApp HTTP and WebSocket DTO forms without changing report semantics
+ok 21 - adapter accepts the original dApp HTTP and WebSocket DTO forms without changing report semantics
+  ---
+  duration_ms: 0.511277
+  type: 'test'
+  ...
+# Subtest: manual observer neither creates audio nor claims narration
+ok 22 - manual observer neither creates audio nor claims narration
+  ---
+  duration_ms: 23.371867
+  type: 'test'
+  ...
+# Subtest: armAudio prepares a silent graph reused for serialized playout; secrets stay private
+ok 23 - armAudio prepares a silent graph reused for serialized playout; secrets stay private
+  ---
+  duration_ms: 216.041297
+  type: 'test'
+  ...
+# Subtest: failed lease heartbeat immediately stops audio and never finishes the utterance
+ok 24 - failed lease heartbeat immediately stops audio and never finishes the utterance
+  ---
+  duration_ms: 308.185216
+  type: 'test'
+  ...
+# Subtest: disconnect stops the current source and terminalizes it without replay
+ok 25 - disconnect stops the current source and terminalizes it without replay
+  ---
+  duration_ms: 12.617545
+  type: 'test'
+  ...
+# Subtest: a hanging heartbeat cannot extend local speech past the last confirmed lease
+ok 26 - a hanging heartbeat cannot extend local speech past the last confirmed lease
+  ---
+  duration_ms: 856.771329
+  type: 'test'
+  ...
+# Subtest: leased presentation and coarticulation accompany speech, then clear on cancellation
+ok 27 - leased presentation and coarticulation accompany speech, then clear on cancellation
+  ---
+  duration_ms: 147.498365
+  type: 'test'
+  ...
+# Subtest: finished narration clears presentation metadata before the next job
+ok 28 - finished narration clears presentation metadata before the next job
+  ---
+  duration_ms: 133.282413
+  type: 'test'
+  ...
+# Subtest: producer/player authorization is separate; config and failures never disclose credentials
+ok 29 - producer/player authorization is separate; config and failures never disclose credentials
+  ---
+  duration_ms: 128.17541
+  type: 'test'
+  ...
+# Subtest: idempotency survives readiness and conflicts are rejected; bounded queue recovers after cancel
+ok 30 - idempotency survives readiness and conflicts are rejected; bounded queue recovers after cancel
+  ---
+  duration_ms: 93.532612
+  type: 'test'
+  ...
+# Subtest: public emotion discovery matches aliases and narration stage cues are validated over HTTP
+ok 31 - public emotion discovery matches aliases and narration stage cues are validated over HTTP
+  ---
+  duration_ms: 98.575179
+  type: 'test'
+  ...
+# Subtest: simultaneous claims lease exactly one narration; leased heartbeat protects decoding
+ok 32 - simultaneous claims lease exactly one narration; leased heartbeat protects decoding
+  ---
+  duration_ms: 118.75519
+  type: 'test'
+  ...
+# Subtest: cancelling generation aborts provider, preserves cancelled state and starts next job
+ok 33 - cancelling generation aborts provider, preserves cancelled state and starts next job
+  ---
+  duration_ms: 59.21341
+  type: 'test'
+  ...
+# Subtest: cancellation invalidates playback lease and denies subsequent audio reads
+ok 34 - cancellation invalidates playback lease and denies subsequent audio reads
+  ---
+  duration_ms: 100.187427
+  type: 'test'
+  ...
+# Subtest: expired lease never replays; a new narration can be claimed
+ok 35 - expired lease never replays; a new narration can be claimed
+  ---
+  duration_ms: 61.485463
+  type: 'test'
+  ...
+# Subtest: original expiry caps heartbeats and work cannot be played after its deadline
+ok 36 - original expiry caps heartbeats and work cannot be played after its deadline
+  ---
+  duration_ms: 55.006264
+  type: 'test'
+  ...
+# Subtest: claim skips audio that cannot finish before expiry and start rechecks after decoding
+ok 37 - claim skips audio that cannot finish before expiry and start rechecks after decoding
+  ---
+  duration_ms: 79.52157
+  type: 'test'
+  ...
+# Subtest: restart expires possibly spoken audio while preserving ready jobs and idempotency
+ok 38 - restart expires possibly spoken audio while preserving ready jobs and idempotency
+  ---
+  duration_ms: 70.999901
+  type: 'test'
+  ...
+# Subtest: static serving permits only studio assets and vendor allowlist, including symlink containment
+ok 39 - static serving permits only studio assets and vendor allowlist, including symlink containment
+  ---
+  duration_ms: 47.05125
+  type: 'test'
+  ...
+# Subtest: second gateway on same database is rejected without disrupting active instance
+ok 40 - second gateway on same database is rejected without disrupting active instance
+  ---
+  duration_ms: 36.76641
+  type: 'test'
+  ...
+# Subtest: process crash releases the gateway lock and recovery never replays leased audio
+ok 41 - process crash releases the gateway lock and recovery never replays leased audio
+  ---
+  duration_ms: 92.823736
+  type: 'test'
+  ...
+# Subtest: replacement ponytail preserves source geometry and follows the calibrated head bind transform
+ok 42 - replacement ponytail preserves source geometry and follows the calibrated head bind transform
+  ---
+  duration_ms: 1521.416459
+  type: 'test'
+  ...
+# Subtest: health worker reports the exact bounded JSON result, deduplicates probes and recovers after timeout
+ok 43 - health worker reports the exact bounded JSON result, deduplicates probes and recovers after timeout
+  ---
+  duration_ms: 57.741062
+  type: 'test'
+  ...
+# Subtest: launcher GPU preference preserves a typed prior snapshot and passes executable paths as data
+ok 44 - launcher GPU preference preserves a typed prior snapshot and passes executable paths as data
+  ---
+  duration_ms: 3.087305
+  type: 'test'
+  ...
+# Subtest: occupied preview port chooses another port without disturbing its owner
+ok 45 - occupied preview port chooses another port without disturbing its owner
+  ---
+  duration_ms: 55.991573
+  type: 'test'
+  ...
+# Subtest: owned readiness waits for its actual JSON event and spawn failures reject cleanly
+ok 46 - owned readiness waits for its actual JSON event and spawn failures reject cleanly
+  ---
+  duration_ms: 150.349442
+  type: 'test'
+  ...
+# Subtest: IPC shutdown runs asynchronous drain before exit and does not force a Windows-style termination
+ok 47 - IPC shutdown runs asynchronous drain before exit and does not force a Windows-style termination
+  ---
+  duration_ms: 191.36359
+  type: 'test'
+  ...
+# Subtest: launcher IPC preload lets a completed worker exit naturally and preserves its exit code
+ok 48 - launcher IPC preload lets a completed worker exit naturally and preserves its exit code
+  ---
+  duration_ms: 49.322506
+  type: 'test'
+  ...
+# Subtest: loss of the owning launcher closes its detached worker gracefully
+ok 49 - loss of the owning launcher closes its detached worker gracefully
+  ---
+  duration_ms: 61.854278
+  type: 'test'
+  ...
+# Subtest: service stdin EOF does not terminate an unattended broadcaster
+ok 50 - service stdin EOF does not terminate an unattended broadcaster
+  ---
+  duration_ms: 8.176312
+  type: 'test'
+  ...
+# Subtest: explicit supervisor can stop through split quit lines and EOF
+ok 51 - explicit supervisor can stop through split quit lines and EOF
+  ---
+  duration_ms: 2.021169
+  type: 'test'
+  ...
+# Subtest: audio clock chooses a cue at exact boundaries and closes during silence and after end
+ok 52 - audio clock chooses a cue at exact boundaries and closes during silence and after end
+  ---
+  duration_ms: 2.938792
+  type: 'test'
+  ...
+# Subtest: malformed, overlapping and unbounded timelines are rejected
+ok 53 - malformed, overlapping and unbounded timelines are rejected
+  ---
+  duration_ms: 0.454597
+  type: 'test'
+  ...
+# Subtest: missing aligner has an explicit fallback; required mode fails and cancellation is respected
+ok 54 - missing aligner has an explicit fallback; required mode fails and cancellation is respected
+  ---
+  duration_ms: 15.87375
+  type: 'test'
+  ...
+# Subtest: aligned cues persist across a gateway restart and travel with the audio lease
+ok 55 - aligned cues persist across a gateway restart and travel with the audio lease
+  ---
+  duration_ms: 43.644511
+  type: 'test'
+  ...
+# Subtest: presentation accepts only supported monitor/home actions and rejects malformed or extra fields
+ok 56 - presentation accepts only supported monitor/home actions and rejects malformed or extra fields
+  ---
+  duration_ms: 2.619748
+  type: 'test'
+  ...
+# Subtest: presentation survives database restart, participates in idempotency and reaches the existing lease
+ok 57 - presentation survives database restart, participates in idempotency and reaches the existing lease
+  ---
+  duration_ms: 55.50622
+  type: 'test'
+  ...
+# Subtest: additive migration preserves hashes and retries from a pre-presentation database
+ok 58 - additive migration preserves hashes and retries from a pre-presentation database
+  ---
+  duration_ms: 25.812488
+  type: 'test'
+  ...
+# Subtest: speech segments at boundaries, preserves text and never cuts a surrogate pair
+ok 59 - speech segments at boundaries, preserves text and never cuts a surrogate pair
+  ---
+  duration_ms: 2.004349
+  type: 'test'
+  ...
+# Subtest: WAV validation rejects truncation, float encoding and inconsistent sample alignment
+ok 60 - WAV validation rejects truncation, float encoding and inconsistent sample alignment
+  ---
+  duration_ms: 1.849615
+  type: 'test'
+  ...
+# Subtest: fully buffered HTTP WAV with streaming size sentinels is normalized safely
+ok 61 - fully buffered HTTP WAV with streaming size sentinels is normalized safely
+  ---
+  duration_ms: 1.606012
+  type: 'test'
+  ...
+# Subtest: TTS requests sequential bounded WAV segments and concatenates compatible PCM only
+ok 62 - TTS requests sequential bounded WAV segments and concatenates compatible PCM only
+  ---
+  duration_ms: 61.303964
+  type: 'test'
+  ...
+# Subtest: TTS fails clearly on differing sample rates instead of concatenating corrupt audio
+ok 63 - TTS fails clearly on differing sample rates instead of concatenating corrupt audio
+  ---
+  duration_ms: 1.944259
+  type: 'test'
+  ...
+# Subtest: provider errors are sanitized and body limits are enforced before buffering
+ok 64 - provider errors are sanitized and body limits are enforced before buffering
+  ---
+  duration_ms: 2.019939
+  type: 'test'
+  ...
+# Subtest: cancellation propagates to the provider and never becomes provider detail
+ok 65 - cancellation propagates to the provider and never becomes provider detail
+  ---
+  duration_ms: 11.72848
+  type: 'test'
+  ...
+# Subtest: actual avatar walks to all monitors with planted feet and returns through the clear aisle
+ok 66 - actual avatar walks to all monitors with planted feet and returns through the clear aisle
+  ---
+  duration_ms: 13468.454984
+  type: 'test'
+  ...
+1..66
+# tests 74
+# suites 0
+# pass 74
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 14623.587544

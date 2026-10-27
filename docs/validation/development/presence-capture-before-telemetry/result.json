@@ -1,0 +1,311 @@
+{
+  "passed": false,
+  "date": "2026-10-24T17:22:58.906Z",
+  "error": "AssertionError [ERR_ASSERTION]: The authenticated narration presentation cue reached the actual renderer\n+ actual - expected\n\n+ undefined\n- 'left'\n\n    at file:///workspace/scratch/e2605feface4/presence-upgrade/AIR3_Studio_Complete/studio-broadcast/scripts/smoke-avatar.mjs:116:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+  "events": [
+    {
+      "at": "2026-10-24T17:21:42.711Z",
+      "event": "encoder-selected",
+      "encoder": "libx264",
+      "requested": "libx264",
+      "hardware": false
+    },
+    {
+      "at": "2026-10-24T17:21:56.661Z",
+      "event": "renderer-ready",
+      "diagnostics": {
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "frameCount": 6,
+        "fps": 0.2,
+        "width": 960,
+        "height": 540,
+        "audioState": "running",
+        "currentJob": null,
+        "quality": "software",
+        "avatar": "airewardrop · live presenter",
+        "avatarRig": {
+          "profile": "AIR3 source geometry with translation-retargeted animations",
+          "extendedSkinMeshes": 7,
+          "preservedSkinInfluences": 12,
+          "idleClips": 3,
+          "talkClips": 4,
+          "motion": "idle",
+          "facialLipSync": {
+            "ready": true,
+            "articulation": "bounded skeletal poses plus source corrective morphs",
+            "controls": 35,
+            "sourceCorrectiveCount": 29,
+            "mouthCue": "X",
+            "emotion": "warm",
+            "emotionIntensity": 0.35,
+            "blink": 0,
+            "microExpressions": true,
+            "microSmile": 0.055,
+            "mouthInterpolation": "bounded exponential damping",
+            "phoneticTiming": "none",
+            "rigLogicParity": false
+          },
+          "attention": {
+            "ready": true,
+            "enabled": true,
+            "target": "camera",
+            "lensContact": true,
+            "headYawDegrees": 5.434073032174546,
+            "headPitchDegrees": 4.673018051063478,
+            "eyeYawDegrees": {
+              "left": 10.216636347514898,
+              "right": 10.603761982494524
+            },
+            "eyePitchDegrees": {
+              "left": 10.167212954733975,
+              "right": 10.15415875562039
+            },
+            "limitsDegrees": {
+              "headYaw": 48,
+              "headPitch": [
+                -18,
+                20
+              ],
+              "eyeYaw": 24,
+              "eyePitch": 17
+            },
+            "calibratedAxes": true,
+            "headTimeConstantSeconds": 0.3,
+            "eyeTimeConstantSeconds": 0.025,
+            "cameraAssigned": true,
+            "proceduralGlance": 0
+          },
+          "motionBlend": {
+            "mode": "normalized continuous weights",
+            "timeConstantSeconds": 0.18,
+            "contributingActions": 1,
+            "weightSum": 1
+          },
+          "rootOrientationLocked": true,
+          "footContactAnchors": 126,
+          "materials": {
+            "profile": "air3-materials-2026-10-24-v4-blue-iris",
+            "surfaces": {
+              "skin-body": 1,
+              "cloth": 7,
+              "shoes": 1,
+              "skin-face": 1,
+              "mouth": 1,
+              "tear-film": 2,
+              "eyes": 2,
+              "lashes": 1,
+              "waterline": 1,
+              "hair": 1,
+              "brows": 1
+            },
+            "source": "Supplied Unreal 5.7.4 material parameters and textures",
+            "normalY": -1,
+            "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+            "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+            "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+            "limitations": [
+              "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+              "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+            ]
+          },
+          "normalY": -1
+        },
+        "environment": {
+          "source": "authored linear HDR softbox scene",
+          "pmrem": true,
+          "resolution": 128
+        },
+        "reflections": {
+          "mode": "environment reflection only"
+        },
+        "postprocessing": {
+          "output": "direct ACES/sRGB",
+          "ao": false,
+          "bloom": false
+        },
+        "lipSync": "none"
+      },
+      "software": true
+    },
+    {
+      "at": "2026-10-24T17:21:58.437Z",
+      "event": "broadcast-running",
+      "mode": "file",
+      "recording": "/workspace/scratch/e2605feface4/presence-upgrade/AIR3_Studio_Complete/docs/validation/current/avatar-smoke/studio-2026-10-24T17-21-42-903Z-2a8367da.mkv",
+      "width": 960,
+      "height": 540,
+      "fps": 15,
+      "encoder": "libx264"
+    },
+    {
+      "at": "2026-10-24T17:22:00.441Z",
+      "event": "speech-playback",
+      "job": null,
+      "phase": "idle",
+      "lipSync": "none",
+      "elapsed": 0,
+      "duration": 0,
+      "mouthCue": "X"
+    },
+    {
+      "at": "2026-10-24T17:22:18.450Z",
+      "event": "speech-playback",
+      "job": "browser-qa-complete",
+      "phase": "playing",
+      "lipSync": "rhubarb:pocketSphinx",
+      "elapsed": 1.701496598639455,
+      "duration": 12,
+      "mouthCue": "C"
+    },
+    {
+      "at": "2026-10-24T17:22:30.453Z",
+      "event": "speech-playback",
+      "job": null,
+      "phase": "idle",
+      "lipSync": "none",
+      "elapsed": 0,
+      "duration": 0,
+      "mouthCue": "X"
+    },
+    {
+      "at": "2026-10-24T17:22:46.459Z",
+      "event": "speech-playback",
+      "job": "browser-qa-cancel",
+      "phase": "playing",
+      "lipSync": "rhubarb:pocketSphinx",
+      "elapsed": 1.3996371882086152,
+      "duration": 12,
+      "mouthCue": "C"
+    },
+    {
+      "at": "2026-10-24T17:22:50.467Z",
+      "event": "speech-playback",
+      "job": null,
+      "phase": "idle",
+      "lipSync": "none",
+      "elapsed": 0,
+      "duration": 0,
+      "mouthCue": "X"
+    },
+    {
+      "at": "2026-10-24T17:22:52.058Z",
+      "event": "renderer-final",
+      "diagnostics": {
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "frameCount": 48,
+        "fps": 0.8,
+        "width": 960,
+        "height": 540,
+        "audioState": "running",
+        "currentJob": null,
+        "quality": "software",
+        "avatar": "airewardrop · live presenter",
+        "avatarRig": {
+          "profile": "AIR3 source geometry with translation-retargeted animations",
+          "extendedSkinMeshes": 7,
+          "preservedSkinInfluences": 12,
+          "idleClips": 3,
+          "talkClips": 4,
+          "motion": "idle",
+          "facialLipSync": {
+            "ready": true,
+            "articulation": "bounded skeletal poses plus source corrective morphs",
+            "controls": 35,
+            "sourceCorrectiveCount": 29,
+            "mouthCue": "X",
+            "emotion": "neutral",
+            "emotionIntensity": 0.35,
+            "blink": 0,
+            "microExpressions": true,
+            "microSmile": 0.055,
+            "mouthInterpolation": "bounded exponential damping",
+            "phoneticTiming": "none",
+            "rigLogicParity": false
+          },
+          "attention": {
+            "ready": true,
+            "enabled": true,
+            "target": "travel",
+            "lensContact": false,
+            "headYawDegrees": -6.812558792060282,
+            "headPitchDegrees": 3.798021638457593,
+            "eyeYawDegrees": {
+              "left": 0.7808361248939737,
+              "right": 2.480878576573004
+            },
+            "eyePitchDegrees": {
+              "left": -0.6533459315844152,
+              "right": -0.6536102731812783
+            },
+            "limitsDegrees": {
+              "headYaw": 48,
+              "headPitch": [
+                -18,
+                20
+              ],
+              "eyeYaw": 24,
+              "eyePitch": 17
+            },
+            "calibratedAxes": true,
+            "headTimeConstantSeconds": 0.3,
+            "eyeTimeConstantSeconds": 0.025,
+            "cameraAssigned": true,
+            "proceduralGlance": 0
+          },
+          "motionBlend": {
+            "mode": "normalized continuous weights",
+            "timeConstantSeconds": 0.18,
+            "contributingActions": 3,
+            "weightSum": 1.0000000000000002
+          },
+          "rootOrientationLocked": true,
+          "footContactAnchors": 126,
+          "materials": {
+            "profile": "air3-materials-2026-10-24-v4-blue-iris",
+            "surfaces": {
+              "skin-body": 1,
+              "cloth": 7,
+              "shoes": 1,
+              "skin-face": 1,
+              "mouth": 1,
+              "tear-film": 2,
+              "eyes": 2,
+              "lashes": 1,
+              "waterline": 1,
+              "hair": 1,
+              "brows": 1
+            },
+            "source": "Supplied Unreal 5.7.4 material parameters and textures",
+            "normalY": -1,
+            "hairCoverage": "Compact attribute R; alpha-masked depth-writing cards",
+            "face": "Scanned albedo with parameter-guided makeup and calibrated roughness",
+            "eyes": "Blue iris preserving source detail and sclera with clearcoat",
+            "limitations": [
+              "Eye and dental palette lookup textures were not supplied; natural palettes are explicit substitutes.",
+              "UE eye-occlusion graph, strand-hair scattering and full skin SSS are not reproduced."
+            ]
+          },
+          "normalY": -1
+        },
+        "environment": {
+          "source": "authored linear HDR softbox scene",
+          "pmrem": true,
+          "resolution": 128
+        },
+        "reflections": {
+          "mode": "environment reflection only"
+        },
+        "postprocessing": {
+          "output": "direct ACES/sRGB",
+          "ao": false,
+          "bloom": false
+        },
+        "lipSync": "none"
+      }
+    },
+    {
+      "at": "2026-10-24T17:22:53.001Z",
+      "event": "broadcaster-stopped"
+    }
+  ]
+}

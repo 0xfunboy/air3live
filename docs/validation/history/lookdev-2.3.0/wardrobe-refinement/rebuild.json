@@ -1,0 +1,8 @@
+{
+  "command": "python tools/prepare_crop_top.py --output <temporary-directory>/crop-top.glb",
+  "sourceSha256": "5ba16fe9583d908ff13e530200e32ea6dc947b8c993150d2e65a771e3265130f",
+  "runtimeSha256": "9c16dd73287bf0ed499aa2c0fc9656e7b6dc2fb54d31591e9394df881b1713e4",
+  "rebuiltSha256": "9c16dd73287bf0ed499aa2c0fc9656e7b6dc2fb54d31591e9394df881b1713e4",
+  "identical": true,
+  "runtimeModified": false
+}

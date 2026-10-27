@@ -1,0 +1,52 @@
+{
+  "review": "Look preset v2 and controller integration",
+  "date": "2026-10-25",
+  "scope": "Lightweight unit/integration review. Asset-controller interfaces exercised with asynchronous test doubles; rendered asset fit is covered by separate wardrobe and visual QA.",
+  "command": "node --test --test-isolation=none test/look-controls.test.mjs test/look-v2.test.mjs",
+  "exitCode": 0,
+  "tests": 20,
+  "passed": 20,
+  "failed": 0,
+  "skipped": 0,
+  "durationMs": 182.513708,
+  "coverage": [
+    "Packaged/default lighting exactly matches every numeric/boolean/colour field in supplied user preference",
+    "Wavy and Espresso default, original shirt and relaxed boot default",
+    "v1 JSON imports migrate to v2 adding original clothing and relaxed boot fit while retaining saved hair and lights",
+    "Deliberate v2 browser key starts new packaged default; v2 saved custom look and resetLook=1 work",
+    "Both clothing choices and both boot fits round-trip and propagate to controllers; changing sneakers retains boot fit",
+    "Invalid and external-asset fields reject before mutation",
+    "Concurrent hair, boot fit, clothing, lighting and name edits produce only one final complete persistence write",
+    "Failed crop load rolls back earlier successful hair and shoe changes; stale failure does not overwrite latest request",
+    "Missing clothing controller rejects crop; disposing pending boot work prevents later clothing/persistence",
+    "Both HTML pages select Leggermente felice at intensity 1; app initializes happy/intensity 1 and viewer initialization/reset uses those controls"
+  ],
+  "changes": [
+    "New test/look-v2.test.mjs: 11 focused cases",
+    "Existing independent-lights test now compares untouched key intensity to pre-change state instead of obsolete hard-coded 30"
+  ],
+  "runtimeFindings": [],
+  "hairFaceFrozenHashesVerified": true,
+  "limitations": [
+    "No browser or whole-project QA was run for this review",
+    "Dropdown bindings reviewed from source; browser interaction belongs to final application QA",
+    "No runtime code was changed during this review"
+  ],
+  "sha256": {
+    "studio-broadcast/public/look-presets.mjs": "f0e76a07354475f8ba1d92157c4ab4810e88e6e8db6cbe48d27f13a415898208",
+    "studio-broadcast/public/look-controller.mjs": "b82f4107f060e974dcbd34d927c3d2eaf28cfa39c7ca8e80a3a47a21a793b333",
+    "studio-broadcast/public/look-controls.mjs": "742d8bcb7fe3667aa0e7cd36670edfe2f270a5b49a98a3b418b4a7892aaf724a",
+    "studio-broadcast/public/index.html": "59ba9e76afaef85b7dbd328dd167b65d0de4f4de879a101ed6923bab732f47b2",
+    "studio-broadcast/public/app.mjs": "700226e8cf4c3e50d5bf515c38f6305c45b529f17573f9d85b76f8750fa8b8af",
+    "studio-broadcast/public/preview/index.html": "2509172389d1fd2580062b0371ddcd530b9b781a13484f03b9ea20159f0d69bc",
+    "studio-broadcast/public/preview/viewer.mjs": "f02a55ab321c968031da1e3aeef3a4f7649d194d09f4e1d48a6505f408f8acb5",
+    "studio-broadcast/public/assets/air3/presets/default-look.json": "7173cd78730d870c34e4252c5cf768ae0da37094de48ec85bd0e496e7504747c",
+    "source-assets/user-preferences/look-user-2026-10-25.json": "4bed2f356a32a149f6060750819d30ebf4a1af1fb6a300f36f441737c704f256",
+    "studio-broadcast/test/look-controls.test.mjs": "3b0abc1f1835a6ce98c99dbda5c83eb475bf3a660c5581a5e6b9732ad393a0df",
+    "studio-broadcast/test/look-v2.test.mjs": "7e9ebc8deb3c271c271ebd5f46f145025f04ed872e507728472d4252af6913a9",
+    "studio-broadcast/public/air3-hair-wardrobe.mjs": "5824be384bde5edcb76ddc3361ac85880b94a485df2cd831b5a4b8e3b44cecb7",
+    "studio-broadcast/public/avatar-materials.mjs": "9d3c5848ec1043cb2baa6d5252724708a72a6eb504a8d22adad1cb96be269ccc"
+  },
+  "refresh": "Rerun against frozen final runtime after adding the rear camera button; 20 tests passed. No runtime, test, browser or build changes in this refresh.",
+  "finalSuiteReference": "system-qa-report.json: the final full suite repeats all preset tests after the separate narration-expression fallback refinement."
+}

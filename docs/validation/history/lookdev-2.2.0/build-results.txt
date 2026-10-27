@@ -1,0 +1,9 @@
+
+  public/build/shared-C4QLRHKW.js  540.2kb
+  public/build/app.js               66.3kb
+  public/build/preview.js           10.5kb
+  public/build/shared-IUPYLFTI.js    4.3kb
+  public/build/health.js             694b 
+
+⚡ Done in 36ms
+{"built":true,"compiler":"esbuild 0.28.2","sourceModules":24,"outputs":5,"bytes":636802,"modelImages":9}

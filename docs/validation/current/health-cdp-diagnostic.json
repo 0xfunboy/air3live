@@ -1,0 +1,190 @@
+{
+  "schema": "air3.health-cdp-diagnostic.v1",
+  "date": "2026-10-24T17:14:14.474080+00:00",
+  "browser": "Chrome/148.0.7778.97",
+  "fixture": "Read-only local HTTP health endpoint; no external services or credentials. Scene experiment uses unchanged compiled health consumer with diagnostic fetch wrapping; plain-worker experiment compares body consumers. Executed before final probe-ID telemetry change.",
+  "finding": "CDP sometimes emits net::ERR_ABORTED for a worker fetch after status 200 and successful complete bounded JSON consumption. All application probes in these experiments succeeded. The event reproduces without WebGL; it is not evidence of a four-second timeout or GPU saturation.",
+  "limitations": [
+    "Observed Chromium/CDP behavior; the internal browser root cause is not established.",
+    "This is not a GPU throughput or long-term availability benchmark.",
+    "Do not ignore arbitrary health aborts: require status 200 and the application success of exactly the same correlation ID.",
+    "Any application timeout, HTTP failure, invalid JSON, missing correlation, or non-health request failure remains a failure."
+  ],
+  "scene": {
+    "probes": [
+      {
+        "probe": 1,
+        "workerStartedAt": 1792861822798,
+        "workerCompletedAt": 1792861822809,
+        "workerElapsedMs": 11.5,
+        "workerOk": true,
+        "timeoutSignalObserved": false,
+        "requestId": "37339.66",
+        "cdpRequestTimestamp": 53938.041592,
+        "cdpTerminalTimestamp": 53938.045557,
+        "cdpElapsedMs": 3.965,
+        "httpStatus": 200,
+        "cdpTerminalEvent": "loadingFinished",
+        "cdpError": null,
+        "serverReceivedAt": 1792861822800,
+        "serverFinishedAt": 1792861822800
+      },
+      {
+        "probe": 2,
+        "workerStartedAt": 1792861825645,
+        "workerCompletedAt": 1792861825653,
+        "workerElapsedMs": 7.7,
+        "workerOk": true,
+        "timeoutSignalObserved": false,
+        "requestId": "37339.67",
+        "cdpRequestTimestamp": 53940.888584,
+        "cdpTerminalTimestamp": 53940.89579,
+        "cdpElapsedMs": 7.206,
+        "httpStatus": 200,
+        "cdpTerminalEvent": "loadingFailed",
+        "cdpError": "net::ERR_ABORTED",
+        "serverReceivedAt": 1792861825648,
+        "serverFinishedAt": 1792861825648
+      },
+      {
+        "probe": 3,
+        "workerStartedAt": 1792861835644,
+        "workerCompletedAt": 1792861835648,
+        "workerElapsedMs": 4.6,
+        "workerOk": true,
+        "timeoutSignalObserved": false,
+        "requestId": "37339.68",
+        "cdpRequestTimestamp": 53950.887543,
+        "cdpTerminalTimestamp": 53950.891751,
+        "cdpElapsedMs": 4.208,
+        "httpStatus": 200,
+        "cdpTerminalEvent": "loadingFailed",
+        "cdpError": "net::ERR_ABORTED",
+        "serverReceivedAt": 1792861835646,
+        "serverFinishedAt": 1792861835646
+      },
+      {
+        "probe": 4,
+        "workerStartedAt": 1792861848261,
+        "workerCompletedAt": 1792861848270,
+        "workerElapsedMs": 8.3,
+        "workerOk": true,
+        "timeoutSignalObserved": false,
+        "requestId": "37339.69",
+        "cdpRequestTimestamp": 53963.505238,
+        "cdpTerminalTimestamp": 53963.512746,
+        "cdpElapsedMs": 7.508,
+        "httpStatus": 200,
+        "cdpTerminalEvent": "loadingFailed",
+        "cdpError": "net::ERR_ABORTED",
+        "serverReceivedAt": 1792861848265,
+        "serverFinishedAt": 1792861848266
+      },
+      {
+        "probe": 5,
+        "workerStartedAt": 1792861855644,
+        "workerCompletedAt": 1792861855650,
+        "workerElapsedMs": 6.2,
+        "workerOk": true,
+        "timeoutSignalObserved": false,
+        "requestId": "37339.70",
+        "cdpRequestTimestamp": 53970.887565,
+        "cdpTerminalTimestamp": 53970.891866,
+        "cdpElapsedMs": 4.301,
+        "httpStatus": 200,
+        "cdpTerminalEvent": "loadingFinished",
+        "cdpError": null,
+        "serverReceivedAt": 1792861855646,
+        "serverFinishedAt": 1792861855646
+      }
+    ],
+    "applicationSuccesses": 5,
+    "applicationFailures": 0,
+    "cdpAborts": 3,
+    "finalGatewayConnected": true,
+    "teardownAt": 1792861861257
+  },
+  "plainWorker": {
+    "variants": [
+      {
+        "consumer": "original",
+        "explicitContentLength": false,
+        "probes": 12,
+        "applicationSuccesses": 12,
+        "applicationFailures": 0,
+        "cdpAborts": 5,
+        "cdpErrors": [
+          "net::ERR_ABORTED"
+        ]
+      },
+      {
+        "consumer": "original",
+        "explicitContentLength": true,
+        "probes": 12,
+        "applicationSuccesses": 12,
+        "applicationFailures": 0,
+        "cdpAborts": 3,
+        "cdpErrors": [
+          "net::ERR_ABORTED"
+        ]
+      },
+      {
+        "consumer": "no-release",
+        "explicitContentLength": false,
+        "probes": 12,
+        "applicationSuccesses": 12,
+        "applicationFailures": 0,
+        "cdpAborts": 7,
+        "cdpErrors": [
+          "net::ERR_ABORTED"
+        ]
+      },
+      {
+        "consumer": "no-release",
+        "explicitContentLength": true,
+        "probes": 12,
+        "applicationSuccesses": 12,
+        "applicationFailures": 0,
+        "cdpAborts": 5,
+        "cdpErrors": [
+          "net::ERR_ABORTED"
+        ]
+      },
+      {
+        "consumer": "native-json",
+        "explicitContentLength": false,
+        "probes": 12,
+        "applicationSuccesses": 12,
+        "applicationFailures": 0,
+        "cdpAborts": 0,
+        "cdpErrors": []
+      },
+      {
+        "consumer": "native-json",
+        "explicitContentLength": true,
+        "probes": 12,
+        "applicationSuccesses": 12,
+        "applicationFailures": 0,
+        "cdpAborts": 0,
+        "cdpErrors": []
+      }
+    ],
+    "applicationSuccesses": 72,
+    "applicationFailures": 0,
+    "cdpAborts": 20
+  },
+  "runtimeChange": {
+    "healthDeadlineMs": 4000,
+    "maxResponseBytes": 65536,
+    "automaticRetries": 0,
+    "request": "/api/health?probe=<probeId>",
+    "applicationDiagnostics": "air3Studio.diagnostics().health.probes",
+    "historyLimit": 128,
+    "successRequires": "Completed JSON read and payload.ok === true"
+  },
+  "targetedTest": {
+    "file": "studio-broadcast/test/health-worker.test.mjs",
+    "passed": true,
+    "cases": "Concurrent-probe suppression; correlation IDs; invalid JSON and ok:false; HTTP503; oversize body; unchanged timeout deadline; abort; next scheduled probe recovery without retry."
+  }
+}

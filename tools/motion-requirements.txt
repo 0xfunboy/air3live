@@ -1,0 +1,4 @@
+# Offline regeneration of the included, preconverted motion data only.
+# The Node/browser application has no Python dependency.
+numpy>=1.26,<3
+scipy>=1.11,<2

@@ -1,0 +1,760 @@
+{
+  "passed": true,
+  "date": "2026-10-27T03:18:19.168Z",
+  "browser": "Chrome/148.0.7778.97",
+  "renderer": "Chromium SwiftShader; 1000×1000 framebuffer; original source modules",
+  "sources": {
+    "public/air3-avatar.mjs": {
+      "bytes": 19199,
+      "sha256": "e300f7fb43c2ae9511a5c70c02563a0f7716cff6cc95d89fb908c2804fe6aacf"
+    },
+    "public/air3-talk-shoulders.mjs": {
+      "bytes": 4884,
+      "sha256": "63e51c972a3ea54e55eb5733d3c4f7a685879a25db7eda52aa550e72f9f7298c"
+    },
+    "public/air3-clothing.mjs": {
+      "bytes": 8139,
+      "sha256": "40bac2f5e43b0a65c9d889dd67527f82351eb093b9d6ef37ffe811dfd973c67b"
+    },
+    "public/assets/air3/models/AIR3-runtime.glb": {
+      "bytes": 21666344,
+      "sha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d"
+    },
+    "public/assets/air3/clothing/crop-top.glb": {
+      "bytes": 2800472,
+      "sha256": "a7f45020f75d775a79ead6b1b8006f4ee89cc3f4ada3251efcebe6e4fd3735d7"
+    },
+    "scripts/qa-talk-visual.mjs": {
+      "bytes": 6888,
+      "sha256": "a73f39a8ee5b49b81261ba3aa5fa7c7a4269c10fc332c0797c871fe1ccca23ad"
+    }
+  },
+  "errors": [],
+  "frames": [
+    {
+      "file": "MH_Talk-original-front.png",
+      "config": {
+        "clip": "MH_Talk",
+        "time": 19.6,
+        "corrected": false,
+        "view": "front"
+      },
+      "shoulders": {
+        "l": [
+          0.14047799919773826,
+          1.3335715165234323,
+          -0.15112882873365285
+        ],
+        "r": [
+          -0.12578229504815597,
+          1.3232758878350463,
+          -0.19608470409618572
+        ]
+      },
+      "neck": [
+        0.000015985592577091824,
+        1.4031927514564098,
+        -0.147772169539936
+      ],
+      "correction": {
+        "enabled": false,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 0,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 0
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk-original-side.png",
+      "config": {
+        "clip": "MH_Talk",
+        "time": 19.6,
+        "corrected": false,
+        "view": "side"
+      },
+      "shoulders": {
+        "l": [
+          0.14047799919773826,
+          1.3335715165234325,
+          -0.15112882873365285
+        ],
+        "r": [
+          -0.12578229504815597,
+          1.3232758878350466,
+          -0.19608470409618572
+        ]
+      },
+      "neck": [
+        0.000015985592577091824,
+        1.40319275145641,
+        -0.147772169539936
+      ],
+      "correction": {
+        "enabled": false,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 0,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 0
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk-corrected-front.png",
+      "config": {
+        "clip": "MH_Talk",
+        "time": 19.6,
+        "corrected": true,
+        "view": "front"
+      },
+      "shoulders": {
+        "l": [
+          0.1404805763560712,
+          1.3336168862489284,
+          -0.15112889069234967
+        ],
+        "r": [
+          -0.12626816920767303,
+          1.3278107721680548,
+          -0.1962678219739181
+        ]
+      },
+      "neck": [
+        0.000015985592577091824,
+        1.4031927514564098,
+        -0.147772169539936
+      ],
+      "correction": {
+        "enabled": true,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 1,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0.020063470138155785
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 2.0153690592959155
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk-corrected-side.png",
+      "config": {
+        "clip": "MH_Talk",
+        "time": 19.6,
+        "corrected": true,
+        "view": "side"
+      },
+      "shoulders": {
+        "l": [
+          0.1404805763560712,
+          1.3336168862489284,
+          -0.15112889069234967
+        ],
+        "r": [
+          -0.12626816920767303,
+          1.3278107721680548,
+          -0.1962678219739181
+        ]
+      },
+      "neck": [
+        0.000015985592577091824,
+        1.4031927514564098,
+        -0.147772169539936
+      ],
+      "correction": {
+        "enabled": true,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 1,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0.020063470138155785
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 2.0153690592959155
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk01-original-front.png",
+      "config": {
+        "clip": "MH_Talk01",
+        "time": 3,
+        "corrected": false,
+        "view": "front"
+      },
+      "shoulders": {
+        "l": [
+          0.3102228710921506,
+          1.2882142657925957,
+          -0.12458385617924198
+        ],
+        "r": [
+          0.05007453904829408,
+          1.342356028112617,
+          -0.08289650184533474
+        ]
+      },
+      "neck": [
+        0.19346273544535297,
+        1.3989075181556117,
+        -0.11373605721320289
+      ],
+      "correction": {
+        "enabled": false,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 0,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0.020063470138155785
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 2.0153690592959155
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk01-original-side.png",
+      "config": {
+        "clip": "MH_Talk01",
+        "time": 3,
+        "corrected": false,
+        "view": "side"
+      },
+      "shoulders": {
+        "l": [
+          0.3102228710921506,
+          1.2882142657925957,
+          -0.12458385617924198
+        ],
+        "r": [
+          0.05007453904829408,
+          1.342356028112617,
+          -0.08289650184533474
+        ]
+      },
+      "neck": [
+        0.19346273544535297,
+        1.3989075181556117,
+        -0.11373605721320289
+      ],
+      "correction": {
+        "enabled": false,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 0,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0.020063470138155785
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 2.0153690592959155
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk01-corrected-front.png",
+      "config": {
+        "clip": "MH_Talk01",
+        "time": 3,
+        "corrected": true,
+        "view": "front"
+      },
+      "shoulders": {
+        "l": [
+          0.31894243153544954,
+          1.3233624924424896,
+          -0.12459623426555985
+        ],
+        "r": [
+          0.050055751131992246,
+          1.3378889466895598,
+          -0.08289048330800486
+        ]
+      },
+      "neck": [
+        0.19346273544535297,
+        1.3989075181556117,
+        -0.11373605721320289
+      ],
+      "correction": {
+        "enabled": true,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 1,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 16.041008260799114
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 1.9723642308076748
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk01-corrected-side.png",
+      "config": {
+        "clip": "MH_Talk01",
+        "time": 3,
+        "corrected": true,
+        "view": "side"
+      },
+      "shoulders": {
+        "l": [
+          0.31894243153544954,
+          1.3233624924424896,
+          -0.12459623426555985
+        ],
+        "r": [
+          0.050055751131992246,
+          1.3378889466895598,
+          -0.08289048330800486
+        ]
+      },
+      "neck": [
+        0.19346273544535297,
+        1.3989075181556117,
+        -0.11373605721320289
+      ],
+      "correction": {
+        "enabled": true,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 1,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 16.041008260799114
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 1.9723642308076748
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk02-original-front.png",
+      "config": {
+        "clip": "MH_Talk02",
+        "time": 4.6,
+        "corrected": false,
+        "view": "front"
+      },
+      "shoulders": {
+        "l": [
+          0.012812729398381878,
+          1.3418964462804321,
+          0.04542249350977463
+        ],
+        "r": [
+          -0.25657996152163975,
+          1.3079798614872482,
+          0.023829791009515863
+        ]
+      },
+      "neck": [
+        -0.13282627718131848,
+        1.404590447430262,
+        0.03256315715932198
+      ],
+      "correction": {
+        "enabled": false,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 0,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 16.041008260799114
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 1.9723642308076748
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk02-original-side.png",
+      "config": {
+        "clip": "MH_Talk02",
+        "time": 4.6,
+        "corrected": false,
+        "view": "side"
+      },
+      "shoulders": {
+        "l": [
+          0.012812729398381878,
+          1.341896446280432,
+          0.04542249350977463
+        ],
+        "r": [
+          -0.25657996152163975,
+          1.3079798614872478,
+          0.023829791009515863
+        ]
+      },
+      "neck": [
+        -0.13282627718131848,
+        1.4045904474302617,
+        0.03256315715932198
+      ],
+      "correction": {
+        "enabled": false,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 0,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 16.041008260799114
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 1.9723642308076748
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk02-corrected-front.png",
+      "config": {
+        "clip": "MH_Talk02",
+        "time": 4.6,
+        "corrected": true,
+        "view": "front"
+      },
+      "shoulders": {
+        "l": [
+          0.01280130849704783,
+          1.341377904776811,
+          0.04542057884198473
+        ],
+        "r": [
+          -0.2604589146924451,
+          1.3284114675083505,
+          0.02389042279733091
+        ]
+      },
+      "neck": [
+        -0.13282627718131848,
+        1.404590447430262,
+        0.03256315715932198
+      ],
+      "correction": {
+        "enabled": true,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 1,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0.2289982153494773
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 9.19171779409237
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk02-corrected-side.png",
+      "config": {
+        "clip": "MH_Talk02",
+        "time": 4.6,
+        "corrected": true,
+        "view": "side"
+      },
+      "shoulders": {
+        "l": [
+          0.01280130849704783,
+          1.341377904776811,
+          0.04542057884198473
+        ],
+        "r": [
+          -0.2604589146924451,
+          1.3284114675083505,
+          0.02389042279733091
+        ]
+      },
+      "neck": [
+        -0.13282627718131848,
+        1.404590447430262,
+        0.03256315715932198
+      ],
+      "correction": {
+        "enabled": true,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 1,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0.2289982153494773
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 9.19171779409237
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk03-original-front.png",
+      "config": {
+        "clip": "MH_Talk03",
+        "time": 6.366666666667,
+        "corrected": false,
+        "view": "front"
+      },
+      "shoulders": {
+        "l": [
+          0.18055766614875063,
+          1.306321412557768,
+          0.009520951231497567
+        ],
+        "r": [
+          -0.08768632896254064,
+          1.3479843731110481,
+          0.03937713658987974
+        ]
+      },
+      "neck": [
+        0.05699403389998307,
+        1.4066334504287332,
+        0.025822436507042454
+      ],
+      "correction": {
+        "enabled": false,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 0,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0.2289982153494773
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 9.19171779409237
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk03-original-side.png",
+      "config": {
+        "clip": "MH_Talk03",
+        "time": 6.366666666667,
+        "corrected": false,
+        "view": "side"
+      },
+      "shoulders": {
+        "l": [
+          0.18055766614875063,
+          1.306321412557768,
+          0.009520951231497567
+        ],
+        "r": [
+          -0.08768632896254064,
+          1.3479843731110481,
+          0.03937713658987974
+        ]
+      },
+      "neck": [
+        0.05699403389998307,
+        1.4066334504287332,
+        0.025822436507042454
+      ],
+      "correction": {
+        "enabled": false,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 0,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 0.2289982153494773
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 9.19171779409237
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk03-corrected-front.png",
+      "config": {
+        "clip": "MH_Talk03",
+        "time": 6.366666666667,
+        "corrected": true,
+        "view": "front"
+      },
+      "shoulders": {
+        "l": [
+          0.18553247835758674,
+          1.3310925240382874,
+          0.009251051942731334
+        ],
+        "r": [
+          -0.0876916451928969,
+          1.3450930976578428,
+          0.039378049349718794
+        ]
+      },
+      "neck": [
+        0.05699403389998307,
+        1.4066334504287332,
+        0.025822436507042454
+      ],
+      "correction": {
+        "enabled": true,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 1,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 11.173388528386468
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 1.2765469064735766
+          }
+        ]
+      }
+    },
+    {
+      "file": "MH_Talk03-corrected-side.png",
+      "config": {
+        "clip": "MH_Talk03",
+        "time": 6.366666666667,
+        "corrected": true,
+        "view": "side"
+      },
+      "shoulders": {
+        "l": [
+          0.18553247835758674,
+          1.3310925240382874,
+          0.009251051942731334
+        ],
+        "r": [
+          -0.0876916451928969,
+          1.3450930976578428,
+          0.039378049349718794
+        ]
+      },
+      "neck": [
+        0.05699403389998307,
+        1.4066334504287332,
+        0.025822436507042454
+      ],
+      "correction": {
+        "enabled": true,
+        "reference": "MH_Idle01_UE frame 0",
+        "maximumSoftVariationMetres": 0.008,
+        "talkWeight": 1,
+        "method": "avatar-local shoulder height envelope with arm counter-rotation",
+        "shoulders": [
+          {
+            "side": "l",
+            "referenceNeckGapMetres": 0.06754535637773773,
+            "correctionDegrees": 11.173388528386468
+          },
+          {
+            "side": "r",
+            "referenceNeckGapMetres": 0.06819210997911207,
+            "correctionDegrees": 1.2765469064735766
+          }
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Diagnostic diffuse lighting differs from the five studio lights.",
+    "Each before/after pair uses identical current clothing, hair and clip time; only the talk shoulder envelope changes.",
+    "Static source-module frames verify silhouette; they do not measure live FPS or dynamic cloth collisions."
+  ]
+}

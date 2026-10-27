@@ -1,0 +1,13 @@
+✔ eye makeup uses the original data mask and the brows follow hair tint through the real skinning adapter (234.13502ms)
+✔ imported hair follows immutable head binding after animation and presentation scaling; switching preserves avatar (839.295848ms)
+✔ failed and racing hairstyle loads preserve a valid visible style and latest user choice (1243.964848ms)
+✔ espresso is an intermediate colour, reuses the authored atlas and keeps brows in sync with successful choices (637.16446ms)
+✔ soft hair lag stays bounded and gives similar motion at 30 and 60 updates per second (1253.955996ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4258.706492

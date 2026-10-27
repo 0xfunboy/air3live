@@ -1,0 +1,224 @@
+{
+  "schema": "air3.attention-qa.v1",
+  "date": "2026-10-25T03:39:26.403Z",
+  "glbSha256": "ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d",
+  "runtime": "v24.22.1",
+  "platform": "linux",
+  "tests": [
+    {
+      "clip": "MH_Idle01_UE",
+      "camera": "front",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.2248268539014822,
+      "meanEyeErrorDegrees": 0.45731423434199014,
+      "maxHeadYawDegrees": 15.285608117710535,
+      "maxHeadPitchDegrees": 10.66091247059021
+    },
+    {
+      "clip": "MH_Idle01_UE",
+      "camera": "left",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.2330864637538765,
+      "meanEyeErrorDegrees": 0.4589839434776865,
+      "maxHeadYawDegrees": 31.565630680695918,
+      "maxHeadPitchDegrees": 11.318113187752937
+    },
+    {
+      "clip": "MH_Idle01_UE",
+      "camera": "right",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.2171444270427518,
+      "meanEyeErrorDegrees": 0.4581131558510975,
+      "maxHeadYawDegrees": 28.528465795787913,
+      "maxHeadPitchDegrees": 11.513058291380855
+    },
+    {
+      "clip": "MH_Idle02_UE",
+      "camera": "front",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.1484027348533006,
+      "meanEyeErrorDegrees": 0.31659426389949874,
+      "maxHeadYawDegrees": 14.314029295112181,
+      "maxHeadPitchDegrees": 6.9583034987380685
+    },
+    {
+      "clip": "MH_Idle02_UE",
+      "camera": "left",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.1419704785762324,
+      "meanEyeErrorDegrees": 0.3214839381594785,
+      "maxHeadYawDegrees": 30.56295887081107,
+      "maxHeadPitchDegrees": 7.4021782008275805
+    },
+    {
+      "clip": "MH_Idle02_UE",
+      "camera": "right",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.1396579811027607,
+      "meanEyeErrorDegrees": 0.3119382342736354,
+      "maxHeadYawDegrees": 19.28985072782252,
+      "maxHeadPitchDegrees": 8.817003495648699
+    },
+    {
+      "clip": "MH_Idle03_UE",
+      "camera": "front",
+      "samples": 240,
+      "maxEyeErrorDegrees": 0.4854986457041895,
+      "meanEyeErrorDegrees": 0.2161045177522641,
+      "maxHeadYawDegrees": 17.776075620716526,
+      "maxHeadPitchDegrees": 4.773949906674037
+    },
+    {
+      "clip": "MH_Idle03_UE",
+      "camera": "left",
+      "samples": 240,
+      "maxEyeErrorDegrees": 0.4988987824670184,
+      "meanEyeErrorDegrees": 0.2235769979303174,
+      "maxHeadYawDegrees": 4.4083575322858355,
+      "maxHeadPitchDegrees": 5.746745932192373
+    },
+    {
+      "clip": "MH_Idle03_UE",
+      "camera": "right",
+      "samples": 240,
+      "maxEyeErrorDegrees": 0.4903407792075433,
+      "meanEyeErrorDegrees": 0.21232095852031216,
+      "maxHeadYawDegrees": 33.71922283200835,
+      "maxHeadPitchDegrees": 6.759982268457401
+    },
+    {
+      "clip": "MH_Talk",
+      "camera": "front",
+      "samples": 240,
+      "maxEyeErrorDegrees": 0.5256553811107864,
+      "meanEyeErrorDegrees": 0.3044523173379812,
+      "maxHeadYawDegrees": 4.126055472002676,
+      "maxHeadPitchDegrees": 2.757292206964448
+    },
+    {
+      "clip": "MH_Talk",
+      "camera": "left",
+      "samples": 240,
+      "maxEyeErrorDegrees": 0.47219882172562677,
+      "meanEyeErrorDegrees": 0.29788260693291657,
+      "maxHeadYawDegrees": 13.507331337018046,
+      "maxHeadPitchDegrees": 1.5602152325564835
+    },
+    {
+      "clip": "MH_Talk",
+      "camera": "right",
+      "samples": 240,
+      "maxEyeErrorDegrees": 0.5278174831876299,
+      "meanEyeErrorDegrees": 0.30296528218954655,
+      "maxHeadYawDegrees": 19.33251311900299,
+      "maxHeadPitchDegrees": 1.5081110922364926
+    },
+    {
+      "clip": "MH_Talk01",
+      "camera": "front",
+      "samples": 240,
+      "maxEyeErrorDegrees": 0.7277626787680813,
+      "meanEyeErrorDegrees": 0.3869920240601056,
+      "maxHeadYawDegrees": 21.067897175333712,
+      "maxHeadPitchDegrees": 4.782950999234215
+    },
+    {
+      "clip": "MH_Talk01",
+      "camera": "left",
+      "samples": 240,
+      "maxEyeErrorDegrees": 0.7309504975077774,
+      "meanEyeErrorDegrees": 0.41397743575507445,
+      "maxHeadYawDegrees": 36.91381828674363,
+      "maxHeadPitchDegrees": 6.964849541543368
+    },
+    {
+      "clip": "MH_Talk01",
+      "camera": "right",
+      "samples": 240,
+      "maxEyeErrorDegrees": 0.6495839815753849,
+      "meanEyeErrorDegrees": 0.3617556946637157,
+      "maxHeadYawDegrees": 5.214159055390842,
+      "maxHeadPitchDegrees": 4.524808752911992
+    },
+    {
+      "clip": "MH_Talk02",
+      "camera": "front",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.5490561104575495,
+      "meanEyeErrorDegrees": 0.6031212872824381,
+      "maxHeadYawDegrees": 17.96046661738624,
+      "maxHeadPitchDegrees": 10.882098411094816
+    },
+    {
+      "clip": "MH_Talk02",
+      "camera": "left",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.51352375880755,
+      "meanEyeErrorDegrees": 0.5952645886804123,
+      "maxHeadYawDegrees": 12.40452710430524,
+      "maxHeadPitchDegrees": 9.920754665847067
+    },
+    {
+      "clip": "MH_Talk02",
+      "camera": "right",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.3668470691302288,
+      "meanEyeErrorDegrees": 0.5676231862234512,
+      "maxHeadYawDegrees": 34.21827144520094,
+      "maxHeadPitchDegrees": 13.760862963509588
+    },
+    {
+      "clip": "MH_Talk03",
+      "camera": "front",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.6080242411470382,
+      "meanEyeErrorDegrees": 0.4593099528565273,
+      "maxHeadYawDegrees": 23.17697612055098,
+      "maxHeadPitchDegrees": 18.953036856006126
+    },
+    {
+      "clip": "MH_Talk03",
+      "camera": "left",
+      "samples": 240,
+      "maxEyeErrorDegrees": 1.5103231532777526,
+      "meanEyeErrorDegrees": 0.43209893664503435,
+      "maxHeadYawDegrees": 40.064750839787564,
+      "maxHeadPitchDegrees": 19.340321864035893
+    },
+    {
+      "clip": "MH_Talk03",
+      "camera": "right",
+      "samples": 240,
+      "maxEyeErrorDegrees": 2.63000488989813,
+      "meanEyeErrorDegrees": 0.5662184576548115,
+      "maxHeadYawDegrees": 24.74784561914785,
+      "maxHeadPitchDegrees": 19.00571672214313
+    }
+  ],
+  "passed": true,
+  "scope": "Actual delivered skeleton/animations; texture-free Node load; angular errors are bone optical axes, not a pixel-based likeness score",
+  "stageTransform": {
+    "position": [
+      1,
+      0.1,
+      -2
+    ],
+    "scale": [
+      1.13,
+      1.13,
+      1.13
+    ],
+    "rotationY": 0.46
+  },
+  "sources": {
+    "public/air3-avatar.mjs": {
+      "sha256": "59260a2fb70366dc29ffb21159db2bd69ff2e724e78cb29d91c87c501580d1af"
+    },
+    "public/air3-attention.mjs": {
+      "sha256": "ea1e33cd14300879e1d104ec8866fc7943ac715497bfd7bb8dea86f4270a783d"
+    },
+    "public/air3-face.mjs": {
+      "sha256": "bf67004472684e6eae68b962a6f5b91fb54f29250fac94b56ec0fd261701ae2b"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "air3live",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "description": "#AIR3 Autonomous 24/7 Live Broadcast Studio — 3D MetaHuman Presenter, Market Wallboard, Headless Audio/Video Pipeline & Agent Control APIs",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:0xfunboy/air3live.git"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "init": "npm run init --prefix studio-broadcast",
+    "start": "npm run live",
+    "broadcast": "npm run broadcast --prefix studio-broadcast",
+    "preview": "node tools/preview-server.mjs --studio studio-broadcast",
+    "test": "npm test --prefix studio-broadcast",
+    "check": "npm run check --prefix studio-broadcast",
+    "smoke": "npm run smoke --prefix studio-broadcast",
+    "smoke:avatar": "npm run smoke:avatar --prefix studio-broadcast",
+    "sync:metadata": "node studio-broadcast/scripts/sync-metadata-assets.mjs",
+    "build": "npm run build --prefix studio-broadcast",
+    "start:intel": "node scripts/start-live.mjs intel",
+    "start:nvidia": "node scripts/start-live.mjs nvidia",
+    "preview:intel": "node scripts/launch-studio.mjs intel",
+    "preview:nvidia": "node scripts/launch-studio.mjs nvidia",
+    "broadcast:intel": "node scripts/launch-broadcast.mjs intel",
+    "broadcast:nvidia": "node scripts/launch-broadcast.mjs nvidia",
+    "gpu:status": "node studio-broadcast/scripts/select-gpu.mjs status",
+    "gpu:intel": "node studio-broadcast/scripts/select-gpu.mjs intel",
+    "gpu:nvidia": "node studio-broadcast/scripts/select-gpu.mjs nvidia",
+    "gpu:reset": "node studio-broadcast/scripts/select-gpu.mjs reset",
+    "test:intel": "node studio-broadcast/scripts/test-intel-arc.mjs",
+    "live": "node scripts/start-live.mjs",
+    "setup": "npm ci --prefix studio-broadcast && npm run init --prefix studio-broadcast && npm run browser:install --prefix studio-broadcast",
+    "bridge:dapp": "node --env-file=studio-broadcast/.env adapters/dapp-wallpanel.mjs",
+    "qa:live": "npm run qa:live --prefix studio-broadcast",
+    "qa:rtmp": "npm run qa:rtmp --prefix studio-broadcast",
+    "qa:logs": "npm run qa:logs --prefix studio-broadcast"
+  },
+  "keywords": [
+    "air3",
+    "threejs",
+    "metahuman",
+    "puppeteer-stream",
+    "ffmpeg",
+    "broadcast",
+    "rtsp",
+    "rtmp",
+    "ai-agent"
+  ],
+  "author": "0xfunboy",
+  "license": "0xfunboy Non-Commercial License Version 1.1"
+}
