@@ -107,7 +107,7 @@ export function loadBroadcastConfig(env = process.env) {
     controlStdin: bool(env, 'AIR3_CONTROL_STDIN'),
     recordingDir: resolve(serviceRoot, env.AIR3_RECORDING_DIR || './recordings'),
     ffmpeg: env.AIR3_FFMPEG || 'ffmpeg',
-    noSandbox: bool(env, 'AIR3_CHROME_NO_SANDBOX'),
+    noSandbox: env.AIR3_CHROME_NO_SANDBOX !== undefined ? bool(env, 'AIR3_CHROME_NO_SANDBOX') : process.platform === 'linux',
     requireHardware: bool(env, 'AIR3_REQUIRE_HARDWARE_RENDERING', mode !== 'file'),
     bitrateKbps: integer(env, 'AIR3_VIDEO_BITRATE_KBPS', 4500, 500, 20000),
     captureBitrateKbps: integer(env, 'AIR3_CAPTURE_BITRATE_KBPS', 10000, 1000, 40000),
