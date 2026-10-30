@@ -13,17 +13,16 @@ studio-broadcast/.env
 # Local Runtime Data and Cache
 .cache/
 .tmp/
-studio-broadcast/.tmp/
-data/
-studio-broadcast/data/
+/data/
+/studio-broadcast/data/
 
 # Video Recordings and Temporary Media
 recordings/
-studio-broadcast/recordings/
+/studio-broadcast/recordings/
 *.mkv
 *.mp4
-*.wav
 *.part-*
+!studio-broadcast/public/assets/**
 
 # Logs
 *.log
