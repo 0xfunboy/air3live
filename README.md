@@ -11,6 +11,7 @@
   <a href="#quickstart"><strong>🚀 Quickstart</strong></a> ·
   <a href="#executive-summary">Executive Summary</a> ·
   <a href="#at-a-glance">At a Glance</a> ·
+  <a href="docs/AI_AGENT_GUIDE.md"><strong>🤖 AI Agent Guide</strong></a> ·
   <a href="#247-autonomous-architecture">24/7 Autonomous Architecture</a> ·
   <a href="#control-room">Control Room</a> ·
   <a href="#airdapp-wallboard">AIRdApp Wallboard</a> ·
