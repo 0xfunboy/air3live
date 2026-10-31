@@ -97,8 +97,8 @@ export function loadBroadcastConfig(env = process.env) {
   }
   const encoder = env.AIR3_VIDEO_ENCODER || 'auto';
   if (!['auto', 'libx264', 'h264_nvenc', 'h264_qsv'].includes(encoder)) throw new Error('AIR3_VIDEO_ENCODER must be auto, libx264, h264_nvenc or h264_qsv');
-  const angle = env.AIR3_CHROME_ANGLE || 'default';
-  if (!['default', 'vulkan', 'gl', 'swiftshader'].includes(angle)) throw new Error('Unsupported AIR3_CHROME_ANGLE');
+  const angle = env.AIR3_CHROME_ANGLE || 'gl-egl';
+  if (!['default', 'vulkan', 'gl', 'gl-egl', 'swiftshader'].includes(angle)) throw new Error('Unsupported AIR3_CHROME_ANGLE');
   let browserPath = env.AIR3_CHROME_PATH || '';
   if (!browserPath) { try { browserPath = readFileSync(resolve(serviceRoot, '.browser-path'), 'utf8').trim(); } catch {} }
   if (!browserPath) throw new Error('Set AIR3_CHROME_PATH or run npm run browser:install');

@@ -123,7 +123,7 @@ async function staticFile(req, res, pathname, config) {
     await handle.close();
     throw new QueueError('NOT_FOUND', 404);
   }
-  res.writeHead(200, { 'Content-Type': MIME[ext], 'Content-Length': info.size, 'Cache-Control': 'no-cache' });
+  res.writeHead(200, { 'Content-Type': MIME[ext], 'Content-Length': info.size, 'Cache-Control': 'no-store, no-cache, must-revalidate' });
   if (req.method === 'HEAD') { await handle.close(); res.end(); return; }
   await pipeline(handle.createReadStream(), res);
 }

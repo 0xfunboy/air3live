@@ -400,20 +400,25 @@ async function boot() {
     if (config.live) {
       await applyProgram(programState);
       programClient = createProgramClient({ onUpdate: applyProgram }); programClient.start();
-      $('live-control-link').hidden = false; $('save-live-look').hidden = false;
-      $('save-live-look').addEventListener('click', async () => {
-        const button = $('save-live-look'); button.disabled = true;
-        try {
-          const response = await fetch('/api/live/settings', { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ look: scene.look.getPreset() }) });
-          if (!response.ok) throw new Error('Open the Live Control Room and log in before saving the look.');
-          $('notice').textContent = 'Look saved to Control Room and applied to broadcast output.';
-        } catch (error) { $('notice').textContent = error.message; } finally { button.disabled = false; }
-      });
+      if (!isPublicHost && params.get('operator') === '1') {
+        if ($('live-control-link')) $('live-control-link').hidden = false;
+        if ($('save-live-look')) {
+          $('save-live-look').hidden = false;
+          $('save-live-look').addEventListener('click', async () => {
+            const button = $('save-live-look'); button.disabled = true;
+            try {
+              const response = await fetch('/api/live/settings', { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ look: scene.look.getPreset() }) });
+              if (!response.ok) throw new Error('Open the Live Control Room and log in before saving the look.');
+              if ($('notice')) $('notice').textContent = 'Look saved to Control Room and applied to broadcast output.';
+            } catch (error) { if ($('notice')) $('notice').textContent = error.message; } finally { button.disabled = false; }
+          });
+        }
+      }
     }
-    if (scene.stageMotion) for (const id of ['stage-present', 'stage-home', 'stage-auto']) $(id).disabled = false;
-    if (params.get('roam') === '1') { scene.enableRoaming(true); $('stage-auto').checked = true; }
-    $('loading').hidden = true;
+    if (scene.stageMotion) for (const id of ['stage-present', 'stage-home', 'stage-auto']) if ($(id)) $(id).disabled = false;
+    if (params.get('roam') === '1' && $('stage-auto')) { scene.enableRoaming(true); $('stage-auto').checked = true; }
+    if ($('loading')) $('loading').hidden = true;
     resolveReady({ renderer: 'three.js/WebGL', avatar: scene.avatarStatus });
     tick(); sample(); health();
     healthTimer = setInterval(health, 10_000);

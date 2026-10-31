@@ -85,12 +85,24 @@ async function session(signal) {
   signal.addEventListener('abort', onAbort, { once: true });
   try {
     const args = ['--autoplay-policy=no-user-gesture-required', '--disable-background-timer-throttling',
-      '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', '--hide-scrollbars'];
-    if (config.angle !== 'default') args.push(`--use-angle=${config.angle}`);
+      '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', '--hide-scrollbars',
+      '--enable-gpu', '--ignore-gpu-blocklist', '--enable-gpu-rasterization',
+      '--disable-gpu-vsync', '--disable-frame-rate-limit'];
+    if (config.angle === 'gl-egl') {
+      args.push('--use-gl=angle', '--use-angle=gl-egl');
+    } else if (config.angle !== 'default') {
+      args.push(`--use-angle=${config.angle}`);
+    }
     if (config.angle === 'vulkan') args.push('--enable-features=Vulkan', '--enable-gpu');
     if (config.angle === 'swiftshader' || !config.requireHardware) args.push('--enable-unsafe-swiftshader');
     if (config.noSandbox) args.push('--no-sandbox');
-    browser = await capture.launch({ executablePath: config.browserPath, headless: 'new', args,
+    const browserEnv = {
+      ...process.env,
+      LD_LIBRARY_PATH: '/home/funboy/.local/lib/nvidia/usr/lib/x86_64-linux-gnu:/home/funboy/.local/usr/lib/x86_64-linux-gnu:' + (process.env.LD_LIBRARY_PATH || ''),
+      VK_ICD_FILENAMES: '/home/funboy/.local/share/vulkan/icd.d/nvidia_icd.json',
+      __EGL_VENDOR_LIBRARY_FILENAMES: '/home/funboy/.local/lib/nvidia/usr/share/glvnd/egl_vendor.d/10_nvidia.json',
+    };
+    browser = await capture.launch({ executablePath: config.browserPath, headless: 'new', args, env: browserEnv,
       defaultViewport: { width: config.gateway.width, height: config.gateway.height, deviceScaleFactor: 1 },
       timeout: 120000, protocolTimeout: 120000, startDelay: 1000, dumpio: true });
     browser.once('disconnected', () => { if (!signal.aborted) fail(new Error('Browser disconnected')); });

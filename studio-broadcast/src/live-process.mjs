@@ -28,10 +28,16 @@ export function buildLiveEnvironment(settings, gatewayConfig, baseEnv, { mode, o
   if (!['live', 'record', 'twitch-test'].includes(mode)) throw new QueueError('INVALID_LIVE_MODE', 400);
   if (mode === 'twitch-test' && settings.stream.provider !== 'twitch') throw new QueueError('TWITCH_TEST_ONLY', 400);
   const profile = VIDEO_PROFILES[settings.stream.profile];
+  const nvidiaLib = '/home/funboy/.local/lib/nvidia/usr/lib/x86_64-linux-gnu';
   const localLib = '/home/funboy/.local/usr/lib/x86_64-linux-gnu';
+  const fullLd = `${nvidiaLib}:${localLib}`;
   const existingLd = baseEnv.LD_LIBRARY_PATH || process.env.LD_LIBRARY_PATH || '';
-  const ldPath = existingLd.includes(localLib) ? existingLd : (existingLd ? `${localLib}:${existingLd}` : localLib);
-  const env = { ...baseEnv, LD_LIBRARY_PATH: ldPath, AIR3_PRODUCER_TOKEN: gatewayConfig.producerToken, AIR3_PLAYER_TOKEN: gatewayConfig.playerToken,
+  const ldPath = existingLd.includes(nvidiaLib) ? existingLd : (existingLd ? `${fullLd}:${existingLd}` : fullLd);
+  const env = { ...baseEnv, LD_LIBRARY_PATH: ldPath,
+    VK_ICD_FILENAMES: baseEnv.VK_ICD_FILENAMES || '/home/funboy/.local/share/vulkan/icd.d/nvidia_icd.json',
+    __EGL_VENDOR_LIBRARY_FILENAMES: baseEnv.__EGL_VENDOR_LIBRARY_FILENAMES || '/home/funboy/.local/lib/nvidia/usr/share/glvnd/egl_vendor.d/10_nvidia.json',
+    AIR3_CHROME_ANGLE: baseEnv.AIR3_CHROME_ANGLE || 'gl-egl',
+    AIR3_PRODUCER_TOKEN: gatewayConfig.producerToken, AIR3_PLAYER_TOKEN: gatewayConfig.playerToken,
     AIR3_PORT: String(gatewayConfig.port), AIR3_DATA_DIR: gatewayConfig.dataDir,
     AIR3_STUDIO_URL: `${origin}/studio?output=1&live=1`, AIR3_AVATAR_URL: gatewayConfig.avatarUrl || '',
     AIR3_WIDTH: String(profile.width), AIR3_HEIGHT: String(profile.height), AIR3_FPS: String(profile.fps),
