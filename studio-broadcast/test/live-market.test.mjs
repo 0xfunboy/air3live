@@ -55,7 +55,7 @@ test('observed heatmap bins only matching real executed events and distinguishes
   const h = observedHeatmap(events, binanceCandles(prices), { symbol: 'BTCUSDT', range: '12h', now: NOW, collectedSince: NOW - 20_000 });
   assert.equal(h.kind, 'observed-liquidations'); assert.equal(h.count, 2); assert.equal(h.longUsd, 40000); assert.equal(h.shortUsd, 40000);
   assert.equal(h.cells.reduce((sum, row) => sum + row[2], 0), 80000);
-  assert.ok(h.coverage.includes('non indica') || h.coverage.includes('Non indica'));
+  assert.ok(/not indicate|non indica/i.test(h.coverage));
   const empty = observedHeatmap([], [], { symbol: 'BTCUSDT', range: '12h', now: NOW });
   assert.deepEqual(empty.cells, []); assert.equal(empty.minPrice, null); assert.equal(empty.count, 0);
 });

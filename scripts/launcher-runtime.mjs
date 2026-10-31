@@ -10,7 +10,7 @@ export function gpuRequest(value = 'intel') {
   const name = String(value).toLowerCase();
   if (['intel', 'arc'].includes(name)) return { id: 'intel', preference: '1', encoder: 'h264_qsv', label: 'basso consumo / Intel, se disponibile' };
   if (['nvidia', 'rtx'].includes(name)) return { id: 'nvidia', preference: '2', encoder: 'h264_nvenc', label: 'alte prestazioni / NVIDIA, se disponibile' };
-  throw new Error('GPU non valida: usare intel oppure nvidia');
+  throw new Error('Invalid GPU: specify intel or nvidia');
 }
 
 export async function resolveLauncherChrome(serviceRoot, env = process.env, platform = process.platform) {
@@ -19,7 +19,7 @@ export async function resolveLauncherChrome(serviceRoot, env = process.env, plat
   let executable = env.AIR3_CHROME_PATH || fileEnvironment.AIR3_CHROME_PATH;
   if (!executable) try { executable = (await readFile(path.join(serviceRoot, '.browser-path'), 'utf8')).trim(); } catch (error) { if (error.code !== 'ENOENT') throw error; }
   if (!executable && platform === 'win32') executable = path.win32.join(env.ProgramFiles || 'C:\\Program Files', 'Google', 'Chrome', 'Application', 'chrome.exe');
-  if (!executable) throw new Error('Chrome non configurato: eseguire npm run browser:install --prefix studio-broadcast oppure impostare AIR3_CHROME_PATH');
+  if (!executable) throw new Error('Chrome not configured: run npm run browser:install --prefix studio-broadcast or set AIR3_CHROME_PATH');
   await access(executable, constants.F_OK);
   return executable;
 }
@@ -77,7 +77,7 @@ export function applyWindowsGpuPreference(executable, request, { platform = proc
   if (platform !== 'win32') return { applied: false, restore: () => ({ restored: false, reason: 'not-windows' }) };
   const base = { ...env, AIR3_LAUNCHER_GPU_APP: executable, AIR3_LAUNCHER_GPU_PREFERENCE: request.preference };
   const prior = powershellJson(APPLY_GPU_SCRIPT, base, execute);
-  if (typeof prior.existed !== 'boolean' || prior.applied !== `GpuPreference=${request.preference};`) throw new Error('Risposta preferenza GPU non valida');
+  if (typeof prior.existed !== 'boolean' || prior.applied !== `GpuPreference=${request.preference};`) throw new Error('Invalid GPU preference response');
   let result = null;
   return { applied: true, restore() {
     if (result) return result;
@@ -122,12 +122,12 @@ export function startManaged(command, args, { cwd, env = process.env, stdout = p
 
 export function waitForOwnedEvent(managed, predicate, timeoutMs = 15000) {
   const existing = managed.seen.find(predicate); if (existing) return Promise.resolve(existing);
-  if (managed.ended) return Promise.reject(managed.ended.error || new Error(`Il processo è terminato prima dell'avvio (${managed.ended.code ?? managed.ended.signal})`));
+  if (managed.ended) return Promise.reject(managed.ended.error || new Error(`Process terminated before startup (${managed.ended.code ?? managed.ended.signal})`));
   return new Promise((resolve, reject) => {
     const cleanup = () => { clearTimeout(timer); managed.events.off('json', onJson); managed.events.off('ended', onEnd); };
     const onJson = value => { if (!predicate(value)) return; cleanup(); resolve(value); };
-    const onEnd = result => { cleanup(); reject(result.error || new Error(`Il processo è terminato prima dell'avvio (${result.code ?? result.signal})`)); };
-    const timer = setTimeout(() => { cleanup(); reject(new Error('Timeout nell’attesa dell’avvio del processo controllato')); }, timeoutMs);
+    const onEnd = result => { cleanup(); reject(result.error || new Error(`Process terminated before startup (${result.code ?? result.signal})`)); };
+    const timer = setTimeout(() => { cleanup(); reject(new Error('Timed out waiting for managed process startup')); }, timeoutMs);
     managed.events.on('json', onJson); managed.events.once('ended', onEnd);
   });
 }

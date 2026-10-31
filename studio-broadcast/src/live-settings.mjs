@@ -26,7 +26,7 @@ export function defaultLiveSettings(config = {}) {
     twitch: { enabled: false, clientId: '', clientSecret: '', channel: '', accessToken: '', refreshToken: '', userId: '', login: '', scopes: [], expiresAt: 0 },
   };
 }
-function fail(field) { throw new QueueError('INVALID_LIVE_SETTINGS', 400, `Valore non valido: ${field}`); }
+function fail(field) { throw new QueueError('INVALID_LIVE_SETTINGS', 400, `Invalid value: ${field}`); }
 function object(v, allowed, field) {
   if (!v || typeof v !== 'object' || ![Object.prototype, null].includes(Object.getPrototypeOf(v)) || Object.keys(v).some(k => !allowed.includes(k))) fail(field);
 }
@@ -50,7 +50,7 @@ export const VIDEO_PROFILES = Object.freeze({ '720p30': { width: 1280, height: 7
   '1080p30': { width: 1920, height: 1080, fps: 30 }, '1080p60': { width: 1920, height: 1080, fps: 60 } });
 
 export function mergeLiveSettings(previous, patch, { internal = false } = {}) {
-  object(patch, ['stream', 'scene', 'look', 'tts', 'market', 'twitch'], 'Impostazioni');
+  object(patch, ['stream', 'scene', 'look', 'tts', 'market', 'twitch'], 'Settings');
   const next = clone(previous);
   for (const section of ['stream', 'scene', 'tts', 'market', 'twitch']) if (patch[section] !== undefined) {
     const allowed = [...FIELDS[section]];
@@ -63,44 +63,44 @@ export function mergeLiveSettings(previous, patch, { internal = false } = {}) {
   }
   const s = next.stream;
   if ((s.provider !== previous.stream.provider || s.server !== previous.stream.server) && patch.stream && !Object.hasOwn(patch.stream, 'key')) s.key = '';
-  s.provider = choice(s.provider, ['restream', 'twitch', 'custom'], 'Destinazione');
-  s.server = text(s.server, 2048, 'Server streaming'); s.key = text(s.key, 1024, 'Stream key');
+  s.provider = choice(s.provider, ['restream', 'twitch', 'custom'], 'Destination');
+  s.server = text(s.server, 2048, 'Streaming server'); s.key = text(s.key, 1024, 'Stream key');
   if (s.key && /[\s#\\]/.test(s.key)) fail('Stream key');
   if (s.server) {
-    let u; try { u = new URL(s.server); } catch { fail('Server streaming'); }
-    if (!['rtmp:', 'rtmps:'].includes(u.protocol) || !u.hostname || u.username || u.password || u.search || u.hash) fail('Server streaming');
-    if (s.provider === 'restream' && !/(^|\.)restream\.io$/i.test(u.hostname)) fail('Server Restream');
-    if (s.provider === 'twitch' && !/(^|\.)(live-video\.net|twitch\.tv)$/i.test(u.hostname)) fail('Server Twitch');
+    let u; try { u = new URL(s.server); } catch { fail('Streaming server'); }
+    if (!['rtmp:', 'rtmps:'].includes(u.protocol) || !u.hostname || u.username || u.password || u.search || u.hash) fail('Streaming server');
+    if (s.provider === 'restream' && !/(^|\.)restream\.io$/i.test(u.hostname)) fail('Restream server');
+    if (s.provider === 'twitch' && !/(^|\.)(live-video\.net|twitch\.tv)$/i.test(u.hostname)) fail('Twitch server');
     s.server = u.toString().replace(/\/$/, '');
   }
-  choice(s.profile, Object.keys(VIDEO_PROFILES), 'Risoluzione'); number(s.bitrateKbps, 500, 20000, 'Bitrate', true);
+  choice(s.profile, Object.keys(VIDEO_PROFILES), 'Resolution'); number(s.bitrateKbps, 500, 20000, 'Bitrate', true);
   choice(s.encoder, ['auto', 'libx264', 'h264_nvenc', 'h264_qsv'], 'Encoder');
-  choice(s.quality, ['auto', 'high', 'balanced', 'software'], 'Qualità'); bool(s.twitchBandwidthTest, 'Test Twitch');
+  choice(s.quality, ['auto', 'high', 'balanced', 'software'], 'Quality'); bool(s.twitchBandwidthTest, 'Twitch test');
   if (s.autoRecovery === undefined) s.autoRecovery = true; else bool(s.autoRecovery, 'Auto-Recovery');
   const a = next.scene;
   choice(a.camera, ['auto', 'wide', 'presenter', 'screens'], 'Camera');
-  choice(a.emotion, ['neutral', 'happy', 'sad', 'surprised', 'warm', 'focused', 'concerned'], 'Espressione');
-  number(a.intensity, 0, 1, 'Intensità'); bool(a.eyeContact, 'Sguardo'); bool(a.roaming, 'Movimento');
+  choice(a.emotion, ['neutral', 'happy', 'sad', 'surprised', 'warm', 'focused', 'concerned'], 'Expression');
+  number(a.intensity, 0, 1, 'Intensity'); bool(a.eyeContact, 'Eye contact'); bool(a.roaming, 'Roaming');
   const t = next.tts;
-  t.baseUrl = text(t.baseUrl, 2048, 'Server voce', false);
-  let tu; try { tu = new URL(t.baseUrl); } catch { fail('Server voce'); }
-  if (!['http:', 'https:'].includes(tu.protocol) || tu.username || tu.password || tu.search || tu.hash) fail('Server voce');
+  t.baseUrl = text(t.baseUrl, 2048, 'TTS server', false);
+  let tu; try { tu = new URL(t.baseUrl); } catch { fail('TTS server'); }
+  if (!['http:', 'https:'].includes(tu.protocol) || tu.username || tu.password || tu.search || tu.hash) fail('TTS server');
   t.baseUrl = tu.toString().replace(/\/$/, '');
   for (const key of ['model', 'voiceIt', 'voiceEn']) t[key] = text(t[key], 160, key, false);
-  t.apiKey = text(t.apiKey, 4096, 'Chiave TTS'); number(t.speed, .5, 2, 'Velocità voce');
+  t.apiKey = text(t.apiKey, 4096, 'TTS key'); number(t.speed, .5, 2, 'Speech speed');
   const m = next.market;
-  bool(m.enabled, 'Dati mercato'); choice(m.provider, ['binance', 'coinglass', 'demo'], 'Fonte heatmap');
-  choice(m.symbol, ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'], 'Simbolo'); choice(m.range, ['12h', '24h', '3d', '7d'], 'Intervallo');
-  choice(m.wallpanelSource, ['market', 'external'], 'Wallpanel'); m.coinglassKey = text(m.coinglassKey, 512, 'Chiave CoinGlass');
-  try { validateMarketConfig(m); } catch { fail('Fonte mercato'); }
-  const c = next.twitch; bool(c.enabled, 'Chat Twitch');
+  bool(m.enabled, 'Market data'); choice(m.provider, ['binance', 'coinglass', 'demo'], 'Heatmap provider');
+  choice(m.symbol, ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'], 'Symbol'); choice(m.range, ['12h', '24h', '3d', '7d'], 'Range');
+  choice(m.wallpanelSource, ['market', 'external'], 'Wallpanel'); m.coinglassKey = text(m.coinglassKey, 512, 'CoinGlass key');
+  try { validateMarketConfig(m); } catch { fail('Market source'); }
+  const c = next.twitch; bool(c.enabled, 'Twitch chat');
   c.clientId = text(c.clientId, 128, 'Twitch Client ID'); c.clientSecret = text(c.clientSecret, 1024, 'Twitch Client secret');
-  c.channel = text(c.channel, 25, 'Canale Twitch').replace(/^#/, '').toLowerCase();
-  if (c.channel && !/^[a-z0-9_]{1,25}$/.test(c.channel)) fail('Canale Twitch');
+  c.channel = text(c.channel, 25, 'Twitch channel').replace(/^#/, '').toLowerCase();
+  if (c.channel && !/^[a-z0-9_]{1,25}$/.test(c.channel)) fail('Twitch channel');
   if (c.clientId && !/^[a-z0-9]+$/i.test(c.clientId)) fail('Twitch Client ID');
   for (const key of ['accessToken', 'refreshToken', 'userId', 'login']) c[key] = text(c[key], 4096, key);
   if (!Array.isArray(c.scopes) || c.scopes.some(v => typeof v !== 'string' || v.length > 100)) fail('Twitch scope');
-  number(c.expiresAt, 0, Number.MAX_SAFE_INTEGER, 'Twitch scadenza');
+  number(c.expiresAt, 0, Number.MAX_SAFE_INTEGER, 'Twitch expiration');
   if (previous.twitch.clientId !== c.clientId || previous.twitch.clientSecret !== c.clientSecret) {
     c.accessToken = ''; c.refreshToken = ''; c.userId = ''; c.login = ''; c.scopes = []; c.expiresAt = 0;
   }

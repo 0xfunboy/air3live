@@ -67,11 +67,12 @@ export async function runLiveLauncher({ root = ROOT, gpu = process.argv[2] } = {
   if (Number(process.versions.node.split('.')[0]) < 24 || typeof process.loadEnvFile !== 'function') throw new Error('NODE_24_REQUIRED');
   const service = resolve(root, 'studio-broadcast');
   await access(resolve(service, 'node_modules/three/package.json')).catch(() => { throw new Error('RUN_SETUP_FIRST'); });
-  let gateway, stopping = null, stderr = '', preference = null;
+  let gateway, ttsAdapter = null, stopping = null, stderr = '', preference = null;
   async function shutdown(code = 0) {
     if (stopping) return stopping;
     stopping = (async () => {
       const stopped = await stopManaged(gateway, { graceMs: 50_000 });
+      if (ttsAdapter) await stopManaged(ttsAdapter, { graceMs: 5000 });
       if (stopped.forced && !code) code = 1;
       try {
         const restored = preference?.restore();
@@ -90,15 +91,63 @@ export async function runLiveLauncher({ root = ROOT, gpu = process.argv[2] } = {
     if (chrome && requestedGpu && process.platform === 'win32') {
       try {
         const request = gpuRequest(requestedGpu);
-        console.log(`airewardrop Live · GPU richiesta per Chrome: ${request.label}`);
+        console.log(`airewardrop Live · GPU requested for Chrome: ${request.label}`);
         preference = applyWindowsGpuPreference(chrome, request);
       } catch (err) {
-        console.log(`Nota GPU: ${err.message}`);
+        console.log(`GPU note: ${err.message}`);
       }
     }
     const prepared = await prepareLiveEnv(service);
     if (stopping) { await stopping; return; }
     process.loadEnvFile(prepared.file);
+
+    // Check and start Kokoro TTS adapter if local adapter is not already running
+    const ttsBase = process.env.AIR3_TTS_BASE_URL || 'http://127.0.0.1:8880/v1';
+    let ttsTargetUrl;
+    try {
+      ttsTargetUrl = new URL(ttsBase);
+    } catch {
+      ttsTargetUrl = new URL('http://127.0.0.1:8880/v1');
+    }
+    const isLocalTts = ['127.0.0.1', 'localhost', '::1'].includes(ttsTargetUrl.hostname);
+    if (isLocalTts) {
+      let ttsActive = false;
+      try {
+        const probe = await fetch(new URL('/health', ttsTargetUrl.origin), { signal: AbortSignal.timeout(1000) });
+        ttsActive = probe.ok;
+      } catch {}
+
+      if (!ttsActive) {
+        const pythonTts = process.env.AIR3_TTS_PYTHON || '/home/funboy/.local/share/pocket-tts/venv/bin/python3';
+        const hasLocalServer = await access(pythonTts).then(() => true).catch(() => false);
+        if (hasLocalServer) {
+          ttsAdapter = startManaged(pythonTts, [resolve(root, 'services/tts-server/server.py')], {
+            cwd: root, env: { ...process.env }, stdout: null,
+            stderr: { write(bytes) { console.error('[TTS-Server]', bytes.toString()); } }
+          });
+        } else {
+          ttsAdapter = startManaged(process.execPath, [resolve(root, 'adapters/tts-gradio-adapter.mjs')], {
+            cwd: root, env: { ...process.env }, stdout: null,
+            stderr: { write(bytes) { console.error('[TTS-Adapter]', bytes.toString()); } }
+          });
+        }
+        for (let i = 0; i < 50; i++) {
+          try {
+            const probe = await fetch(new URL('/health', ttsTargetUrl.origin), { signal: AbortSignal.timeout(500) });
+            if (probe.ok) { ttsActive = true; break; }
+          } catch {}
+          await delay(100);
+        }
+        if (ttsActive) {
+          console.log(`✓ TTS service started on ${ttsTargetUrl.origin}`);
+        } else {
+          console.warn(`! Warning: TTS service on ${ttsTargetUrl.origin} did not respond within timeout.`);
+        }
+      } else {
+        console.log(`✓ TTS service active on ${ttsTargetUrl.origin}`);
+      }
+    }
+
     // External environment remains authoritative; this entry point explicitly
     // enables the control room, never an encoder or a public broadcast.
     const env = { ...process.env, AIR3_LIVE_ENABLED: 'true' };
@@ -112,14 +161,19 @@ export async function runLiveLauncher({ root = ROOT, gpu = process.argv[2] } = {
     const studioUrl = new URL('/studio', `http://${studioHost}:${ready.port}`).toString();
 
     console.log('========================================================================');
-    console.log('✓ #AIR3 Live Standalone 3.0 avviato con successo!');
-    console.log(`✓ Finestra 1 (Regia Live): ${controlUrl}`);
-    console.log(`✓ Finestra 2 (Studio 3D) : ${studioUrl}`);
+    console.log('✓ #AIR3 Live Standalone 3.0 successfully started!');
+    console.log(`✓ Window 1 (Live Control Room): ${controlUrl}`);
+    console.log(`✓ Window 2 (3D Studio Stage) : ${studioUrl}`);
     console.log('========================================================================');
-    console.log('Apertura automatica di entrambe le finestre nel browser in corso...');
-    console.log('Ctrl+C nel terminale arresta il servizio.');
+    if (process.platform === 'win32' || process.env.DISPLAY || process.env.WAYLAND_DISPLAY) {
+      console.log('Automatically opening both windows in browser...');
+    } else {
+      console.log('Headless / server environment: open the URLs above in your client browser.');
+    }
+    console.log('Ctrl+C in terminal stops the service.');
 
     function openBrowser(targetUrl) {
+      if (process.platform !== 'win32' && !process.env.DISPLAY && !process.env.WAYLAND_DISPLAY) return;
       if (chrome) {
         const proc = spawn(chrome, ['--new-window', '--autoplay-policy=no-user-gesture-required', targetUrl],
           { detached: true, stdio: 'ignore', windowsHide: false });
@@ -140,11 +194,11 @@ export async function runLiveLauncher({ root = ROOT, gpu = process.argv[2] } = {
     if (!stopping) await shutdown(exitCode(result));
   } catch (error) {
     if (!stopping) {
-      const message = /EADDRINUSE/.test(stderr) ? 'Porta già occupata. La regia esistente è rimasta attiva.'
-        : error.message === 'LIVE_INIT_BUSY' ? 'Inizializzazione già in corso. Riprova tra pochi secondi.'
+      const message = /EADDRINUSE/.test(stderr) ? 'Port already in use. Existing control room remains active.'
+        : error.message === 'LIVE_INIT_BUSY' ? 'Initialization already in progress. Retry in a few seconds.'
         : /AIR3_.*must|Operator, producer and player tokens must|Producer and player tokens must/.test(stderr)
-          ? 'Configurazione .env non valida: verifica i parametri e le tre chiavi distinte, senza rigenerare quelle già in uso.'
-          : 'Avvio della regia non riuscito. Verifica Node 24, npm run setup e la configurazione .env.';
+          ? 'Invalid .env configuration: verify parameters and the three distinct keys.'
+          : 'Failed to start control room. Verify Node 24, npm run setup, and .env configuration.';
       console.error(message); await shutdown(1);
     }
   } finally {
@@ -155,9 +209,9 @@ export async function runLiveLauncher({ root = ROOT, gpu = process.argv[2] } = {
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   runLiveLauncher().catch(error => {
-    console.error(error.message === 'NODE_24_REQUIRED' ? 'Installa Node.js 24 o successivo.'
-      : error.message === 'RUN_SETUP_FIRST' ? 'Esegui npm run setup nella cartella del progetto, poi npm run live.'
-        : 'Avvio della regia non riuscito. Verifica installazione e accesso alla cartella.');
+    console.error(error.message === 'NODE_24_REQUIRED' ? 'Please install Node.js 24 or later.'
+      : error.message === 'RUN_SETUP_FIRST' ? 'Run npm run setup in the project directory, then npm run live.'
+        : 'Failed to start control room. Verify installation and directory permissions.');
     process.exitCode = 1;
   });
 }

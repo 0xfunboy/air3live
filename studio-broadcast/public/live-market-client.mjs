@@ -21,7 +21,7 @@ export function createLiveMarketClient({ onUpdate, onStatus = () => {}, token = 
       onUpdate(snapshot); emit();
     } catch (error) {
       if (stopped || gen !== generation || request.signal.aborted) return;
-      failures++; state.connected = false; state.error = 'Dati di mercato temporaneamente non disponibili'; emit();
+      failures++; state.connected = false; state.error = 'Market data temporarily unavailable'; emit();
       // Retain received prices with an explicit stale state; never turn an
       // unavailable real feed into a synthetic chart or a zero-value price.
       if (latest) onUpdate({ ...latest, connection: { ...latest.connection, status: 'offline', stale: true, error: state.error },

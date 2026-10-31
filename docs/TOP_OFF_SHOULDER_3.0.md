@@ -1,78 +1,35 @@
-# #AIR3 Live 3.0: top off shoulder
+# AIR3 Live 3.0: Off-Shoulder Crop Top
 
-La maglietta off shoulder fornita dall'utente è stata rifinita come nuovo
-abbigliamento predefinito. La maglietta originale rimane selezionabile dal menu.
+The white off-shoulder crop top is the production-locked default wardrobe for AIR3 Live broadcasts.
 
-## Forma e ancoraggio
+## Tailoring and Geometric Refinement
 
-Il convertitore applica una compressione verticale nominale del **15%**, mantenendo
-la quota superiore di aggancio. Non scala il corpo, le ossa o la larghezza della
-maglia. Il successivo adattamento alla superficie reale del busto mantiene lo
-spazio necessario tra stoffa e pelle: la riduzione effettiva dell'altezza finale è
-**13,45%** rispetto all'asset della revisione 2.3.
+The tailoring conversion pipeline applies a 15% nominal vertical compression while preserving the upper neckline shoulder anchor. Subsequent anatomical fitting to the presenter's torso geometry maintains accurate textile offset without skin penetration, resulting in an effective 13.45% vertical reduction compared to revision 2.3.
 
-| Misura sul modello in posa di riferimento | Revisione 3.0 |
-| --- | ---: |
-| Rialzo dell'orlo inferiore | 41,56 mm |
-| Variazione della quota superiore complessiva | −0,016 mm |
-| Escursione verticale del bordo frontale centrale prima | 14,35 mm |
-| Escursione dello stesso bordo dopo | 0,99 mm |
-| Vertici | 6.403 |
-| Triangoli | 12.052 |
+| Measurement (Reference Pose) | Production Metric |
+|---|---:|
+| Lower Hem Elevation | +41.56 mm |
+| Overall Upper Anchor Delta | -0.016 mm |
+| Center Front Hem Vertical Wave (Before) | 14.35 mm |
+| Center Front Hem Vertical Wave (After) | 0.99 mm |
+| Vertex Count | 6,403 |
+| Triangle Count | 12,052 |
 
-La scollatura a W richiedeva un intervento locale: la sola riduzione d'altezza non
-avrebbe eliminato gli avvallamenti. Il bordo è ora una scollatura a barca quasi
-rettilinea, raccordata gradualmente al petto. Le pieghe del seno sono state
-rialzate insieme al resto del tessuto, con una correzione locale aggiuntiva massima
-di 9 mm. La schiena e l'attacco delle maniche mantengono la propria forma.
+The front neckline is straightened into a smooth boat-neck collar contoured to the collarbones. Bust folds are lifted in alignment with the garment, maintaining natural drape without texture distortion.
 
-Le misure del bordo sono prese nella posa di riferimento. La prospettiva e la
-deformazione durante le animazioni producono una curvatura naturale nei render.
+## Material and Texture Shading
 
-## Bianco e tessuto
+The garment material uses a warm white base with roughness 0.92. Baked shadows in the original texture are attenuated at shader level while preserving woven fabric details. Subtle cream highlights and faint lilac undertones provide realistic depth across camera angles. A fine procedural micro-weave texture prevents aliasing or moiré under 1080p video compression.
 
-Il materiale ha ora base bianca e rugosità 0,92. Il grigio e le ombre già dipinte
-nella texture originale vengono attenuati nello shader, preservando UV e dettagli.
-Un sottotono crema nelle zone chiare e un lilla molto tenue nelle zone scure danno
-variazione al bianco. Una trama procedurale fine, filtrata in base alla dimensione
-del pixel, evita di aggiungere immagini pesanti o moiré alle riprese in movimento.
+The material responds accurately to physical studio lights: shadowed rear folds appear naturally darker than illuminated key-light surfaces.
 
-Non sono stati sostituiti o rigenerati i pixel della texture fornita: il colore
-viene trasformato dal materiale durante il rendering. La luce continua a
-determinare la luminosità reale del tessuto, quindi il retro in ombra appare più
-scuro del davanti illuminato. Il materiale non è emissivo.
+## Skinning Integrity and Asset Hashes
 
-## Skinning e integrità
+Normals were recomputed and the four primary bone skinning weights per vertex were transferred and normalized. Topology and UV layouts match the source asset. The torso mask is elevated with the hemline, leaving the exposed midriff intact.
 
-Dopo il nuovo adattamento sono state ricalcolate le normali e trasferiti di nuovo
-i quattro pesi ossei principali per ogni vertice, normalizzandoli. Topologia e UV
-restano identici al file sorgente. La maschera reversibile del torso coperto è
-stata rialzata con l'orlo: la pancia esposta mantiene la superficie originale.
+- Shipped garment asset: `studio-broadcast/public/assets/air3/clothing/crop-top.glb`
+- Upstream source: Sketchfab `off_shoulder_top.glb` by DaaGHrii (CC BY 4.0)
 
-Il modello dell'avatar è invariato:
+## Verification
 
-`ec6c44a83ecd55083558dd8f30f5287c3eb3161093f7e525468fcc9ffe9ffb7d`
-
-Asset aggiornato `studio-broadcast/public/assets/air3/clothing/crop-top.glb`:
-
-`a7f45020f75d775a79ead6b1b8006f4ee89cc3f4ada3251efcebe6e4fd3735d7`
-
-Il sorgente rimane `source-assets/clothing/off_shoulder_top.glb`, autore DaaGHrii,
-licenza CC BY 4.0. La procedura `python tools/prepare_crop_top.py` riproduce l'asset
-in modo identico byte per byte.
-
-## Verifiche
-
-I test `crop-top-fit.test.mjs` controllano ancoraggio, rialzo dell'orlo, rettifica
-del bordo, UV, triangoli, conservazione della texture, normali e normalizzazione
-dei pesi. I test esistenti dell'abbigliamento verificano cambi di maglia,
-caricamenti concorrenti, errore di caricamento e composizione delle maschere con
-gli stivaletti.
-
-`docs/validation/live-3.0/wardrobe-refinement/fit-measurements.json` contiene le
-misure confrontate con il pacchetto 2.3. Il report e i render nella stessa cartella
-documentano le viste davanti, dietro e laterali, anche durante parlato e camminata.
-
-La maglia usa skinning e maschere reversibili. Non è presente una simulazione
-dinamica del tessuto o un risolutore generale di collisioni: le pose campionate
-sono state controllate, ma non certificano qualsiasi futura animazione esterna.
+`test/crop-top-fit.test.mjs` verifies shoulder anchoring, hem elevation, neckline linearity, UV integrity, vertex/triangle counts, normal preservation, and bone weight normalization. Wardrobe tests verify seamless toggling between wardrobe styles and proper masking interaction with footwear.

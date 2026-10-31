@@ -92,15 +92,15 @@ async function session(signal) {
     if (config.noSandbox) args.push('--no-sandbox');
     browser = await capture.launch({ executablePath: config.browserPath, headless: 'new', args,
       defaultViewport: { width: config.gateway.width, height: config.gateway.height, deviceScaleFactor: 1 },
-      timeout: 45000, protocolTimeout: 45000, startDelay: 1000 });
+      timeout: 120000, protocolTimeout: 120000, startDelay: 1000 });
     browser.once('disconnected', () => { if (!signal.aborted) fail(new Error('Browser disconnected')); });
     page = await browser.newPage();
     page.on('pageerror', (error) => log('studio-page-error', { message: error.message.slice(0, 500) }));
     page.on('console', message => { if (message.type() === 'error') log('studio-console-error', { message: message.text().slice(0, 1500) }); });
     page.on('error', () => fail(new Error('Studio page crashed')));
-    await page.goto(config.studioUrl, { waitUntil: 'networkidle0', timeout: 45000 });
-    await page.waitForFunction(() => Boolean(window.air3Studio?.ready), { timeout: 30000 });
-    await bounded(page.evaluate(() => window.air3Studio.ready), 30000, 'Studio readiness timed out');
+    await page.goto(config.studioUrl, { waitUntil: 'load', timeout: 60000 });
+    await page.waitForFunction(() => Boolean(window.air3Studio?.ready), { timeout: 60000 });
+    await bounded(page.evaluate(() => window.air3Studio.ready), 120000, 'Studio readiness timed out');
     await bounded(page.evaluate(() => window.air3Studio.armAudio()), 10000, 'Studio audio initialization timed out');
     const diagnostics = await page.evaluate(() => window.air3Studio.diagnostics());
     const software = softwareRenderer(diagnostics);
@@ -169,7 +169,7 @@ async function session(signal) {
         }
         const frames = d.frameCount ?? d.renderedFrames ?? d.frames ?? 0;
         if (frames > lastFrameCount) { lastFrameCount = frames; lastFrameAt = Date.now(); }
-        if (Date.now() - lastFrameAt > 15000 || Date.now() - lastMediaAt > 15000) throw new Error('Frame/capture watchdog timed out');
+        if (Date.now() - lastFrameAt > 30000 || Date.now() - lastMediaAt > 30000) throw new Error('Frame/capture watchdog timed out');
       } catch (e) { fail(e); }
       finally { checking = false; }
     }, 2000);

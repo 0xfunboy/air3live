@@ -46,9 +46,16 @@ test('off-shoulder shortening preserves the top anchor and original body while s
   assert.equal(binding.bodyGeometryChanged,false);
 });
 
-test('refitted garment retains authored UVs, topology and normalized body binding',async()=>{
+test('refitted garment retains authored UVs, topology and normalized body binding',async(t)=>{
+  let rawSource;
+  try {
+    rawSource = await readFile(new URL('../../source-assets/clothing/off_shoulder_top.glb',import.meta.url));
+  } catch {
+    t.skip('source-assets removed for production deployment');
+    return;
+  }
   const fit=unpack(await readFile(new URL('../public/assets/air3/clothing/crop-top.glb',import.meta.url)));
-  const original=unpack(await readFile(new URL('../../source-assets/clothing/off_shoulder_top.glb',import.meta.url)));
+  const original=unpack(rawSource);
   const fp=fit.doc.meshes[0].primitives[0], op=original.doc.meshes[0].primitives[0];
   assert.deepEqual(fit.attribute(fp.indices),original.attribute(op.indices));
   assert.deepEqual(fit.attribute(fp.attributes.TEXCOORD_0),original.attribute(op.attributes.TEXCOORD_0));

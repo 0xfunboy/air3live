@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <title>airewardrop · Broadcast studio</title>
+  <title>airewardrop · Broadcast Studio</title>
   <link rel="icon" type="image/png" href="/assets/air3/branding/air3-emblem.png">
   <link rel="stylesheet" href="/studio/styles.css">
   <link rel="stylesheet" href="/studio/look-controls.css">
@@ -25,27 +25,27 @@
         <label>TIMEFRAME<select id="timeframe"><option>1m</option><option>5m</option><option>15m</option><option>30m</option><option selected>1h</option><option>4h</option><option>1d</option></select></label>
         <label>CAMERA<select id="camera"><option value="auto">Automatic director</option><option value="wide">Studio wide</option><option value="presenter">Presenter</option><option value="screens">Market screens</option></select></label>
         <label>QUALITY<select id="quality"><option value="auto">Automatic</option><option value="high">High · reflections + AO</option><option value="balanced">Balanced · reflections</option><option value="software">Software · preview</option></select></label>
-        <label>ESPRESSIONE<select id="studio-emotion"><option value="neutral">Neutra</option><option value="happy" selected>Leggermente felice</option><option value="sad">Leggermente triste</option><option value="surprised">Lieve stupore</option><option value="warm">Accogliente</option><option value="focused">Concentrata</option><option value="concerned">Preoccupata</option></select></label>
-        <label class="emotion-range">INTENSITÀ <output id="emotion-strength">100%</output><input id="emotion-intensity" type="range" min="0" max="1" step="0.05" value="1"></label>
+        <label>EXPRESSION<select id="studio-emotion"><option value="neutral">Neutral</option><option value="happy" selected>Subtly Happy</option><option value="sad">Subtly Thoughtful</option><option value="surprised">Subtle Surprise</option><option value="warm">Warm & Welcoming</option><option value="focused">Focused</option><option value="concerned">Attentive</option></select></label>
+        <label class="emotion-range">INTENSITY <output id="emotion-strength">100%</output><input id="emotion-intensity" type="range" min="0" max="1" step="0.05" value="1"></label>
         <div class="buttons">
-          <button id="studio-audio-test" type="button" class="accent-btn" title="Riproduce l'audio di riferimento ed esegue il lip-sync fonetico con l'espressione selezionata">▶ TEST VOCE & LIP-SYNC</button>
+          <button id="studio-audio-test" type="button" class="accent-btn" title="Plays reference audio and tests phonetic lip-sync with selected facial expression">▶ TEST VOICE & LIP-SYNC</button>
           <button id="next-trade" type="button">NEXT TRADE <span>↗</span></button>
           <button id="refresh" type="button">REFRESH DATA</button>
         </div>
         <div class="mode-badge" id="mode-badge">MUTED OBSERVER</div>
       </section>
-      <section class="operator stage-controls" aria-label="Presenza e movimento">
-        <label>DESTINAZIONE <select id="stage-target"><option value="left">Monitor sinistro</option><option value="center" selected>Monitor centrale</option><option value="right">Monitor destro</option></select></label>
-        <button id="stage-present" type="button" disabled>Presenta il monitor</button>
-        <button id="stage-home" type="button" disabled>Torna alla postazione</button>
-        <label class="check-label"><input id="eye-contact" type="checkbox" checked> Sguardo in camera</label>
-        <label class="check-label"><input id="stage-auto" type="checkbox" disabled> Movimenti automatici</label>
-        <button id="look-toggle" class="look-toggle" type="button" aria-expanded="false" aria-controls="look-panel" disabled>Luci e aspetto ⚙</button>
-        <button id="save-live-look" type="button" hidden>Salva look nella regia</button>
-        <a id="live-regia-link" href="/control" target="_blank" rel="noopener" hidden>Regia live ↗</a>
-        <span id="stage-state" role="status">Preparazione della presentatrice</span>
+      <section class="operator stage-controls" aria-label="Presence and stage motion">
+        <label>TARGET <select id="stage-target"><option value="left">Left Monitor</option><option value="center" selected>Center Monitor</option><option value="right">Right Monitor</option></select></label>
+        <button id="stage-present" type="button" disabled>Present Monitor</button>
+        <button id="stage-home" type="button" disabled>Return to Center</button>
+        <label class="check-label"><input id="eye-contact" type="checkbox" checked> Camera Eye Contact</label>
+        <label class="check-label"><input id="stage-auto" type="checkbox" disabled> Autonomous Roaming</label>
+        <button id="look-toggle" class="look-toggle" type="button" aria-expanded="false" aria-controls="look-panel" disabled>Lighting & Look ⚙</button>
+        <button id="save-live-look" type="button" hidden>Save Look to Control Room</button>
+        <a id="live-control-link" href="/control" target="_blank" rel="noopener" hidden>Live Control Room ↗</a>
+        <span id="stage-state" role="status">Preparing Presenter</span>
       </section>
-      <aside id="look-panel" class="operator" hidden aria-label="Luci e aspetto"></aside>
+      <aside id="look-panel" class="operator" hidden aria-label="Lighting and Look"></aside>
       <section class="program" aria-label="Program output">
         <div id="viewport"></div>
         <div class="program-top"><div class="program-brand"><img class="corporate-lockup" src="/assets/air3/branding/airewardrop-lockup.png" alt="AiRewardrop"></div><div class="program-state"><span id="data-led" class="led"></span><span id="feed-state">DATA UNAVAILABLE</span><span id="program-clock">--:-- UTC</span></div></div>

@@ -3,13 +3,13 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { setBodyDrawMask, releaseBodyDrawMask } from './air3-garment-mask.mjs';
 
 export const FOOTWEAR_STYLES = Object.freeze([
-  Object.freeze({ id: 'original', label: 'Sneakers originali', commercialUse: true, license: 'asset del progetto' }),
-  Object.freeze({ id: 'boot', label: 'Stivaletti in pelle · Aquateknica', commercialUse: true, license: 'CC BY 4.0', author: 'Aquateknica' }),
-  Object.freeze({ id: 'shoes-test', label: 'Tacchi aperti · demo non commerciale', commercialUse: false, license: 'CC BY-NC 4.0', author: 'Bente Aimee' }),
+  Object.freeze({ id: 'original', label: 'Original Sneakers', commercialUse: true, license: 'Project Asset' }),
+  Object.freeze({ id: 'boot', label: 'Leather Boots · Aquateknica', commercialUse: true, license: 'CC BY 4.0', author: 'Aquateknica' }),
+  Object.freeze({ id: 'shoes-test', label: 'Open Heels · Non-commercial evaluation', commercialUse: false, license: 'CC BY-NC 4.0', author: 'Bente Aimee' }),
 ]);
 export const BOOT_FITS = Object.freeze([
-  Object.freeze({ id: 'relaxed', label: 'Gambale adattato' }),
-  Object.freeze({ id: 'low-cut', label: 'Gambale basso' }),
+  Object.freeze({ id: 'relaxed', label: 'Relaxed Boot Cut' }),
+  Object.freeze({ id: 'low-cut', label: 'Low-Cut' }),
 ]);
 const smooth = (a, b, x) => THREE.MathUtils.smoothstep(x, a, b);
 const sourceAssets = '/assets/air3/footwear/';

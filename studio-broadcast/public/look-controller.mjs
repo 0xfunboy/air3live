@@ -5,7 +5,7 @@ export function availableBrowserStorage() {
 }
 export async function loadInitialLook({ storage = availableBrowserStorage(), query = globalThis.location?.search || '' } = {}) {
   const response = await fetch(DEFAULT_LOOK_URL, { cache: 'no-store' });
-  if (!response.ok) throw new Error('Preset luci e aspetto non disponibile');
+  if (!response.ok) throw new Error('Lighting and look preset unavailable');
   const shipped = parseLookPreset(await response.text());
   const params = new URLSearchParams(query);
   if (params.get('resetLook') === '1') return { preset: shipped, shipped, source: 'package' };
@@ -45,7 +45,7 @@ export class LookController {
     try {
       if (!this.storage?.setItem) throw new Error('Storage unavailable');
       this.storage.setItem(LOOK_STORAGE_KEY, serializeLookPreset(this.getPreset())); this.lastSaved = Date.now();
-    } catch { this.lastSaved = null; this.error = 'Salvataggio locale non disponibile: usa Esporta preset.'; }
+    } catch { this.lastSaved = null; this.error = 'Local storage unavailable: use Export preset.'; }
   }
   setLighting(value, { persist = true } = {}) {
     if (this.disposed) return;
@@ -69,7 +69,7 @@ export class LookController {
     if (this.footwear) await this.footwear.setStyle(preset.footwear.style, { fit: preset.footwear.fit });
     if (this.disposed) return;
     if (this.clothing) await this.clothing.setStyle(preset.clothing.style);
-    else if (preset.clothing.style !== 'original') throw new Error('Controller maglietta non disponibile');
+    else if (preset.clothing.style !== 'original') throw new Error('Wardrobe top controller unavailable');
   }
   apply(value, { persist = true, source = 'custom' } = {}) {
     const preset = validateLookPreset(value); // Validate the whole file before any mutation.
@@ -93,7 +93,7 @@ export class LookController {
           if (!this.disposed) {
             this.lighting.setState(previous.lighting); this.name = previous.name; this.source = previousSource;
             if (generation === this.generation) this.desired = this.getPreset();
-            if (generation === this.generation) this.error = `Impossibile applicare il preset: ${error.message}` + (rollbackError ? `; ripristino incompleto: ${rollbackError.message}` : '. Ripristinata la configurazione precedente.');
+            if (generation === this.generation) this.error = `Failed to apply preset: ${error.message}` + (rollbackError ? `; incomplete rollback: ${rollbackError.message}` : '. Restored previous configuration.');
           }
         }
         throw error;

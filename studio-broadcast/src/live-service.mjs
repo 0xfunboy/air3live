@@ -99,7 +99,7 @@ export async function createLiveService({ config, json, body, enqueue, cancel, g
         redirectUri: auth.origin(req) + '/api/live/twitch/callback' }); return true;
     }
     if (pathname === '/api/live/settings' && req.method === 'GET') { json(res, 200, store.public()); return true; }
-    if (pathname === '/api/live/settings' && req.method === 'PATCH') {
+    if (pathname === '/api/live/settings' && (req.method === 'PATCH' || req.method === 'PUT')) {
       const patch = await body(req, 64 * 1024), before = store.get();
       if (patch.stream && (broadcaster.child || broadcaster.busy)) throw new QueueError('STOP_BEFORE_STREAM_SETTINGS', 409);
       const next = await store.update(patch);

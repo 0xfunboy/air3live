@@ -1,45 +1,31 @@
-# Identità visiva #AIR3 e AiRewardrop
+# Visual Identity: #AIR3 and AiRewardrop
 
-## Posizionamento nella revisione 2.3
+## Placement in Revision 2.3
 
-Il marchio aziendale AiRewardrop compare **una volta nel set**, sul fondale, e **una volta fuori dal set**, nella grafica superiore della trasmissione. L’intestazione dei comandi usa #AIR3. La preview del solo personaggio, che non contiene il set, usa un’unica intestazione AiRewardrop.
+The AiRewardrop corporate brand appears **once inside the set**, on the backdrop, and **once outside the set**, in the upper broadcast overlay graphics. The command header uses #AIR3. The standalone character preview, which excludes the studio set, uses a single AiRewardrop header.
 
-La scrivania usa il simbolo A circondato dall’arco rosso/blu e la scritta AIR3. Nessun logo viene più dipinto sui tre canvas dei monitor, né sul piccolo monitor da scrivania che condivide il canvas del grafico. I monitor restano dedicati a grafici, telemetria e testo della narrazione.
+The presenter desk displays the "A" emblem enclosed by the red/blue arc alongside the AIR3 wordmark. No logo is painted on the three monitor canvases, nor on the small desk monitor that shares the market chart canvas. The monitors remain dedicated to charts, telemetry, and speech narration text.
 
-Il volto e la figura presenti nelle immagini di riferimento **non sono inclusi in nessuno dei nuovi loghi runtime**.
+The face and figure depicted in legacy reference images **are not included in any of the runtime logos**.
 
-## Asset consegnati
+## Shipped Assets
 
-Percorso: `studio-broadcast/public/assets/air3/branding/`.
+Location: `studio-broadcast/public/assets/air3/branding/`.
 
-| File | Dimensioni PNG | Uso |
+| File | PNG Dimensions | Purpose |
 |---|---:|---|
-| `air3-emblem.png`, `air3-emblem.svg` | 1024 × 1024 | Simbolo isolato, favicon e caricamento |
-| `air3-lockup.png`, `air3-lockup.svg` | 2160 × 640 | Simbolo con scritta AIR3, scrivania e regia |
-| `airewardrop-lockup.png`, `airewardrop-lockup.svg` | 2400 × 344 | Marchio aziendale, fondale e grafica esterna |
+| `air3-emblem.png`, `air3-emblem.svg` | 1024 × 1024 | Isolated emblem, favicon, and loading screens |
+| `air3-lockup.png`, `air3-lockup.svg` | 2160 × 640 | Emblem with AIR3 wordmark, desk, and control room |
+| `airewardrop-lockup.png`, `airewardrop-lockup.svg` | 2400 × 344 | Corporate brand, backdrop, and external broadcast graphics |
 
-I PNG usano un canale alpha reale; il nero mostrato da alcuni visualizzatori è lo sfondo del visualizzatore, non un rettangolo incorporato. Gli SVG contengono contorni e gradienti, senza immagini del personaggio, font remoti o script. Le texture vengono posizionate mantenendo le proporzioni del marchio.
+The PNG assets utilize an authentic alpha channel; any black appearance in raw image viewers reflects the viewer background, not an opaque canvas. The SVGs contain clean vector paths and gradients without embedded character imagery, remote web fonts, or executable scripts. Textures are mapped while strictly preserving brand aspect ratios.
 
-## Fonte e metodo
+## Sourcing and Methodology
 
-La fonte è il banner indicato dall’utente, `image-edit-target-ee69adcf30977a71.png`. La copia esatta è conservata in `source-assets/branding/banner-2026-10-25/source-banner.png`; l’hash è riportato nel manifest dei loghi.
+The canonical source is the user-provided reference banner. Clean vector contours and high-resolution rasterizations were produced to ensure smooth anti-aliased presentation without raster edge noise. The brand lettering was reconstructed using typographic vectors; the emblem and AIR3 letters are clean SVG paths.
 
-Sono state eseguite estrazioni con imagegen in modalità modifica, usando **quel file locale** come riferimento e `transparent_background: true`. I risultati selezionati sono conservati senza ritocchi sotto `source-assets/branding/banner-2026-10-25/`, con prefisso `imagegen-`. L’estrazione del marchio aziendale è stata ripetuta per correggere la grafia.
+`branding-manifest.json` tracks source history, positioning, and SHA-256 checksums for each runtime asset. Heavy intermediate generation files are excluded from runtime loading: the production studio loads only the final lightweight PNG assets.
 
-Le estrazioni raster presentavano bordi irregolari, piccoli fori e grana visibili quando ingrandite. Per l’uso nel renderer sono stati quindi preparati **contorni vettoriali puliti** dei marchi e rasterizzazioni ad alta risoluzione. I colori, la composizione generale e la grafia seguono il banner. La scritta aziendale è stata ricostruita con contorni tipografici; non si dichiara una corrispondenza pixel per pixel al carattere del banner. Il simbolo e le lettere AIR3 sono tracciati SVG. Le versioni raster generate da imagegen restano disponibili per confronto con queste versioni runtime.
+## Verification
 
-`branding-manifest.json` registra fonte, metodo, posizionamento e SHA-256 di ciascun asset corrente. Le immagini originali e le estrazioni non vengono caricate dalla scena; il runtime usa solo i piccoli file PNG finali.
-
-### Brief delle estrazioni
-
-I tre brief applicati all’immagine di riferimento richiedevano rispettivamente:
-
-1. Isolare il logo centrale rosso/blu con la sola scritta AIR3, eliminando persona, sfondo e altri elementi; mantenere forma, colori e testo, su trasparenza reale.
-2. Isolare soltanto il simbolo della A circondata dall’arco rosso/blu; nessuna figura, scritta o sfondo.
-3. Isolare e ingrandire il marchio AiRewardrop nell’angolo superiore destro, con simbolo triangolare, testo corretto e colori originali; nessun altro elemento e sfondo trasparente.
-
-Questi sono i brief operativi riepilogati, non una trascrizione dei metadati del servizio di generazione. Le seconde prove richiedevano inoltre bordi continui e puliti, senza grana o parti aggiunte.
-
-## Verifica
-
-La matrice browser della build compilata controlla che esista un solo marchio aziendale nella scena e un solo elemento aziendale nella grafica esterna. Le catture del framebuffer mostrano il marchio sul fondale e #AIR3 sulla scrivania. L’inventario di build include i loghi, i relativi hash, HTML e CSS effettivamente collaudati. I conteggi e l’esito corrente sono in `docs/validation/history/lookdev-2.3.0/compiled-visual-qa.json`.
+The compiled browser test matrix ensures that exactly one corporate brand exists within the 3D scene and exactly one brand element is rendered in the external overlay graphics. Framebuffer captures verify the brand on the backdrop and #AIR3 on the desk. The build inventory includes verified logos, hashes, HTML, and CSS. Current metrics and validation records are located in `docs/validation/history/lookdev-2.3.0/compiled-visual-qa.json`.

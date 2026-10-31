@@ -16,20 +16,20 @@ const login = value => typeof value === 'string' && /^[a-z0-9_]{1,25}$/i.test(va
 const hash = value => createHash('sha256').update(value).digest();
 const error = (code, statusCode = 400) => new QueueError(code, statusCode);
 const safeError = cause => ({
-  TWITCH_AUTH_REQUIRED: 'Collega Twitch per leggere la chat.',
-  TWITCH_CLIENT_REQUIRED: 'Inserisci Client ID e Client Secret della tua applicazione Twitch.',
-  TWITCH_AUTH_INVALID: 'Autorizzazione Twitch scaduta o revocata. Ricollega l’account.',
-  TWITCH_SCOPE_REQUIRED: 'È richiesta l’autorizzazione di lettura chat di Twitch.',
-  TWITCH_CHANNEL_INVALID: 'Il nome del canale Twitch non è valido.',
-  TWITCH_CHANNEL_NOT_FOUND: 'Il canale Twitch non è stato trovato.',
-  TWITCH_CHAT_FORBIDDEN: 'Twitch non consente di leggere questo canale con l’account collegato.',
-  TWITCH_REVOKED: 'Twitch ha revocato la sottoscrizione della chat. Ricollega l’account.',
-  TWITCH_SUBSCRIPTION_UNAVAILABLE: 'Una sottoscrizione della chat non è disponibile.',
-  TWITCH_RATE_LIMIT: 'Limite Twitch raggiunto. La connessione verrà ritentata.',
-  TWITCH_HEARTBEAT_TIMEOUT: 'Connessione Twitch interrotta. Riconnessione in corso.',
-  TWITCH_CONNECTION_CLOSED: 'Connessione Twitch interrotta. Riconnessione in corso.',
-  TWITCH_RECONNECT_INVALID: 'Twitch ha restituito un indirizzo di riconnessione non valido.',
-}[cause?.code] || 'Connessione Twitch non disponibile. Verrà ritentata.');
+  TWITCH_AUTH_REQUIRED: 'Connect Twitch to read live chat.',
+  TWITCH_CLIENT_REQUIRED: 'Enter Client ID and Client Secret for your Twitch application.',
+  TWITCH_AUTH_INVALID: 'Twitch authorization expired or revoked. Please reconnect account.',
+  TWITCH_SCOPE_REQUIRED: 'Twitch chat read authorization (user:read:chat) is required.',
+  TWITCH_CHANNEL_INVALID: 'Invalid Twitch channel name.',
+  TWITCH_CHANNEL_NOT_FOUND: 'Twitch channel not found.',
+  TWITCH_CHAT_FORBIDDEN: 'Twitch does not allow reading this channel with the connected account.',
+  TWITCH_REVOKED: 'Twitch revoked chat subscription. Please reconnect account.',
+  TWITCH_SUBSCRIPTION_UNAVAILABLE: 'Chat subscription is unavailable.',
+  TWITCH_RATE_LIMIT: 'Twitch rate limit reached. Retrying connection automatically.',
+  TWITCH_HEARTBEAT_TIMEOUT: 'Twitch connection dropped. Reconnecting...',
+  TWITCH_CONNECTION_CLOSED: 'Twitch connection closed. Reconnecting...',
+  TWITCH_RECONNECT_INVALID: 'Twitch returned an invalid reconnect URL.',
+}[cause?.code] || 'Twitch connection unavailable. Retrying automatically...');
 
 function validateRedirect(value) {
   let url; try { url = new URL(value); } catch { throw error('TWITCH_REDIRECT_INVALID'); }

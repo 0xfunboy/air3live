@@ -43,8 +43,8 @@ export class StudioLighting {
       light.position.set(this.origin.x + Math.sin(angle) * row.radius, this.origin.y + row.height, this.origin.z + Math.cos(angle) * row.radius);
       light.intensity = row.enabled ? row.intensity : 0; light.color.set(row.color);
       light.angle = row.cone * Math.PI / 180; light.penumbra = row.penumbra;
-      // Software preview keeps one shadow map; all five lights still illuminate.
-      const shadows = row.enabled && row.shadows && (this.quality.name !== 'software' || i === 0);
+      // Software preview keeps one shadow map if shadowSize > 0; all five lights still illuminate.
+      const shadows = row.enabled && row.shadows && (this.quality.shadowSize || 0) > 0 && (this.quality.name !== 'software' || i === 0);
       if (light.castShadow && !shadows) { light.shadow.map?.dispose(); light.shadow.map = null; }
       light.castShadow = shadows; light.shadow.needsUpdate = true;
       if (fixture) {

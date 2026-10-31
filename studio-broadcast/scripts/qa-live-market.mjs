@@ -48,7 +48,7 @@ try {
   for (const [name, snapshot] of cases) {
     const captures = await page.evaluate(snapshot => {
       const ids = ['left', 'center', 'right'], canvases = ids.map(id => document.getElementById(id));
-      window.panels.drawLiveDesk(canvases[0].getContext('2d'), snapshot, { phase: 'playing', text: 'Aggiornamento dei mercati: confronto dei dati confermati e del contesto della seduta. Questo testo è una prova del pannello.' });
+      window.panels.drawLiveDesk(canvases[0].getContext('2d'), snapshot, { phase: 'playing', text: 'Market Update: Evaluation of verified orders and session context. Sample telemetry text.' });
       window.panels.drawLiveWallpanel(canvases[1].getContext('2d'), snapshot);
       window.panels.drawLiveHeatmap(canvases[2].getContext('2d'), snapshot);
       return canvases.map((canvas, index) => ({ id: ids[index], url: canvas.toDataURL('image/png') }));

@@ -2,6 +2,10 @@ node_modules/
 .cache/
 .browser-path
 .env
+.env.*
+*.env
+*.env.*
+*secret*
 /data/
 /recordings/
 *.log

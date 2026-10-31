@@ -90,12 +90,12 @@ export function observedHeatmap(events, candles, { symbol, range, now = Date.now
   const from = now - RANGE_MS[range], to = now, selected = events.filter(e => e.symbol === symbol && e.time >= from && e.time <= to);
   const prices = candles.filter(c => c.time >= from && c.time <= to);
   const rangeBounds = bounds(prices, selected.map(e => e.price));
-  return { kind: 'observed-liquidations', title: 'LIQUIDAZIONI OSSERVATE', source: 'Binance USD-M · forceOrder', symbol, range,
+  return { kind: 'observed-liquidations', title: 'OBSERVED LIQUIDATIONS', source: 'Binance USD-M · forceOrder', symbol, range,
     from, to, columns: 144, rows: 80, ...rangeBounds, candles: prices, cells: histogram(selected, { from, to, ...rangeBounds }),
     volumeUnit: 'USDT', count: selected.length, longUsd: selected.filter(e => e.side === 'long').reduce((s, e) => s + e.usd, 0),
     shortUsd: selected.filter(e => e.side === 'short').reduce((s, e) => s + e.usd, 0), collectedSince, lastEventAt,
     retainedFrom: Math.max(collectedSince ?? now, now - KEEP_MS, truncated && events.length ? events[0].time : 0), truncated, gaps,
-    coverage: 'Ordini completati campionati: ultimo ordine per simbolo ogni 1 s; parziali esclusi. Non indica livelli futuri. Storico locale, massimo 24 h.' };
+    coverage: 'Sampled completed orders: latest order per symbol every 1s; partials excluded. Does not indicate future levels. Local history, max 24h.' };
 }
 
 export function coinglassHeatmap(raw, { symbol, range, now = Date.now() } = {}) {
@@ -121,12 +121,12 @@ export function coinglassHeatmap(raw, { symbol, range, now = Date.now() } = {}) 
   return { kind: 'estimated-liquidation-levels', title: 'LIQUIDATION HEATMAP · MODEL 3', source: 'CoinGlass API · Model3', symbol, range,
     from, to, columns: 144, rows: 80, ...rangeBounds, candles: candles.slice(-1_500),
     cells: histogram(points, { from, to, ...rangeBounds, aggregation: 'max' }), volumeUnit: 'USD', count: null, longUsd: null, shortUsd: null,
-    updatedAt: now, coverage: 'Livelli stimati dal modello CoinGlass, non liquidazioni eseguite. Accesso API Professional/Enterprise.' };
+    updatedAt: now, coverage: 'Estimated levels from CoinGlass model, not executed liquidations. Professional/Enterprise API access.' };
 }
 
 export function normalizeWallpanel(input, now = Date.now()) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) throw new Error('Wallpanel payload must be an object');
-  const out = { title: cleanText(input.title || 'WALLPANEL', 60), subtitle: cleanText(input.subtitle, 140), source: cleanText(input.source || 'Ingresso esterno', 80),
+  const out = { title: cleanText(input.title || 'WALLPANEL', 60), subtitle: cleanText(input.subtitle, 140), source: cleanText(input.source || 'External Ingest', 80),
     updatedAt: now, sourceAt: timeValue(input.sourceAt ?? input.updatedAt), expiresAt: now + Math.min(86_400, Math.max(15, finite(input.ttlSeconds) ?? 300)) * 1_000,
     cards: [], rows: [], trades: [], candles: [], report: null, selected: null };
   if (Array.isArray(input.cards)) out.cards = input.cards.slice(0, 6).map(card => ({ label: cleanText(card?.label, 24),
@@ -160,9 +160,9 @@ export function demoMarketSnapshot(now = Date.now(), symbol = 'BTCUSDT', range =
     const level = band * (.24 + .76 * Math.pow(Math.cos(y * .19), 2)) * (1 + x / 144) * 2_000_000;
     if (level > 35_000) cells.push([x, y, level]);
   }
-  return { kind: 'demo', title: 'HEATMAP · DEMO SINTETICA', source: 'DEMO · nessun dato di mercato', symbol, range, from, to: now,
+  return { kind: 'demo', title: 'LIQUIDATION HEATMAP · SYNTHETIC DEMO', source: 'DEMO · no live market data', symbol, range, from, to: now,
     columns: 144, rows: 80, minPrice, maxPrice, candles, cells, volumeUnit: 'SIM', count: null, longUsd: null, shortUsd: null,
-    updatedAt: now, coverage: 'Dati inventati esclusivamente per verificare grafica e regia. Non utilizzare per analisi di mercato.' };
+    updatedAt: now, coverage: 'Synthetic data generated exclusively for graphics and control verification. Not for financial analysis.' };
 }
 
 export function createLiveMarketService(options = {}) { return new LiveMarketService(options); }
@@ -205,7 +205,7 @@ export class LiveMarketService {
         this.externalWallpanel.updatedAt = timeValue(raw.wallpanel.updatedAt) ?? now;
       }
     } catch (error) {
-      if (error.code !== 'ENOENT') this.state.storageError = 'Storico locale non leggibile; nuova raccolta avviata';
+      if (error.code !== 'ENOENT') this.state.storageError = 'Local history unreadable; starting fresh collection';
     }
   }
   prune() {
@@ -223,7 +223,7 @@ export class LiveMarketService {
       await mkdir(resolve(this.file, '..'), { recursive: true, mode: 0o700 });
       await writeFile(this.file + '.tmp', payload, { mode: 0o600 });
       await rename(this.file + '.tmp', this.file); this.state.storageError = null;
-    }).catch(() => { this.state.storageError = 'Salvataggio storico non disponibile'; });
+    }).catch(() => { this.state.storageError = 'History storage unavailable'; });
     return this.saveQueue;
   }
   async start() {
@@ -243,7 +243,7 @@ export class LiveMarketService {
     if (this.config.provider === 'demo') { this.state.status = 'demo'; return this.publicConfig(); }
     if (this.config.provider === 'coinglass') {
       this.state.status = this.config.coinglassKey ? 'connecting' : 'requires-key';
-      if (!this.config.coinglassKey) { this.state.error = 'Inserire una chiave CoinGlass con accesso Model3'; return this.publicConfig(); }
+      if (!this.config.coinglassKey) { this.state.error = 'Provide a CoinGlass API key with Model3 access'; return this.publicConfig(); }
       const poll = async () => { await this.refreshCoinGlass(); this.schedule(poll, 30_000); };
       void poll();
     } else { this.state.status = 'connecting'; this.openSocket(0); }
@@ -284,8 +284,8 @@ export class LiveMarketService {
       apply(raw);
     } catch (error) {
       if (this.stopped || gen !== this.generation || controller.signal.aborted) return;
-      if (key === 'coinglass') { this.state.status = 'error'; this.state.error = /401|403/.test(error.message) ? 'Chiave o piano CoinGlass non abilitato a Model3' : 'CoinGlass non disponibile; dati precedenti marcati come non aggiornati'; }
-      else this.state.error = 'Prezzi Binance non disponibili: verificare rete e disponibilità regionale';
+      if (key === 'coinglass') { this.state.status = 'error'; this.state.error = /401|403/.test(error.message) ? 'CoinGlass key or plan not authorized for Model3' : 'CoinGlass unavailable; prior data marked stale'; }
+      else this.state.error = 'Binance prices unavailable: check network and regional availability';
     } finally { if (this.requests.get(key) === controller) this.requests.delete(key); }
   }
   async refreshPrices() {
@@ -377,15 +377,15 @@ export class LiveMarketService {
     if (provider === 'demo') heatmap = demoMarketSnapshot(now, symbol, range);
     else if (provider === 'coinglass') heatmap = this.cg ? copy(this.cg) : { kind: 'estimated-liquidation-levels', title: 'LIQUIDATION HEATMAP · MODEL 3',
       source: 'CoinGlass API · Model3', symbol, range, columns: 144, rows: 80, cells: [], candles, minPrice: null, maxPrice: null,
-      from: now - RANGE_MS[range], to: now, coverage: 'In attesa di dati CoinGlass autorizzati; nessun dato dimostrativo automatico.' };
+      from: now - RANGE_MS[range], to: now, coverage: 'Awaiting authorized CoinGlass data; no automatic demo fallback.' };
     else heatmap = observedHeatmap(this.events, candles, { symbol, range, now, collectedSince: this.collectedSince[symbol] ?? null,
       lastEventAt: this.events.filter(e => e.symbol === symbol).at(-1)?.time ?? null, truncated: this.truncated, gaps: this.gaps[symbol] ?? 0 });
     const tickers = MARKET_SYMBOLS.map(s => this.tickers.get(s) ?? { symbol: s, price: null, changePct: null, updatedAt: null, source: 'Binance USD-M' });
     const stale = !this.config.enabled || this.stopped || (provider === 'binance' ? (this.state.status !== 'connected' || !this.state.lastMessageAt || now - this.state.lastMessageAt > 45_000)
       : provider === 'coinglass' ? (!heatmap.updatedAt || now - heatmap.updatedAt > 90_000 || this.state.status !== 'connected') : false);
-    const wallpanel = wallpanelSource === 'external' ? { mode: 'external', ...copy(this.externalWallpanel ?? { title: 'WALLPANEL', source: 'Ingresso esterno', cards: [], rows: [], trades: [], candles: [], selected: null }),
+    const wallpanel = wallpanelSource === 'external' ? { mode: 'external', ...copy(this.externalWallpanel ?? { title: 'WALLPANEL', source: 'External Ingest', cards: [], rows: [], trades: [], candles: [], selected: null }),
       stale: !this.externalWallpanel || this.externalWallpanel.expiresAt <= now }
-      : { mode: 'market', title: 'MARKET WALLPANEL', source: provider === 'demo' ? 'DEMO SINTETICA' : 'Binance USD-M',
+      : { mode: 'market', title: 'MARKET WALLPANEL', source: provider === 'demo' ? 'SYNTHETIC DEMO' : 'Binance USD-M',
         tickers: provider === 'demo' ? [] : tickers, candles: provider === 'demo' ? heatmap.candles : candles, symbol, updatedAt: this.state.lastCandleAt, stale: provider !== 'demo' && (!this.state.lastCandleAt || now - this.state.lastCandleAt > 90_000) };
     return { schema: 'air3.live-market.v1', generatedAt: now, provider, demo: provider === 'demo', config: this.publicConfig(),
       connection: { ...this.state, stale }, tickers: provider === 'demo' ? [] : copy(tickers), heatmap: { ...heatmap, stale }, wallpanel };

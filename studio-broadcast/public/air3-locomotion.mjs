@@ -7,7 +7,7 @@ const captureFor = id => Object.hasOwn(ACCAD_MOTION.clips, id) ? ACCAD_MOTION.cl
   ACCAD_MOTION.variants && Object.hasOwn(ACCAD_MOTION.variants, id) ? ACCAD_MOTION.variants[id] : null;
 export const MOCAP_CATALOG = Object.freeze(Object.keys(ACCAD_MOTION.clips).map(id => Object.freeze({
   id, name: `ACCAD_${id[0].toUpperCase() + id.slice(1)}_Female`,
-  label: ({stand:'Fermo — cattura umana', start:'Partenza — cattura umana', walk:'Camminata — cattura umana', stop:'Arresto — cattura umana', turnLeft:'Svolta sinistra — cattura umana', turnRight:'Svolta destra — cattura umana', turnAround:'Inversione — cattura umana'})[id],
+  label: ({stand:'Stand — human capture', start:'Start Walk — human capture', walk:'Walk — human capture', stop:'Stop — human capture', turnLeft:'Turn Left 90° — human capture', turnRight:'Turn Right 90° — human capture', turnAround:'Turn Around 180° — human capture'})[id],
   source: ACCAD_MOTION.clips[id].source, duration: ACCAD_MOTION.clips[id].duration,
   motionCapture: true, license: ACCAD_MOTION.license
 })));

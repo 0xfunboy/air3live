@@ -44,6 +44,16 @@ test('public HTTPS origin requires a real operator credential and marks the cook
   assert.throws(()=>login(auth,request,{token:'incorrect'}),errorCode('OPERATOR_UNAUTHORIZED',401));
 });
 
+test('subdomains of airewardrop.xyz are accepted for remote control room login', () => {
+  const auth = createOperatorAuth({operatorToken:TOKEN,publicOrigin:'https://live.airewardrop.xyz',localOperator:false});
+  const dashReq = req({host:'livedash.airewardrop.xyz',origin:'https://livedash.airewardrop.xyz','sec-fetch-site':'same-origin'},'203.0.113.10');
+  const dashSigned = login(auth,dashReq,{token:TOKEN});
+  assert.equal(dashSigned.result.authenticated,true);
+  assert.match(dashSigned.header,/; Secure/);
+  assert.equal(auth.origin(dashReq),'https://livedash.airewardrop.xyz');
+  assert(auth.requireOperator(req({host:'livedash.airewardrop.xyz',origin:'https://livedash.airewardrop.xyz',cookie:dashSigned.cookie}),{mutation:true}));
+});
+
 test('sessions expire, logout invalidates the exact cookie, and forged IDs never authenticate', () => {
   let now = 1_000_000; const auth = createOperatorAuth({operatorToken:TOKEN},{now:()=>now});
   const first = login(auth), second = login(auth); assert.notEqual(first.cookie,second.cookie);

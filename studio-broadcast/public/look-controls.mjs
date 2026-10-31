@@ -1,54 +1,54 @@
 import { LIGHT_NAMES, parseLookPreset } from './look-presets.mjs';
 
-const HAIR = [ ['legacy', 'Coda corta · originale'], ['wavy', 'Wavy · coda ondulata'], ['artemis', 'Artemis · prova non commerciale'] ];
-const COLORS = [ ['blonde', 'Biondo'], ['copper', 'Rame'], ['auburn', 'Castano ramato'], ['chestnut', 'Castano'], ['dark-brown', 'Castano scuro'], ['espresso', 'Castano quasi nero'], ['black', 'Nero'] ];
-const SHOES = [ ['original', 'Sneakers originali'], ['boot', 'Stivaletti'], ['shoes-test', 'Scarpe test · uso non commerciale'] ];
-const CLOTHES = [['original', 'Maglietta originale'], ['crop', 'Maglietta corta · off shoulder']];
-const FITS = [['relaxed', 'Gambale adattato'], ['low-cut', 'Gambale basso']];
+const HAIR = [ ['legacy', 'Original Ponytail'], ['wavy', 'Wavy Ponytail'], ['artemis', 'Artemis · Non-commercial test'] ];
+const COLORS = [ ['blonde', 'Blonde'], ['copper', 'Copper'], ['auburn', 'Auburn'], ['chestnut', 'Chestnut'], ['dark-brown', 'Dark Brown'], ['espresso', 'Espresso'], ['black', 'Black'] ];
+const SHOES = [ ['original', 'Original Sneakers'], ['boot', 'Boots'], ['shoes-test', 'Test Shoes · Non-commercial'] ];
+const CLOTHES = [['original', 'Original Top'], ['crop', 'Cropped Off-Shoulder Top']];
+const FITS = [['relaxed', 'Relaxed Boot Cut'], ['low-cut', 'Low-Cut']];
 const options = rows => rows.map(([id, name]) => `<option value="${id}">${name}</option>`).join('');
-const range = (field, label, min, max, step, unit = '') => `<label class="look-range"><span>${label}<small>${unit}</small></span><span class="look-range-input"><input data-range="${field}" type="range" min="${min}" max="${max}" step="${step}" aria-label="${label}"><input data-number="${field}" type="number" min="${min}" max="${max}" step="${step}" aria-label="${label}, valore esatto"></span></label>`;
+const range = (field, label, min, max, step, unit = '') => `<label class="look-range"><span>${label}<small>${unit}</small></span><span class="look-range-input"><input data-range="${field}" type="range" min="${min}" max="${max}" step="${step}" aria-label="${label}"><input data-number="${field}" type="number" min="${min}" max="${max}" step="${step}" aria-label="${label}, exact value"></span></label>`;
 
 export function mountLookControls(mount, controller, { drawer = false } = {}) {
   if (!mount) return { dispose() {} };
   mount.classList.add('look-controls'); if (drawer) mount.classList.add('look-drawer');
-  mount.innerHTML = `<div class="look-heading"><div><p>REGIA DEL PERSONAGGIO</p><h2>Luci e aspetto</h2></div>${drawer ? '<button type="button" class="look-close" aria-label="Chiudi luci e aspetto">✕</button>' : ''}</div>
-    <p class="look-intro">Regola la luce sul volto. Confronta capelli, maglietta e scarpe nella stessa scena.</p>
-    <div class="look-tabs" role="tablist" aria-label="Luci e aspetto"><button type="button" role="tab" aria-selected="true" data-tab="lighting">Luci</button><button type="button" role="tab" aria-selected="false" data-tab="appearance">Aspetto</button></div>
-    <fieldset class="look-fields"><legend class="sr-only">Regolazioni</legend>
-    <section data-page="lighting"><h3>Ambiente</h3>
-      ${range('ambient', 'Luce diffusa', 0, 1.5, .01)}
-      ${range('environment', 'Ambiente e riflessi', 0, 2, .01)}
-      ${range('exposure', 'Esposizione', .2, 2.5, .01)}
-      <div class="look-divider"></div><h3>Cinque faretti conici</h3>
-      <label class="look-label" for="look-light-select">Faretto da regolare</label><select id="look-light-select">${options(LIGHT_NAMES.map((label, i) => [String(i), `${i + 1}. ${label}`]))}</select>
-      <div class="look-inline"><label><input id="look-light-enabled" type="checkbox"> Acceso</label><label><input id="look-light-shadows" type="checkbox"> Ombre</label><label class="look-color">Colore <input id="look-light-color" type="color" aria-label="Colore del faretto"></label></div>
-      ${range('intensity', 'Potenza', 0, 150, .5, 'cd')}
-      ${range('azimuth', 'Posizione sul cerchio', -180, 180, 1, '°')}
-      ${range('radius', 'Distanza dal centro', .7, 6, .05, 'm')}
-      ${range('height', 'Altezza faretto', 1.6, 5, .05, 'm')}
-      ${range('targetHeight', 'Altezza di puntamento', .2, 2, .05, 'm')}
-      ${range('cone', 'Semiapertura del cono', 10, 75, 1, '°')}
-      ${range('penumbra', 'Morbidezza del bordo', 0, 1, .01)}
-      <label class="look-check"><input id="look-follow" type="checkbox"> Punta alla presentatrice quando si sposta</label>
-      <label class="look-check"><input id="look-guides" type="checkbox"> Mostra guide dei coni</label>
-      <p class="look-help">0° davanti, +90° a destra della scena, ±180° dietro. Le guide restano fuori dall’uscita pulita. Il profilo Software calcola le ombre del solo faretto principale.</p>
+  mount.innerHTML = `<div class="look-heading"><div><p>CHARACTER DIRECTION</p><h2>Lighting & Appearance</h2></div>${drawer ? '<button type="button" class="look-close" aria-label="Close lighting and appearance">✕</button>' : ''}</div>
+    <p class="look-intro">Adjust facial lighting. Compare hair, top, and footwear in the active scene.</p>
+    <div class="look-tabs" role="tablist" aria-label="Lighting and Appearance"><button type="button" role="tab" aria-selected="true" data-tab="lighting">Lighting</button><button type="button" role="tab" aria-selected="false" data-tab="appearance">Appearance</button></div>
+    <fieldset class="look-fields"><legend class="sr-only">Adjustments</legend>
+    <section data-page="lighting"><h3>Environment</h3>
+      ${range('ambient', 'Diffuse Ambient Light', 0, 1.5, .01)}
+      ${range('environment', 'Environment & Reflections', 0, 2, .01)}
+      ${range('exposure', 'Exposure', .2, 2.5, .01)}
+      <div class="look-divider"></div><h3>Five Spotlights</h3>
+      <label class="look-label" for="look-light-select">Spotlight to Adjust</label><select id="look-light-select">${options(LIGHT_NAMES.map((label, i) => [String(i), `${i + 1}. ${label}`]))}</select>
+      <div class="look-inline"><label><input id="look-light-enabled" type="checkbox"> Enabled</label><label><input id="look-light-shadows" type="checkbox"> Shadows</label><label class="look-color">Color <input id="look-light-color" type="color" aria-label="Spotlight color"></label></div>
+      ${range('intensity', 'Intensity', 0, 150, .5, 'cd')}
+      ${range('azimuth', 'Azimuth Angle', -180, 180, 1, '°')}
+      ${range('radius', 'Distance from Center', .7, 6, .05, 'm')}
+      ${range('height', 'Spotlight Height', 1.6, 5, .05, 'm')}
+      ${range('targetHeight', 'Target Height', .2, 2, .05, 'm')}
+      ${range('cone', 'Beam Angle', 10, 75, 1, '°')}
+      ${range('penumbra', 'Penumbra Softness', 0, 1, .01)}
+      <label class="look-check"><input id="look-follow" type="checkbox"> Track presenter on stage movements</label>
+      <label class="look-check"><input id="look-guides" type="checkbox"> Show spotlight cones</label>
+      <p class="look-help">0° front, +90° stage right, ±180° back. Spotlight guides remain hidden in clean program output. Software profile computes shadows for primary spotlight only.</p>
     </section>
-    <section data-page="appearance" hidden><h3>Capelli</h3><label class="look-label" for="look-hair-style">Acconciatura</label><select id="look-hair-style">${options(HAIR)}</select>
-      <label class="look-label" for="look-hair-color">Colore</label><select id="look-hair-color">${options(COLORS)}</select>
+    <section data-page="appearance" hidden><h3>Hair</h3><label class="look-label" for="look-hair-style">Hairstyle</label><select id="look-hair-style">${options(HAIR)}</select>
+      <label class="look-label" for="look-hair-color">Color</label><select id="look-hair-color">${options(COLORS)}</select>
       <div class="look-swatches" aria-hidden="true"><i style="--swatch:#d6b678"></i><i style="--swatch:#a64e25"></i><i style="--swatch:#70351f"></i><i style="--swatch:#4a2e22"></i><i style="--swatch:#281b16"></i><i style="--swatch:#3b2b21"></i><i style="--swatch:#100e0e"></i></div>
-      <p class="look-help">Sette tonalità, compreso Castano quasi nero. Le sopracciglia seguono il colore scelto. Le acconciature conservano i propri dettagli.</p>
-      <div class="look-divider"></div><h3>Maglietta</h3><label class="look-label" for="look-clothing">Modello</label><select id="look-clothing">${options(CLOTHES)}</select><div class="look-divider"></div><h3>Scarpe</h3><label class="look-label" for="look-footwear">Modello</label><select id="look-footwear">${options(SHOES)}</select>
-      <div id="look-fit-row"><label class="look-label" for="look-boot-fit">Calzata stivaletti</label><select id="look-boot-fit">${options(FITS)}</select></div><p class="look-help">Confronta il gambale adattato e la versione bassa nella vista Scarpe, anche di profilo e da dietro.</p>
+      <p class="look-help">Seven color tones including Espresso dark brown. Brows track hair color selection.</p>
+      <div class="look-divider"></div><h3>Clothing</h3><label class="look-label" for="look-clothing">Style</label><select id="look-clothing">${options(CLOTHES)}</select><div class="look-divider"></div><h3>Footwear</h3><label class="look-label" for="look-footwear">Style</label><select id="look-footwear">${options(SHOES)}</select>
+      <div id="look-fit-row"><label class="look-label" for="look-boot-fit">Boot Fit</label><select id="look-boot-fit">${options(FITS)}</select></div><p class="look-help">Compare relaxed cut and low-cut versions in the footwear view.</p>
       <p id="look-asset-note" class="look-license" role="status"></p>
     </section></fieldset>
-    <div class="look-divider"></div><section class="look-preset"><h3>Il tuo preset</h3><label class="look-label" for="look-preset-name">Nome</label><input id="look-preset-name" type="text" maxlength="80" autocomplete="off">
-      <div class="look-actions"><button id="look-export" type="button">Esporta JSON ↓</button><button id="look-import" type="button">Importa JSON</button><button id="look-reset" type="button">Ripristina</button></div>
+    <div class="look-divider"></div><section class="look-preset"><h3>Your Preset</h3><label class="look-label" for="look-preset-name">Name</label><input id="look-preset-name" type="text" maxlength="80" autocomplete="off">
+      <div class="look-actions"><button id="look-export" type="button">Export JSON ↓</button><button id="look-import" type="button">Import JSON</button><button id="look-reset" type="button">Reset</button></div>
       <input id="look-import-file" class="sr-only" type="file" accept=".json,application/json" tabindex="-1">
-      <p id="look-status" class="look-help" role="status"></p><p class="look-help">Le prove si salvano in questo browser. Esporta il JSON per condividere i valori o fissarli nel pacchetto.</p>
+      <p id="look-status" class="look-help" role="status"></p><p class="look-help">Customizations are stored in this browser. Export JSON to share settings or persist them.</p>
     </section>`;
   const $ = id => mount.querySelector('#' + id);
   let selected = 0, disposed = false, localError = '';
-  const statusText = status => status.error || localError || (status.busy ? 'Caricamento del modello…' : status.saved ? 'Preset salvato nel browser.' : status.source === 'package' ? 'Preset incluso nel pacchetto.' : 'Preset del browser applicato.');
+  const statusText = status => status.error || localError || (status.busy ? 'Loading model…' : status.saved ? 'Preset saved in browser.' : status.source === 'package' ? 'Default package preset.' : 'Browser preset applied.');
   function render(preset, status) {
     if (disposed) return;
     mount.querySelector('.look-fields').disabled = status.busy;
@@ -63,8 +63,8 @@ export function mountLookControls(mount, controller, { drawer = false } = {}) {
     $('look-hair-style').value = preset.hair.style; $('look-hair-color').value = preset.hair.color; $('look-footwear').value = preset.footwear.style; $('look-clothing').value = preset.clothing.style;
     $('look-boot-fit').value = preset.footwear.fit; $('look-fit-row').hidden = preset.footwear.style !== 'boot';
     if (document.activeElement !== $('look-preset-name')) $('look-preset-name').value = preset.name;
-    const restricted = [preset.hair.style === 'artemis' && 'Artemis', preset.footwear.style === 'shoes-test' && 'Scarpe test'].filter(Boolean);
-    $('look-asset-note').textContent = restricted.length ? `${restricted.join(' e ')}: licenza non commerciale. Questa scelta è per prove; per l’uso aziendale serve un’autorizzazione del titolare.` : 'Modelli attivi: attribuzioni e licenze nel dossier del pacchetto.';
+    const restricted = [preset.hair.style === 'artemis' && 'Artemis', preset.footwear.style === 'shoes-test' && 'Test Shoes'].filter(Boolean);
+    $('look-asset-note').textContent = restricted.length ? `${restricted.join(' and ')}: non-commercial license for evaluation.` : 'Active models: attributions and licenses documented in package repository.';
     $('look-asset-note').classList.toggle('restricted', !!restricted.length);
     $('look-status').textContent = statusText(status);
   }
@@ -106,7 +106,7 @@ export function mountLookControls(mount, controller, { drawer = false } = {}) {
   $('look-import').onclick = () => $('look-import-file').click();
   $('look-import-file').onchange = () => run(async () => {
     const file = $('look-import-file').files[0]; if (!file) return;
-    try { if (file.size > 32768) throw new Error('Preset troppo grande: massimo 32 KB.'); await controller.apply(parseLookPreset(await file.text())); }
+    try { if (file.size > 32768) throw new Error('Preset too large: maximum 32 KB.'); await controller.apply(parseLookPreset(await file.text())); }
     finally { $('look-import-file').value = ''; }
   });
   $('look-reset').onclick = () => run(() => controller.reset());
@@ -118,10 +118,9 @@ export function mountLookControls(mount, controller, { drawer = false } = {}) {
   if (drawer) {
     mount.hidden = true;
     const open = value => { mount.hidden = !value; toggle?.setAttribute('aria-expanded', String(value)); if (value) mount.querySelector('.look-close').focus(); else toggle?.focus(); };
-    if (toggle) { toggle.disabled = false; toggle.onclick = () => open(mount.hidden); }
-    mount.querySelector('.look-close').onclick = () => open(false);
-    mount.addEventListener('keydown', event => { if (event.key === 'Escape') open(false); });
+    toggle?.addEventListener('click', () => open(mount.hidden));
+    mount.querySelector('.look-close')?.addEventListener('click', () => open(false));
+    window.addEventListener('keydown', e => { if (e.key === 'Escape' && !mount.hidden) { e.preventDefault(); open(false); } });
   }
-  refresh();
-  return { dispose() { disposed = true; unsubscribe(); if (toggle) toggle.onclick = null; mount.replaceChildren(); } };
+  return { dispose() { disposed = true; unsubscribe(); } };
 }

@@ -1,56 +1,41 @@
-# Comandi di regia associati alla narrazione
+# Presentation and Stage Directing APIs
 
-Il producer può suggerire alla conduttrice di presentare uno dei monitor o tornare alla posizione centrale mediante un campo opzionale nell'API esistente. L'estensione non richiede modifiche ai repository dApp o Eliza già inclusi.
+Producers and autonomous agents (such as ElizaOS or AIRdApp bots) can direct the presenter to present studio monitors or return home via optional payload fields in the speech narration endpoint.
 
-## Esempio
+## Example Request
 
-Inviare al gateway `POST /api/narrations`, con il consueto header di autorizzazione del producer:
+Send an authenticated request to `POST /api/live/narrations`:
 
 ```json
 {
-  "id": "commento-monitor-001",
-  "language": "it",
-  "text": "Osserviamo adesso il grafico sul monitor centrale.",
-  "emotion": { "name": "focused", "intensity": 0.3 },
+  "id": "commentary-monitor-001",
+  "language": "en",
+  "text": "Let us examine the latest liquidation sweep on the center monitor.",
+  "emotion": { "name": "focused", "intensity": 0.4 },
   "presentation": { "action": "monitor", "monitor": "center" }
 }
 ```
 
-Le forme ammesse sono precisamente:
+### Supported Values
 
-| Intento | Campo `presentation` |
+| Intent | `presentation` Payload |
 |---|---|
-| Monitor sinistro | `{"action":"monitor","monitor":"left"}` |
-| Monitor centrale | `{"action":"monitor","monitor":"center"}` |
-| Monitor destro | `{"action":"monitor","monitor":"right"}` |
-| Ritorno alla postazione | `{"action":"home"}` |
-| Nessun comando | Omettere il campo |
+| Present Left Monitor | `{"action":"monitor","monitor":"left"}` |
+| Present Center Monitor | `{"action":"monitor","monitor":"center"}` |
+| Present Right Monitor | `{"action":"monitor","monitor":"right"}` |
+| Return Home to Desk | `{"action":"home"}` |
+| No Movement Command | Omit the `presentation` field |
 
-Gli altri valori, `null`, gli array, i nomi di monitor sconosciuti e le proprietà aggiuntive producono HTTP 400 con `INVALID_PRESENTATION`. Il payload è una scelta limitata di regia, non contiene codice eseguibile, URL o coordinate di movimento arbitrarie.
+Malformed values or unrecognized monitor names return HTTP 400 `INVALID_PRESENTATION`. Payloads are strictly validated and cannot contain arbitrary URLs or executable scripts.
 
-## Momento di esecuzione
+## Execution Model
 
-Il gateway salva il comando insieme alla narrazione e lo restituisce al player che ottiene il lease. Il player lo rende disponibile nel proprio stato; il frontend avvia l'azione una sola volta quando cambia `currentJob` e la fase diventa `playing`. Il suono continua a usare il clock Web Audio e il percorso di autorizzazione esistente.
+The gateway stores directing commands alongside narration records. When the internal broadcast player claims the audio lease, the frontend dispatches the stage motion action in parallel with speech audio playback. Movement does not block audio streaming or introduce artificial speech pauses.
 
-Il comando avvia il gesto o lo spostamento in parallelo al parlato. Non è una marcatura temporale di una parola e non introduce una pausa artificiale dell'audio per attendere la destinazione. Un producer può omettere il campo per lasciare la conduttrice alla posizione attuale e inviare un successivo comando `home` per il rientro. Cancellazione, disconnessione e completamento eliminano il metadato attivo del player; l'eventuale rientro scenico segue la gestione della regia frontend.
+## Idempotency and Storage
 
-## Compatibilità e idempotenza
+Directing parameters participate in cryptographic idempotency hashing. Submitting the same narration ID with conflicting presentation instructions returns HTTP 409 `IDEMPOTENCY_CONFLICT`.
 
-La migrazione SQLite aggiunge soltanto la colonna nullable `presentation_json`. Le righe precedenti espongono `presentation: null` al claim. Quando il producer omette il campo, la sequenza JSON usata per il contenuto hash resta esattamente quella della versione precedente: i retry di un vecchio ID restano riconosciuti.
+## Emotion Catalog
 
-Quando il campo è presente, partecipa all'hash del contenuto. Lo stesso ID con un monitor diverso o con `home` produce HTTP 409 `IDEMPOTENCY_CONFLICT`. L'ordine delle chiavi del piccolo oggetto in ingresso non altera l'hash, perché il comando viene normalizzato prima della memorizzazione.
-
-Il lease unico, gli heartbeat, la cancellazione, la prevenzione del replay e i timeout audio restano quelli della pipeline esistente. Il metadato di regia non viene trasmesso al server TTS.
-
-## Catalogo emozioni
-
-`GET /api/emotions` e `GET /api/expressions` sono disponibili sia nel gateway sia nella preview, senza token. Restituiscono i nomi canonici `neutral`, `happy`, `sad`, `surprised`, `warm`, `focused`, `concerned`, insieme alla mappa degli alias italiani accettati. Sono endpoint di sola lettura; non espongono testo delle narrazioni o credenziali.
-
-## Verifica
-
-```bash
-cd studio-broadcast
-node --test test/presentation.test.mjs test/gateway.test.mjs test/frontend-player.test.mjs
-```
-
-I test nuovi coprono validazione rigorosa, conflitto d'idempotenza, persistenza e claim dopo riavvio, migrazione da un database senza la nuova colonna, hash dei producer precedenti, trasporto del comando via HTTP e pulizia dello stato alla cancellazione/completamento. I test esistenti di autorizzazione e lease vengono rieseguiti insieme.
+`GET /api/emotions` and `GET /api/expressions` are public endpoints returning canonical emotion names: `neutral`, `happy`, `sad`, `surprised`, `warm`, `focused`, `concerned`, alongside supported aliases.

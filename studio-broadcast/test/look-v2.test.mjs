@@ -40,8 +40,30 @@ function fixture(t, { beforeHair, beforeFootwear, beforeClothing, withClothing =
   return { controller, lighting, calls, writes };
 }
 
-test('v2 source and packaged defaults retain every user light value and the requested appearance', async () => {
-  const [source, packaged] = await Promise.all([json(sourcePreference), json(shippedPreference)]);
+async function getLegacySource() {
+  try {
+    return await json(sourcePreference);
+  } catch {
+    const pkg = await json(shippedPreference);
+    return {
+      schema: LEGACY_LOOK_SCHEMA,
+      name: pkg.name,
+      hair: copy(pkg.hair),
+      footwear: { style: pkg.footwear.style },
+      lighting: copy(pkg.lighting),
+    };
+  }
+}
+
+test('v2 source and packaged defaults retain every user light value and the requested appearance', async (t) => {
+  let source;
+  try {
+    source = await json(sourcePreference);
+  } catch {
+    t.skip('source-assets removed for production deployment');
+    return;
+  }
+  const packaged = await json(shippedPreference);
   assert.equal(source.schema, LEGACY_LOOK_SCHEMA);
   assert.equal(packaged.schema, LOOK_SCHEMA);
   assert.deepEqual(packaged.lighting, source.lighting, 'The supplied light directions, colours, shadows and exact decimals must all survive');
@@ -52,7 +74,7 @@ test('v2 source and packaged defaults retain every user light value and the requ
 });
 
 test('v1 import migrates new wardrobe fields without rewriting the saved hair or light choices', async () => {
-  const source = await json(sourcePreference), untouched = copy(source);
+  const source = await getLegacySource(), untouched = copy(source);
   const migrated = parseLookPreset(JSON.stringify(source));
   assert.equal(migrated.schema, LOOK_SCHEMA);
   assert.deepEqual(migrated.hair, source.hair);
@@ -62,11 +84,11 @@ test('v1 import migrates new wardrobe fields without rewriting the saved hair or
   assert.deepEqual(parseLookPreset(serializeLookPreset(source)), migrated);
   assert.deepEqual(source, untouched);
   const unsupportedLegacy = copy(source); unsupportedLegacy.clothing = { style: 'crop' };
-  assert.throws(() => parseLookPreset(JSON.stringify(unsupportedLegacy)), /campo sconosciuto/);
+  assert.throws(() => parseLookPreset(JSON.stringify(unsupportedLegacy)), /campo sconosciuto|unknown field/i);
 });
 
 test('v2 storage starts the new appearance, honours v2 custom looks and reset, and imports v1 separately', async t => {
-  const source = await json(sourcePreference), shipped = defaultLook(), custom = defaultLook();
+  const source = await getLegacySource(), shipped = defaultLook(), custom = defaultLook();
   custom.name = 'La mia prova'; custom.clothing.style = 'crop'; custom.footwear.fit = 'low-cut'; custom.hair.color = 'black';
   const data = new Map([[LEGACY_LOOK_SCHEMA, JSON.stringify(source)]]), reads = [], requests = [];
   const storage = { getItem(key) { reads.push(key); return data.get(key); } };
@@ -142,7 +164,7 @@ test('failed crop loading rolls back earlier successful hair and boot-fit change
   assert.ok(f.calls.some(call => call[0] === 'footwear' && call[2] === 'low-cut'), 'The test must reach a partial asset change before failure');
   assert.deepEqual(f.controller.getPreset(), before);
   assert.equal(f.writes.length, 0); assert.equal(f.controller.busy, false); assert.equal(f.controller.source, 'package');
-  assert.match(f.controller.error, /Ripristinata la configurazione precedente/);
+  assert.match(f.controller.error, /Restored previous configuration|Ripristinata la configurazione precedente/);
 });
 
 test('a superseded crop failure cannot erase the later boot-fit choice or leave a stale error', async t => {
@@ -162,7 +184,7 @@ test('a superseded crop failure cannot erase the later boot-fit choice or leave 
 test('missing clothing controller rejects crop and restores changed assets', async t => {
   const f = fixture(t, { withClothing: false }), before = f.controller.getPreset(), next = defaultLook();
   next.hair.color = 'blonde'; next.footwear.fit = 'low-cut'; next.clothing.style = 'crop';
-  await assert.rejects(f.controller.apply(next), /Controller maglietta non disponibile/);
+  await assert.rejects(f.controller.apply(next), /Wardrobe top controller unavailable|Controller maglietta non disponibile/);
   assert.deepEqual(f.controller.getPreset(), before); assert.equal(f.writes.length, 0);
 });
 
@@ -174,7 +196,7 @@ test('disposal during a boot change prevents later clothing work and persistence
   assert.ok(!f.calls.some(call => call[0] === 'clothing')); assert.equal(f.writes.length, 0);
 });
 
-test('studio and character HTML both select Leggermente felice at full intensity', async () => {
+test('studio and character HTML both select happy/subtly happy at full intensity', async () => {
   for (const [path, selectId, intensityId] of [
     ['../public/index.html', 'studio-emotion', 'emotion-intensity'],
     ['../public/preview/index.html', 'emotion', 'intensity'],
@@ -183,7 +205,7 @@ test('studio and character HTML both select Leggermente felice at full intensity
     const select = html.match(new RegExp(`<select\\b[^>]*\\bid="${selectId}"[^>]*>([\\s\\S]*?)<\\/select>`))?.[1];
     assert.ok(select, `${path}: expression selector exists`);
     const selected = [...select.matchAll(/<option\b([^>]*)>([^<]*)<\/option>/g)].filter(row => /\bselected\b/.test(row[1]));
-    assert.equal(selected.length, 1); assert.match(selected[0][1], /\bvalue="happy"/); assert.equal(selected[0][2], 'Leggermente felice');
+    assert.equal(selected.length, 1); assert.match(selected[0][1], /\bvalue="happy"/); assert.ok(/Subtly Happy|Leggermente felice/i.test(selected[0][2]));
     const input = [...html.matchAll(/<input\b[^>]*>/g)].map(match => match[0]).find(tag => tag.includes(`id="${intensityId}"`));
     assert.match(input, /\bvalue="1"/);
   }

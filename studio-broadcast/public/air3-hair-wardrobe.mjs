@@ -4,20 +4,20 @@ import { createAir3Hair } from './air3-hair.mjs';
 
 const PROFILE = 'air3-imported-hair-2026-10-25-v2-espresso';
 export const HAIR_STYLES = Object.freeze([
-  { id: 'wavy', label: 'Coda ondulata', license: 'CC BY 4.0 · zHairezt', commercial: true, source: 'https://sketchfab.com/3d-models/wavy-white-ponytail-with-bones-d3e0ba8904504d6fb5e247346a4e93de' },
-  { id: 'artemis', label: 'Artemis · prova non commerciale', license: 'CC BY-NC 4.0 · CT Reed / antoinepavia', commercial: false, source: 'https://sketchfab.com/3d-models/ponytail-1-artemis-character-hair-free-b15554b4b9934cd6adbcf8669f83f634' },
-  { id: 'legacy', label: 'Coda corta AIR3', license: 'Derivata dai sorgenti del progetto', commercial: null },
+  { id: 'wavy', label: 'Wavy Ponytail', license: 'CC BY 4.0 · zHairezt', commercial: true, source: 'https://sketchfab.com/3d-models/wavy-white-ponytail-with-bones-d3e0ba8904504d6fb5e247346a4e93de' },
+  { id: 'artemis', label: 'Artemis · Non-commercial evaluation', license: 'CC BY-NC 4.0 · CT Reed / antoinepavia', commercial: false, source: 'https://sketchfab.com/3d-models/ponytail-1-artemis-character-hair-free-b15554b4b9934cd6adbcf8669f83f634' },
+  { id: 'legacy', label: 'AIR3 Short Ponytail', license: 'Derived from project assets', commercial: null },
 ]);
 export const HAIR_COLORS = Object.freeze([
-  { id: 'blonde', label: 'Biondo', tint: '#c6a774', authorTexture: 3 },
-  { id: 'copper', label: 'Rame', tint: '#a86437', authorTexture: 1 },
-  { id: 'auburn', label: 'Castano ramato', tint: '#7b3c21', authorTexture: 2 },
-  { id: 'chestnut', label: 'Castano', tint: '#6e4a31', authorTexture: 4 },
-  { id: 'dark-brown', label: 'Castano scuro', tint: '#4b321e', authorTexture: 5 },
+  { id: 'blonde', label: 'Blonde', tint: '#c6a774', authorTexture: 3 },
+  { id: 'copper', label: 'Copper', tint: '#a86437', authorTexture: 1 },
+  { id: 'auburn', label: 'Auburn', tint: '#7b3c21', authorTexture: 2 },
+  { id: 'chestnut', label: 'Chestnut', tint: '#6e4a31', authorTexture: 4 },
+  { id: 'dark-brown', label: 'Dark Brown', tint: '#4b321e', authorTexture: 5 },
   // Halfway between dark-brown and black in linear-light RGB, then encoded
   // back to sRGB. It is a reversible colour, not a new hair geometry or UV set.
-  { id: 'espresso', label: 'Castano quasi nero', tint: '#3b2b21', authorTexture: 5, atlas: 'dark-brown' },
-  { id: 'black', label: 'Nero naturale', tint: '#252323', authorTexture: 6 },
+  { id: 'espresso', label: 'Espresso Dark Brown', tint: '#3b2b21', authorTexture: 5, atlas: 'dark-brown' },
+  { id: 'black', label: 'Natural Black', tint: '#252323', authorTexture: 6 },
 ]);
 const STYLE = Object.fromEntries(HAIR_STYLES.map(v => [v.id, v]));
 const COLOR = Object.fromEntries(HAIR_COLORS.map(v => [v.id, v]));

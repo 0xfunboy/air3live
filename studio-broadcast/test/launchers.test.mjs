@@ -24,7 +24,7 @@ test('launcher GPU preference preserves a typed prior snapshot and passes execut
   assert.equal(calls.length, 2, 'Restore is idempotent');
   assert.deepEqual(JSON.parse(calls[1].options.env.AIR3_LAUNCHER_GPU_PRIOR), prior);
   assert.equal(applyWindowsGpuPreference(executable, gpuRequest('nvidia'), { platform: 'linux', execute: () => assert.fail('PowerShell on Linux') }).applied, false);
-  assert.throws(() => gpuRequest('unsupported'), /GPU non valida/);
+  assert.throws(() => gpuRequest('unsupported'), /Invalid GPU/);
 });
 
 test('occupied preview port chooses another port without disturbing its owner', async t => {

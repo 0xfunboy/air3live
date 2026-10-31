@@ -83,25 +83,18 @@ Original license files in `../airewardrop-dapp-main/` and
 repositories; this inventory does not assign a new license to the AIR3 project.
 
 
-## Calzature aggiunte il 25 ottobre 2026
+## Footwear Assets
 
-Boot di Aquateknica: CC BY 4.0. Shoes test di Bente Aimee: CC BY-NC 4.0, selezione demo non commerciale. Attribuzioni, fonti e modifiche: [ATTRIBUTION.md](../source-assets/footwear/ATTRIBUTION.md). Dettagli di calzata e limiti: [CALZATURE.md](../docs/CALZATURE.md). Le licenze originali restano nei metadati dei GLB; gli originali ricevuti sono conservati e verificati tramite SHA-256.
+Boot by Aquateknica: CC BY 4.0. Shoes test by Bente Aimee: CC BY-NC 4.0, non-commercial reference variant. Fitting details and runtime limits: [FOOTWEAR.md](../docs/FOOTWEAR.md). Original licenses are embedded in GLB metadata.
 
-## Top corto fornito — Off Shoulder Top
+## Crop Top — Off Shoulder Top
 
-[Off Shoulder Top](https://sketchfab.com/3d-models/off-shoulder-top-5dac7be571c7464e802cc5aaa08a15c0),
-di [DaaGHrii](https://sketchfab.com/DaaGHrii), è fornito con licenza dichiarata
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). La versione AIR3 adatta
-la geometria del capo al corpo esistente e aggiunge pesi di skinning, conservando
-topologia, UV e texture originali. L'originale è conservato in
-`source-assets/clothing/off_shoulder_top.glb`; provenienza e hash sono in
-[SOURCES.json](../source-assets/clothing/SOURCES.json). Fitting, modifiche e limiti
-sono descritti in [Top e stivaletti](../docs/TOP_E_STIVALETTI.md).
+[Off Shoulder Top](https://sketchfab.com/3d-models/off-shoulder-top-5dac7be571c7464e802cc5aaa08a15c0) by [DaaGHrii](https://sketchfab.com/DaaGHrii), provided under declared [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The AIR3 version fits the garment geometry to the existing presenter anatomy and adds skinning weights, strictly preserving topology, UVs, and textures. Fitting and limits are described in [TOP_AND_BOOTS.md](../docs/TOP_AND_BOOTS.md).
 
-## Acconciature aggiunte il 25 ottobre 2026
+## Hairstyle Assets
 
-Wavy White Ponytail (With Bones), zHairezt: CC BY 4.0 dichiarata dalla fonte. Ponytail1 Artemis, CT Reed/continuumreed (remix da antoinepavia): CC BY-NC 4.0 dichiarata dalla fonte corrente, disponibile come prova non commerciale. Sei atlanti originali Artemis ottimizzati in WebP; Wavy mantiene il suo atlante indipendente. Dettagli, fonti, storico delle dichiarazioni e modifiche: [CAPELLI_IMPORTATI.md](../docs/CAPELLI_IMPORTATI.md). I metadati ufficiali consultati e gli originali forniti sono conservati in `../source-assets/lookdev/hair/`.
+Wavy White Ponytail (With Bones) by zHairezt: CC BY 4.0 declared by source. Ponytail1 Artemis by CT Reed / continuumreed (remix from antoinepavia): CC BY-NC 4.0 declared by source, available as non-commercial reference. Six original Artemis atlases optimized to WebP; Wavy preserves its dedicated independent atlas. Details and styling: [IMPORTED_HAIR.md](../docs/IMPORTED_HAIR.md).
 
-## Catture ACCAD / Ohio State
+## ACCAD / Ohio State Motion Captures
 
-Open Motion Project by ACCAD/The Ohio State University, **CC BY 3.0**. Le catture originali Female1 sono state ritagliate e retargettate al rig esistente, senza cambiare le lunghezze ossee. [Fonte ufficiale](https://accad.osu.edu/research/motion-lab/mocap-system-and-data), [licenza](https://creativecommons.org/licenses/by/3.0/), [attribuzione e sorgenti](../source-assets/motion/accad-female1/ATTRIBUTION.md). Non sono animazioni generate né vendute come un pacchetto nativo MetaHuman.
+Open Motion Project by ACCAD / The Ohio State University, **CC BY 3.0**. Original Female1 captures were trimmed and retargeted to the existing rig without altering skeletal limb lengths. [Official source](https://accad.osu.edu/research/motion-lab/mocap-system-and-data), [License](https://creativecommons.org/licenses/by/3.0/). Technical retargeting details: [LOCOMOTION_MOCAP.md](../docs/LOCOMOTION_MOCAP.md).

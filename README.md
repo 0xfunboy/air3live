@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>Attiva una volta. Trasmetti per sempre.</strong><br>
+  <strong>Launch once. Broadcast forever.</strong><br>
   <em>Autonomous 24/7 Live Broadcast Studio — 3D MetaHuman Presenter, Market Wallboard, Headless Audio/Video Pipeline & Agent Control APIs</em>
 </p>
 
@@ -161,19 +161,19 @@ The Live Control Room is accessible at `http://localhost:5890/control`:
 </p>
 
 ### Key Panels
-- **Barra Programma**: Instant buttons for `● LIVE (24/7)`, `⏺ Registra Prova Locale`, `■ Arresta`, and status metrics (Render FPS, Encode FPS, Bitrate, Durata).
-- **Regia In Scena**:
-  - *Inquadratura*: Regia automatica, Campo largo, Primo piano presentatrice, Schermi.
-  - *Espressione*: Lieve sorriso naturale, Accogliente, Concentrata, Lieve stupore, Neutra.
-  - *Sguardo in camera*: Aggancio attivo dello sguardo verso la camera attiva.
-  - *Presenta Monitor*: Spostamento della presentatrice verso Monitor Centrale (Wallboard), Destro (Heatmap), Sinistro (Mercato).
-  - *Test Rapido*: Pulsante one-click per verificare voce e lip-sync fonetico.
-- **01 · Destinazione 24/7**: Configurazione RTMP/RTMPS (Restream / Twitch / Custom) e toggle Watchdog Auto-Recovery.
-- **02 · Titoli & Ticker**: Notizie in onda, titolo principale, sottotitolo, e ticker scorrevole continuo.
-- **03 · Voce AI**: Parametri OpenAI-compatible TTS, selezione lingua (IT / EN), invio testo con lip-sync.
-- **04 · Wallboard AIRdApp**: Monitoraggio e sincronizzazione del feed [https://airdapp.airewardrop.xyz/wallboard](https://airdapp.airewardrop.xyz/wallboard).
-- **05 · Chat**: Monitoraggio chat Twitch con conversione messaggi in titoli con un click.
-- **06 · Verifiche & File**: Log eventi diagnostici e download diretto dei file video registrati.
+- **Program Bar**: Instant buttons for `● LIVE (24/7)`, `⏺ Record Local Test`, `■ Stop`, and status metrics (Render FPS, Encode FPS, Bitrate, Uptime).
+- **Scene Directing**:
+  - *Camera Angle*: Auto Directing, Wide Shot, Presenter Close-up, Studio Monitors.
+  - *Expression*: Subtle Natural Smile, Welcoming, Focused, Subtle Wonder, Neutral.
+  - *Camera Gaze*: Active gaze tracking locked onto the live broadcast camera.
+  - *Present Monitor*: Presenter navigation toward Center Monitor (Wallboard), Right (Heatmap), Left (Market).
+  - *Quick Test*: One-click button to evaluate voice and phonetic lip-sync.
+- **01 · 24/7 Destination**: RTMP/RTMPS setup (Restream / Twitch / Custom) and Watchdog Auto-Recovery toggle.
+- **02 · Titles & Ticker**: On-air news, main headline, subheadline, and continuous scrolling ticker.
+- **03 · AI Voice**: OpenAI-compatible TTS parameters, language selection (EN / IT), speech dispatch with lip-sync.
+- **04 · AIRdApp Wallboard**: Real-time synchronization with the official feed at [https://airdapp.airewardrop.xyz/wallboard](https://airdapp.airewardrop.xyz/wallboard).
+- **05 · Chat**: Twitch chat monitoring with one-click message promotion to lower-third banners.
+- **06 · Diagnostics & Files**: Live event logs and direct downloads of recorded video files.
 
 ---
 
@@ -204,15 +204,15 @@ Authorization: Bearer <AIR3_PRODUCER_TOKEN>
 
 ### Endpoints
 
-#### 1. Invia Narrazione Vocale & Lip-Sync
+#### 1. Dispatch Voice Narration & Lip-Sync
 Enqueue speech text for the avatar to pronounce live:
 ```http
 POST /api/live/narrations
 Content-Type: application/json
 
 {
-  "text": "Benvenuti alla diretta di AIR3. Analizziamo i segnali di trading appena rilevati sulla dApp.",
-  "language": "it"
+  "text": "Welcome to the AIR3 live stream. Let's analyze the latest trading signals detected on the dApp.",
+  "language": "en"
 }
 ```
 *Response (`202 Accepted`)*:
@@ -223,7 +223,7 @@ Content-Type: application/json
 }
 ```
 
-#### 2. Aggiorna Titolazione Sovraimpressa
+#### 2. Update On-Screen Titles & Ticker
 Update live on-screen lower-third banner and ticker:
 ```http
 POST /api/live/titles
@@ -232,19 +232,19 @@ Content-Type: application/json
 {
   "enabled": true,
   "label": "#AIR3 LIVE",
-  "title": "Nuovo segnale long su BTCUSDT",
-  "subtitle": "Entry a 68,400 $ con Target a 72,000 $",
+  "title": "New long signal on BTCUSDT",
+  "subtitle": "Entry at 68,400 $ with Target at 72,000 $",
   "ticker": [
-    "AIR3: volume trading 24h in aumento del 34%",
-    "Wallboard aggiornato con 2 nuovi ordini pendenti",
-    "Segui gli aggiornamenti in tempo reale su airdapp.airewardrop.xyz"
+    "AIR3: 24h trading volume up 34%",
+    "Wallboard updated with 2 new pending orders",
+    "Track live execution on airdapp.airewardrop.xyz"
   ],
   "speed": 65,
   "ttlSeconds": 0
 }
 ```
 
-#### 3. Comandi Regia & Movimento Monitor
+#### 3. Directing Commands & Monitor Movement
 Direct the avatar to walk to a monitor or return home:
 ```http
 POST /api/live/command
@@ -255,9 +255,9 @@ Content-Type: application/json
   "monitor": "center"
 }
 ```
-*(Values for `monitor`: `"center"` (Wallboard), `"right"` (Heatmap), `"left"` (Mercato). Set `type: "home"` to return to the desk.)*
+*(Values for `monitor`: `"center"` (Wallboard), `"right"` (Heatmap), `"left"` (Market Desk). Set `type: "home"` to return to the desk.)*
 
-#### 4. Invia Snapshot Wallboard Personalizzato
+#### 4. Send Custom Wallboard Snapshot
 Publish custom market data cards directly to the center monitor:
 ```http
 POST /api/live/wallpanel
@@ -267,17 +267,17 @@ Content-Type: application/json
   "title": "AIRTrack Wallboard",
   "source": "AIRdApp Intelligence",
   "cards": [
-    { "label": "Posizioni Aperte", "value": "4", "tone": "positive" },
+    { "label": "Open Positions", "value": "4", "tone": "positive" },
     { "label": "Win Rate 30D", "value": "78.4%", "tone": "positive" }
   ],
   "rows": [
-    { "label": "BTC Long", "value": "+4.2%", "tone": "positive", "detail": "Target 1 raggiunto" }
+    { "label": "BTC Long", "value": "+4.2%", "tone": "positive", "detail": "Target 1 reached" }
   ],
   "ttlSeconds": 60
 }
 ```
 
-#### 5. Stato Sessione & Streaming
+#### 5. Session & Streaming Status
 Inspect real-time broadcast and encoder state:
 ```http
 GET /api/live/status
@@ -295,7 +295,7 @@ AIR3 Live uses zero-copy GPU textures between Chromium Direct3D11 and FFmpeg:
 | **Intel Arc / Core Ultra** | `h264_qsv` | Direct Quick Sync encoding via DirectX11 |
 | **CPU Fallback** | `libx264` | Multi-threaded CPU encoding for testing |
 
-To inspect or switch GPU affinity on Windows:
+To inspect or switch GPU affinity:
 ```bash
 npm run gpu:status
 npm run gpu:nvidia

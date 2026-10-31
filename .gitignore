@@ -4,11 +4,19 @@ package-lock.json
 
 # Local Environment and Credentials
 .env
+.env.*
 *.env
+*.env.*
 !.env.example
 .browser-path
 studio-broadcast/.browser-path
 studio-broadcast/.env
+studio-broadcast/.env.*
+*secret*
+migration-settings.json
+live-settings.json
+*.key
+*.pem
 
 # Local Runtime Data and Cache
 .cache/
@@ -34,3 +42,6 @@ asset-backups/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+__pycache__/
+*.pyc

@@ -147,6 +147,7 @@ export class StudioScene {
     const gl = this.renderer.getContext(), extension = gl.getExtension('WEBGL_debug_renderer_info');
     this.gpu = extension ? gl.getParameter(extension.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER);
     this.quality = resolveStudioQuality(config, this.gpu, location.search);
+    this.renderer.shadowMap.enabled = (this.quality.shadowSize || 0) > 0;
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, this.quality.maxPixelRatio));
     this.environment = createStudioEnvironment(this.renderer, this.quality);
     this.scene.environment = this.environment.texture; this.scene.environmentIntensity = .5;
@@ -366,7 +367,7 @@ export class StudioScene {
         const idle = gltf.animations.find((a) => /idle/i.test(a.name));
         if (idle) this.mixer.clipAction(idle).play();
       }
-      this.avatarStatus = this.avatarRig ? 'Presentatrice virtuale · live' :
+      this.avatarStatus = this.avatarRig ? 'Virtual Presenter · live' :
         this.morphs.length ? 'Configured GLB · amplitude jaw' : 'Configured GLB · no jaw morph';
       this.onStatus(this.avatarStatus);
       // Ready means the complete avatar has passed through the actual renderer,
@@ -461,7 +462,7 @@ export class StudioScene {
     const targetFps = Math.min(60, Math.max(10, this.config.fps || 30));
     if (now - this.lastRender < 1000 / targetFps - 1 || this.contextLost) return;
     const dt = Math.min(.1, (now - (this.lastRender || now)) / 1000); this.lastRender = now;
-    const t = now / 1000;
+    const t = (Date.now() % 86_400_000) / 1000;
     if (!this.inspectionPaused) this.updatePose(dt, t);
     this.floor.beginFrame(this.frameCount);
     this.renderer.info.reset(); this.post.render(dt);

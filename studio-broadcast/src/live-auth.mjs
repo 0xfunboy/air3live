@@ -9,15 +9,47 @@ const COOKIE = 'air3_operator';
 
 export function createOperatorAuth(config, { now = Date.now } = {}) {
   const sessions = new Map(), attempts = new Map();
+  function isAllowedOrigin(candOrigin) {
+    if (!candOrigin || typeof candOrigin !== 'string') return false;
+    let url; try { url = new URL(candOrigin); } catch { return false; }
+    if (!['http:', 'https:'].includes(url.protocol)) return false;
+    if (/^(127\.0\.0\.1|localhost|\[::1\])(?::\d{1,5})?$/.test(url.host)) return true;
+    if (config.publicOrigin) {
+      try { if (new URL(config.publicOrigin).origin === url.origin) return true; } catch {}
+    }
+    if (config.controlOrigin) {
+      try { if (new URL(config.controlOrigin).origin === url.origin) return true; } catch {}
+    }
+    if (/(?:^|\.)airewardrop\.xyz(?::\d{1,5})?$/i.test(url.host)) return true;
+    return false;
+  }
   function origin(req) {
-    if (config.publicOrigin) return config.publicOrigin;
-    const host = req.headers.host;
+    const originHeader = typeof req.headers?.origin === 'string' ? req.headers.origin : null;
+    if (originHeader && isAllowedOrigin(originHeader)) return originHeader;
+    const host = req.headers?.host;
+    if (config.publicOrigin) {
+      if (typeof host === 'string' && /(?:^|\.)airewardrop\.xyz(?::\d{1,5})?$/i.test(host)) {
+        return `https://${host}`;
+      }
+      return config.publicOrigin;
+    }
     if (typeof host !== 'string' || !/^(127\.0\.0\.1|localhost|\[::1\])(?::\d{1,5})?$/.test(host)) throw new QueueError('PUBLIC_ORIGIN_REQUIRED', 403);
     return `http://${host}`;
   }
   function sameOrigin(req) {
+    const originHeader = req.headers?.origin;
+    if (!originHeader) return false;
+    if (req.headers['sec-fetch-site'] && !['same-origin', 'same-site'].includes(req.headers['sec-fetch-site'])) return false;
+    if (isAllowedOrigin(originHeader)) {
+      const host = req.headers?.host;
+      if (typeof host === 'string') {
+        let url; try { url = new URL(originHeader); } catch { return false; }
+        if (url.host === host) return true;
+        if (isAllowedOrigin(`http://${host}`) || isAllowedOrigin(`https://${host}`)) return true;
+      }
+    }
     let expected; try { expected = origin(req); } catch { return false; }
-    return req.headers.origin === expected && (!req.headers['sec-fetch-site'] || req.headers['sec-fetch-site'] === 'same-origin');
+    return originHeader === expected;
   }
   function session(req) {
     const raw = String(req.headers.cookie || '').split(';').map(s => s.trim()).find(s => s.startsWith(COOKIE + '='));

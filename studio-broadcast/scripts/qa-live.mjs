@@ -73,15 +73,15 @@ try {
   await page.setViewport({ width: 1440, height: 1100 }); check('Control room fits desktop and 390px mobile viewport');
   await page.click('[data-tab="titles"]');
   await page.evaluate(() => {
-    document.getElementById('title-main').value = 'Mercati, il punto della giornata';
-    document.getElementById('title-subtitle').value = 'Prova della regia #AIR3 · dati dimostrativi dichiarati';
+    document.getElementById('title-main').value = 'Markets Daily Briefing';
+    document.getElementById('title-subtitle').value = '#AIR3 Control Room Test · Demonstration Data';
     document.getElementById('title-ticker').value = 'Una guida scorrevole controllata via API\nPrezzi, commenti e aggiornamenti editoriali';
     document.getElementById('title-enabled').checked = true;
   });
   const titleResponse = page.waitForResponse(r => r.url().endsWith('/api/live/titles') && r.request().method() === 'POST');
   await page.click('#titles-form button.primary'); assert.equal((await titleResponse).status(), 200);
   await request('/api/live/settings', 'PATCH', { market: { enabled: true, provider: 'demo' } });
-  const state = await request('/api/live/status'); assert.equal(state.titles.title, 'Mercati, il punto della giornata');
+  const state = await request('/api/live/status'); assert.equal(state.titles.title, 'Markets Daily Briefing');
   const publicConfig = await fetch(base + '/api/public-config').then(r => r.json()); assert.equal(publicConfig.live, true);
   const publicProgram = await fetch(base + '/api/live/program').then(r => r.json());
   for (const token of [env.AIR3_PRODUCER_TOKEN, env.AIR3_PLAYER_TOKEN, env.AIR3_OPERATOR_TOKEN]) assert.ok(!JSON.stringify(publicProgram).includes(token));
@@ -93,7 +93,7 @@ try {
   await studio.goto(base + '/studio?output=1&quality=software', { waitUntil: 'domcontentloaded', timeout: 120000 });
   await studio.waitForFunction(() => !!window.air3Studio?.ready, { timeout: 120000 });
   await studio.evaluate(() => window.air3Studio.ready);
-  await studio.waitForFunction(() => document.querySelector('.editorial-title')?.textContent === 'Mercati, il punto della giornata');
+  await studio.waitForFunction(() => document.querySelector('.editorial-title')?.textContent === 'Markets Daily Briefing');
   report.scene = await studio.evaluate(() => window.air3Studio.diagnostics());
   assert.equal(report.scene.look.clothing.style, 'crop');
   const frame = await studio.evaluate(() => window.air3Studio.captureFrame());
@@ -103,7 +103,7 @@ try {
   await request('/api/live/titles', 'POST', { title: malicious });
   await studio.waitForFunction(text => document.querySelector('.editorial-title')?.textContent === text, {}, malicious);
   assert.equal(await studio.$eval('.live-editorial', e => e.querySelectorAll('img,script,iframe').length), 0);
-  await request('/api/live/titles', 'POST', { title: 'Mercati, il punto della giornata' });
+  await request('/api/live/titles', 'POST', { title: 'Markets Daily Briefing' });
   check('Headless compiled studio applies the white top, live titles and explicit demo monitors; title HTML remains inert text');
   await studio.close(); studio = null;
   await page.click('#record');

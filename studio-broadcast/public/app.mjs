@@ -13,7 +13,8 @@ import { createProgramClient, mountLiveTitles } from './live-program.mjs';
 
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
-if (params.get('output') === '1') document.body.classList.add('output');
+const isPublicHost = location.hostname === 'live.airewardrop.xyz' || location.hostname.startsWith('live.');
+if (params.get('output') === '1' || isPublicHost) document.body.classList.add('output');
 
 let scene, market, monitors, config, player, tickTimer, sampleRaf, lookControls, healthTimer, destroyed = false, gatewayOk = false, healthPending = false;
 let healthWorker, healthWorkerFailed = false;
@@ -66,7 +67,7 @@ function stopDemoVoice() {
   monitors?.setSpeech(idleState);
   const btn = $('studio-audio-test');
   if (btn) {
-    btn.textContent = '▶ TEST VOCE & LIP-SYNC';
+    btn.textContent = '▶ TEST VOICE & LIP-SYNC';
     btn.classList.remove('playing');
   }
   const resume = resumeAfterDemo; resumeAfterDemo = null;
@@ -77,20 +78,20 @@ async function playDemoVoice(customEmotion = null) {
   if (demoPlaying) { stopDemoVoice(); return; }
   await ready;
   if (player?.state.connected) {
-    $('notice').textContent = 'Il test voce è disponibile nell’anteprima; la trasmissione ha già il proprio player audio.';
+    $('notice').textContent = 'Voice test is available in preview; live broadcast uses its own dedicated audio player.';
     return;
   }
   const btn = $('studio-audio-test');
   if (btn) btn.disabled = true;
   try {
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    if (!AudioCtx) throw new Error('Web Audio non disponibile');
+    if (!AudioCtx) throw new Error('Web Audio unavailable');
     demoContext ||= new AudioCtx({ latencyHint: 'playback' });
     await demoContext.resume();
 
     const [wav, timeline] = await Promise.all([
       fetch('/assets/air3/demo/voice-reference.wav').then(r => {
-        if (!r.ok) throw new Error('Traccia audio reference non trovata');
+        if (!r.ok) throw new Error('Reference audio track not found');
         return r.arrayBuffer();
       }),
       fetch('/assets/air3/demo/voice-reference.json').then(r => r.json())
@@ -124,14 +125,14 @@ async function playDemoVoice(customEmotion = null) {
     demoSource.start(demoStartedAt);
 
     if (btn) {
-      btn.textContent = '⏹ FERMA AUDIO';
+      btn.textContent = '⏹ STOP AUDIO';
       btn.classList.add('playing');
     }
     $('speech-title').textContent = 'Voice on air (Test)';
-    $('subtitle').textContent = 'Prova della voce della presentatrice';
+    $('subtitle').textContent = 'Presenter voice reference test';
   } catch (err) {
     stopDemoVoice();
-    if ($('notice')) $('notice').textContent = `Errore riproduzione voce test: ${err.message}`;
+    if ($('notice')) $('notice').textContent = `Test voice playback error: ${err.message}`;
   } finally {
     if (btn) btn.disabled = false;
   }
@@ -151,7 +152,7 @@ window.air3Studio = Object.freeze({
   async playDemoVoice(options = {}) { return playDemoVoice(options); },
   async playLiveTestVoice() {
     await ready;
-    if (player.state.currentJob || demoPlaying) throw new Error('Una lettura è già in corso');
+    if (player.state.currentJob || demoPlaying) throw new Error('Speech playback already in progress');
     const resume = playerOptions;
     await player.disconnect({ keepAudio: true });
     resumeAfterDemo = resume;
@@ -215,11 +216,11 @@ function updateLiveMarket(snapshot) {
   monitors.setLiveMarketSnapshot(snapshot);
   const fresh = !snapshot.connection.stale && !snapshot.demo;
   $('data-led').classList.toggle('fresh', fresh);
-  const source = snapshot.demo ? 'DEMO · DATI SIMULATI' : snapshot.provider === 'coinglass' ? 'COINGLASS · MODEL3' : 'MERCATO · LIQUIDAZIONI OSSERVATE';
+  const source = snapshot.demo ? 'DEMO · SYNTHETIC DATA' : snapshot.provider === 'coinglass' ? 'COINGLASS · MODEL3' : 'MARKET · OBSERVED LIQUIDATIONS';
   $('feed-state').textContent = source;
   $('data-stat').textContent = `${source} / ${snapshot.connection.status}`;
   $('data-detail').textContent = snapshot.connection.error || snapshot.heatmap.coverage || '';
-  $('market-age').textContent = snapshot.demo ? 'DEMO GRAFICA · NON DATI REALI' : snapshot.connection.stale ? 'FONTE DATI NON AGGIORNATA' : `${snapshot.config.symbol} · AGGIORNAMENTO ${ageLabel(snapshot.heatmap.updatedAt || snapshot.generatedAt).toUpperCase()}`;
+  $('market-age').textContent = snapshot.demo ? 'DEMO GRAPHICS · SYNTHETIC DATA' : snapshot.connection.stale ? 'DATA FEED STALE' : `${snapshot.config.symbol} · UPDATED ${ageLabel(snapshot.heatmap.updatedAt || snapshot.generatedAt).toUpperCase()}`;
   $('next-trade').disabled = true;
 }
 
@@ -287,7 +288,7 @@ function tick() {
     $('gpu-stat').textContent = d.gpuRenderer;
     $('avatar-stat').textContent = scene.mannequin ? 'CALIBRATION MODEL' : 'CONFIGURED GLB';
     const motion = d.stageMotion;
-    if ($('stage-state')) $('stage-state').textContent = motion ? ({ home: 'Postazione principale', walking: 'In cammino', turning: 'Orientamento', presenting: 'Presentazione del monitor', settling: 'Arrivo', idle: 'In postazione' }[motion.phase] || motion.phase) : 'Preparazione della presentatrice';
+    if ($('stage-state')) $('stage-state').textContent = motion ? ({ home: 'Home Position', walking: 'Walking', turning: 'Orienting', presenting: 'Presenting Monitor', settling: 'Arriving', idle: 'Stationary' }[motion.phase] || motion.phase) : 'Preparing presenter';
     $('avatar-label').textContent = scene.mannequin ? 'CALIBRATION MANNEQUIN · ORIGINAL AVATAR NOT CONFIGURED' : scene.avatarStatus.toUpperCase();
     $('avatar-label').classList.toggle('loaded', !scene.mannequin);
     $('avatar-detail').textContent = scene.avatarStatus.includes('failed') ? scene.avatarStatus : scene.avatarRig ? 'Retargeted body · PBR materials · facial rig · audio-clock articulation.' : 'Configure an avatar to enable facial controls.';
@@ -308,7 +309,7 @@ function sample() {
       phase: 'playing',
       connected: true,
       currentJob: 'test-voice',
-      text: 'Prova della voce della presentatrice',
+      text: 'Presenter voice reference test',
       elapsed: Math.max(0, elapsed),
       duration: demoDuration,
       amplitude: Math.min(1, Math.sqrt(energy / demoSamples.length) * 8),
@@ -323,7 +324,7 @@ function sample() {
     $('speech-progress').textContent = `${elapsed.toFixed(1)} / ${demoDuration.toFixed(1)}s [${mouthCue}]`;
     $('lip-label').textContent = `AUDIO-ALIGNED LIP SYNC [${mouthCue}] · ${currentEmotion.name.toUpperCase()}`;
     $('audio-stat').textContent = 'PLAYING / RUNNING (TEST)';
-    $('audio-detail').textContent = `Forma labiale ${mouthCue} · Espressione ${currentEmotion.name}`;
+    $('audio-detail').textContent = `Viseme ${mouthCue} · Expression ${currentEmotion.name}`;
   } else {
     const state = player?.sample();
     if (state) {
@@ -369,7 +370,7 @@ async function boot() {
       liveMarket = createLiveMarketClient({ onUpdate: updateLiveMarket });
       liveTitles = mountLiveTitles(document.querySelector('.program'));
       $('feed').disabled = true; $('timeframe').disabled = true;
-      $('feed').replaceChildren(new Option('Monitor della regia live', 'live', true, true));
+      $('feed').replaceChildren(new Option('Live Control Room Monitor', 'live', true, true));
     } else market = new MarketData(config, updateMarket);
     $('feed').addEventListener('change', () => {
       market?.start($('feed').value); updateOutputLink();
@@ -395,14 +396,14 @@ async function boot() {
     if (config.live) {
       await applyProgram(programState);
       programClient = createProgramClient({ onUpdate: applyProgram }); programClient.start();
-      $('live-regia-link').hidden = false; $('save-live-look').hidden = false;
+      $('live-control-link').hidden = false; $('save-live-look').hidden = false;
       $('save-live-look').addEventListener('click', async () => {
         const button = $('save-live-look'); button.disabled = true;
         try {
           const response = await fetch('/api/live/settings', { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ look: scene.look.getPreset() }) });
-          if (!response.ok) throw new Error('Apri la regia live ed esegui l’accesso prima di salvare il look.');
-          $('notice').textContent = 'Look salvato nella regia e applicato all’uscita.';
+          if (!response.ok) throw new Error('Open the Live Control Room and log in before saving the look.');
+          $('notice').textContent = 'Look saved to Control Room and applied to broadcast output.';
         } catch (error) { $('notice').textContent = error.message; } finally { button.disabled = false; }
       });
     }

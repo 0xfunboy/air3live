@@ -10,13 +10,20 @@ import { patchSkinMaterial } from './air3-avatar.mjs';
 export const STUDIO_QUALITY = Object.freeze({
   high: Object.freeze({ name: 'high', maxPixelRatio: 1.25, shadowSize: 2048, reflectionSize: 1024, reflectionInterval: 1, ao: true, bloom: true, msaa: 4, environmentSize: 256 }),
   balanced: Object.freeze({ name: 'balanced', maxPixelRatio: 1, shadowSize: 1024, reflectionSize: 512, reflectionInterval: 2, ao: false, bloom: true, msaa: 2, environmentSize: 256 }),
-  software: Object.freeze({ name: 'software', maxPixelRatio: 1, shadowSize: 512, reflectionSize: 0, reflectionInterval: 1, ao: false, bloom: false, msaa: 0, environmentSize: 128 }),
+  software: Object.freeze({ name: 'software', maxPixelRatio: 1, shadowSize: 0, reflectionSize: 0, reflectionInterval: 1, ao: false, bloom: false, msaa: 0, environmentSize: 128 }),
 });
 
 export function resolveStudioQuality(config = {}, gpu = '', query = '') {
-  const requested = new URLSearchParams(query).get('quality') || config.renderQuality || config.quality || 'auto';
+  const queryQuality = new URLSearchParams(query).get('quality');
   const software = /swiftshader|llvmpipe|software rasterizer/i.test(gpu);
-  const name = Object.hasOwn(STUDIO_QUALITY, requested) ? requested : software ? 'software' : 'balanced';
+  const requested = queryQuality || config.renderQuality || config.quality || 'auto';
+  const name = queryQuality && Object.hasOwn(STUDIO_QUALITY, queryQuality)
+    ? queryQuality
+    : software
+      ? 'software'
+      : Object.hasOwn(STUDIO_QUALITY, requested)
+        ? requested
+        : 'balanced';
   return { ...STUDIO_QUALITY[name], requested, softwareRenderer: software,
     selectionReason: name === requested ? 'explicit selection' : software ? 'software renderer detected' : 'balanced default' };
 }

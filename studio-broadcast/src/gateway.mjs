@@ -72,8 +72,20 @@ async function staticFile(req, res, pathname, config) {
   let root;
   let relative;
   let vendor = false;
-  if ((pathname === '/' && config.live?.enabled) || pathname === '/control' || pathname === '/control/') {
-    root = config.publicDir; relative = 'control/index.html';
+  const host = (req.headers?.host || '').toLowerCase();
+  const isControlHost = host.startsWith('livedash.');
+
+  if (isControlHost && (pathname === '/' || pathname === '/control' || pathname === '/control/')) {
+    root = config.publicDir;
+    relative = 'control/index.html';
+  } else if (!isControlHost && (pathname === '/control' || pathname === '/control/')) {
+    if (host.includes('airewardrop.xyz')) {
+      res.writeHead(302, { Location: 'https://livedash.airewardrop.xyz/', 'Cache-Control': 'no-store' });
+      res.end();
+      return;
+    }
+    root = config.publicDir;
+    relative = 'control/index.html';
   } else if (pathname === '/' || pathname === '/studio' || pathname === '/studio/') {
     root = config.publicDir;
     relative = 'index.html';
@@ -205,7 +217,7 @@ export async function createGateway(config) {
   const dappOrigin = visible.dappBaseUrl ? ` ${new URL(visible.dappBaseUrl).origin}` : '';
   const csp = `default-src 'self'; script-src 'self'${importMapPolicy}; style-src 'self' 'unsafe-inline'; ` +
     `connect-src 'self' blob:${dappOrigin}${dappOrigin.replace(/^ http/, ' ws')}; img-src 'self' data: blob: https:; ` +
-    `media-src 'self' blob:; worker-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'`;
+    `media-src 'self' blob:; worker-src 'self' blob:; font-src 'self'; frame-src 'self' https://player.twitch.tv https://chat.restream.io; object-src 'none'; base-uri 'none'; frame-ancestors 'none'`;
   const server = http.createServer({ maxHeaderSize: 16384 }, async (req, res) => {
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('X-Frame-Options', 'DENY');

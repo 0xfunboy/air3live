@@ -30,8 +30,8 @@ export function applyWhiteCottonFinish(material) {
 }
 
 export const CLOTHING_STYLES = Object.freeze([
-  Object.freeze({ id: 'original', label: 'Maglietta originale', commercialUse: true, license: 'asset del progetto' }),
-  Object.freeze({ id: 'crop', label: 'Top corto bianco · DaaGHrii', commercialUse: true, license: 'CC BY 4.0', author: 'DaaGHrii' }),
+  Object.freeze({ id: 'original', label: 'Original Top', commercialUse: true, license: 'Project Asset' }),
+  Object.freeze({ id: 'crop', label: 'Cropped White Top · DaaGHrii', commercialUse: true, license: 'CC BY 4.0', author: 'DaaGHrii' }),
 ]);
 export async function createClothingController({ avatarRoot, rig, assetBase = '/assets/air3/clothing/', loader = new GLTFLoader() } = {}) {
   if (!avatarRoot) throw new TypeError('avatarRoot is required');

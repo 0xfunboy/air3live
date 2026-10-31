@@ -35,6 +35,8 @@
     "test:intel": "node studio-broadcast/scripts/test-intel-arc.mjs",
     "live": "node scripts/start-live.mjs",
     "setup": "npm ci --prefix studio-broadcast && npm run init --prefix studio-broadcast && npm run browser:install --prefix studio-broadcast",
+    "service:tts": "${AIR3_TTS_PYTHON:-/home/funboy/.local/share/pocket-tts/venv/bin/python3} services/tts-server/server.py",
+    "adapter:tts": "node --env-file=studio-broadcast/.env adapters/tts-gradio-adapter.mjs",
     "bridge:dapp": "node --env-file=studio-broadcast/.env adapters/dapp-wallpanel.mjs",
     "qa:live": "npm run qa:live --prefix studio-broadcast",
     "qa:rtmp": "npm run qa:rtmp --prefix studio-broadcast",

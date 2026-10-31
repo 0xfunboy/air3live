@@ -15,13 +15,13 @@ async function shutdown(code = 0) {
     // The gateway stays alive while the player terminalizes its lease and the
     // capture recorder/FFmpeg flush their last audio and video packets.
     const capture = await stopManaged(broadcaster, { graceMs: 30000 });
-    if (capture.forced) { console.error('Timeout di arresto broadcaster: processo terminato dopo 30 secondi.'); if (!code) code = 1; }
+    if (capture.forced) { console.error('Broadcaster shutdown timeout: process terminated after 30 seconds.'); if (!code) code = 1; }
     const service = await stopManaged(gateway, { graceMs: 12000 });
-    if (service.forced) { console.error('Timeout di arresto gateway.'); if (!code) code = 1; }
+    if (service.forced) { console.error('Gateway shutdown timeout.'); if (!code) code = 1; }
     try {
       const restored = preference?.restore();
-      if (restored?.reason === 'changed-externally') console.log('Preferenza GPU modificata esternamente: mantenuto il valore più recente.');
-    } catch (error) { console.error('Ripristino preferenza GPU non riuscito:', error.message); if (!code) code = 1; }
+      if (restored?.reason === 'changed-externally') console.log('GPU preference modified externally: retained latest value.');
+    } catch (error) { console.error('Failed to restore GPU preference:', error.message); if (!code) code = 1; }
     process.exitCode = code;
   })();
   return stopping;
@@ -32,10 +32,10 @@ process.once('SIGINT', onInterrupt); process.once('SIGTERM', onTerminate);
 try {
   const request = gpuRequest(process.argv[2]);
   const chrome = await resolveLauncherChrome(serviceRoot);
-  if (stopping) throw new Error('Avvio interrotto');
-  console.log(`airewardrop Broadcast · GPU richiesta: ${request.label}; encoder richiesto: ${request.encoder}`);
+  if (stopping) throw new Error('Startup aborted');
+  console.log(`airewardrop Broadcast · Requested GPU: ${request.label}; Requested encoder: ${request.encoder}`);
   preference = applyWindowsGpuPreference(chrome, request);
-  if (!preference.applied) console.log('Preferenza DXGI disponibile solo su Windows; verificare renderer ed encoder nei log.');
+  if (!preference.applied) console.log('DXGI preference available on Windows only; verify renderer and encoder in logs.');
   const env = { ...process.env, AIR3_CHROME_PATH: chrome, AIR3_VIDEO_ENCODER: request.encoder,
     AIR3_REQUIRE_HARDWARE_RENDERING: 'true', AIR3_CONTROL_STDIN: 'false' };
   if (!stopping) {
@@ -50,13 +50,13 @@ try {
         gateway.done.then(result => ({ owner: 'gateway', result }))
       ]);
       if (!stopping) {
-        if (first.owner === 'gateway') console.error('Il gateway avviato dal launcher è terminato durante la trasmissione.');
+        if (first.owner === 'gateway') console.error('The gateway started by the launcher terminated during broadcast.');
         await shutdown(first.owner === 'gateway' ? exitCode(first.result) || 1 : exitCode(first.result));
       }
     }
   }
 } catch (error) {
-  if (!stopping) { console.error('Avvio trasmissione non riuscito:', error.message); await shutdown(1); }
+  if (!stopping) { console.error('Broadcast startup failed:', error.message); await shutdown(1); }
 } finally {
   if (stopping) await stopping;
   process.off('SIGINT', onInterrupt); process.off('SIGTERM', onTerminate);

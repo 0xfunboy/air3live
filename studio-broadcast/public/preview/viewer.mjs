@@ -52,19 +52,19 @@ function stopDemo() {
   demoPlaying = false;
   if (demoSource) { demoSource.onended = null; try { demoSource.stop(); } catch {} demoSource.disconnect(); demoSource = null; }
   rig?.setSpeech({ phase: 'idle', amplitude: 0, mouthCue: 'X', lipSync: 'none' });
-  $('demo').textContent = 'Ascolta la voce · 12 s'; $('audio-state').textContent = 'Estratto della registrazione fornita con il progetto.';
+  $('demo').textContent = 'Play Voice Sample · 12 s'; $('audio-state').textContent = 'Sample speech recording with phonetic lip-sync.';
 }
 async function playDemo() {
   if (demoPlaying) { stopDemo(); return; } await ready; $('demo').disabled = true;
   try {
     audioContext ||= new AudioContext({ latencyHint: 'playback' }); await audioContext.resume();
-    const [wav, timeline] = await Promise.all([fetch('/assets/air3/demo/voice-reference.wav').then((r) => { if (!r.ok) throw new Error('Audio non disponibile'); return r.arrayBuffer(); }), fetch('/assets/air3/demo/voice-reference.json').then((r) => r.json())]);
+    const [wav, timeline] = await Promise.all([fetch('/assets/air3/demo/voice-reference.wav').then((r) => { if (!r.ok) throw new Error('Audio unavailable'); return r.arrayBuffer(); }), fetch('/assets/air3/demo/voice-reference.json').then((r) => r.json())]);
     const buffer = await audioContext.decodeAudioData(wav); demoCues = normalizeMouthCues(timeline.mouthCues, buffer.duration); demoDuration = buffer.duration;
     if (!analyser) { analyser = audioContext.createAnalyser(); analyser.fftSize = 512; analyser.connect(audioContext.destination); samples = new Float32Array(512); }
     demoSource = audioContext.createBufferSource(); demoSource.buffer = buffer; demoSource.connect(analyser);
     demoStartedAt = audioContext.currentTime + .06; demoPlaying = true; paused = false;
-    $('mouth').value = 'auto'; rig.clearFacialPreview(); emotion(); $('pause').textContent = 'Pausa animazione';
-    demoSource.onended = stopDemo; demoSource.start(demoStartedAt); $('demo').textContent = 'Ferma la voce';
+    $('mouth').value = 'auto'; rig.clearFacialPreview(); emotion(); $('pause').textContent = 'Pause animation';
+    demoSource.onended = stopDemo; demoSource.start(demoStartedAt); $('demo').textContent = 'Stop Voice';
   } catch (error) { stopDemo(); $('audio-state').textContent = error.message; } finally { $('demo').disabled = false; }
 }
 window.assetPreview = { ready,
@@ -82,7 +82,7 @@ window.assetPreview = { ready,
   front: () => view('front'), back: () => view('back'), face: () => view('face'), feet: () => view('feet'), feetRear: () => view('feetRear'), side: () => view('side'), threequarter: () => view('threequarter'),
   setExpression(name, intensity = .35) { $('emotion').value = name; $('intensity').value = intensity; emotion(); },
   setEyeContact(enabled) { rig.setEyeContactEnabled(enabled); $('eye-contact').checked = !!enabled; },
-  setPaused(value) { paused = !!value; $('pause').textContent = paused ? 'Riprendi animazione' : 'Pausa animazione'; },
+  setPaused(value) { paused = !!value; $('pause').textContent = paused ? 'Resume animation' : 'Pause animation'; },
   advanceForInspection(seconds) {
     if (!Number.isFinite(seconds) || seconds < 0 || seconds > 10) throw new Error('Inspection interval must be 0–10 seconds');
     paused = true; controls.update();
@@ -112,7 +112,7 @@ renderer.setAnimationLoop((now) => {
       const mouthCue = mouthCueAt(demoCues, elapsed, demoDuration);
       rig.setSpeech({ phase: 'playing', amplitude: Math.min(1, Math.sqrt(energy / samples.length) * 8), elapsed: Math.max(0, elapsed), duration: demoDuration, mouthCue,
         mouthWeights: mouthPoseWeightsAt(demoCues, elapsed, demoDuration), lipSync: 'rhubarb:pocketSphinx' });
-      $('audio-state').textContent = Math.max(0, elapsed).toFixed(1) + ' / ' + demoDuration.toFixed(1) + ' s · Forma ' + mouthCue;
+      $('audio-state').textContent = Math.max(0, elapsed).toFixed(1) + ' / ' + demoDuration.toFixed(1) + ' s · Viseme ' + mouthCue;
     }
     rig.update(paused ? 0 : dt);
     hair?.update(paused ? 0 : dt);
@@ -122,7 +122,7 @@ renderer.setAnimationLoop((now) => {
   renderer.render(scene, camera); frames++;
 });
 for (const name of ['front', 'back', 'threequarter', 'side', 'face', 'feet']) $(name).onclick = () => view(name);
-$('pause').onclick = () => { paused = !paused; $('pause').textContent = paused ? 'Riprendi animazione' : 'Pausa animazione'; };
+$('pause').onclick = () => { paused = !paused; $('pause').textContent = paused ? 'Resume animation' : 'Pause animation'; };
 $('emotion').onchange = emotion; $('intensity').oninput = emotion;
 $('eye-contact').onchange = () => rig?.setEyeContactEnabled($('eye-contact').checked);
 $('mouth').onchange = () => { stopDemo(); if ($('mouth').value === 'auto') rig.clearFacialPreview(); else rig.setFacialPreview({ mouthCue: $('mouth').value }); emotion(); };
@@ -176,11 +176,11 @@ try {
   await look.apply(initialLook.preset, { persist: false, source: initialLook.source });
   if (disposed) throw new Error('Preview closed while loading look');
   lookControls = mountLookControls($('look-panel'), look);
-  const updateGeometryCount = () => { modelTriangles = 0; model.traverseVisible(node => { if (node.isMesh) modelTriangles += (node.geometry.index?.count ?? node.geometry.attributes.position.count) / 3; }); $('triangles').textContent = modelTriangles.toLocaleString('it-IT'); };
+  const updateGeometryCount = () => { modelTriangles = 0; model.traverseVisible(node => { if (node.isMesh) modelTriangles += (node.geometry.index?.count ?? node.geometry.attributes.position.count) / 3; }); $('triangles').textContent = modelTriangles.toLocaleString('en-US'); };
   look.subscribe(updateGeometryCount); updateGeometryCount();
   rig.setCameraTarget(camera); rig.setEyeContactEnabled($('eye-contact').checked);
-  for (const clip of [...rig.idles, ...rig.talks, ...createMocapClips()]) { const option = document.createElement('option'); option.value = clip.name; option.textContent = ({ACCAD_Stand_Female:'Mocap · Fermo', ACCAD_Start_Female:'Mocap · Partenza', ACCAD_Walk_Female:'Mocap · Camminata', ACCAD_Stop_Female:'Mocap · Arresto', ACCAD_TurnLeft_Female:'Mocap · Svolta sinistra', ACCAD_TurnRight_Female:'Mocap · Svolta destra', ACCAD_TurnAround_Female:'Mocap · Inversione'})[clip.name] || clip.name.replace('MH_', '').replace('_UE', ''); $('motion').append(option); }
+  for (const clip of [...rig.idles, ...rig.talks, ...createMocapClips()]) { const option = document.createElement('option'); option.value = clip.name; option.textContent = ({ACCAD_Stand_Female:'Mocap · Stand', ACCAD_Start_Female:'Mocap · Start Walk', ACCAD_Walk_Female:'Mocap · Walk', ACCAD_Stop_Female:'Mocap · Stop', ACCAD_TurnLeft_Female:'Mocap · Turn Left 90°', ACCAD_TurnRight_Female:'Mocap · Turn Right 90°', ACCAD_TurnAround_Female:'Mocap · Turn Around 180°'})[clip.name] || clip.name.replace('MH_', '').replace('_UE', ''); $('motion').append(option); }
   $('motion').disabled = false; $('motion').onchange = () => rig.setClip($('motion').value, { immediate: false });
-  $('quality').textContent = quality.name; $('triangles').textContent = modelTriangles.toLocaleString('it-IT'); $('clips').textContent = rig.idles.length + ' idle · ' + rig.talks.length + ' talk · 7 mocap'; $('state').textContent = 'Pronta';
+  $('quality').textContent = quality.name; $('triangles').textContent = modelTriangles.toLocaleString('en-US'); $('clips').textContent = rig.idles.length + ' idle · ' + rig.talks.length + ' talk · 7 mocap'; $('state').textContent = 'Ready';
   emotion(); view('front'); renderer.render(scene, camera); $('loading').hidden = true; $('demo').disabled = false; resolveReady(window.assetPreview.diagnostics());
-} catch (error) { if (!disposed) { $('loading').querySelector('strong').textContent = 'Caricamento non riuscito'; $('loading').querySelector('span').textContent = error.message; $('state').textContent = 'Errore'; } rejectReady(error); disposePreview(); }
+} catch (error) { if (!disposed) { $('loading').querySelector('strong').textContent = 'Loading failed'; $('loading').querySelector('span').textContent = error.message; $('state').textContent = 'Error'; } rejectReady(error); disposePreview(); }

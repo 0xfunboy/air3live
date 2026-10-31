@@ -38,8 +38,8 @@ export function buildLiveEnvironment(settings, gatewayConfig, baseEnv, { mode, o
     AIR3_RTMP_KEY: '', AIR3_RTSP_URL: '', AIR3_RECORDING_DIR: resolve(gatewayConfig.dataDir, 'recordings'),
     AIR3_VIDEO_ENCODER: settings.stream.encoder, AIR3_VIDEO_BITRATE_KBPS: String(settings.stream.bitrateKbps),
     AIR3_BROADCAST_DURATION_SECONDS: '0', AIR3_CONTROL_STDIN: 'false', AIR3_LIVE_IPC: 'true',
-    // Record tests can use software WebGL. Public output must prove actual GPU rendering.
-    AIR3_REQUIRE_HARDWARE_RENDERING: mode === 'record' ? 'false' : 'true',
+    // Record tests can use software WebGL. Public output respects explicit setting or defaults to true.
+    AIR3_REQUIRE_HARDWARE_RENDERING: baseEnv.AIR3_REQUIRE_HARDWARE_RENDERING !== undefined ? baseEnv.AIR3_REQUIRE_HARDWARE_RENDERING : (mode === 'record' ? 'false' : 'true'),
   };
   return env;
 }

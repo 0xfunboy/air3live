@@ -88,7 +88,7 @@ test('failed accessory import restores the previous complete look and does not p
   const before = f.controller.getPreset(), next = defaultLook(); next.hair = { style: 'artemis', color: 'blonde' }; next.footwear.style = 'boot';
   await assert.rejects(f.controller.apply(next), /Test asset unavailable/);
   assert.deepEqual(f.controller.getPreset(), before); assert.equal(saved.length, 0); assert.equal(f.controller.busy, false);
-  assert.match(f.controller.error, /Ripristinata/); f.dispose();
+  assert.match(f.controller.error, /Restored previous configuration|Ripristinata/); f.dispose();
 });
 
 test('a browser denying localStorage can load the shipped preset without falsely reporting persistence', async t => {
@@ -98,7 +98,7 @@ test('a browser denying localStorage can load the shipped preset without falsely
   try {
     const loaded = await loadInitialLook(); assert.deepEqual(loaded.preset, defaultLook()); assert.equal(loaded.source, 'package');
     const f = controllerFixture(); await f.controller.setFootwear('original');
-    assert.equal(f.controller.lastSaved, null); assert.match(f.controller.error, /Salvataggio locale non disponibile/); f.dispose();
+    assert.equal(f.controller.lastSaved, null); assert.match(f.controller.error, /Local storage unavailable|Salvataggio locale non disponibile/); f.dispose();
   } finally { if (descriptor) Object.defineProperty(globalThis, 'localStorage', descriptor); else delete globalThis.localStorage; }
 });
 
