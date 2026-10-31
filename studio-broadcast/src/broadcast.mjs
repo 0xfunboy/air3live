@@ -88,11 +88,11 @@ async function session(signal) {
       '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', '--hide-scrollbars'];
     if (config.angle !== 'default') args.push(`--use-angle=${config.angle}`);
     if (config.angle === 'vulkan') args.push('--enable-features=Vulkan', '--enable-gpu');
-    if (config.angle === 'swiftshader') args.push('--enable-unsafe-swiftshader');
+    if (config.angle === 'swiftshader' || !config.requireHardware) args.push('--enable-unsafe-swiftshader');
     if (config.noSandbox) args.push('--no-sandbox');
     browser = await capture.launch({ executablePath: config.browserPath, headless: 'new', args,
       defaultViewport: { width: config.gateway.width, height: config.gateway.height, deviceScaleFactor: 1 },
-      timeout: 120000, protocolTimeout: 120000, startDelay: 1000 });
+      timeout: 120000, protocolTimeout: 120000, startDelay: 1000, dumpio: true });
     browser.once('disconnected', () => { if (!signal.aborted) fail(new Error('Browser disconnected')); });
     page = await browser.newPage();
     page.on('pageerror', (error) => log('studio-page-error', { message: error.message.slice(0, 500) }));

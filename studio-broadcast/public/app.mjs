@@ -14,7 +14,11 @@ import { createProgramClient, mountLiveTitles } from './live-program.mjs';
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
 const isPublicHost = location.hostname === 'live.airewardrop.xyz' || location.hostname.startsWith('live.');
-if (params.get('output') === '1' || isPublicHost) document.body.classList.add('output');
+if (params.get('operator') === '1' && !isPublicHost) {
+  document.body.classList.remove('output');
+} else {
+  document.body.classList.add('output');
+}
 
 let scene, market, monitors, config, player, tickTimer, sampleRaf, lookControls, healthTimer, destroyed = false, gatewayOk = false, healthPending = false;
 let healthWorker, healthWorkerFailed = false;

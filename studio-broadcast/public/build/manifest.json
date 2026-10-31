@@ -1,6 +1,6 @@
 {
   "schema": "air3.frontend-build.v1",
-  "builtAt": "2026-10-31T10:15:59.364Z",
+  "builtAt": "2026-10-31T10:46:36.992Z",
   "node": "v24.18.0",
   "esbuild": "0.28.2",
   "inputs": [
@@ -61,8 +61,8 @@
     },
     {
       "path": "public/app.mjs",
-      "bytes": 24357,
-      "sha256": "84c0f57e1127fde4ea41dcea5567835ad85311df0fe36647f737a2642765d910"
+      "bytes": 24419,
+      "sha256": "e09d774e373033095c6b2db504f6f845b81e461159f573d06ad6cba5d9a50121"
     },
     {
       "path": "public/assets/air3/motion/accad-female1.mjs",
@@ -166,8 +166,8 @@
     },
     {
       "path": "public/index.html",
-      "bytes": 6683,
-      "sha256": "b015b5bf874d4e30f5e323c27429c15e888dc207a21a5a8ec1689157a2921433"
+      "bytes": 6698,
+      "sha256": "4900c6bbc394bd45fd75d3b239f2f58b1a04eac98ff4977a2e5dada3109af72b"
     },
     {
       "path": "public/styles.css",
@@ -208,8 +208,8 @@
   "outputs": [
     {
       "path": "public/build/app.js",
-      "bytes": 87401,
-      "sha256": "e8d6c683b6acc11d9b7184702e3c1e5b3a269a9c141f7484a11c93baf3452488"
+      "bytes": 87442,
+      "sha256": "9ae359d904de082048eb09c8f5ef2d076f74fe420e83bde3fd56d1eac866c275"
     },
     {
       "path": "public/build/control.js",
