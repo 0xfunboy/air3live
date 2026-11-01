@@ -93,7 +93,7 @@ test('trade polling reuses candles for 15 seconds and reports for 60 seconds, wi
   await f.bridge.runOnce(); f.advance(4000); await f.bridge.runOnce();
   const chartCalls = () => f.calls.filter(c => c.url.includes('/ohlcv')).length;
   const reportCalls = () => f.calls.filter(c => c.url.includes('/reports?')).length;
-  assert.equal(chartCalls(), 1); assert.equal(reportCalls(), 1); assert.match(f.posts[1].subtitle, /candele 4s · riepilogo 4s/);
+  assert.equal(chartCalls(), 1); assert.equal(reportCalls(), 1); assert.match(f.posts[1].subtitle, /(?:candele|candles) 4s · (?:riepilogo|summary) 4s/);
   f.advance(12000); await f.bridge.runOnce(); assert.equal(chartCalls(), 2); assert.equal(reportCalls(), 1);
   f.advance(45000); await f.bridge.runOnce(); assert.equal(chartCalls(), 3); assert.equal(reportCalls(), 2);
   assert.equal(f.posts.length, 4);

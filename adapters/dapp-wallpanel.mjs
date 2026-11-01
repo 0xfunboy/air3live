@@ -133,8 +133,8 @@ export function createDappWallpanelBridge({ config = loadDappBridgeConfig(), fet
     const reportAt = reportDue ? fetchedAt : cache.reportAt;
     const chartAge = chartAt ? Math.max(0, Math.floor((fetchedAt - chartAt) / 1000)) : null;
     const reportAge = Math.max(0, Math.floor((fetchedAt - reportAt) / 1000));
-    const payload = { title: feed.label, source: `${feed.label} · dApp pubblica`,
-      subtitle: `${config.timeframe} · candele ${chartAge === null ? 'non disponibili' : `${chartAge}s`} · riepilogo ${reportAge}s`,
+    const payload = { title: feed.label, source: `${feed.label} · Public dApp`,
+      subtitle: `${config.timeframe} · candles ${chartAge === null ? 'unavailable' : `${chartAge}s`} · summary ${reportAge}s`,
       trades, candles, report, selectedId, sourceAt, ttlSeconds: config.ttlSeconds };
     const body = JSON.stringify(payload);
     if (Buffer.byteLength(body) > MAX_PANEL_BYTES) throw new BridgeError('WALLPANEL_TOO_LARGE');
