@@ -60,20 +60,21 @@ def init_models():
     t0 = time.time()
     
     # Italian model
-    logger.info("Loading Italian model (giovanni)...")
+    logger.info("Loading Italian model (alba - young female voice)...")
     model_it = TTSModel.load_model(language="italian")
     model_it.to(DEVICE)
-    voice_it = model_it.get_state_for_audio_prompt(get_default_voice_for_language("italian", None))
+    voice_it = model_it.get_state_for_audio_prompt("alba")
     models["it"] = model_it
     voice_states["it"] = voice_it
     voice_states["giovanni"] = voice_it
     voice_states["if_sara"] = voice_it
+    voice_states["alba"] = voice_it
     
     # English model
-    logger.info("Loading English model (alba)...")
+    logger.info("Loading English model (alba - young female voice)...")
     model_en = TTSModel.load_model(language="english")
     model_en.to(DEVICE)
-    voice_en = model_en.get_state_for_audio_prompt(get_default_voice_for_language("english", None))
+    voice_en = model_en.get_state_for_audio_prompt("alba")
     models["en"] = model_en
     voice_states["en"] = voice_en
     voice_states["alba"] = voice_en
