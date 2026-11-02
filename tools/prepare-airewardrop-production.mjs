@@ -48,7 +48,7 @@ if(command==='prepare'){
  await fs.lstat(dropin).then(()=>{throw new Error('PRODUCTION_DROPIN_ALREADY_EXISTS');},error=>{if(error.code!=='ENOENT')throw error;});
  await request('/api/live/stop','POST',{});
  const stopped=await request('/api/live/status');if(!['stopped','idle'].includes(stopped.broadcast.phase))throw new Error('OLD_STREAM_STOP_NOT_PROVEN');
- await privateFile(dropin,`[Service]\nExecStart=\nExecStart=/home/funboy/.local/bin/node --env-file=/home/funboy/air3live/studio-broadcast/.env --env-file=${directory}/gateway.env ${root}/studio-broadcast/src/main.mjs\nExecStartPost=\nExecStartPost=/home/funboy/.local/bin/node ${root}/tools/resume-airewardrop-production.mjs\n`);
+ await privateFile(dropin,`[Unit]\nRequires=air3-tts-air3agent-canary.service\nAfter=air3-tts-air3agent-canary.service\n\n[Service]\nWorkingDirectory=${root}/studio-broadcast\nExecStart=\nExecStart=/home/funboy/.local/bin/node --env-file=/home/funboy/air3live/studio-broadcast/.env --env-file=${directory}/gateway.env ${root}/studio-broadcast/src/main.mjs\nExecStartPost=\nExecStartPost=/home/funboy/.local/bin/node ${root}/tools/resume-airewardrop-production.mjs\n`);
  await exec('systemctl',['--user','daemon-reload']);
  await exec('systemctl',['--user','restart','air3-live.service'],{timeout:120000});
  const status=await gatewayReady();

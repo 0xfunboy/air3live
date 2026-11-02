@@ -4,11 +4,11 @@ After=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/funboy/air3live-v2-dev/services/tts-server
+WorkingDirectory=/home/funboy/air3live/services/tts-server
 EnvironmentFile=/home/funboy/.local/state/air3live-air3agent-canary/tts.env
 Environment=HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2
 Environment=AIR3_TTS_VOICE_EN=cosette
-ExecStart=/home/funboy/.local/share/pocket-tts/venv/bin/python3 /home/funboy/air3live-v2-dev/services/tts-server/server.py
+ExecStart=/home/funboy/.local/share/pocket-tts/venv/bin/python3 /home/funboy/air3live/services/tts-server/server.py
 Restart=on-failure
 RestartSec=10
 TimeoutStopSec=20

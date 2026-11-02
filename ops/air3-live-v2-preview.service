@@ -4,8 +4,8 @@ After=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/funboy/air3live-v2-dev
-ExecStart=/home/funboy/.local/bin/node /home/funboy/air3live-v2-dev/tools/preview-v2.mjs --python /home/funboy/.local/share/pocket-tts/venv/bin/python3 --source-origin http://127.0.0.1:5890
+WorkingDirectory=/home/funboy/air3live
+ExecStart=/home/funboy/.local/bin/node /home/funboy/air3live/tools/preview-v2.mjs --python /home/funboy/.local/share/pocket-tts/venv/bin/python3 --source-origin http://127.0.0.1:5890
 Restart=on-failure
 RestartSec=10
 TimeoutStopSec=25
