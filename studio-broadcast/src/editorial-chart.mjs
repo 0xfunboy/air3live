@@ -13,7 +13,7 @@ export function decodeEditorialChart(chart){
 export function storeEditorialChart(directory,decoded,expiresAt){
  if(!directory)throw new QueueError('EDITORIAL_CHART_DISABLED',503);
  mkdirSync(directory,{recursive:true,mode:0o700});const info=lstatSync(directory);
- if(info.isSymbolicLink()||!info.isDirectory()||info.uid!==process.getuid()||(info.mode&0o077))throw new QueueError('EDITORIAL_CHART_STORAGE_UNSAFE',503);
+ if(info.isSymbolicLink()||!info.isDirectory()||(typeof process.getuid==='function'&&info.uid!==process.getuid())||(process.platform!=='win32'&&(info.mode&0o077)))throw new QueueError('EDITORIAL_CHART_STORAGE_UNSAFE',503);
  const file=join(directory,decoded.sha256+'.png');
  const files=readdirSync(directory).filter(name=>/^[a-f0-9]{64}\.png$/.test(name));
  if(!existsSync(file)&&(files.length>=1024||files.reduce((sum,name)=>sum+lstatSync(join(directory,name)).size,0)+decoded.bytes.length>128*1024*1024))throw new QueueError('EDITORIAL_CHART_STORAGE_FULL',503);
