@@ -20,6 +20,7 @@ export class SpeechPlayer {
   #loop = null;
   #silentSource = null;
   #silentGain = null;
+  #pageGuards = [];
 
   constructor(onChange = () => {}) {
     this.onChange = onChange;
@@ -44,6 +45,10 @@ export class SpeechPlayer {
       this.#analyser.fftSize = 512;
       this.#analyser.connect(this.#context.destination);
       this.#samples = new Float32Array(this.#analyser.fftSize);
+      this.#context.onstatechange = () => {
+        const active=this.#active;
+        if(active&&this.#context?.state!=='running')this.stopActive('Audio context suspended',active);
+      };
       this.#silentGain = this.#context.createGain();
       this.#silentGain.gain.value = 0;
       this.#silentGain.connect(this.#context.destination);
@@ -67,6 +72,10 @@ export class SpeechPlayer {
     this.#session = new AbortController();
     try {
       await this.armAudio();
+      const freeze=()=>{const active=this.#active;if(active?.job.editorial){this.stopActive('Player page suspended',active);void this.event(active,'failed',undefined,this.#session?.signal).catch(()=>{});}};
+      for(const [target,name] of [[globalThis.document,'freeze'],[globalThis.window,'pagehide']]) {
+        if(target?.addEventListener){target.addEventListener(name,freeze);this.#pageGuards.push([target,name,freeze]);}
+      }
       this.state = { ...this.state, phase: 'idle', connected: true, error: '', audioState: 'running' };
       this.emit();
       this.#loop = this.run(epoch);
@@ -92,9 +101,9 @@ export class SpeechPlayer {
     }, signal);
   }
 
-  stopActive(reason) {
+  stopActive(reason, expected = this.#active) {
     const active = this.#active;
-    if (!active) return;
+    if (!active || active !== expected) return;
     active.cancelled = true;
     active.reason = reason;
     active.controller.abort();
@@ -106,10 +115,15 @@ export class SpeechPlayer {
     this.state.mouthCue = 'X';
     this.state.mouthWeights = null;
     this.state.presentation = null;
+    this.state.editorial = null;
+    this.state.phase = active.yielding ? 'yielding' : 'waiting';
+    this.emit();
   }
 
   async disconnect({ keepAudio = false } = {}) {
     const active = this.#active;
+    for(const [target,name,handler] of this.#pageGuards)target.removeEventListener(name,handler);
+    this.#pageGuards=[];
     ++this.#epoch;
     this.stopActive('Player disconnected');
     this.#session?.abort();
@@ -142,7 +156,7 @@ export class SpeechPlayer {
     while (!signal.aborted && epoch === this.#epoch) {
       try {
         if (this.#context?.state !== 'running') throw new Error('Audio context stopped');
-        const response = await this.request('/api/player/claim', { playerId: this.#playerId }, signal);
+        const response = await this.request('/api/player/claim', { playerId: this.#playerId, protocol:'air3.editorial.player.v1' }, signal);
         if (signal.aborted || epoch !== this.#epoch) break;
         if (response.job) await this.play(response.job, response.leaseMs, epoch);
         else await delay(1000, signal);
@@ -157,13 +171,41 @@ export class SpeechPlayer {
   renewLease(active, durationMs) {
     clearTimeout(active.watchdog);
     if (active.cancelled || active.finishing || this.#active !== active) return;
+    active.leaseWallDeadline=Date.now()+Math.max(0,durationMs-50);
     // Stop conservatively before the confirmed lease deadline. An HTTP request
     // hanging beyond that deadline must not let local speech continue.
     active.watchdog = setTimeout(() => {
       if (active.finishing || active.cancelled || this.#active !== active) return;
-      this.stopActive('Playback lease deadline reached');
+      this.stopActive('Playback lease deadline reached',active);
       this.state.error = active.reason; this.emit();
     }, Math.max(0, durationMs - 50));
+    // The audio clock still enforces authority if the JS event loop is paused.
+    // Only editorial jobs use this additive behavior; keep legacy unchanged.
+    if (active.job.editorial && active.source && this.#context) {
+      active.leaseStopAt = this.#context.currentTime + Math.max(0, durationMs - 50) / 1000;
+      try { active.source.stop(active.leaseStopAt); } catch { /* Already ended. */ }
+    }
+  }
+
+  async yieldActive(active) {
+    if (this.#active !== active || active.cancelled || active.finishing) return;
+    active.yielding = true;
+    // Stop/fade first; only then release the server lease. No other player can
+    // claim merely because an interrupt command was sent but not acknowledged.
+    const time = this.#context.currentTime;
+    if (active.gain?.gain?.linearRampToValueAtTime) {
+      active.gain.gain.cancelScheduledValues(time);
+      active.gain.gain.setValueAtTime(1, time);
+      active.gain.gain.linearRampToValueAtTime(0, time + .08);
+      try { active.source?.stop(time + .09); } catch { /* Already ended. */ }
+      await delay(110, active.controller.signal);
+    }
+    if (this.#active !== active || active.finishing) return;
+    this.stopActive('Editorial priority handover');
+    if (this.#token) {
+      try { await this.event(active, 'interrupted', undefined, this.#session.signal); }
+      catch { /* No ACK: lease expiry, never pretend successful completion. */ }
+    }
   }
 
   async heartbeat(active, leaseMs) {
@@ -175,11 +217,13 @@ export class SpeechPlayer {
       if (active.cancelled || active.finishing || this.#active !== active) return;
       const confirmedMs = Number.isFinite(result.leaseMs) ? result.leaseMs : leaseMs;
       this.renewLease(active, confirmedMs - (performance.now() - sentAt));
-      active.heartbeat = setTimeout(() => this.heartbeat(active, leaseMs), Math.max(100, Math.floor(Math.min(leaseMs, confirmedMs) / 3)));
+      if (result.control?.yield) { active.yieldPromise = this.yieldActive(active); await active.yieldPromise; return; }
+      active.heartbeat = setTimeout(() => this.heartbeat(active, leaseMs),
+        Math.max(100, Math.min(result.controlPollMs ?? Infinity, Math.floor(Math.min(leaseMs, confirmedMs) / 3))));
     } catch {
-      if (active.finishing) return;
+      if (active.finishing || active.cancelled || this.#active!==active) return;
       // Do not continue speaking on a lost lease, even after a transient outage.
-      this.stopActive('Playback lease lost, cancelled or expired');
+      this.stopActive('Playback lease lost, cancelled or expired',active);
       this.state.error = active.reason; this.emit();
     }
   }
@@ -197,43 +241,55 @@ export class SpeechPlayer {
     this.state = { ...this.state, phase: 'decoding', currentJob: job.id, text: String(job.text ?? '').slice(0, 20000),
       duration: 0, elapsed: 0, amplitude: 0, mouthCue: 'X', mouthWeights: null,
       presentation: job.presentation ? { ...job.presentation } : null,
+      editorial: job.editorial ? { ...job.editorial } : null,
       lipSync: 'none', emotion: job.emotion ?? { name: 'neutral', intensity: .35 },
       emotionExplicit: job.emotionExplicit !== false, error: '' };
     this.emit();
     // Heartbeats cover download and decode as well as audible playout.
-    active.heartbeat = setTimeout(() => this.heartbeat(active, leaseMs), Math.max(250, Math.floor(leaseMs / 3)));
+    active.heartbeat = setTimeout(() => this.heartbeat(active, leaseMs), job.editorial || job.editorialControl ? 500 : Math.max(250, Math.floor(leaseMs / 3)));
     try {
       const bytes = await boundedFetch(audioPath, { signal: active.controller.signal,
         headers: { Authorization: `Bearer ${this.#token}`, Accept: 'audio/wav' } },
       { timeoutMs: 20_000, maxBytes: 64 * 1024 * 1024 });
       const buffer = await this.#context.decodeAudioData(bytes.buffer);
-      if (active.cancelled || epoch !== this.#epoch) return;
+      if (active.cancelled || epoch !== this.#epoch) { if(active.yielding)await active.yieldPromise; return; }
+      if(job.editorial&&Date.now()>=active.leaseWallDeadline)throw new Error('Playback authority expired while decoding');
       if (!Number.isFinite(buffer.duration) || buffer.duration <= 0 || buffer.duration > 600) throw new Error('Invalid audio duration');
       active.mouthCues = job.lipSync?.kind === 'rhubarb' ? normalizeMouthCues(job.lipSync.mouthCues, buffer.duration) : null;
       this.state.lipSync = active.mouthCues ? `rhubarb:${job.lipSync.recognizer || 'phonetic'}` : 'amplitude';
       const sentAt = performance.now();
       const started = await this.event(active, 'started');
       if (active.cancelled || epoch !== this.#epoch) return;
+      if (started.control?.yield) { await this.yieldActive(active); return; }
       this.renewLease(active, (Number.isFinite(started.leaseMs) ? started.leaseMs : leaseMs) - (performance.now() - sentAt));
       const source = this.#context.createBufferSource();
       active.source = source;
       source.buffer = buffer;
-      source.connect(this.#analyser);
+      if (job.editorial) {
+        active.gain = this.#context.createGain(); source.connect(active.gain); active.gain.connect(this.#analyser);
+      } else source.connect(this.#analyser);
       active.startedAt = this.#context.currentTime + 0.04;
       this.state.phase = 'playing'; this.state.duration = buffer.duration; this.state.error = ''; this.emit();
       await new Promise((resolve) => {
         active.finish = resolve;
         source.onended = resolve;
         source.start(active.startedAt);
+        if (job.editorial) this.renewLease(active, (Number.isFinite(started.leaseMs) ? started.leaseMs : leaseMs) - (performance.now() - sentAt));
       });
+      if (active.yielding) { await active.yieldPromise; return; }
+      if (job.editorial && !active.cancelled && this.#context.currentTime - active.startedAt < buffer.duration - .1) {
+        this.stopActive('Playback authority ended before audio completion');
+        try { await this.event(active, 'failed', active.reason, this.#session.signal); } catch { /* Lease owns result. */ }
+      }
       active.finishing = true;
       clearTimeout(active.heartbeat);
       clearTimeout(active.watchdog);
       if (!active.cancelled && epoch === this.#epoch) await this.event(active, 'finished');
     } catch (error) {
+      if(active.yielding) { await active.yieldPromise; return; }
       if (!active.cancelled) {
         this.state.error = `Narration stopped (${error.message})`;
-        this.stopActive(this.state.error);
+        this.stopActive(this.state.error,active);
       }
       if (epoch === this.#epoch && this.#token) {
         try { await this.event(active, 'failed', active.reason || 'Audio playback failed', new AbortController().signal); } catch { /* Gateway owns terminal state. */ }
@@ -247,15 +303,17 @@ export class SpeechPlayer {
         try { active.source.stop(); } catch { /* Natural completion. */ }
         active.source.disconnect();
       }
+      active.gain?.disconnect();
       if (this.#active === active) this.#active = null;
       if (epoch === this.#epoch) {
-        this.state = { ...this.state, phase: 'idle', currentJob: null, text: '', elapsed: 0, duration: 0, amplitude: 0, mouthCue: 'X', mouthWeights: null, presentation: null, lipSync: 'none', emotion: { name: 'neutral', intensity: .35 } };
+        this.state = { ...this.state, phase: 'idle', currentJob: null, text: '', elapsed: 0, duration: 0, amplitude: 0, mouthCue: 'X', mouthWeights: null, presentation: null, editorial:null, lipSync: 'none', emotion: { name: 'neutral', intensity: .35 } };
         this.emit();
       }
     }
   }
 
   sample() {
+    if(this.#active?.job.editorial&&!this.#active.cancelled&&Date.now()>=this.#active.leaseWallDeadline)this.stopActive('Playback authority expired',this.#active);
     if (this.state.phase === 'playing' && this.#active && !this.#active.cancelled && this.#context && this.#analyser) {
       this.#analyser.getFloatTimeDomainData(this.#samples);
       let energy = 0;

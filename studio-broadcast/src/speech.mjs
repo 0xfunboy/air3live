@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto';
 /** Fully buffered OpenAI-compatible speech synthesis. No progressive playout. */
 export class SpeechError extends Error {
   constructor(code) {
@@ -176,11 +177,18 @@ export async function synthesizeSpeech(tts, job, { fetchImpl = fetch, signal } =
   const combined = signal ? AbortSignal.any([signal, timeout]) : timeout;
   const headers = { 'Content-Type': 'application/json', Accept: 'audio/wav' };
   if (tts.apiKey) headers.Authorization = `Bearer ${tts.apiKey}`;
+  if (tts.editorial) {
+    headers['X-AIR3-Class'] = job.contentClass || 'filler';
+    headers['X-AIR3-Language'] = job.language;
+  }
   const parts = [];
+  let activeRequest;
   let total = 0;
   try {
     for (const text of splitSpeechText(job.text, tts.maxChunkChars ?? 450)) {
       combined.throwIfAborted();
+      activeRequest = tts.editorial ? randomUUID() : undefined;
+      if(activeRequest) headers['X-AIR3-Request-ID'] = activeRequest;
       const response = await fetchImpl(endpoint, {
         method: 'POST', headers, signal: combined, redirect: 'error',
         body: JSON.stringify({ model: tts.model, input: text, voice,
@@ -192,6 +200,7 @@ export async function synthesizeSpeech(tts, job, { fetchImpl = fetch, signal } =
         throw new SpeechError(`TTS_HTTP_${Number(response.status) || 500}`);
       }
       const part = parsePcmWav(await boundedBody(response, MAX_SEGMENT_BYTES, combined), MAX_SEGMENT_BYTES);
+      activeRequest = undefined;
       total += part.pcm.length;
       if (total + 44 > MAX_AUDIO_BYTES) throw new SpeechError('TTS_AUDIO_TOO_LARGE');
       parts.push(part);
@@ -200,6 +209,16 @@ export async function synthesizeSpeech(tts, job, { fetchImpl = fetch, signal } =
     return { ...assemblePcmWav(parts), segmentCount: parts.length, buffered: true,
       lipSync: { kind: 'amplitude' } };
   } catch (error) {
+    if(activeRequest){
+      // HTTP disconnect is not a reliable cancellation signal through every
+      // ASGI middleware. Explicit, authenticated cancellation stops the actual
+      // generator; its tombstone also covers a late POST after this DELETE.
+      try{
+        const response=await fetchImpl(`${endpoint}/${activeRequest}`,{method:'DELETE',redirect:'error',
+          headers:tts.apiKey?{Authorization:`Bearer ${tts.apiKey}`}:{},signal:AbortSignal.timeout(1000)});
+        await response.body?.cancel();
+      }catch{}
+    }
     if (signal?.aborted) throw new SpeechError('TTS_CANCELLED');
     if (timeout.aborted) throw new SpeechError('TTS_TIMEOUT');
     if (error instanceof SpeechError) throw error;

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { presenterFromCurrentPosition,conversationFocus,chartCameraOffset } from './editorial-view.mjs';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { Air3AvatarRig } from './air3-avatar.mjs';
 import { Air3StageMotion } from './air3-stage-motion.mjs';
@@ -395,6 +396,7 @@ export class StudioScene {
   }
 
   setSpeech(state) {
+    this.editorialSpeech=state;
     this.speaking = state.phase === 'playing'; this.amplitude = state.amplitude || 0;
     this.avatarRig?.setSpeech(state);
   }
@@ -408,13 +410,16 @@ export class StudioScene {
   }
 
   updatePose(dt, t) {
+    const focus=conversationFocus(this.editorialProgram,this.editorialSpeech);
+    if(this.stageMotion)this.stageMotion.editorialHold=focus;
     this.stageMotion?.update(dt, t);
-    const mode = this.manualCamera === 'auto' ? (this.stageMotion?.moving ? 'wide' : this.stageMotion?.phase === 'presenting' ? 'presentation' : this.speaking ? 'presenter' : Math.floor(t / 18) % 3 === 2 ? 'screens' : 'wide') : this.manualCamera;
+    const mode = this.manualCamera === 'auto' ? (focus ? this.editorialChartVisible?'chart':'presenter' : this.stageMotion?.moving ? 'wide' : this.stageMotion?.phase === 'presenting' ? 'presentation' : this.speaking ? 'presenter' : Math.floor(t / 18) % 3 === 2 ? 'screens' : 'wide') : this.manualCamera;
     this.effectiveCamera = mode;
     let pos, look;
-    if (mode === 'presenter') {
+    if (mode === 'presenter'||mode==='chart') {
       const a = this.avatar.position;
       pos = [a.x + .10 + Math.sin(t * .06) * .015, 1.52, a.z + 2.12]; look = [a.x, 1.36, a.z];
+      if(focus&&this.manualCamera==='auto'){const view=presenterFromCurrentPosition(a,this.avatar.rotation.y);if(view){pos=view.position;look=view.target;}}
     } else if (mode === 'presentation') {
       const a = this.avatar.position, screen = this.stageLayout.monitorTargets[this.stageMotion.targetId];
       const x = THREE.MathUtils.lerp(a.x, screen[0], .42), z = THREE.MathUtils.lerp(a.z, screen[2], .42);
@@ -422,9 +427,16 @@ export class StudioScene {
     } else if (mode === 'screens') { pos = [.15 + Math.sin(t * .06) * .06, 2.55, 6.7]; look = [0, 1.95, -2.6]; }
     else { pos = [2.0 + Math.sin(t * .055) * .07, 2.45, 8.7]; look = [0, 1.60, -1.0]; }
     const blend = this.snapCamera ? 1 : 1 - Math.exp(-dt * .95); this.snapCamera = false;
-    this.camera.fov = THREE.MathUtils.lerp(this.camera.fov, mode === 'presenter' ? 27 : mode === 'screens' ? 34 : 37, blend);
+    this.camera.fov = THREE.MathUtils.lerp(this.camera.fov, mode === 'presenter'||mode==='chart' ? 27 : mode === 'screens' ? 34 : 37, blend);
+    this.chartOffsetRatio=THREE.MathUtils.lerp(this.chartOffsetRatio??0,mode==='chart'?chartCameraOffset(1):0,blend);
+    const width=Math.max(1,this.container.clientWidth),height=Math.max(1,this.container.clientHeight);
+    if(this.chartOffsetRatio>.0001)this.camera.setViewOffset(width,height,width*this.chartOffsetRatio,0,width,height);else this.camera.clearViewOffset();
     this.camera.updateProjectionMatrix();
     this.camera.position.lerp(new THREE.Vector3(...pos), blend); this.lookTarget.lerp(new THREE.Vector3(...look), blend); this.camera.lookAt(this.lookTarget);
+    this.camera.updateMatrixWorld();
+    const right=new THREE.Vector3().setFromMatrixColumn(this.camera.matrixWorld,0).multiplyScalar(.32);
+    const shoulder=this.avatar.position.clone().add(new THREE.Vector3(0,1.4,0)).add(right).project(this.camera);
+    this.chartFrameReady=mode==='chart'&&this.chartOffsetRatio>.19&&(shoulder.x+1)/2<.52;
     this.avatar.scale.y = this.avatarRig ? 1 : 1 + Math.sin(t * 1.4) * .002;
     this.mixer?.update(dt);
     this.avatarRig?.update(dt);
@@ -483,7 +495,7 @@ export class StudioScene {
     fps: Number(this.fps.toFixed(1)), gpuRenderer: this.gpu, gpu: this.gpu, contextLost: !!this.contextLost,
     renderer: 'three.js/WebGL', width: this.renderer.domElement.width, height: this.renderer.domElement.height,
     drawCalls: this.renderer.info.render.calls, triangles: this.renderer.info.render.triangles, avatar: this.avatarStatus,
-    jawMorphs: this.morphs.length, camera: this.manualCamera, effectiveCamera: this.effectiveCamera,
+    jawMorphs: this.morphs.length, camera: this.manualCamera, effectiveCamera: this.effectiveCamera,chartOffsetRatio:this.chartOffsetRatio??0,
     avatarRig: this.avatarRig?.diagnostics() ?? null,
     quality: this.quality, environment: this.environment.diagnostics, reflections: this.floor.diagnostics,
     postprocessing: this.post.diagnostics, stageLayout: this.stageLayout, stageMotion: this.stageMotion?.diagnostics() ?? null,

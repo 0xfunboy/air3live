@@ -1,0 +1,25 @@
+[Unit]
+Description=AIR3 Live V2 private preview without Twitch or streaming
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/funboy/air3live-v2-dev
+ExecStart=/home/funboy/.local/bin/node /home/funboy/air3live-v2-dev/tools/preview-v2.mjs --python /home/funboy/.local/share/pocket-tts/venv/bin/python3 --source-origin http://127.0.0.1:5890
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=25
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+StateDirectory=air3live-v2-preview
+StateDirectoryMode=0700
+ProtectSystem=strict
+ReadWritePaths=/home/funboy/.local/state/air3live-v2-preview
+InaccessiblePaths=/home/funboy/.ssh /home/funboy/air3live/.env /home/funboy/air3live/studio-broadcast/.env /home/funboy/air3live/studio-broadcast/data
+CPUQuota=150%
+MemoryMax=6G
+TasksMax=128
+
+[Install]
+WantedBy=default.target

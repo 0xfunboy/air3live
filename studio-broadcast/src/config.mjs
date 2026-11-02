@@ -53,6 +53,10 @@ export function loadConfig(env = process.env) {
     dataDir: resolve(serviceRoot, env.AIR3_DATA_DIR || './data'),
     publicDir: resolve(serviceRoot, 'public'), nodeModulesDir: resolve(serviceRoot, 'node_modules'),
     producerToken, playerToken,
+    editorial: { enabled: bool(env, 'AIR3_EDITORIAL_ENABLED', false),
+      environment: env.AIR3_EDITORIAL_ENVIRONMENT || 'production',
+      producerId: env.AIR3_EDITORIAL_PRODUCER_ID || 'eliza-air3',
+      channelId: env.AIR3_EDITORIAL_CHANNEL_ID || '', retentionMs: 86400000 },
     live: { enabled: liveEnabled, operatorToken, publicOrigin, localOperator: bool(env, 'AIR3_LOCAL_OPERATOR', true) },
     dappBaseUrl: httpUrl(env.AIR3_DAPP_BASE_URL, 'AIR3_DAPP_BASE_URL', true), avatarUrl, renderQuality,
     width: integer(env, 'AIR3_WIDTH', 1920, 320, 3840),
@@ -62,6 +66,7 @@ export function loadConfig(env = process.env) {
       timeoutMs: integer(env, 'AIR3_LIPSYNC_TIMEOUT_MS', 45000, 1000, 120000),
       threads: integer(env, 'AIR3_LIPSYNC_THREADS', 2, 1, 8) },
     tts: {
+      editorial: bool(env, 'AIR3_TTS_EDITORIAL_TRANSPORT', false),
       baseUrl: httpUrl(env.AIR3_TTS_BASE_URL || 'http://127.0.0.1:8880/v1', 'AIR3_TTS_BASE_URL'),
       apiKey: env.AIR3_TTS_API_KEY || '', model: env.AIR3_TTS_MODEL || 'kokoro',
       voiceEn: env.AIR3_TTS_VOICE_EN || 'af_jessica', voiceIt: env.AIR3_TTS_VOICE_IT || 'if_sara',

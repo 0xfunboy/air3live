@@ -203,7 +203,7 @@ export class Air3StageMotion {
   }
   update(dt){
     if(this.disposed||!this.ready)return;dt=clamp(Number.isFinite(dt)?dt:0,0,.1);this.time+=dt;
-    if(this.enabled&&!this.rig.speaking&&this.time>=this.nextAutomaticAt){if(this.phase==='home')this.presentMonitor(['left','center','right'][this.autoIndex++%3]);else if(this.phase==='presenting')this.returnHome();this.nextAutomaticAt=this.time+40;}
+    if(this.enabled&&!this.rig.speaking&&!this.editorialHold&&this.time>=this.nextAutomaticAt){if(this.phase==='home')this.presentMonitor(['left','center','right'][this.autoIndex++%3]);else if(this.phase==='presenting')this.returnHome();this.nextAutomaticAt=this.time+40;}
     this.walkWeight=THREE.MathUtils.damp(this.walkWeight,this.phase==='home'?0:1,8,dt);
     this.turnWarp=THREE.MathUtils.damp(this.turnWarp,this.phase==='turning'?1:0,9,dt);
     if(this.phase==='turning'){

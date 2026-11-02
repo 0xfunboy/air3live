@@ -74,6 +74,13 @@ export class StudioMonitors {
   }
 
   setMarket(state) { this.market = state; this.draw(); }
+  setEditorialChart(chart){
+    const path=chart&&/^\/api\/editorial-charts\/[a-f0-9]{64}\.png$/.test(chart.path??'')&&chart.expiresAt>Date.now()?chart.path:null;
+    if(path===this.editorialChartPath)return;
+    this.editorialChartPath=path;const epoch=this.editorialChartEpoch=(this.editorialChartEpoch??0)+1;this.editorialChartImage=null;
+    this.drawLeft();this.onDirty?.('left');if(!path)return;
+    const image=new Image();image.onload=()=>{if(epoch!==this.editorialChartEpoch)return;this.editorialChartImage=image;this.drawLeft();this.onDirty?.('left');};image.onerror=()=>{};image.src=path;
+  }
   setLiveMarketSnapshot(snapshot) { this.liveMarket = snapshot; this.draw(); }
   setSpeech(state) {
     this.speech = state;
@@ -93,6 +100,7 @@ export class StudioMonitors {
 
   drawLeft() {
     const ctx = this.left.getContext('2d'), m = this.market;
+    if(this.editorialChartImage){base(ctx,'VIEWER REQUEST · MARKET CHART','01');const image=this.editorialChartImage;const scale=Math.min(960/image.naturalWidth,450/image.naturalHeight);const w=image.naturalWidth*scale,h=image.naturalHeight*scale;ctx.drawImage(image,(1024-w)/2,95+(450-h)/2,w,h);return;}
     if (this.liveMarket) { drawLiveDesk(ctx, this.liveMarket, this.speech); return; }
     base(ctx, 'MARKET TELEMETRY', '01');
     const fresh = m && !isStale(m.fetchedAt);

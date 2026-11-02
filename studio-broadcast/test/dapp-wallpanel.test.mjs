@@ -115,6 +115,21 @@ test('a changed selection waits for its own candles; failure leaves the old snap
   assert.equal(f.posts[2].selectedId, null); assert.deepEqual(f.posts[2].candles, []); assert.deepEqual(f.posts[2].trades, []);
 });
 
+test('a verified empty feed publishes an explicit no-positions panel without invented candles or PnL', async () => {
+  const f = fixture(); f.source.trades = [];
+  f.source.report = { totals: { open: 0, pending: 0, closed: 3, discarded: 0 }, pnl_realized_pct_sum: null };
+  assert.equal((await f.bridge.runOnce()).ok, true);
+  const panel = f.posts[0], normalized = normalizeWallpanel(panel, START);
+  assert.equal(panel.selectedId, null); assert.deepEqual(panel.candles, []);
+  assert.deepEqual(normalized.cards.map(c => c.value), ['0', '0', '3']);
+  assert.equal(normalized.rows[0].value, 'No open or pending trades');
+  assert.equal(normalized.report.pnlSum, null);
+  assert.equal(f.calls.some(c => c.url.includes('/ohlcv')), false);
+  f.source.trades = [trade()]; f.advance(4000); await f.bridge.runOnce();
+  assert.equal(f.posts[1].selectedId, 7); assert.ok(f.posts[1].candles.length);
+  assert.equal(f.posts[1].rows, undefined); assert.equal(f.posts[1].cards, undefined);
+});
+
 test('the default 12-second rotation retrieves candles for each newly selected signal', async () => {
   const f = fixture(); f.source.trades.push(trade(8, 'ETHUSDT'));
   await f.bridge.runOnce(); f.advance(8000); await f.bridge.runOnce(); f.advance(4000); await f.bridge.runOnce();

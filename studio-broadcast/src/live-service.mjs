@@ -10,7 +10,7 @@ import { LiveProcess } from './live-process.mjs';
 import { createLiveMarketService } from './live-market.mjs';
 import { createTwitchChat } from './twitch-chat.mjs';
 
-export async function createLiveService({ config, json, body, enqueue, cancel, getNarration,
+export async function createLiveService({ config, json, body, enqueue, cancel, getNarration, getEditorialTitles = () => null, getEditorialState = () => null,
   baseEnv = process.env, processFactory = options => new LiveProcess(options), marketFactory = createLiveMarketService,
   chatFactory = createTwitchChat }) {
   const store = await createLiveSettingsStore(config.dataDir, defaultLiveSettings(config));
@@ -27,7 +27,11 @@ export async function createLiveService({ config, json, body, enqueue, cancel, g
   const externalChat = [];
   function program() {
     const s = store.get();
-    return { schema: 'air3.live.program.v1', revision, scene: s.scene, look: s.look, titles: editorial.get(),
+    const manual = editorial.get();
+    const titles = manual.enabled ? manual : getEditorialTitles() ?? manual;
+    const coordination=getEditorialState();
+    return { schema: 'air3.live.program.v1', revision, scene: s.scene, look: s.look, titles,
+      ...(coordination?{editorial:coordination,titleOwner:manual.enabled?'operator':'editorial'}:{}),
       streaming: ['running', 'stalled', 'reconnecting'].includes(broadcaster.snapshot().phase) };
   }
   function publisher(req) {
@@ -102,6 +106,7 @@ export async function createLiveService({ config, json, body, enqueue, cancel, g
     if (pathname === '/api/live/settings' && (req.method === 'PATCH' || req.method === 'PUT')) {
       const patch = await body(req, 64 * 1024), before = store.get();
       if (patch.stream && (broadcaster.child || broadcaster.busy)) throw new QueueError('STOP_BEFORE_STREAM_SETTINGS', 409);
+      if(config.previewOnly&&Object.keys(patch).some(k=>!['look','scene'].includes(k)))throw new QueueError('PREVIEW_SETTINGS_RESTRICTED',403);
       const next = await store.update(patch);
       config.tts = { ...config.tts, ...next.tts }; revision++;
       if (JSON.stringify(before.market) !== JSON.stringify(next.market)) await market.configure(next.market);

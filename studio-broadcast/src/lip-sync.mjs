@@ -1,5 +1,6 @@
 import { execFile } from 'node:child_process';
-import { access, chmod } from 'node:fs/promises';
+import { access, chmod, writeFile, unlink } from 'node:fs/promises';
+import { randomUUID } from 'node:crypto';
 import { constants } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -20,7 +21,7 @@ export function bundledRhubarb(platform = process.platform, architecture = proce
 }
 
 /** Run once on the completed WAV, before it becomes claimable by a player. */
-export async function generateLipSync(config, { audioPath, durationMs, language }, { signal } = {}) {
+export async function generateLipSync(config, { audioPath, durationMs, language, text }, { signal } = {}) {
   const mode = config?.mode ?? 'off';
   if (mode === 'off') return { kind: 'amplitude', reason: 'disabled' };
   const binary = config.binary || bundledRhubarb();
@@ -28,16 +29,23 @@ export async function generateLipSync(config, { audioPath, durationMs, language 
   const timeout = AbortSignal.timeout(timeoutMs);
   const combined = signal ? AbortSignal.any([signal, timeout]) : timeout;
   const started = performance.now();
+  let dialog;
   try {
     if (!binary) throw new Error('unsupported platform');
     combined.throwIfAborted();
     await access(binary, constants.F_OK);
     // ZIP extraction on Linux may discard the executable bit. Only repair the
     // bundled executable, never an operator-provided path.
-    if (process.platform !== 'win32' && binary === bundledRhubarb()) await chmod(binary, 0o755);
+    if (process.platform !== 'win32' && binary === bundledRhubarb()) {
+      try{await access(binary,constants.X_OK);}catch{await chmod(binary,0o755);}
+    }
     const recognizer = language === 'en' ? 'pocketSphinx' : 'phonetic';
+    if(recognizer==='pocketSphinx'&&typeof text==='string'&&text.length<=8000){
+      dialog=`${audioPath}.part-${randomUUID()}`;
+      await writeFile(dialog,text,{flag:'wx',mode:0o600});
+    }
     const { stdout } = await execute(binary, ['--quiet', '--consoleLevel', 'error', '--exportFormat', 'json',
-      '--recognizer', recognizer, '--extendedShapes', 'GHX', '--threads', String(config.threads ?? 2), audioPath],
+      '--recognizer', recognizer, ...(dialog?['--dialogFile',dialog]:[]), '--extendedShapes', 'GHX', '--threads', String(config.threads ?? 2), audioPath],
     { signal: combined, timeout: timeoutMs, killSignal: 'SIGKILL', maxBuffer: 1024 * 1024,
       windowsHide: true, shell: false, encoding: 'utf8' });
     combined.throwIfAborted();
@@ -51,5 +59,5 @@ export async function generateLipSync(config, { audioPath, durationMs, language 
     const reason = timeout.aborted ? 'alignment-timeout' : 'alignment-unavailable';
     if (mode === 'required') throw new LipSyncError(timeout.aborted ? 'TTS_LIPSYNC_TIMEOUT' : 'TTS_LIPSYNC_UNAVAILABLE');
     return { kind: 'amplitude', reason };
-  }
+  } finally { if(dialog)await unlink(dialog).catch(()=>{}); }
 }

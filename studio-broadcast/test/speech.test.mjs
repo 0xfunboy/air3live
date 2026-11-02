@@ -92,3 +92,17 @@ test('cancellation propagates to the provider and never becomes provider detail'
   });
   await assert.rejects(result, { message: 'TTS_CANCELLED' });
 });
+test('editorial cancellation is explicit, authenticated and has its own non-aborted signal',async()=>{
+  const controller=new AbortController();const seen=[];let requestId;
+  await assert.rejects(synthesizeSpeech({...settings,editorial:true,baseUrl:'http://fixture.invalid/v1/editorial/audio/speech'},{text:'Hello.',language:'en',contentClass:'chat'},
+    {signal:controller.signal,fetchImpl:async(url,options)=>{
+      seen.push(options.method);
+      if(options.method==='DELETE'){
+        assert.equal(url,`http://fixture.invalid/v1/editorial/audio/speech/${requestId}`);
+        assert.equal(options.headers.Authorization,'Bearer test-secret');assert.equal(options.signal.aborted,false);return Response.json({status:'cancelled'});
+      }
+      requestId=options.headers['X-AIR3-Request-ID'];assert.ok(requestId);assert.equal(options.headers['X-AIR3-Class'],'chat');
+      controller.abort();throw new Error('Fixture disconnected');
+    }}),{message:'TTS_CANCELLED'});
+  assert.deepEqual(seen,['POST','DELETE']);
+});

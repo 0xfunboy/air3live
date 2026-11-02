@@ -7,6 +7,7 @@ import { NarrationQueue, QueueError, isSafeId, EMOTION_NAMES, EMOTION_ALIASES } 
 import { synthesizeSpeech } from './speech.mjs';
 import { generateLipSync } from './lip-sync.mjs';
 import { createLiveService } from './live-service.mjs';
+import { ProducerCoordinator } from './producer-coordinator.mjs';
 
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -142,6 +143,9 @@ export async function createGateway(config) {
   const audioDir = path.join(config.dataDir, 'audio');
   await mkdir(audioDir, { recursive: true, mode: 0o700 });
   const queue = new NarrationQueue(path.join(config.dataDir, 'narrations.sqlite'), config.queue, now);
+  let editorial;
+  try { editorial = config.editorial?.enabled ? new ProducerCoordinator(queue, { ...config.editorial, chartDir:path.join(config.dataDir,'editorial-charts'), ttsPriority: !!config.tts.editorial }, now) : null; }
+  catch (error) { queue.close(); throw error; }
   const knownFiles = queue.referencedAudioFiles();
   for (const filename of await readdir(audioDir)) {
     if (/^[a-f0-9]{64}\.wav(?:\.part-[a-f0-9-]+)?$/.test(filename) && !knownFiles.has(filename)) {
@@ -156,14 +160,18 @@ export async function createGateway(config) {
 
   const work = async () => {
     while (!closing) {
-      const job = queue.takeForGeneration();
+      editorial?.pump();
+      const job = queue.takeForGeneration(id => !editorial || editorial.allowed(id));
       if (!job) return;
+      if(editorial) job.contentClass=editorial.jobParent(job.id)?.kind ?? 'filler';
       const controller = new AbortController();
       active = { id: job.id, controller };
       let temp;
       let target;
       try {
+        const ttsStarted=performance.now();
         const speech = await synthesizeSpeech(config.tts, job, { fetchImpl: config.fetchImpl || fetch, signal: controller.signal });
+        const synthesisMs=Math.round(performance.now()-ttsStarted);
         if (closing || controller.signal.aborted) continue;
         const name = makeAudioName(job.id);
         target = path.join(audioDir, name);
@@ -172,7 +180,8 @@ export async function createGateway(config) {
         await rename(temp, target);
         temp = null;
         const lipSync = await generateLipSync(config.lipSync, { audioPath: target,
-          durationMs: speech.durationMs, language: job.language }, { signal: controller.signal });
+          durationMs: speech.durationMs, language: job.language, ...(editorial?{text:job.text}:{}) }, { signal: controller.signal });
+        if(editorial)lipSync.synthesisMs=synthesisMs;
         if (closing || controller.signal.aborted || !queue.markReady(job.id, name, speech.durationMs, lipSync)) {
           await rm(target, { force: true });
         }
@@ -197,6 +206,7 @@ export async function createGateway(config) {
     sweepBusy = true;
     try {
       queue.sweep();
+      editorial?.pump();
       if (active && queue.row(active.id)?.status !== 'generating') active.controller.abort();
       for (const row of queue.prune()) {
         if (row.audio_file && /^[a-f0-9]{64}\.wav$/.test(row.audio_file)) {
@@ -212,7 +222,7 @@ export async function createGateway(config) {
   try { live = config.live?.enabled ? await createLiveService({ config, json, body,
     enqueue(input) { const result = queue.enqueue(input); kick(); return { id: result.id, status: result.status, duplicate: result.duplicate }; },
     cancel(id) { const job = queue.cancel(id); if (active?.id === id) active.controller.abort(); return job; },
-    getNarration: id => queue.get(id), ...config.liveDependencies,
+    getNarration: id => queue.get(id), getEditorialTitles: () => editorial?.program(), getEditorialState:()=>editorial?.state(), ...config.liveDependencies,
   }) : null; } catch (error) { queue.close(); throw error; }
   const dappOrigin = visible.dappBaseUrl ? ` ${new URL(visible.dappBaseUrl).origin}` : '';
   const csp = `default-src 'self'; script-src 'self'${importMapPolicy}; style-src 'self' 'unsafe-inline'; ` +
@@ -236,6 +246,39 @@ export async function createGateway(config) {
           speech: { mode: 'fully-buffered', lipSync: config.lipSync?.mode ?? 'off', clock: 'audio' } });
       }
       if (req.method === 'GET' && pathname === '/api/public-config') return json(res, 200, { ...visible, ...live?.publicConfig() });
+      const chart=/^\/api\/editorial-charts\/([a-f0-9]{64})\.png$/.exec(pathname);
+      if(chart&&req.method==='GET'){
+        if(!editorial)throw new QueueError('NOT_FOUND',404);
+        const permitted=queue.db.prepare("SELECT body FROM editorial_intents WHERE owner=? AND expires>? AND status IN ('ready','suspended','completed') AND body IS NOT NULL").all(editorial.owner,now()).some(row=>JSON.parse(row.body).chart?.sha256===chart[1]);
+        if(!permitted)throw new QueueError('NOT_FOUND',404);
+        const bytes=await readFile(path.join(config.dataDir,'editorial-charts',chart[1]+'.png'));
+        if(bytes.length>393216||createHash('sha256').update(bytes).digest('hex')!==chart[1])throw new QueueError('CHART_UNAVAILABLE',404);
+        res.writeHead(200,{'Content-Type':'image/png','Content-Length':bytes.length,'Cache-Control':'private, max-age=15','X-Content-Type-Options':'nosniff'});res.end(bytes);return;
+      }
+      if (pathname.startsWith('/api/producer/v1/')) {
+        if (!authorized(req, config.producerToken)) throw new QueueError('UNAUTHORIZED', 401);
+        if (!editorial) throw new QueueError('EDITORIAL_DISABLED', 503);
+        if (req.method === 'GET' && pathname === '/api/producer/v1/capabilities') return json(res, 200, editorial.capabilities());
+        if (req.method === 'GET' && pathname === '/api/producer/v1/state') return json(res, 200, editorial.state());
+        const route = /^\/api\/producer\/v1\/(turns|utterances|news-items)\/([a-zA-Z0-9][a-zA-Z0-9_.-]{0,127})$/.exec(pathname);
+        if (!route) throw new QueueError('NOT_FOUND', 404);
+        const [, kind, id] = route;
+        let result;
+        if (req.method === 'PUT') {
+          const input = await body(req, kind==='utterances'?640*1024:64 * 1024);
+          result = kind === 'turns' ? editorial.putTurn(id, input) : kind === 'utterances' ? editorial.putIntent(id, input) : editorial.putNews(id, input);
+        } else if (req.method === 'DELETE' && kind !== 'news-items') {
+          result = kind === 'turns' ? editorial.cancelTurn(id) : editorial.cancelIntent(id);
+        } else if (req.method === 'GET' && kind !== 'news-items') {
+          editorial.reconcile(); result = editorial.view(kind === 'turns' ? editorial.turn(id) : editorial.intent(id));
+          if (!result) throw new QueueError('NOT_FOUND', 404);
+        } else throw new QueueError('METHOD_NOT_ALLOWED', 405);
+        if(editorial.hasChat() && active && editorial.jobParent(active.id)?.kind!=='chat' && config.tts.editorial) {
+          queue.deferGeneration(active.id); active.controller.abort();
+        }
+        editorial.pump(); kick();
+        return json(res, req.method === 'PUT' ? 202 : 200, result);
+      }
       if (live && await live.handle(req, res, pathname, url)) return;
       if (req.method === 'GET' && (pathname === '/api/emotions' || pathname === '/api/expressions')) {
         return json(res, 200, { emotions: EMOTION_NAMES, aliases: EMOTION_ALIASES });
@@ -266,11 +309,18 @@ export async function createGateway(config) {
       }
       if (pathname === '/api/player/claim' && req.method === 'POST') {
         const input = await body(req, 4096);
-        return json(res, 200, queue.claim(input.playerId));
+        if(editorial&&input.protocol!=='air3.editorial.player.v1')throw new QueueError('EDITORIAL_PLAYER_PROTOCOL_REQUIRED',409);
+        if(editorial)editorial.playerSeenAt=now();
+        editorial?.pump();
+        const result = queue.claim(input.playerId, id => !editorial || editorial.allowed(id));
+        if (editorial && result.job) result.job = editorial.decorate(result.job);
+        return json(res, 200, result);
       }
       match = /^\/api\/player\/([^/]+)\/events$/.exec(pathname);
       if (match && isSafeId(match[1]) && req.method === 'POST') {
-        return json(res, 200, queue.playerEvent(match[1], await body(req, 4096)));
+        const result = queue.playerEvent(match[1], await body(req, 4096), { editorial: !!editorial });
+        if (editorial) { editorial.pump(); result.control = editorial.control(match[1]); result.controlPollMs = 500; kick(); }
+        return json(res, 200, result);
       }
       match = /^\/api\/audio\/([^/]+)$/.exec(pathname);
       if (match && isSafeId(match[1]) && req.method === 'GET') {

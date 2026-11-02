@@ -1,5 +1,5 @@
 /** Same-origin program state; no streaming credentials enter the rendering page. */
-export function mountLiveTitles(container) {
+export function mountLiveTitles(container,{onChartVisibility=()=>{},isChartFrameReady=()=>true}={}) {
   const element = document.createElement('div'); element.className = 'live-editorial';
   const strap = document.createElement('div'); strap.className = 'editorial-strap';
   const label = document.createElement('span'); label.className = 'editorial-label';
@@ -11,7 +11,10 @@ export function mountLiveTitles(container) {
   const viewport = document.createElement('div'); viewport.className = 'ticker-viewport';
   const track = document.createElement('div'); track.className = 'ticker-track';
   const first = document.createElement('span'), second = document.createElement('span'); second.setAttribute('aria-hidden', 'true');
-  track.append(first, second); viewport.append(track); ticker.append(badge, viewport); element.append(strap, ticker); container.append(element);
+  const chart = document.createElement('img'); chart.className='editorial-chart'; chart.alt='Requested market chart'; chart.hidden=true;
+  track.append(first, second); viewport.append(track); ticker.append(badge, viewport); element.append(chart, strap, ticker); container.append(element);
+  let chartPath='', chartEpoch=0,chartRaf;
+  const revealChart=epoch=>{if(epoch!==chartEpoch||!chartPath)return;if(isChartFrameReady()){chart.hidden=false;return;}chartRaf=requestAnimationFrame(()=>revealChart(epoch));};
   let last = '', speed = 65;
   const measure = () => { const width = first.getBoundingClientRect().width; track.style.animationDuration = `${Math.max(4, width / speed)}s`; };
   const observer = new ResizeObserver(measure); observer.observe(viewport);
@@ -19,6 +22,9 @@ export function mountLiveTitles(container) {
     update(state) {
       const key = JSON.stringify(state); if (key === last) return; last = key;
       const enabled = !!state?.enabled; element.hidden = !enabled;
+      const path=enabled&&state.chart?.expiresAt>Date.now()&&/^\/api\/editorial-charts\/[a-f0-9]{64}\.png$/.test(state.chart.path??'')?state.chart.path:'';
+      if(path!==chartPath){chartPath=path;const epoch=++chartEpoch;cancelAnimationFrame(chartRaf);chart.hidden=true;onChartVisibility(false);chart.removeAttribute('src');
+        chart.onload=()=>{if(epoch===chartEpoch&&path){onChartVisibility(true);revealChart(epoch);}};chart.onerror=()=>{if(epoch===chartEpoch){cancelAnimationFrame(chartRaf);chart.hidden=true;onChartVisibility(false);}};if(path)chart.src=path;}
       const hasStrap = enabled && !!(state.title || state.subtitle);
       container.classList.toggle('has-editorial-title', hasStrap); container.classList.toggle('has-editorial-ticker', enabled && !!state.ticker?.length);
       strap.hidden = !hasStrap; label.textContent = state?.label || '#AIR3'; label.hidden = !state?.label;
@@ -27,7 +33,7 @@ export function mountLiveTitles(container) {
       const text = (state?.ticker || []).join('   •   '); first.textContent = text ? text + '   •   ' : ''; second.textContent = first.textContent;
       requestAnimationFrame(measure);
     },
-    dispose() { observer.disconnect(); element.remove(); },
+    dispose() { chartEpoch++;cancelAnimationFrame(chartRaf);onChartVisibility(false); chart.onload=chart.onerror=null;observer.disconnect(); element.remove(); },
   };
 }
 

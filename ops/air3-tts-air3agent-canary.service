@@ -1,0 +1,28 @@
+[Unit]
+Description=AIR3 isolated editorial TTS for air3agent canary
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/funboy/air3live-v2-dev/services/tts-server
+EnvironmentFile=/home/funboy/.local/state/air3live-air3agent-canary/tts.env
+Environment=HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2
+Environment=AIR3_TTS_VOICE_EN=cosette
+ExecStart=/home/funboy/.local/share/pocket-tts/venv/bin/python3 /home/funboy/air3live-v2-dev/services/tts-server/server.py
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=20
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+StateDirectory=air3-tts-air3agent-canary
+StateDirectoryMode=0700
+ProtectSystem=strict
+ReadWritePaths=/home/funboy/.local/state/air3-tts-air3agent-canary
+InaccessiblePaths=/home/funboy/.ssh /home/funboy/air3live/studio-broadcast/.env /home/funboy/air3live/studio-broadcast/data /home/funboy/.local/state/air3live-air3agent-canary
+CPUQuota=150%
+MemoryMax=4G
+TasksMax=128
+
+[Install]
+WantedBy=default.target

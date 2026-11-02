@@ -18,23 +18,23 @@ function mockAudio(duration = .04) {
     get currentTime() { return (Date.now() - this.epoch) / 1000; }
     async resume() { this.state = 'running'; }
     async close() { this.state = 'closed'; }
-    createGain() { return Object.assign(new Node(), { gain: { value: 1 } }); }
+    createGain() { return Object.assign(new Node(), { gain: { value: 1, cancelScheduledValues() {}, setValueAtTime() {}, linearRampToValueAtTime() {} } }); }
     createOscillator() { stats.oscillators++; return Object.assign(new Node(), { start() {} }); }
     createAnalyser() { return Object.assign(new Node(), { fftSize: 512, getFloatTimeDomainData(array) { array.fill(.05); } }); }
     async decodeAudioData() { return { duration }; }
     createBufferSource() {
       stats.sources++;
-      const n = new Node(); let timer, done = false;
-      const finish = () => { if (done) return; done = true; clearTimeout(timer); stats.active--; n.onended?.(); };
+      const n = new Node(); let timer, stopTimer, done = false;
+      const finish = () => { if (done) return; done = true; clearTimeout(timer); clearTimeout(stopTimer); stats.active--; n.onended?.(); };
       n.start = () => { stats.active++; stats.maxActive = Math.max(stats.maxActive, stats.active); timer = setTimeout(finish, duration * 1000 + 40); };
-      n.stop = () => { if (!done) stats.stopped++; finish(); };
+      n.stop = (when) => { clearTimeout(stopTimer); if (Number.isFinite(when) && when > this.currentTime) { stopTimer=setTimeout(()=>{if(!done)stats.stopped++;finish();},(when-this.currentTime)*1000); return; } if (!done) stats.stopped++; finish(); };
       return n;
     }
   }
   return { stats, AudioContext };
 }
 
-function installMock(t, { jobs = 1, duration = .04, heartbeatFails = false, heartbeatHangs = false, presentation = null,
+function installMock(t, { jobs = 1, duration = .04, heartbeatFails = false, heartbeatHangs = false, presentation = null, editorial = false, yieldOnHeartbeat = false,
   lipSync = { kind: 'amplitude' } } = {}) {
   const originalFetch = globalThis.fetch, originalWindow = globalThis.window;
   const { stats, AudioContext } = mockAudio(duration); globalThis.window = { AudioContext };
@@ -44,7 +44,7 @@ function installMock(t, { jobs = 1, duration = .04, heartbeatFails = false, hear
     if (path === '/api/player/claim') {
       claimed++;
       return Response.json({ job: claimed <= jobs ? { id: `test.${claimed}`, text: 'Test narration', audioPath: `/api/audio/test.${claimed}`,
-        leaseToken: 'fake-lease-secret', lipSync, presentation } : null, leaseMs: 900 });
+        leaseToken: 'fake-lease-secret', lipSync, presentation, ...(editorial?{editorial:{parentId:'fixture',kind:'filler'}}:{}) } : null, leaseMs: 900 });
     }
     if (path.startsWith('/api/audio/')) return new Response(new Uint8Array([1, 2, 3]), { headers: { 'Content-Type': 'audio/wav' } });
     const event = JSON.parse(options.body); events.push(event);
@@ -52,11 +52,22 @@ function installMock(t, { jobs = 1, duration = .04, heartbeatFails = false, hear
     if (event.event === 'heartbeat' && heartbeatHangs) return new Promise((resolve, reject) => {
       options.signal.addEventListener('abort', () => reject(new Error('Request aborted')), { once: true });
     });
-    return Response.json({ status: 'ok' });
+    return Response.json({ status: 'ok', ...(editorial?{control:{yield:yieldOnHeartbeat&&event.event==='heartbeat'},controlPollMs:500}: {}) });
   };
   t.after(() => { globalThis.fetch = originalFetch; globalThis.window = originalWindow; });
   return { stats, events, requests };
 }
+
+test('editorial handover fades/stops before releasing the lease and never claims completion', async (t) => {
+  const {stats,events}=installMock(t,{duration:3,editorial:true,yieldOnHeartbeat:true});
+  const player=new SpeechPlayer();t.after(()=>player.disconnect());
+  const start=performance.now();
+  await player.connect({token:'test-player-token-123456789',playerId:'broadcaster.test'});
+  await until(()=>events.some(e=>e.event==='interrupted'));
+  assert.ok(performance.now()-start<2000);
+  assert.equal(stats.active,0);assert.equal(events.filter(e=>e.event==='finished').length,0);
+  assert.equal(events.filter(e=>e.event==='failed').length,0);assert.equal(stats.maxActive,1);
+});
 
 test('manual observer neither creates audio nor claims narration', async (t) => {
   const { stats, requests } = installMock(t);

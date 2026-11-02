@@ -136,6 +136,14 @@ export function createDappWallpanelBridge({ config = loadDappBridgeConfig(), fet
     const payload = { title: feed.label, source: `${feed.label} · Public dApp`,
       subtitle: `${config.timeframe} · candles ${chartAge === null ? 'unavailable' : `${chartAge}s`} · summary ${reportAge}s`,
       trades, candles, report, selectedId, sourceAt, ttlSeconds: config.ttlSeconds };
+    // A verified empty feed is not a missing connection or a missing chart.
+    // Do not invent a position, price or portfolio return to fill the monitor.
+    if (!trades.length) {
+      payload.cards = [{ label: 'Open trades', value: '0' }, { label: 'Pending trades', value: '0' },
+        { label: 'Closed trades', value: report.closed === null ? '—' : String(report.closed) }];
+      payload.rows = [{ label: 'Current positions', value: 'No open or pending trades',
+        detail: 'Public dApp feed received successfully.' }];
+    }
     const body = JSON.stringify(payload);
     if (Buffer.byteLength(body) > MAX_PANEL_BYTES) throw new BridgeError('WALLPANEL_TOO_LARGE');
     current(generation, signal);

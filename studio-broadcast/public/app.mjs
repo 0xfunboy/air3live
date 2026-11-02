@@ -10,6 +10,7 @@ import { mountLookControls } from './look-controls.mjs';
 import { resolvePresenterEmotion } from './presenter-emotion.mjs';
 import { createLiveMarketClient } from './live-market-client.mjs';
 import { createProgramClient, mountLiveTitles } from './live-program.mjs';
+import { composeEditorialTitles,activeResponse } from './editorial-view.mjs';
 
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
@@ -175,6 +176,7 @@ window.air3Studio = Object.freeze({
     const render = scene?.diagnostics() ?? { frameCount: 0, lastRenderedFrameAt: 0, gpuRenderer: null };
     const audio = player?.diagnostics() ?? { phase: 'booting', audioState: 'not-created', currentJob: null };
     return { ready: !!scene?.frameCount, ...render, audioState: audio.audioState, currentJob: audio.currentJob,
+      editorialProtocol:'air3.editorial.player.v1',
       speech: demoPlaying ? { phase: 'playing', lipSync: 'rhubarb:pocketSphinx', elapsed: demoContext ? demoContext.currentTime - demoStartedAt : 0, duration: demoDuration, emotion: currentEmotion } : audio,
       gatewayConnected: gatewayOk,
       health: { pending: healthPending, workerFailed: healthWorkerFailed,
@@ -182,7 +184,7 @@ window.air3Studio = Object.freeze({
         probes: healthProbes.map(probe => ({ ...probe })) },
       data: market ? { mode: market.state.mode, websocket: market.state.connection, snapshotAt: market.state.fetchedAt,
         chartAt: market.state.chartAt, reportAt: market.state.reportAt, stale: isStale(market.state.fetchedAt) } : liveMarket?.state() || null,
-      liveProgram: programState ? { revision: programState.revision, titles: programState.titles } : null };
+      liveProgram: programState ? { revision: programState.revision, titles: programState.titles, activeResponse:programState.editorial?.activeResponse??null } : null };
   },
 });
 
@@ -230,7 +232,10 @@ function updateLiveMarket(snapshot) {
 
 async function applyProgram(state) {
   if (destroyed) return; programState = state;
-  liveTitles?.update(state.titles);
+  liveTitles?.update(composeEditorialTitles(state,player?.state));
+  if(scene)scene.editorialChatPending=!!state.editorial?.pendingChat;
+  if(scene)scene.editorialProgram=state;
+  monitors?.setEditorialChart(state.titleOwner==='operator'?null:player?.state?.editorial?.chart??activeResponse(state)?.chart??null);
   const lookKey = JSON.stringify(state.look), sceneKey = JSON.stringify(state.scene);
   if (lookKey !== lastProgramLook && scene?.look) {
     await scene.look.apply(state.look, { persist: false, source: 'live-control' }); lastProgramLook = lookKey;
@@ -248,6 +253,8 @@ function updateSpeech(state) {
   if (state.connected && demoPlaying) stopDemoVoice();
   if ($('studio-audio-test')) $('studio-audio-test').disabled = !!state.connected;
   applyPresentation(state);
+  if(programState)liveTitles?.update(composeEditorialTitles(programState,state));
+  monitors?.setEditorialChart(programState?.titleOwner==='operator'?null:state.editorial?.chart??activeResponse(programState)?.chart??null);
   monitors?.setSpeech(state);
   market?.setPaused(state.phase === 'playing');
   scene?.setSpeech({ ...state, emotion: resolvePresenterEmotion(state, currentEmotion) });
@@ -372,7 +379,7 @@ async function boot() {
     player = new SpeechPlayer(updateSpeech);
     if (config.live) {
       liveMarket = createLiveMarketClient({ onUpdate: updateLiveMarket });
-      liveTitles = mountLiveTitles(document.querySelector('.program'));
+      liveTitles = mountLiveTitles(document.querySelector('.program'),{onChartVisibility:visible=>{scene.editorialChartVisible=visible;},isChartFrameReady:()=>scene.chartFrameReady===true});
       $('feed').disabled = true; $('timeframe').disabled = true;
       $('feed').replaceChildren(new Option('Live Control Room Monitor', 'live', true, true));
     } else market = new MarketData(config, updateMarket);

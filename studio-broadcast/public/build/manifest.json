@@ -1,6 +1,6 @@
 {
   "schema": "air3.frontend-build.v1",
-  "builtAt": "2026-10-31T11:37:42.401Z",
+  "builtAt": "2026-11-01T18:08:29.191Z",
   "node": "v24.18.0",
   "esbuild": "0.28.2",
   "inputs": [
@@ -51,8 +51,8 @@
     },
     {
       "path": "public/air3-stage-motion.mjs",
-      "bytes": 25977,
-      "sha256": "6ec3ecc42171c939d573bcad17b8ae3a68a09fc476adeddd4ce723622bf17921"
+      "bytes": 25998,
+      "sha256": "dd80990e6b4e5d2386bde99dbb4730e661af1b35bc66de814546dc4ddaf25c5f"
     },
     {
       "path": "public/air3-talk-shoulders.mjs",
@@ -61,8 +61,8 @@
     },
     {
       "path": "public/app.mjs",
-      "bytes": 24691,
-      "sha256": "65e917f12e981c81d7c0640fd39ca9e3ee5a3b7414717ece162529f320c8bf25"
+      "bytes": 25501,
+      "sha256": "368232b78f2fa200e7d9cda02239ca6b1c09f8f1644444e538f6e1c9ecd92af1"
     },
     {
       "path": "public/assets/air3/motion/accad-female1.mjs",
@@ -85,6 +85,11 @@
       "sha256": "d99246963e242514d9e360fce7a28f960516351b9d161a79e60fde4899a10bd9"
     },
     {
+      "path": "public/editorial-view.mjs",
+      "bytes": 1761,
+      "sha256": "5c366029b4bbf2ae1fb980f5e04548adb52cd5642bd4b52a7374241e743f5ca1"
+    },
+    {
       "path": "public/health-worker.mjs",
       "bytes": 1384,
       "sha256": "99d2a59a1171635574df2b529fde30b10dc996f90722b35e52859b0d0e513340"
@@ -101,8 +106,8 @@
     },
     {
       "path": "public/live-program.mjs",
-      "bytes": 3794,
-      "sha256": "3bdd63b83b37b21b9af762b58fcd7f8cb424d5710b1ebd3df6c1abb17b44a025"
+      "bytes": 4890,
+      "sha256": "faf9d287eed221ae8230392961f8782117de8c5c3eb566064fe7558be9eabf51"
     },
     {
       "path": "public/look-controller.mjs",
@@ -126,8 +131,8 @@
     },
     {
       "path": "public/monitors.mjs",
-      "bytes": 10002,
-      "sha256": "90b4dd1e4bfbe0679995d6fe0db3c8a588d94931790cbc406c0da1cce168e9e2"
+      "bytes": 10912,
+      "sha256": "17fbbf5a4d44784f106b5d065421e0defcc10a2042b8e745c18407d5d1111bc7"
     },
     {
       "path": "public/presenter-emotion.mjs",
@@ -146,8 +151,8 @@
     },
     {
       "path": "public/speech-player.mjs",
-      "bytes": 13195,
-      "sha256": "a5edb691e792b63d3538f4e027648c82bcb23317e2900696c4885650d279c83e"
+      "bytes": 17214,
+      "sha256": "44895f46d5fc0af828985fa7c6fbeab4a6bba2a94d1382c53bcfb4b6bc176906"
     },
     {
       "path": "public/studio-lighting.mjs",
@@ -161,8 +166,8 @@
     },
     {
       "path": "public/studio-scene.mjs",
-      "bytes": 33093,
-      "sha256": "0f691a80cf7308422fb146eab44df14884463a0b0e54bf35b833da8a6b84b229"
+      "bytes": 34378,
+      "sha256": "866ffcbf5f44ea67044aa9ec5bb4e057fc60118431a5996e94015b31e1938132"
     },
     {
       "path": "public/index.html",
@@ -181,8 +186,8 @@
     },
     {
       "path": "public/live-titles.css",
-      "bytes": 2127,
-      "sha256": "35b1a242b703b75da7fd6977ee42755614e4d7bc81f32bc67f3394589ff0ae8b"
+      "bytes": 2316,
+      "sha256": "65ba2c864fe2235183446365d872906b6df006e674579bae522a15823ce30812"
     },
     {
       "path": "public/control/index.html",
@@ -208,8 +213,8 @@
   "outputs": [
     {
       "path": "public/build/app.js",
-      "bytes": 87594,
-      "sha256": "537b60a5a992564effbf1383ca9d24fe5d173b4f086ff6471b0c4db1d0abf3f8"
+      "bytes": 93643,
+      "sha256": "3319c0b1a11a858e89f343623ec74b7f9b584c0d4ff19c83222da087a6d21a0d"
     },
     {
       "path": "public/build/control.js",

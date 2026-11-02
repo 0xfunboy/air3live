@@ -88,6 +88,11 @@ export class NarrationQueue {
       throw error;
     }
   }
+  enableEditorialTimeline() {
+    const columns=new Set(this.db.prepare('PRAGMA table_info(narrations)').all().map(c=>c.name));
+    for(const name of ['ready_at','started_at','ended_at'])if(!columns.has(name))this.db.exec(`ALTER TABLE narrations ADD COLUMN ${name} INTEGER`);
+    this.editorialTimeline=true;
+  }
 
   recover() {
     const now = this.now();
@@ -171,10 +176,10 @@ export class NarrationQueue {
     return apiJob(this.row(id));
   }
 
-  takeForGeneration() {
+  takeForGeneration(allow = () => true) {
     return this.transaction(() => {
       this.sweep();
-      const row = this.db.prepare("SELECT * FROM narrations WHERE status='queued' ORDER BY priority DESC,seq ASC LIMIT 1").get();
+      const row = this.db.prepare("SELECT * FROM narrations WHERE status='queued' ORDER BY priority DESC,seq ASC").all().find(row => allow(row.id));
       if (!row) return null;
       this.db.prepare("UPDATE narrations SET status='generating',updated_at=? WHERE id=?").run(this.now(), row.id);
       return { id: row.id, text: row.text, language: row.language, expiresAt: row.expires_at };
@@ -183,8 +188,11 @@ export class NarrationQueue {
 
   markReady(id, audioFile, durationMs, lipSync = { kind: 'amplitude' }) {
     this.sweep();
-    return this.db.prepare(`UPDATE narrations SET status='ready',audio_file=?,duration_ms=?,lip_sync_json=?,updated_at=?
-      WHERE id=? AND status='generating'`).run(audioFile, durationMs, JSON.stringify(lipSync), this.now(), id).changes === 1;
+    return this.db.prepare(`UPDATE narrations SET status='ready',audio_file=?,duration_ms=?,lip_sync_json=?,updated_at=?${this.editorialTimeline?',ready_at=?':''}
+      WHERE id=? AND status='generating'`).run(audioFile, durationMs, JSON.stringify(lipSync), this.now(), ...(this.editorialTimeline?[this.now()]:[]), id).changes === 1;
+  }
+  deferGeneration(id) {
+    return this.db.prepare("UPDATE narrations SET status='queued',updated_at=? WHERE id=? AND status='generating'").run(this.now(),id).changes === 1;
   }
 
   markFailed(id, error = 'TTS_FAILED') {
@@ -194,7 +202,7 @@ export class NarrationQueue {
       .run(safe, this.now(), id);
   }
 
-  claim(playerId) {
+  claim(playerId, allow = () => true) {
     if (!isSafeId(playerId)) throw new QueueError('INVALID_PLAYER_ID');
     return this.transaction(() => {
       this.sweep();
@@ -205,7 +213,7 @@ export class NarrationQueue {
       this.db.prepare(`UPDATE narrations SET status='expired',error='PLAYBACK_DEADLINE_TOO_CLOSE',updated_at=?
         WHERE status='ready' AND duration_ms+?>=expires_at-?`)
         .run(now, PLAYBACK_START_MARGIN_MS, now);
-      const row = this.db.prepare("SELECT * FROM narrations WHERE status='ready' ORDER BY priority DESC,seq ASC LIMIT 1").get();
+      const row = this.db.prepare("SELECT * FROM narrations WHERE status='ready' ORDER BY priority DESC,seq ASC").all().find(row => allow(row.id));
       if (!row) return { job: null };
       const leaseToken = randomUUID();
       const leaseExpiresAt = Math.min(now + this.config.leaseMs, row.expires_at);
@@ -220,9 +228,9 @@ export class NarrationQueue {
     });
   }
 
-  playerEvent(id, input) {
+  playerEvent(id, input, { editorial = false } = {}) {
     if (!input || !isSafeId(input.playerId) || typeof input.leaseToken !== 'string' ||
-        !['started', 'heartbeat', 'finished', 'failed'].includes(input.event)) throw new QueueError('INVALID_PLAYER_EVENT');
+        !['started', 'heartbeat', 'finished', 'failed', ...(editorial ? ['interrupted'] : [])].includes(input.event)) throw new QueueError('INVALID_PLAYER_EVENT');
     const result = this.transaction(() => {
       this.sweep();
       const row = this.row(id);
@@ -238,15 +246,16 @@ export class NarrationQueue {
         // Commit the terminal state before rejecting the attempted start.
         return new QueueError('PLAYBACK_DEADLINE_TOO_CLOSE', 409);
       }
-      if (input.event === 'finished' || input.event === 'failed') {
+      if (input.event === 'finished' || input.event === 'failed' || input.event === 'interrupted') {
         if (input.event === 'finished' && row.status !== 'playing') throw new QueueError('PLAYBACK_NOT_STARTED', 409);
-        const status = input.event === 'finished' ? 'finished' : 'failed';
+        const status = input.event === 'finished' ? 'finished' : input.event === 'interrupted' ? 'cancelled' : 'failed';
         this.db.prepare(`UPDATE narrations SET status=?,error=?,updated_at=?,lease_owner=NULL,lease_token=NULL,
-          lease_expires_at=NULL WHERE id=?`).run(status, status === 'failed' ? 'PLAYBACK_FAILED' : null, now, id);
+          lease_expires_at=NULL${this.editorialTimeline?',ended_at=?':''} WHERE id=?`).run(status, input.event === 'interrupted' ? 'PLAYBACK_INTERRUPTED' : status === 'failed' ? 'PLAYBACK_FAILED' : null, now, ...(this.editorialTimeline?[now]:[]), id);
       } else {
         const status = input.event === 'started' ? 'playing' : row.status;
         this.db.prepare('UPDATE narrations SET status=?,lease_expires_at=?,updated_at=? WHERE id=?')
           .run(status, Math.min(now + this.config.leaseMs, row.expires_at), now, id);
+        if(this.editorialTimeline&&input.event==='started')this.db.prepare('UPDATE narrations SET started_at=COALESCE(started_at,?) WHERE id=?').run(now,id);
       }
       return { id, status: this.row(id).status, leaseMs: Math.max(0, Math.min(this.config.leaseMs, row.expires_at - now)) };
     });

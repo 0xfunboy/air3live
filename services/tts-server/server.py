@@ -11,6 +11,11 @@ import sys
 import time
 import logging
 import threading
+import asyncio
+import hmac
+import re
+from priority_tts import PrioritySynthesis, SynthesisCancelled, SynthesisQueueFull
+from voice_config import configured_voices, PRESETS
 from typing import Optional, List, Dict, Any
 
 import torch
@@ -30,6 +35,7 @@ logger = logging.getLogger("air3-tts")
 HOST = os.environ.get("AIR3_TTS_HOST", "0.0.0.0")
 PORT = int(os.environ.get("AIR3_TTS_PORT", "8880"))
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+VOICE_PROFILES = configured_voices(os.environ)
 
 app = FastAPI(
     title="AIR3 Neural TTS Server",
@@ -54,16 +60,126 @@ class UnclosableBytesIO(io.BytesIO):
 models: Dict[str, TTSModel] = {}
 voice_states: Dict[str, Any] = {}
 generation_lock = threading.Lock()
+editorial_enabled = os.environ.get('AIR3_TTS_EDITORIAL_ENABLED', 'false') == 'true'
+editorial_token = os.environ.get('AIR3_TTS_EDITORIAL_TOKEN', '')
+if editorial_enabled and (len(editorial_token) < 32 or any(c.isspace() for c in editorial_token)):
+    raise RuntimeError('EDITORIAL_TOKEN_REQUIRED')
+editorial_queue = PrioritySynthesis(capacity=8) if editorial_enabled else None
+
+
+@app.middleware('http')
+async def editorial_boundary(request: Request, call_next):
+    if request.url.path.startswith('/v1/editorial/audio/speech'):
+        if not editorial_enabled:
+            return JSONResponse({'error': 'EDITORIAL_DISABLED'}, status_code=404)
+        supplied = request.headers.get('authorization', '')
+        if not hmac.compare_digest(supplied.encode('utf8'), ('Bearer ' + editorial_token).encode('utf8')):
+            return JSONResponse({'error': 'UNAUTHORIZED'}, status_code=401)
+        if request.method == 'DELETE':
+            return await call_next(request)
+        try:
+            length = int(request.headers.get('content-length', '-1'))
+        except ValueError:
+            length = -1
+        if length < 0 or length > 16384 or request.headers.get('transfer-encoding'):
+            return JSONResponse({'error': 'INVALID_BODY_LENGTH'}, status_code=413)
+        if request.headers.get('content-encoding', 'identity') != 'identity':
+            return JSONResponse({'error': 'CONTENT_ENCODING_NOT_SUPPORTED'}, status_code=415)
+        if request.headers.get('content-type', '').split(';')[0].lower() != 'application/json':
+            return JSONResponse({'error': 'JSON_REQUIRED'}, status_code=415)
+    return await call_next(request)
+
+
+@app.post('/v1/editorial/audio/speech')
+async def editorial_speech(request: Request):
+    try:
+        value = await request.json()
+        if not isinstance(value, dict) or set(value) - {'model', 'input', 'voice', 'speed', 'response_format'}:
+            raise ValueError()
+        text = value.get('input', '').strip()
+        if not isinstance(text, str) or not text or len(text) > 600 or '\x00' in text or value.get('speed', 1) != 1:
+            raise ValueError()
+        kind = request.headers.get('x-air3-class')
+        lang = request.headers.get('x-air3-language')
+        if kind not in {'chat', 'news', 'filler'} or lang not in {'en', 'it'}:
+            raise ValueError()
+        request_id = request.headers.get('x-air3-request-id', '')
+        if not re.fullmatch(r'[a-zA-Z0-9_-]{1,128}', request_id):
+            raise ValueError()
+    except Exception:
+        return JSONResponse({'error': 'INVALID_EDITORIAL_SPEECH'}, status_code=400)
+    model = models.get(lang)
+    voice_state = voice_states.get(lang)
+    if model is None or voice_state is None:
+        return JSONResponse({'error': 'MODEL_NOT_READY'}, status_code=503)
+
+    def generate(cancel):
+        chunks = []
+        count = 0
+        with generation_lock:
+            if cancel.is_set():
+                raise SynthesisCancelled()
+            stream = iter(model.generate_audio_stream(voice_state, text))
+            try:
+                for chunk in stream:
+                    if cancel.is_set():
+                        raise SynthesisCancelled()
+                    count += chunk.numel()
+                    if count > model.config.mimi.sample_rate * 45:
+                        raise ValueError('AUDIO_TOO_LONG')
+                    chunks.append(chunk)
+            finally:
+                close = getattr(stream, 'close', None)
+                if close:
+                    close()
+        if cancel.is_set():
+            raise SynthesisCancelled()
+        buffer = UnclosableBytesIO()
+        stream_audio_chunks(buffer, chunks, model.config.mimi.sample_rate)
+        return buffer.getvalue()
+
+    try:
+        future, cancel = editorial_queue.submit({'chat': 0, 'news': 1, 'filler': 2}[kind], generate, request_id)
+    except SynthesisQueueFull:
+        return JSONResponse({'error': 'TTS_QUEUE_FULL'}, status_code=429, headers={'Retry-After': '1'})
+    deadline = time.monotonic() + 30
+    try:
+        while not future.done():
+            if await request.is_disconnected():
+                return Response(status_code=499)
+            if time.monotonic() >= deadline:
+                return JSONResponse({'error': 'TTS_DEADLINE'}, status_code=504)
+            await asyncio.sleep(.025)
+        try:
+            audio = future.result()
+        except SynthesisCancelled:
+            return Response(status_code=499)
+        except Exception:
+            return JSONResponse({'error': 'TTS_GENERATION_FAILED'}, status_code=502)
+        return Response(content=audio, media_type='audio/wav', headers={'X-Language': lang})
+    finally:
+        cancel.set()
+
+
+@app.delete('/v1/editorial/audio/speech/{request_id}')
+async def cancel_editorial_speech(request_id: str):
+    if not re.fullmatch(r'[a-zA-Z0-9_-]{1,128}', request_id):
+        return JSONResponse({'error': 'INVALID_REQUEST_ID'}, status_code=400)
+    try:
+        editorial_queue.cancel_request(request_id)
+    except SynthesisQueueFull:
+        return JSONResponse({'error': 'TTS_QUEUE_FULL'}, status_code=429, headers={'Retry-After': '1'})
+    return {'status': 'cancelled'}
 
 def init_models():
     logger.info(f"Initializing bilingual Pocket-TTS models on {DEVICE}...")
     t0 = time.time()
     
     # Italian model
-    logger.info("Loading Italian model (alba - young female voice)...")
+    logger.info("Loading Italian model (voice profile: %s)...", VOICE_PROFILES["it"])
     model_it = TTSModel.load_model(language="italian")
     model_it.to(DEVICE)
-    voice_it = model_it.get_state_for_audio_prompt("alba")
+    voice_it = model_it.get_state_for_audio_prompt(VOICE_PROFILES["it"])
     models["it"] = model_it
     voice_states["it"] = voice_it
     voice_states["giovanni"] = voice_it
@@ -71,10 +187,10 @@ def init_models():
     voice_states["alba"] = voice_it
     
     # English model
-    logger.info("Loading English model (alba - young female voice)...")
+    logger.info("Loading English model (voice profile: %s)...", VOICE_PROFILES["en"])
     model_en = TTSModel.load_model(language="english")
     model_en.to(DEVICE)
-    voice_en = model_en.get_state_for_audio_prompt("alba")
+    voice_en = model_en.get_state_for_audio_prompt(VOICE_PROFILES["en"])
     models["en"] = model_en
     voice_states["en"] = voice_en
     voice_states["alba"] = voice_en
@@ -101,7 +217,7 @@ def detect_language(text: str, requested_voice: str) -> str:
         return "it"
         
     # Explicit English voices or codes
-    if voice_lower in ("en", "eng", "english", "alba", "af_jessica", "jessica"):
+    if voice_lower in PRESETS["en"] or voice_lower in ("en", "eng", "english", "af_jessica", "jessica"):
         return "en"
     if voice_lower.startswith("af_") or voice_lower.startswith("am_") or voice_lower.startswith("bf_") or voice_lower.startswith("bm_"):
         return "en"
@@ -211,7 +327,9 @@ def health_check():
         "device": DEVICE,
         "vram_mb": round(vram, 1),
         "languages": list(models.keys()),
-        "sample_rate": 24000
+        "voice_profiles": VOICE_PROFILES,
+        "sample_rate": 24000,
+        "editorial": editorial_queue.snapshot() if editorial_queue else None,
     }
 
 @app.get("/v1/models")
