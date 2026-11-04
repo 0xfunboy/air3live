@@ -87,7 +87,7 @@ async function session(signal) {
     const args = ['--autoplay-policy=no-user-gesture-required', '--disable-background-timer-throttling',
       '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', '--hide-scrollbars',
       '--enable-gpu', '--ignore-gpu-blocklist', '--enable-gpu-rasterization',
-      '--disable-gpu-vsync', '--disable-frame-rate-limit'];
+      '--disable-gpu-vsync'];
     if (config.angle === 'gl-egl') {
       args.push('--use-gl=angle', '--use-angle=gl-egl');
     } else if (config.angle !== 'default') {
