@@ -10,7 +10,7 @@ if(!Number.isSafeInteger(policy.broadcastApprovedAt)||policy.broadcastApprovedAt
 const env=parseEnv(await fs.readFile('/home/funboy/air3live/studio-broadcast/.env','utf8'));
 const request=async(path,method='GET',body)=>{
  const r=await fetch('http://127.0.0.1:5890'+path,{method,redirect:'error',signal:AbortSignal.timeout(20000),headers:{Authorization:`Bearer ${env.AIR3_OPERATOR_TOKEN}`,'Content-Type':'application/json'},...(body===undefined?{}:{body:JSON.stringify(body)})});
- if(!r.ok)throw new Error('PRODUCTION_RESUME_HTTP_FAILED');return r.json();
+ if(!r.ok){const errText=await r.text().catch(()=>'');console.error(`[resume] HTTP ${r.status} ${path}: ${errText}`);throw new Error(`PRODUCTION_RESUME_HTTP_${r.status}`);}return r.json();
 };
 let ready=false;for(let i=0;i<60;i++){try{const t=await fetch('http://127.0.0.1:8882/health',{signal:AbortSignal.timeout(1000)});if(t.ok){await request('/api/health');ready=true;break;}}catch{}await new Promise(r=>setTimeout(r,500));}
 if(!ready)throw new Error('PRODUCTION_DEPENDENCIES_NOT_READY');

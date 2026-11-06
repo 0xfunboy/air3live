@@ -96,7 +96,7 @@ export class LiveProcess extends EventEmitter {
     await access(b.browserPath).catch(() => { throw new QueueError('BROWSER_NOT_INSTALLED', 503); });
     if (signal?.aborted) throw cancelled();
     await exec(b.ffmpeg, ['-version'], { timeout: 5000, maxBuffer: 64 * 1024, signal }).catch(() => { throw signal?.aborted ? cancelled() : new QueueError('FFMPEG_NOT_AVAILABLE', 503); });
-    const encoder = await selectEncoder(b, { signal }).catch(() => { throw signal?.aborted ? cancelled() : new QueueError('ENCODER_PROBE_FAILED', 503); });
+    const encoder = await selectEncoder(b, { signal }).catch((err) => { this.event('encoder-probe-failed', { message: err?.message || String(err) }); throw signal?.aborted ? cancelled() : new QueueError('ENCODER_PROBE_FAILED', 503); });
     return { ok: true, encoder, width: b.gateway.width, height: b.gateway.height, fps: b.gateway.fps,
       mode, hardwareRenderingRequired: b.requireHardware, rendererCheck: 'performed-on-start' };
   }
