@@ -39,13 +39,17 @@ export async function generateLipSync(config, { audioPath, durationMs, language,
     if (process.platform !== 'win32' && binary === bundledRhubarb()) {
       try{await access(binary,constants.X_OK);}catch{await chmod(binary,0o755);}
     }
-    const recognizer = language === 'en' ? 'pocketSphinx' : 'phonetic';
+    const recognizer = config?.recognizer || (language === 'en' ? 'pocketSphinx' : 'phonetic');
     if(recognizer==='pocketSphinx'&&typeof text==='string'&&text.length<=8000){
       dialog=`${audioPath}.part-${randomUUID()}`;
       await writeFile(dialog,text,{flag:'wx',mode:0o600});
     }
-    const { stdout } = await execute(binary, ['--quiet', '--consoleLevel', 'error', '--exportFormat', 'json',
-      '--recognizer', recognizer, ...(dialog?['--dialogFile',dialog]:[]), '--extendedShapes', 'GHX', '--threads', String(config.threads ?? 2), audioPath],
+    const rhubarbArgs = ['--quiet', '--consoleLevel', 'error', '--exportFormat', 'json',
+      '--recognizer', recognizer, ...(dialog?['--dialogFile',dialog]:[]), '--extendedShapes', 'GHX', '--threads', String(config?.threads ?? 1), audioPath];
+    const niceness = Math.max(0, Math.min(19, config?.niceness ?? (process.platform === 'linux' ? 10 : 0)));
+    const execCmd = (niceness > 0 && process.platform === 'linux') ? 'nice' : binary;
+    const execArgs = (niceness > 0 && process.platform === 'linux') ? ['-n', String(niceness), resolve(binary), ...rhubarbArgs] : rhubarbArgs;
+    const { stdout } = await execute(execCmd, execArgs,
     { signal: combined, timeout: timeoutMs, killSignal: 'SIGKILL', maxBuffer: 1024 * 1024,
       windowsHide: true, shell: false, encoding: 'utf8' });
     combined.throwIfAborted();

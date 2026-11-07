@@ -60,16 +60,61 @@ class UnclosableBytesIO(io.BytesIO):
 models: Dict[str, TTSModel] = {}
 voice_states: Dict[str, Any] = {}
 generation_lock = threading.Lock()
+
+# Authentication & Configuration
+TTS_API_KEY = os.environ.get('AIR3_TTS_API_KEY', '').strip()
+OPERATOR_TOKEN = os.environ.get('AIR3_OPERATOR_TOKEN', '').strip()
+ENABLE_WEB_UI = os.environ.get('AIR3_TTS_ENABLE_WEB_UI', 'false').lower() == 'true'
+
 editorial_enabled = os.environ.get('AIR3_TTS_EDITORIAL_ENABLED', 'false') == 'true'
-editorial_token = os.environ.get('AIR3_TTS_EDITORIAL_TOKEN', '')
+editorial_token = os.environ.get('AIR3_TTS_EDITORIAL_TOKEN', '').strip()
 if editorial_enabled and (len(editorial_token) < 32 or any(c.isspace() for c in editorial_token)):
     raise RuntimeError('EDITORIAL_TOKEN_REQUIRED')
 editorial_queue = PrioritySynthesis(capacity=8) if editorial_enabled else None
 
 
+def get_authorized_tokens() -> List[str]:
+    """Collect all valid configured authorization tokens."""
+    tokens = []
+    for t in [TTS_API_KEY, OPERATOR_TOKEN, editorial_token]:
+        if t and len(t) >= 16 and not any(c.isspace() for c in t):
+            tokens.append(t)
+    return tokens
+
+
+def is_authorized(supplied: str) -> bool:
+    """Validate supplied bearer token or API key against configured secrets using constant-time comparison."""
+    if not supplied:
+        return False
+    tokens = get_authorized_tokens()
+    if not tokens:
+        logger.warning("No authorized tokens configured in environment; rejecting request.")
+        return False
+    supplied_bytes = supplied.strip().encode('utf-8')
+    for token in tokens:
+        if hmac.compare_digest(supplied_bytes, token.encode('utf-8')):
+            return True
+    return False
+
+
+def extract_supplied_token(request: Request) -> str:
+    """Extract token from Authorization (Bearer) or X-API-Key header."""
+    auth_header = request.headers.get('authorization', '').strip()
+    if auth_header:
+        parts = auth_header.split(None, 1)
+        if len(parts) == 2 and parts[0].lower() == 'bearer':
+            return parts[1].strip()
+        return auth_header
+    x_api_key = request.headers.get('x-api-key', '').strip()
+    if x_api_key:
+        return x_api_key
+    return ''
+
+
 @app.middleware('http')
-async def editorial_boundary(request: Request, call_next):
-    if request.url.path.startswith('/v1/editorial/audio/speech'):
+async def security_boundary(request: Request, call_next):
+    path = request.url.path
+    if path.startswith('/v1/editorial/audio/speech'):
         if not editorial_enabled:
             return JSONResponse({'error': 'EDITORIAL_DISABLED'}, status_code=404)
         supplied = request.headers.get('authorization', '')
@@ -87,6 +132,10 @@ async def editorial_boundary(request: Request, call_next):
             return JSONResponse({'error': 'CONTENT_ENCODING_NOT_SUPPORTED'}, status_code=415)
         if request.headers.get('content-type', '').split(';')[0].lower() != 'application/json':
             return JSONResponse({'error': 'JSON_REQUIRED'}, status_code=415)
+    elif path in ('/v1/audio/speech', '/audio/speech'):
+        token = extract_supplied_token(request)
+        if not is_authorized(token):
+            return JSONResponse({'error': 'UNAUTHORIZED'}, status_code=401)
     return await call_next(request)
 
 
@@ -235,10 +284,21 @@ def detect_language(text: str, requested_voice: str) -> str:
 def startup_event():
     init_models()
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
 @app.head("/")
-def home():
+def home(request: Request):
     vram = torch.cuda.memory_allocated() / (1024 * 1024) if DEVICE == "cuda" else 0
+    if not ENABLE_WEB_UI:
+        return JSONResponse({
+            "service": "air3-tts-v2",
+            "status": "online",
+            "device": DEVICE,
+            "vram_mb": round(vram, 1),
+            "web_ui": "disabled"
+        })
+    token = extract_supplied_token(request)
+    if not is_authorized(token):
+        return JSONResponse({"error": "UNAUTHORIZED"}, status_code=401)
     return HTMLResponse(content=f"""<!doctype html>
 <html lang="it">
 <head>

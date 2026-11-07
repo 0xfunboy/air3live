@@ -44,6 +44,8 @@ export function loadConfig(env = process.env) {
   const avatarUrl = env.AIR3_AVATAR_URL || null;
   const lipSyncMode = env.AIR3_LIPSYNC_MODE || 'auto';
   if (!['auto', 'required', 'off'].includes(lipSyncMode)) throw new Error('AIR3_LIPSYNC_MODE must be auto, required or off');
+  const lipSyncRecognizer = env.AIR3_LIPSYNC_RECOGNIZER || '';
+  if (lipSyncRecognizer && !['phonetic', 'pocketSphinx'].includes(lipSyncRecognizer)) throw new Error('AIR3_LIPSYNC_RECOGNIZER must be phonetic or pocketSphinx');
   const renderQuality = env.AIR3_RENDER_QUALITY || 'auto';
   if (!['auto', 'high', 'balanced', 'software'].includes(renderQuality)) throw new Error('Unsupported AIR3_RENDER_QUALITY');
   if (avatarUrl && (!/^\/assets\/[A-Za-z0-9_./-]+\.(glb|gltf)$/.test(avatarUrl) || avatarUrl.includes('..'))) throw new Error('AIR3_AVATAR_URL must identify a local GLB/glTF under /assets/');
@@ -64,7 +66,9 @@ export function loadConfig(env = process.env) {
     fps: integer(env, 'AIR3_FPS', 30, 1, 60),
     lipSync: { mode: lipSyncMode, binary: env.AIR3_RHUBARB_PATH || '',
       timeoutMs: integer(env, 'AIR3_LIPSYNC_TIMEOUT_MS', 45000, 1000, 120000),
-      threads: integer(env, 'AIR3_LIPSYNC_THREADS', 2, 1, 8) },
+      threads: integer(env, 'AIR3_LIPSYNC_THREADS', 1, 1, 8),
+      recognizer: lipSyncRecognizer,
+      niceness: integer(env, 'AIR3_LIPSYNC_NICENESS', 10, 0, 19) },
     tts: {
       editorial: bool(env, 'AIR3_TTS_EDITORIAL_TRANSPORT', false),
       baseUrl: httpUrl(env.AIR3_TTS_BASE_URL || 'http://127.0.0.1:8880/v1', 'AIR3_TTS_BASE_URL'),

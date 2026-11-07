@@ -28,6 +28,11 @@ test('missing aligner has an explicit fallback; required mode fails and cancella
   await assert.rejects(generateLipSync({ mode: 'auto' }, input, { signal: AbortSignal.abort() }), { code: 'TTS_CANCELLED' });
   assert.equal(bundledRhubarb('linux', 'arm64'), null);
 });
+test('lip sync configuration supports recognizer override and niceness bounds', async () => {
+  const input = { audioPath: join(tmpdir(), 'air3-nonexistent-aligner'), durationMs: 1000, language: 'en', text: 'Hello world' };
+  const fallback = await generateLipSync({ mode: 'auto', recognizer: 'phonetic', niceness: 15, threads: 1, binary: join(tmpdir(), 'air3-nonexistent-aligner') }, input);
+  assert.deepEqual(fallback, { kind: 'amplitude', reason: 'alignment-unavailable' });
+});
 test('aligned cues persist across a gateway restart and travel with the audio lease', async (t) => {
   const root = await mkdtemp(join(tmpdir(), 'air3-lipsync-queue-')); let queue;
   t.after(async () => { queue?.close(); await rm(root, { recursive: true, force: true }); });
