@@ -1,4 +1,5 @@
 import { spawn } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { mkdir, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
@@ -88,19 +89,23 @@ async function session(signal) {
       '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', '--hide-scrollbars',
       '--enable-gpu', '--ignore-gpu-blocklist', '--enable-gpu-rasterization',
       '--disable-gpu-vsync'];
-    if (config.angle === 'gl-egl') {
+    if (config.angle === 'vulkan') {
+      args.push('--use-gl=angle', '--use-angle=vulkan', '--enable-features=Vulkan', '--enable-gpu', '--disable-gpu-sandbox');
+    } else if (config.angle === 'gl-egl') {
       args.push('--use-gl=angle', '--use-angle=gl-egl');
     } else if (config.angle !== 'default') {
       args.push(`--use-angle=${config.angle}`);
     }
-    if (config.angle === 'vulkan') args.push('--enable-features=Vulkan', '--enable-gpu');
     if (config.angle === 'swiftshader' || !config.requireHardware) args.push('--enable-unsafe-swiftshader');
     if (config.noSandbox) args.push('--no-sandbox');
+    const hasLocalNvidia = existsSync('/home/funboy/.local/lib/nvidia/usr/lib/x86_64-linux-gnu');
     const browserEnv = {
       ...process.env,
-      LD_LIBRARY_PATH: '/home/funboy/.local/lib/nvidia/usr/lib/x86_64-linux-gnu:/home/funboy/.local/usr/lib/x86_64-linux-gnu:' + (process.env.LD_LIBRARY_PATH || ''),
-      VK_ICD_FILENAMES: '/home/funboy/.local/share/vulkan/icd.d/nvidia_icd.json',
-      __EGL_VENDOR_LIBRARY_FILENAMES: '/home/funboy/.local/lib/nvidia/usr/share/glvnd/egl_vendor.d/10_nvidia.json',
+      LD_LIBRARY_PATH: hasLocalNvidia
+        ? '/home/funboy/.local/lib/nvidia/usr/lib/x86_64-linux-gnu:/home/funboy/.local/usr/lib/x86_64-linux-gnu:' + (process.env.LD_LIBRARY_PATH || '')
+        : (process.env.LD_LIBRARY_PATH || ''),
+      VK_ICD_FILENAMES: process.env.VK_ICD_FILENAMES || (existsSync('/usr/share/vulkan/icd.d/nvidia_icd.json') ? '/usr/share/vulkan/icd.d/nvidia_icd.json' : '/home/funboy/.local/share/vulkan/icd.d/nvidia_icd.json'),
+      __EGL_VENDOR_LIBRARY_FILENAMES: process.env.__EGL_VENDOR_LIBRARY_FILENAMES || (existsSync('/usr/share/glvnd/egl_vendor.d/10_nvidia.json') ? '/usr/share/glvnd/egl_vendor.d/10_nvidia.json' : '/home/funboy/.local/lib/nvidia/usr/share/glvnd/egl_vendor.d/10_nvidia.json'),
     };
     browser = await capture.launch({ executablePath: config.browserPath, headless: 'new', args, env: browserEnv,
       defaultViewport: { width: config.gateway.width, height: config.gateway.height, deviceScaleFactor: 1 },
